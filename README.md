@@ -9,11 +9,11 @@ Let's consider the sentence: Where was Barack Obama born?
 
 If we pass this sentence into AskNow's NQS we can expect:
 
-Where was [Barack Obama](dbpedia.org/resource/Barack_obama) born?
+Where was [Barack Obama](http://dbpedia.org/resource/Barack_Obama) born?
 
 However we aim to also link the relation like:
 
-Where was [Barack Obama](dbpedia.org/resource/Barack_obama)
+Where was [Barack Obama](http://dbpedia.org/resource/Barack_Obama)
 [born](http://dbpedia.org/ontology/birthPlace)?
 
 The hypothesis is that jointly linking relation and entity would help in
