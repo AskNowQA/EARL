@@ -1,5 +1,6 @@
 import re
 import difflib
+import json
 
 import pandas as pd
 
@@ -48,7 +49,7 @@ for i in range(rows):
             build = build.strip()
             length = len(build)
             end = start + length - 1
-            d = make_mini_dict(uri, entity, start, end)
+            d = make_mini_dict(uri, build, start, end)
             predicate_mapping.append(d)
         else:
             entity = entity.lower()
@@ -65,19 +66,23 @@ for i in range(rows):
                         break
             length = len(build)
             end = start + length - 1
-            d = make_mini_dict(uri, entity, start, end)
+            d = make_mini_dict(uri, build, start, end)
             entity_mapping.append(d)
 
     final_dict = {}
-    final_dict['id'] = id_no
-    final_dict['question'] = ques
-    final_dict['sparql_id'] = sparql_id
-    final_dict['checked'] = checked
-    final_dict['predicate mapping'] = predicate_mapping
-    final_dict['entity mapping'] = entity_mapping
-    final_list.append(final_dict)
+    final_dict["id"] = id_no
+    final_dict["question"] = ques
+    final_dict["sparql_id"] = str(sparql_id)
+    final_dict["checked"] = checked
+    final_dict["predicate mapping"] = predicate_mapping
+    final_dict["entity mapping"] = entity_mapping
+    try:
+        final_list.append(json.dumps(final_dict))
+    except TypeError:
+        print(type(final_dict['sparql_id']))
+        break
 
 
-file = open('linked.json', 'w')
+file = open('linked1.json', 'w')
 for item in final_list:
-    file.write('%s\n' % item)
+    file.write('%s,\n' % item)
