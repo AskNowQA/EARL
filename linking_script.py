@@ -83,6 +83,6 @@ for i in range(rows):
         break
 
 
-file = open('linked1.json', 'w')
+file = open('linked.json', 'w')
 for item in final_list:
     file.write('%s,\n' % item)
