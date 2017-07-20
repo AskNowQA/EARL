@@ -49,7 +49,7 @@ for i in range(rows):
             build = build.strip()
             length = len(build)
             end = start + length - 1
-            d = make_mini_dict(uri, build, start, end)
+            d = make_mini_dict(uri, entity, start, end)
             entity_mapping.append(d)
         else:
             entity = entity.lower()
@@ -66,7 +66,7 @@ for i in range(rows):
                         break
             length = len(build)
             end = start + length - 1
-            d = make_mini_dict(uri, build, start, end)
+            d = make_mini_dict(uri, entity, start, end)
             predicate_mapping.append(d)
 
     final_dict = {}
