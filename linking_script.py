@@ -50,7 +50,7 @@ for i in range(rows):
             length = len(build)
             end = start + length - 1
             d = make_mini_dict(uri, build, start, end)
-            predicate_mapping.append(d)
+            entity_mapping.append(d)
         else:
             entity = entity.lower()
             matches = difflib.get_close_matches(entity, l, 5, 0)
@@ -67,7 +67,7 @@ for i in range(rows):
             length = len(build)
             end = start + length - 1
             d = make_mini_dict(uri, build, start, end)
-            entity_mapping.append(d)
+            predicate_mapping.append(d)
 
     final_dict = {}
     final_dict["id"] = id_no
