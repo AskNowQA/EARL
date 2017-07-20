@@ -20,6 +20,7 @@ final_list = []
 for i in range(rows):
     id_no = df.loc[i][0]
     ques = df.loc[i][1]
+    sparql_query = df.loc[i][2]
     sparql_id = df.loc[i][3]
     predicate_mapping = []
     entity_mapping = []
@@ -49,7 +50,7 @@ for i in range(rows):
             build = build.strip()
             length = len(build)
             end = start + length - 1
-            d = make_mini_dict(uri, entity, start, end)
+            d = make_mini_dict(uri, build, start, end)
             entity_mapping.append(d)
         else:
             entity = entity.lower()
@@ -66,12 +67,13 @@ for i in range(rows):
                         break
             length = len(build)
             end = start + length - 1
-            d = make_mini_dict(uri, entity, start, end)
+            d = make_mini_dict(uri, build, start, end)
             predicate_mapping.append(d)
 
     final_dict = {}
     final_dict["id"] = id_no
     final_dict["question"] = ques
+    final_dict["sparql_query"] = sparql_query
     final_dict["sparql_id"] = str(sparql_id)
     final_dict["checked"] = checked
     final_dict["predicate mapping"] = predicate_mapping
