@@ -6,16 +6,16 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/creator",
-			"label": "are",
+			"label": "painted",
 			"seq": "23,25"
 		}, {
 			"uri": "http://dbpedia.org/ontology/ComicsCharacter",
-			"label": "characters",
+			"label": "comic characters",
 			"seq": "12,21"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Bill_Finger",
-			"label": "finger bill",
+			"label": "Bill Finger",
 			"seq": "38,48"
 		}]
 	},
@@ -27,7 +27,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/primeMinister",
-			"label": "minister prime",
+			"label": "prime minister",
 			"seq": "26,39"
 		}],
 		"entity mapping": [{
@@ -36,7 +36,7 @@
 			"seq": "44,55"
 		}, {
 			"uri": "http://dbpedia.org/resource/Winston_Churchill",
-			"label": "churchill winston",
+			"label": "winston churchill",
 			"seq": "4,20"
 		}]
 	},
@@ -48,7 +48,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/parentOrganisation",
-			"label": "organisation parent",
+			"label": "parent organisation",
 			"seq": "25,43"
 		}, {
 			"uri": "http://dbpedia.org/ontology/leader",
@@ -69,7 +69,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/constituency",
-			"label": "come",
+			"label": "in power",
 			"seq": "16,19"
 		}, {
 			"uri": "http://dbpedia.org/ontology/party",
@@ -95,7 +95,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Roberto_Clemente_Bridge",
-			"label": "clemente roberto bridge",
+			"label": "Roberto Clemente Bridge",
 			"seq": "25,47"
 		}]
 	},
@@ -111,7 +111,7 @@
 			"seq": "67,72"
 		}, {
 			"uri": "http://dbpedia.org/property/spouse",
-			"label": "ptolemy",
+			"label": "married",
 			"seq": "29,35"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Royalty",
@@ -120,11 +120,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Cleopatra_V_of_Egypt",
-			"label": "cleopatra",
+			"label": "Cleopatra V",
 			"seq": "80,88"
 		}, {
 			"uri": "http://dbpedia.org/resource/Ptolemy_XIII_Theos_Philopator",
-			"label": "philopator ptolemy",
+			"label": "ptolemy XIII Theos Philopator",
 			"seq": "29,46"
 		}]
 	},
@@ -145,7 +145,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Li_Si",
-			"label": "si li",
+			"label": "Li Si",
 			"seq": "21,25"
 		}]
 	},
@@ -157,20 +157,20 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/hometown",
-			"label": "town home",
+			"label": "home town",
 			"seq": "6,14"
 		}, {
 			"uri": "http://dbpedia.org/ontology/deathPlace",
-			"label": "death",
+			"label": "death location",
 			"seq": "38,42"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Pavel_Moroz",
-			"label": "pavel moroz",
+			"label": "PAvel Moroz",
 			"seq": "19,29"
 		}, {
 			"uri": "http://dbpedia.org/resource/Yakov_Estrin",
-			"label": "estrin yakov",
+			"label": "Yakov Estrin",
 			"seq": "60,71"
 		}]
 	},
@@ -190,7 +190,7 @@
 			"seq": "6,12"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Automobile",
-			"label": "assembles",
+			"label": "cars",
 			"seq": "20,28"
 		}],
 		"entity mapping": [{
@@ -215,12 +215,12 @@
 			"seq": "13,20"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Automobile",
-			"label": "the",
+			"label": "car",
 			"seq": "22,24"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/ASC_Creative_Services",
-			"label": "services creative",
+			"label": "ASC Creative Services",
 			"seq": "62,78"
 		}]
 	},
@@ -232,7 +232,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/doctoralAdvisor",
-			"label": "doctoral",
+			"label": "supervisor",
 			"seq": "68,75"
 		}, {
 			"uri": "http://dbpedia.org/property/doctoralStudents",
@@ -245,11 +245,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Ernest_Rutherford",
-			"label": "rutherford ernest",
+			"label": "Ernest Rutherford",
 			"seq": "40,56"
 		}, {
 			"uri": "http://dbpedia.org/resource/Charles_Drummond_Ellis",
-			"label": "drummond charles ellis",
+			"label": "Charles Drummond Ellis",
 			"seq": "92,113"
 		}]
 	},
@@ -265,12 +265,12 @@
 			"seq": "14,21"
 		}, {
 			"uri": "http://dbpedia.org/ontology/birthPlace",
-			"label": "the",
+			"label": "born",
 			"seq": "10,12"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/REP_Parasol",
-			"label": "parasol rep",
+			"label": "REP Parasol",
 			"seq": "26,36"
 		}]
 	},
@@ -286,16 +286,16 @@
 			"seq": "19,29"
 		}, {
 			"uri": "http://dbpedia.org/ontology/almaMater",
-			"label": "mater alma",
+			"label": "alma mater",
 			"seq": "94,103"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Monroe_Carell_Jr._Children's_Hospital_at_Vanderbilt",
-			"label": "vanderbilt children's hospital",
+			"label": "Monroe Carell Jr. Children's Hospital at Vanderbilt",
 			"seq": "56,85"
 		}, {
 			"uri": "http://dbpedia.org/resource/Duncan_U._Fletcher",
-			"label": "fletcher duncan",
+			"label": "Duncan U. Fletcher",
 			"seq": "112,126"
 		}]
 	},
@@ -304,10 +304,10 @@
 		"question": "What is the hometown of Nader Guirat, where Josef Johansson was born too?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Josef_Johansson> <http://dbpedia.org/property/birthPlace> ?uri. <http://dbpedia.org/resource/Nader_Guirat> <http://dbpedia.org/ontology/hometown> ?uri . }",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/birthPlace",
-			"label": "the",
+			"label": "born",
 			"seq": "8,10"
 		}, {
 			"uri": "http://dbpedia.org/ontology/hometown",
@@ -316,11 +316,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Josef_Johansson",
-			"label": "johansson josef",
+			"label": "Josef Johansson",
 			"seq": "44,58"
 		}, {
 			"uri": "http://dbpedia.org/resource/Nader_Guirat",
-			"label": "",
+			"label": "Nader Guirat",
 			"seq": "1000,999"
 		}]
 	},
