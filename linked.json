@@ -341,11 +341,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/The_Sarah_Jane_Adventures",
-			"label": "adventure sarah",
+			"label": "sarah jane adventure",
 			"seq": "48,62"
 		}, {
 			"uri": "http://dbpedia.org/resource/Doctor_Who_Confidential",
-			"label": "confidential",
+			"label": "dr who confidential",
 			"seq": "80,91"
 		}]
 	},
@@ -357,8 +357,8 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/company",
-			"label": "many",
-			"seq": "4,7"
+			"label": "@@@",
+			"seq": "-1,-1"
 		}, {
 			"uri": "http://dbpedia.org/ontology/TelevisionShow",
 			"label": "shows",
@@ -383,11 +383,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Stanislav_Morozov",
-			"label": "stanislav morozov",
+			"label": "Stanislav Morozo",
 			"seq": "11,27"
 		}, {
 			"uri": "http://dbpedia.org/resource/Nikolai_Morozov_(figure_skater)",
-			"label": "nikolai morozov",
+			"label": "Nikolai Morozov",
 			"seq": "3,17"
 		}]
 	},
@@ -408,7 +408,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Abhijit_Kunte",
-			"label": "abhijit kunte",
+			"label": "Abhijit Kunte",
 			"seq": "29,41"
 		}, {
 			"uri": "http://dbpedia.org/resource/Virtual_Kasparov",
@@ -428,12 +428,12 @@
 			"seq": "50,56"
 		}, {
 			"uri": "http://dbpedia.org/property/owner",
-			"label": "holder",
+			"label": "share holder",
 			"seq": "12,17"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/MSX_BASIC",
-			"label": "",
+			"label": "MSX Basics",
 			"seq": "1000,999"
 		}, {
 			"uri": "http://dbpedia.org/resource/Outlook_on_the_web",
@@ -474,16 +474,16 @@
 			"seq": "6,19"
 		}, {
 			"uri": "http://dbpedia.org/property/placeOfBirth",
-			"label": "place birth",
+			"label": "birth place",
 			"seq": "53,63"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Samur\u2013Absheron_channel",
-			"label": "",
+			"label": "SamurAbsheron",
 			"seq": "1000,999"
 		}, {
 			"uri": "http://dbpedia.org/resource/Anar_Salmanov",
-			"label": "salmanov anar",
+			"label": "Anar Salmanov",
 			"seq": "68,80"
 		}]
 	},
@@ -499,8 +499,8 @@
 			"seq": "14,19"
 		}, {
 			"uri": "http://dbpedia.org/ontology/territory",
-			"label": "infantry",
-			"seq": "46,53"
+			"label": "@@@",
+			"seq": "-1,-1"
 		}, {
 			"uri": "http://dbpedia.org/ontology/MilitaryConflict",
 			"label": "participated",
@@ -508,7 +508,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/2nd_Foreign_Infantry_Regiment",
-			"label": "regiment infantry foreign",
+			"label": "2nd Foreign Infantry Regiment",
 			"seq": "38,62"
 		}]
 	},
@@ -525,7 +525,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/SR_class_3Sub",
-			"label": "class 3sub sr",
+			"label": "SR class 3Sub",
 			"seq": "24,36"
 		}]
 	},
@@ -537,15 +537,15 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/formerBandMember",
-			"label": "member former",
+			"label": "former member",
 			"seq": "14,26"
 		}, {
 			"uri": "http://dbpedia.org/property/pastMembers",
-			"label": "member",
+			"label": "former member",
 			"seq": "21,26"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Band",
-			"label": "and",
+			"label": "band",
 			"seq": "7,9"
 		}],
 		"entity mapping": [{
@@ -554,7 +554,7 @@
 			"seq": "32,42"
 		}, {
 			"uri": "http://dbpedia.org/resource/Joe_Jonas",
-			"label": "jonas joe",
+			"label": "Joe Jonas",
 			"seq": "38,46"
 		}]
 	},
@@ -571,11 +571,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Sunrise_(How_I_Met_Your_Mother)",
-			"label": "sunrise",
+			"label": "Sunrise (HIMYM)",
 			"seq": "23,29"
 		}, {
 			"uri": "http://dbpedia.org/resource/Tim_Gunn",
-			"label": "gunn",
+			"label": "Did Timm Gunn",
 			"seq": "9,12"
 		}]
 	},
@@ -592,7 +592,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/O.co_Coliseum",
-			"label": "coliseum o.co",
+			"label": "O.co Coliseum",
 			"seq": "20,32"
 		}]
 	},
@@ -609,7 +609,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Rishikesh",
-			"label": "",
+			"label": "Rishkiesh",
 			"seq": "1000,999"
 		}]
 	},
@@ -626,11 +626,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Airtours_International_Airways",
-			"label": "airtours",
+			"label": "airtours airways",
 			"seq": "44,51"
 		}, {
 			"uri": "http://dbpedia.org/resource/North_America",
-			"label": "america north",
+			"label": "north america",
 			"seq": "3,15"
 		}]
 	},
@@ -642,16 +642,16 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/prizes",
-			"label": "phds",
+			"label": "winner",
 			"seq": "20,23"
 		}, {
 			"uri": "http://dbpedia.org/property/doctoralAdvisor",
-			"label": "national",
+			"label": "PhDs under",
 			"seq": "33,40"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/National_Medal_of_Science",
-			"label": "national science medal",
+			"label": "National Medal of Science",
 			"seq": "33,54"
 		}]
 	},
@@ -672,11 +672,11 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/2000\u201301_Aston_Villa_F.C._season",
-			"label": "season villa aston",
+			"label": "Aston Villa 2000-02",
 			"seq": "29,46"
 		}, {
 			"uri": "http://dbpedia.org/resource/2009\u201310_Middlesbrough_F.C._season",
-			"label": "middlesbrough season",
+			"label": "Middlesbrough F.C. season 2009-10",
 			"seq": "49,68"
 		}]
 	},
@@ -697,7 +697,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/William_Harper_(Rhodesian_politician)",
-			"label": "william",
+			"label": "William Harper",
 			"seq": "42,48"
 		}]
 	},
@@ -709,7 +709,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/builder",
-			"label": "been",
+			"label": "constructions",
 			"seq": "21,24"
 		}, {
 			"uri": "http://dbpedia.org/ontology/tenant",
@@ -718,7 +718,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/PCL_Construction",
-			"label": "",
+			"label": "PCL constructures",
 			"seq": "1000,999"
 		}]
 	},
@@ -730,16 +730,16 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/formerBandMember",
-			"label": "brothers",
+			"label": "part of",
 			"seq": "32,39"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Jonas_Brothers",
-			"label": "brothers jonas",
+			"label": "Jonas brothers",
 			"seq": "10,23"
 		}, {
 			"uri": "http://dbpedia.org/resource/Kevin_Jonas",
-			"label": "kevin jonas",
+			"label": "Kevin Jonas",
 			"seq": "4,14"
 		}]
 	},
@@ -751,7 +751,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/subsequentWork",
-			"label": "book",
+			"label": "lead to",
 			"seq": "13,16"
 		}, {
 			"uri": "http://dbpedia.org/property/subject",
@@ -764,7 +764,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Cosmos_(Carl_Sagan_book)",
-			"label": "",
+			"label": "Sagan's Cosmos",
 			"seq": "1000,999"
 		}]
 	},
@@ -776,11 +776,11 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/location",
-			"label": "conventions",
+			"label": "held in",
 			"seq": "14,24"
 		}, {
 			"uri": "http://dbpedia.org/property/genre",
-			"label": "are",
+			"label": "kind of",
 			"seq": "26,28"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Convention",
@@ -806,7 +806,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Greenup_County_High_School",
-			"label": "greenup school county high",
+			"label": "Greenup County High School",
 			"seq": "21,46"
 		}]
 	},
@@ -823,7 +823,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Bobby_Hoppe",
-			"label": "hoppe bobby",
+			"label": "Bobby Hoppe",
 			"seq": "25,35"
 		}]
 	},
@@ -839,12 +839,12 @@
 			"seq": "34,39"
 		}, {
 			"uri": "http://dbpedia.org/property/notableworks",
-			"label": "works",
+			"label": "famous works",
 			"seq": "21,25"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/The_Second_Coming_(TV_serial)",
-			"label": "second coming",
+			"label": "The Second Coming",
 			"seq": "48,60"
 		}]
 	},
@@ -856,7 +856,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/author",
-			"label": "how",
+			"label": "penned",
 			"seq": "0,2"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Book",
@@ -865,7 +865,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Miguel_de_Cervantes",
-			"label": "cervantes miguel",
+			"label": "Miguel de Cervantes",
 			"seq": "35,50"
 		}]
 	},
@@ -885,7 +885,7 @@
 			"seq": "6,11"
 		}, {
 			"uri": "http://dbpedia.org/ontology/MusicalArtist",
-			"label": "signs",
+			"label": "bands",
 			"seq": "13,17"
 		}],
 		"entity mapping": [{
@@ -907,7 +907,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Reading,_Berkshire",
-			"label": "berkshire reading,",
+			"label": "Reading, Berkshire",
 			"seq": "35,52"
 		}]
 	},
@@ -919,7 +919,7 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/spouse",
-			"label": "to",
+			"label": "married",
 			"seq": "20,21"
 		}, {
 			"uri": "http://dbpedia.org/property/editor",
@@ -927,12 +927,12 @@
 			"seq": "17,22"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Magazine",
-			"label": "magazine's",
+			"label": "magazine",
 			"seq": "6,15"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Crystal_Harris",
-			"label": "crystal harris",
+			"label": "Crystal Harris",
 			"seq": "38,51"
 		}]
 	},
@@ -949,7 +949,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/West_Thurrock",
-			"label": "thurrock west",
+			"label": "west thurrock",
 			"seq": "9,21"
 		}, {
 			"uri": "http://dbpedia.org/resource/Essex",
@@ -974,7 +974,7 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Niederkirchnerstra\u00dfe",
-			"label": "",
+			"label": "Niederkirchnerstrae",
 			"seq": "1000,999"
 		}]
 	},
@@ -983,14 +983,14 @@
 		"question": "In which television shows have Steven Moffat served as an executive producer?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/executiveProducer> <http://dbpedia.org/resource/Steven_Moffat>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/executiveProducer",
 			"label": "executive producer",
 			"seq": "58,75"
 		}, {
 			"uri": "http://dbpedia.org/ontology/TelevisionShow",
-			"label": "television",
+			"label": "television shows",
 			"seq": "9,18"
 		}],
 		"entity mapping": [{
