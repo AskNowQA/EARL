@@ -1590,7 +1590,7 @@
 		"question": "Who appointed the governor under which Robert Witherspoon worked?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Robert_Witherspoon> <http://dbpedia.org/ontology/governor> ?x . ?x <http://dbpedia.org/property/appointer> ?uri  . }",
 		"sparql_id": "3",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/governor",
 			"label": "governor",
@@ -1627,8 +1627,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/He's_a_Liar",
-			"label": "liar he's",
-			"seq": "62,70"
+			"label": "He's a Liar",
+			"seq": "62,72"
 		}]
 	},
 	{
@@ -1636,7 +1636,7 @@
 		"question": "List the base currency of the country whose anthem is Oj, svijetla majska zoro.",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/anthem> <http://dbpedia.org/resource/Oj,_svijetla_majska_zoro> . ?x <http://dbpedia.org/property/currency> ?uri  . }",
 		"sparql_id": "5",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/anthem",
 			"label": "anthem",
@@ -1648,8 +1648,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Oj,_svijetla_majska_zoro",
-			"label": "svijetla majska",
-			"seq": "58,72"
+			"label": "Oj, svijetla majska zoro",
+			"seq": "54,77"
 		}]
 	},
 	{
@@ -1657,7 +1657,7 @@
 		"question": "Who gave the voice for Allen Walker ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Allen_Walker> <http://dbpedia.org/ontology/voice> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/voice",
 			"label": "voice",
@@ -1674,7 +1674,7 @@
 		"question": "Who is associated to Publius Servilius Vatia Isauricus  and Marcus Calpurnius Bibulus?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/associate> <http://dbpedia.org/resource/Publius_Servilius_Vatia_Isauricus_(consul_48_BC)> . ?uri <http://dbpedia.org/ontology/associate> <http://dbpedia.org/resource/Marcus_Calpurnius_Bibulus> . }",
 		"sparql_id": "7",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/associate",
 			"label": "associated",
@@ -1699,7 +1699,7 @@
 		"question": "Which country has given citizenship to both saima chowdhury and edmund john?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Saima_Chowdhury> <http://dbpedia.org/ontology/citizenship> ?uri. <http://dbpedia.org/resource/Edmund_John> <http://dbpedia.org/ontology/citizenship> ?uri . }",
 		"sparql_id": "15",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/citizenship",
 			"label": "citizenship",
@@ -1724,15 +1724,11 @@
 		"question": "Who is the person that first ascented the Cathedral Peak and Mount Hoffmann?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Cathedral_Peak_(California)> <http://dbpedia.org/ontology/firstAscentPerson> ?uri. <http://dbpedia.org/resource/Mount_Hoffmann> <http://dbpedia.org/ontology/firstAscentPerson> ?uri . }",
 		"sparql_id": "15",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/firstAscentPerson",
-			"label": "ascented",
-			"seq": "29,36"
-		}, {
-			"uri": "http://dbpedia.org/ontology/firstAscentPerson",
-			"label": "ascented",
-			"seq": "29,36"
+			"label": "person that first ascented",
+			"seq": "11,36"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Cathedral_Peak_(California)",
@@ -1749,7 +1745,7 @@
 		"question": "What university campuses are situated in Indiana?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/campus> <http://dbpedia.org/resource/Indiana>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/University>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/campus",
 			"label": "campuses",
@@ -1770,11 +1766,11 @@
 		"question": "Where is the swedish covenant hospital?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Swedish_Covenant_Hospital> <http://dbpedia.org/ontology/location> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/location",
-			"label": "covenant",
-			"seq": "21,28"
+			"label": "Where",
+			"seq": "0,4"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Swedish_Covenant_Hospital",
@@ -1787,7 +1783,7 @@
 		"question": "Which composer of Girl from the North Country is the subsequent work of the Moondog Matinee?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Girl_from_the_North_Country> <http://dbpedia.org/ontology/composer> ?uri. <http://dbpedia.org/resource/Moondog_Matinee> <http://dbpedia.org/ontology/subsequentWork> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/composer",
 			"label": "composer",
@@ -1799,8 +1795,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Girl_from_the_North_Country",
-			"label": "country north girl from",
-			"seq": "18,40"
+			"label": "Girl from the North Country",
+			"seq": "18,44"
 		}, {
 			"uri": "http://dbpedia.org/resource/Moondog_Matinee",
 			"label": "moondog matinee",
@@ -1812,7 +1808,7 @@
 		"question": "What is the television show whose vocals are performed by  April Stewart and Mona Marshall?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/voices> <http://dbpedia.org/resource/April_Stewart> . ?uri <http://dbpedia.org/property/voices> <http://dbpedia.org/resource/Mona_Marshall> . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "307",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/voices",
 			"label": "vocals",
