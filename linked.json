@@ -2264,7 +2264,7 @@
 		"question": "Who is the player who plays for the team that has the Michigan Stadium?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/stadium> <http://dbpedia.org/resource/Michigan_Stadium> . ?uri <http://dbpedia.org/property/currentteam> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Athlete>}",
 		"sparql_id": "306",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/stadium",
 			"label": "stadium",
@@ -2275,8 +2275,8 @@
 			"seq": "36,39"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Athlete",
-			"label": "the",
-			"seq": "7,9"
+			"label": "player",
+			"seq": "11,16"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Michigan_Stadium",
@@ -2289,7 +2289,7 @@
 		"question": "Which country's leader is David Johnston?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/leader> <http://dbpedia.org/resource/David_Johnston>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/leader",
 			"label": "leader",
@@ -2310,15 +2310,15 @@
 		"question": "How many factions have fought in wars where Francois Marie Le Marchand de Lignery was involved?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { <http://dbpedia.org/resource/Fran\u00e7ois-Marie_Le_Marchand_de_Lignery> <http://dbpedia.org/ontology/battle> ?x . ?x <http://dbpedia.org/property/combatant> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/MilitaryConflict>}",
 		"sparql_id": "403",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/battle",
-			"label": "le",
-			"seq": "59,60"
+			"label": "fought",
+			"seq": "23,28"
 		}, {
 			"uri": "http://dbpedia.org/property/combatant",
-			"label": "marchand",
-			"seq": "62,69"
+			"label": "wars",
+			"seq": "33,36"
 		}, {
 			"uri": "http://dbpedia.org/ontology/MilitaryConflict",
 			"label": "marchand",
@@ -2326,8 +2326,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Fran\u00e7ois-Marie_Le_Marchand_de_Lignery",
-			"label": "marchand lignery",
-			"seq": "62,77"
+			"label": "Francois Marie Le Marchand de Lignery",
+			"seq": "44,80"
 		}]
 	},
 	{
@@ -2335,7 +2335,7 @@
 		"question": "Who is the leader of the town where the Myntdu river originates?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Myntdu_River> <http://dbpedia.org/ontology/origin> ?x . ?x <http://dbpedia.org/ontology/leaderName> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Town>}",
 		"sparql_id": "303",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/origin",
 			"label": "originates",
@@ -2360,24 +2360,24 @@
 		"question": "List the movies whose editors are born in London.",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/placeOfBirth> <http://dbpedia.org/resource/London> . ?uri <http://dbpedia.org/ontology/editing> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>}",
 		"sparql_id": "306",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/placeOfBirth",
-			"label": "list",
-			"seq": "0,3"
+			"label": "born",
+			"seq": "34,37"
 		}, {
 			"uri": "http://dbpedia.org/ontology/editing",
 			"label": "editors",
 			"seq": "22,28"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Film",
-			"label": "in",
-			"seq": "39,40"
+			"label": "movies",
+			"seq": "9,14"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/London",
-			"label": "",
-			"seq": "1000,999"
+			"label": "London",
+			"seq": "42,47"
 		}]
 	},
 	{
@@ -2385,7 +2385,7 @@
 		"question": "What is the incumbent of the Al Gore presidential campaign, 2000 and also the president of the Ann Lewis ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Al_Gore_presidential_campaign,_2000> <http://dbpedia.org/ontology/incumbent> ?uri. <http://dbpedia.org/resource/Ann_Lewis> <http://dbpedia.org/ontology/president> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/incumbent",
 			"label": "incumbent",
@@ -2397,8 +2397,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Al_Gore_presidential_campaign,_2000",
-			"label": "presidential campaign, gore 2000",
-			"seq": "32,63"
+			"label": "Al Gore presidential campaign, 2000",
+			"seq": "29,63"
 		}, {
 			"uri": "http://dbpedia.org/resource/Ann_Lewis",
 			"label": "lewis ann",
@@ -2410,24 +2410,24 @@
 		"question": "Which royal person married the successor of Darius I?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/property/predecessor> <http://dbpedia.org/resource/Darius_I> . ?uri <http://dbpedia.org/property/spouse> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Royalty>}",
 		"sparql_id": "306",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/predecessor",
 			"label": "successor",
 			"seq": "31,39"
 		}, {
 			"uri": "http://dbpedia.org/property/spouse",
-			"label": "successor",
-			"seq": "31,39"
+			"label": "married",
+			"seq": "19,25"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Royalty",
-			"label": "royal",
-			"seq": "6,10"
+			"label": "royal person",
+			"seq": "6,17"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Darius_I",
-			"label": "darius",
-			"seq": "44,49"
+			"label": "Darius I",
+			"seq": "44,51"
 		}]
 	},
 	{
@@ -2435,15 +2435,15 @@
 		"question": "What is the region of the Kim Sawchuk which is also served by the Airtours International Airways ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Kim_Sawchuk> <http://dbpedia.org/property/region> ?uri. <http://dbpedia.org/resource/Airtours_International_Airways> <http://dbpedia.org/property/destinations> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/region",
 			"label": "region",
 			"seq": "12,17"
 		}, {
 			"uri": "http://dbpedia.org/property/destinations",
-			"label": "international",
-			"seq": "75,87"
+			"label": "served by",
+			"seq": "52,60"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Kim_Sawchuk",
@@ -2460,7 +2460,7 @@
 		"question": "Where was Antonio Giannini born?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Antonio_Giannini> <http://dbpedia.org/ontology/birthPlace> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/birthPlace",
 			"label": "born",
@@ -2477,7 +2477,7 @@
 		"question": "Where was David Scherman trained ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/David_Scherman> <http://dbpedia.org/ontology/training> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/training",
 			"label": "trained",
@@ -2494,7 +2494,7 @@
 		"question": "Which company offer service of Outlook.com and OneDrive?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/property/services> <http://dbpedia.org/resource/Outlook.com> . ?uri <http://dbpedia.org/property/services> <http://dbpedia.org/resource/OneDrive> . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company>}",
 		"sparql_id": "307",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/services",
 			"label": "service",
@@ -2523,7 +2523,7 @@
 		"question": "What is the province of Rouen Business School ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Rouen_Business_School> <http://dbpedia.org/property/province> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/province",
 			"label": "province",
@@ -2540,7 +2540,7 @@
 		"question": "What religions do politicians in the Korean Minjoo Party follow?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/party> <http://dbpedia.org/resource/Minjoo_Party_of_Korea> . ?x <http://dbpedia.org/ontology/religion> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/OfficeHolder>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/party",
 			"label": "party",
@@ -2551,13 +2551,13 @@
 			"seq": "5,13"
 		}, {
 			"uri": "http://dbpedia.org/ontology/OfficeHolder",
-			"label": "follow",
-			"seq": "57,62"
+			"label": "politicians",
+			"seq": "18,28"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Minjoo_Party_of_Korea",
-			"label": "minjoo party",
-			"seq": "44,55"
+			"label": "Korean Minjoo Party",
+			"seq": "37,55"
 		}]
 	},
 	{
@@ -2565,7 +2565,7 @@
 		"question": "Give me the total number of employer of the engineers whose one of the employer is McDonnell Aircraft ?",
 		"sparql_query": " SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/employer> <http://dbpedia.org/resource/McDonnell_Aircraft> . ?x <http://dbpedia.org/ontology/employer> ?uri }",
 		"sparql_id": "111",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/employer",
 			"label": "employer",
@@ -2586,15 +2586,15 @@
 		"question": "What were the major actions taken by the politicians living in Gales Ferry, Connecticut?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/residence> <http://dbpedia.org/resource/Gales_Ferry,_Connecticut> . ?x <http://dbpedia.org/ontology/battle> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Politician>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/residence",
-			"label": "in",
-			"seq": "56,57"
+			"label": "living in",
+			"seq": "53,61"
 		}, {
 			"uri": "http://dbpedia.org/ontology/battle",
-			"label": "gales",
-			"seq": "63,67"
+			"label": "@@@",
+			"seq": "-1,-1"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Politician",
 			"label": "politicians",
@@ -2611,16 +2611,16 @@
 		"question": "Where was Live in Detroit, MI recorded ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Live_in_Detroit,_MI> <http://dbpedia.org/ontology/recordedIn> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/recordedIn",
-			"label": "recorded in",
-			"seq": "15,25"
+			"label": "recorded",
+			"seq": "30,37"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Live_in_Detroit,_MI",
-			"label": "detroit, live",
-			"seq": "10,22"
+			"label": "Live in Detroit, MI",
+			"seq": "10,28"
 		}]
 	},
 	{
@@ -2636,8 +2636,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/England_national_under-21_football_team",
-			"label": "football under",
-			"seq": "39,52"
+			"label": "english under twenty one football team",
+			"seq": "31,68"
 		}]
 	},
 	{
@@ -2645,7 +2645,7 @@
 		"question": "Name the sea with Helsinki as one of the shore city and is also an outflow for Danish straits?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/cities> <http://dbpedia.org/resource/Helsinki> . ?uri <http://dbpedia.org/property/outflow> <http://dbpedia.org/resource/Danish_straits>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Sea>}",
 		"sparql_id": "308",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/cities",
 			"label": "city",
@@ -2674,7 +2674,7 @@
 		"question": "What awards have been won by the executive producer of Timmy Time ?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Timmy_Time> <http://dbpedia.org/ontology/executiveProducer> ?x . ?x <http://dbpedia.org/ontology/award> ?uri  . }",
 		"sparql_id": "3",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/executiveProducer",
 			"label": "executive producer",
@@ -2695,7 +2695,7 @@
 		"question": "What is the district of Fort Heath radar station ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Fort_Heath_radar_station> <http://dbpedia.org/property/district> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/district",
 			"label": "district",
