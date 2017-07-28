@@ -962,7 +962,7 @@
 		"question": "How many people have headed organizations headquartered at Niederkirchnerstrae?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Niederkirchnerstra\u00dfe> . ?x <http://dbpedia.org/ontology/leader> ?uri  . }",
 		"sparql_id": "105",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/headquarter",
 			"label": "headquartered",
@@ -1611,7 +1611,7 @@
 		"question": "Who is the producer of the song which is the previous work of He's a Liar ?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/He's_a_Liar> <http://dbpedia.org/ontology/previousWork> ?x . ?x <http://dbpedia.org/ontology/producer> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Song>}",
 		"sparql_id": "303",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/previousWork",
 			"label": "previous work",
@@ -1837,7 +1837,7 @@
 		"question": "Name the members of  boards of Freedom of the City and Trinity House?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/board> <http://dbpedia.org/resource/Freedom_of_the_City> . ?uri <http://dbpedia.org/ontology/board> <http://dbpedia.org/resource/Trinity_House> . }",
 		"sparql_id": "7",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/board",
 			"label": "boards",
@@ -1849,8 +1849,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Freedom_of_the_City",
-			"label": "freedom city",
-			"seq": "31,42"
+			"label": "Freedom of the City",
+			"seq": "31,49"
 		}, {
 			"uri": "http://dbpedia.org/resource/Trinity_House",
 			"label": "trinity house",
@@ -1862,11 +1862,11 @@
 		"question": "Was Reza Amrollahi born in Iran?",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/Reza_Amrollahi> <http://dbpedia.org/property/birthplace> <http://dbpedia.org/resource/Iran> }",
 		"sparql_id": "152",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/birthplace",
-			"label": "iran",
-			"seq": "27,30"
+			"label": "born",
+			"seq": "19,22"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Reza_Amrollahi",
@@ -1883,7 +1883,7 @@
 		"question": "Which title of Zaman Shah Durrani is also the nationality of Salahuddin ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Zaman_Shah_Durrani> <http://dbpedia.org/property/title> ?uri. <http://dbpedia.org/resource/Salahuddin_Rabbani> <http://dbpedia.org/ontology/nationality> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/title",
 			"label": "title",
@@ -1911,12 +1911,12 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/battle",
-			"label": "tae",
-			"seq": "21,23"
+			"label": "war",
+			"seq": "9,11"
 		}, {
 			"uri": "http://dbpedia.org/ontology/battle",
-			"label": "tae",
-			"seq": "21,23"
+			"label": "war",
+			"seq": "9,11"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Roh_Tae-woo",
@@ -1933,7 +1933,7 @@
 		"question": "list  the producer of the movies in which Rosemarie DeWitt in the star cast?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/property/starring> <http://dbpedia.org/resource/Rosemarie_DeWitt> . ?x <http://dbpedia.org/property/producer> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Film>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/starring",
 			"label": "star",
@@ -1944,8 +1944,8 @@
 			"seq": "10,17"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Film",
-			"label": "of",
-			"seq": "19,20"
+			"label": "movies",
+			"seq": "26,31"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Rosemarie_DeWitt",
@@ -1958,15 +1958,15 @@
 		"question": "What can be cooked out of things belonging to the order Sapindales?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/order> <http://dbpedia.org/resource/Sapindales> . ?uri <http://dbpedia.org/ontology/ingredient> ?x  . }",
 		"sparql_id": "6",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/order",
 			"label": "order",
 			"seq": "50,54"
 		}, {
 			"uri": "http://dbpedia.org/ontology/ingredient",
-			"label": "sapindales",
-			"seq": "56,65"
+			"label": "things",
+			"seq": "26,31"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Sapindales",
@@ -1979,19 +1979,19 @@
 		"question": "How many  TV shows were made by someone who was associated with Lewis Hamilton?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/associatedBand> <http://dbpedia.org/resource/Lewis_Hamilton> . ?uri <http://dbpedia.org/property/creator> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "406",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/associatedBand",
 			"label": "associated",
 			"seq": "48,57"
 		}, {
 			"uri": "http://dbpedia.org/property/creator",
-			"label": "hamilton",
-			"seq": "70,77"
+			"label": "made",
+			"seq": "24,27"
 		}, {
 			"uri": "http://dbpedia.org/ontology/TelevisionShow",
-			"label": "shows",
-			"seq": "13,17"
+			"label": "TV shows",
+			"seq": "10,17"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Lewis_Hamilton",
@@ -2004,15 +2004,15 @@
 		"question": "What is the city whose mayor is Giorgos Kaminis?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/mayor> <http://dbpedia.org/resource/Giorgos_Kaminis>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AdministrativeRegion>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/mayor",
 			"label": "mayor",
 			"seq": "23,27"
 		}, {
 			"uri": "http://dbpedia.org/ontology/AdministrativeRegion",
-			"label": "kaminis",
-			"seq": "40,46"
+			"label": "city",
+			"seq": "12,15"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Giorgos_Kaminis",
@@ -2025,7 +2025,7 @@
 		"question": "Name the alma mater of Michael hahn ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Michael_Hahn> <http://dbpedia.org/ontology/almaMater> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/almaMater",
 			"label": "mater alma",
@@ -2042,7 +2042,7 @@
 		"question": "How many party leaders are there whose parties are headquartered in Berlin?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/headquarter> <http://dbpedia.org/resource/Berlin> . ?x <http://dbpedia.org/ontology/leader> ?uri  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Politician>}",
 		"sparql_id": "405",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/headquarter",
 			"label": "headquartered",
@@ -2053,8 +2053,8 @@
 			"seq": "15,21"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Politician",
-			"label": "berlin",
-			"seq": "68,73"
+			"label": "party leaders",
+			"seq": "9,21"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Berlin",
@@ -2067,7 +2067,7 @@
 		"question": "How many total religions are followed by people whose hometown is somewhere in India?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/hometown> <http://dbpedia.org/resource/India> . ?x <http://dbpedia.org/property/religion> ?uri  . }",
 		"sparql_id": "105",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/hometown",
 			"label": "hometown",
@@ -2088,16 +2088,16 @@
 		"question": "Who are the cast members of The Simpsons Ride?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Simpsons_Ride> <http://dbpedia.org/property/starring> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/starring",
-			"label": "simpsons",
-			"seq": "32,39"
+			"label": "cast members",
+			"seq": "12,23"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/The_Simpsons_Ride",
-			"label": "simpsons ride the",
-			"seq": "8,24"
+			"label": "The Simpsons Ride",
+			"seq": "28,44"
 		}]
 	},
 	{
@@ -2105,15 +2105,15 @@
 		"question": "Which american football team  has stadium as O.co Coliseum?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/locationCity> <http://dbpedia.org/resource/O.co_Coliseum>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AmericanFootballTeam>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/locationCity",
-			"label": "o.co",
-			"seq": "45,48"
+			"label": "Which",
+			"seq": "0,4"
 		}, {
 			"uri": "http://dbpedia.org/ontology/AmericanFootballTeam",
-			"label": "football american",
-			"seq": "6,22"
+			"label": "american football team",
+			"seq": "6,27"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/O.co_Coliseum",
@@ -2126,11 +2126,11 @@
 		"question": "What woman acted in the mating habits of earthbound humans and is often associated with Mams taylor?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Mating_Habits_of_the_Earthbound_Human> <http://dbpedia.org/property/starring> ?uri. <http://dbpedia.org/resource/Mams_Taylor> <http://dbpedia.org/ontology/associatedMusicalArtist> ?uri . }",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/starring",
-			"label": "mating",
-			"seq": "24,29"
+			"label": "acted",
+			"seq": "11,15"
 		}, {
 			"uri": "http://dbpedia.org/ontology/associatedMusicalArtist",
 			"label": "associated",
@@ -2138,8 +2138,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/The_Mating_Habits_of_the_Earthbound_Human",
-			"label": "earthbound mating habits",
-			"seq": "24,47"
+			"label": "the mating habits of earthbound humans",
+			"seq": "20,57"
 		}, {
 			"uri": "http://dbpedia.org/resource/Mams_Taylor",
 			"label": "taylor mams",
@@ -2151,7 +2151,7 @@
 		"question": "List the products of Playboy Enterprises?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Playboy_Enterprises> <http://dbpedia.org/property/products> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/products",
 			"label": "products",
@@ -2168,7 +2168,7 @@
 		"question": "Did Gwo Ka originate in Western Africa?",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/Gwo_ka> <http://dbpedia.org/property/stylisticOrigins> <http://dbpedia.org/resource/West_Africa> }",
 		"sparql_id": "152",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/stylisticOrigins",
 			"label": "originate",
@@ -2180,8 +2180,8 @@
 			"seq": "4,9"
 		}, {
 			"uri": "http://dbpedia.org/resource/West_Africa",
-			"label": "africa",
-			"seq": "32,37"
+			"label": "Western Africa",
+			"seq": "24,37"
 		}]
 	},
 	{
@@ -2189,7 +2189,7 @@
 		"question": "What are some artists on the show whose opening theme is Send It On?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/openingTheme> <http://dbpedia.org/resource/Send_It_On_(Disney's_Friends_for_Change_song)> . ?x <http://dbpedia.org/property/artist> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/openingTheme",
 			"label": "opening theme",
@@ -2205,8 +2205,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Send_It_On_(Disney's_Friends_for_Change_song)",
-			"label": "",
-			"seq": "1000,999"
+			"label": "Send It On",
+			"seq": "57,66"
 		}]
 	},
 	{
@@ -2214,7 +2214,7 @@
 		"question": "Which company has a product named Visual Studio and One Drive as service ?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/services> <http://dbpedia.org/resource/OneDrive> . ?uri <http://dbpedia.org/property/products> <http://dbpedia.org/resource/Microsoft_Visual_Studio>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Company>}",
 		"sparql_id": "308",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/services",
 			"label": "service",
@@ -2243,7 +2243,7 @@
 		"question": "Give me the total number of commander of the military conflicts whose commander is Roundhead (Wyandot).",
 		"sparql_query": " SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/property/commander> <http://dbpedia.org/resource/Roundhead_(Wyandot)> . ?x <http://dbpedia.org/ontology/commander> ?uri }",
 		"sparql_id": "111",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/commander",
 			"label": "commander",
@@ -2255,8 +2255,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Roundhead_(Wyandot)",
-			"label": "roundhead",
-			"seq": "83,91"
+			"label": "Roundhead (Wyandot)",
+			"seq": "83,101"
 		}]
 	},
 	{
