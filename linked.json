@@ -1908,7 +1908,7 @@
 		"question": "In which war did Roh Tae Woo and Lee Leffingwell fight?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Roh_Tae-woo> <http://dbpedia.org/ontology/battle> ?uri. <http://dbpedia.org/resource/Lee_Leffingwell> <http://dbpedia.org/ontology/battle> ?uri . }",
 		"sparql_id": "15",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/battle",
 			"label": "war",
@@ -2628,7 +2628,7 @@
 		"question": "who all have been a manager of english under twenty one football team?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/managerclubs> <http://dbpedia.org/resource/England_national_under-21_football_team> } ",
 		"sparql_id": "1",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/managerclubs",
 			"label": "manager",
@@ -2712,7 +2712,7 @@
 		"question": "What is the common nickname given both to Harding academy and Lyons township high school?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Harding_Academy_(Memphis)> <http://dbpedia.org/property/nickname> ?uri. <http://dbpedia.org/resource/Lyons_Township_High_School> <http://dbpedia.org/property/nickname> ?uri . }",
 		"sparql_id": "15",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/nickname",
 			"label": "nickname",
@@ -2740,8 +2740,8 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/ground",
-			"label": "count",
-			"seq": "0,4"
+			"label": "stadium",
+			"seq": "82,88"
 		}, {
 			"uri": "http://dbpedia.org/property/youthclubs",
 			"label": "youth club",
@@ -2749,8 +2749,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Rosario,_Santa_Fe",
-			"label": "rosario, santa",
-			"seq": "64,77"
+			"label": "Rosario, Santa Fe",
+			"seq": "64,80"
 		}]
 	},
 	{
@@ -2758,7 +2758,7 @@
 		"question": "What are some families of mammals in the animal kingdom?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/kingdom> <http://dbpedia.org/resource/Animal> . ?x <http://dbpedia.org/ontology/family> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Mammal>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/kingdom",
 			"label": "kingdom",
@@ -2783,7 +2783,7 @@
 		"question": "What is the profession of the Chris Myers (New Jersey) which is the governing body of Oahu Railway and Land Company ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chris_Myers_(New_Jersey)> <http://dbpedia.org/ontology/profession> ?uri. <http://dbpedia.org/resource/Oahu_Railway_and_Land_Company> <http://dbpedia.org/property/governingBody> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/profession",
 			"label": "profession",
@@ -2799,8 +2799,8 @@
 			"seq": "30,53"
 		}, {
 			"uri": "http://dbpedia.org/resource/Oahu_Railway_and_Land_Company",
-			"label": "railway company oahu land",
-			"seq": "86,110"
+			"label": "Oahu Railway and Land Company",
+			"seq": "86,114"
 		}]
 	},
 	{
@@ -2808,11 +2808,11 @@
 		"question": "Count all the different purposes followed by the different NGOs.",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/property/type> <http://dbpedia.org/resource/Non-governmental_organization> . ?x <http://dbpedia.org/property/purpose> ?uri  . }",
 		"sparql_id": "105",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/type",
-			"label": "the",
-			"seq": "10,12"
+			"label": "Count",
+			"seq": "0,4"
 		}, {
 			"uri": "http://dbpedia.org/property/purpose",
 			"label": "purposes",
@@ -2820,8 +2820,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Non-governmental_organization",
-			"label": "",
-			"seq": "1000,999"
+			"label": "NGOs",
+			"seq": "59,62"
 		}]
 	},
 	{
@@ -2829,7 +2829,7 @@
 		"question": "Which television show's developer is Brian Graden and voices to the character is by Isaac Hayes?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/developer> <http://dbpedia.org/resource/Brian_Graden> . ?uri <http://dbpedia.org/property/voices> <http://dbpedia.org/resource/Isaac_Hayes>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "308",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/developer",
 			"label": "developer",
@@ -2840,8 +2840,8 @@
 			"seq": "54,59"
 		}, {
 			"uri": "http://dbpedia.org/ontology/TelevisionShow",
-			"label": "television",
-			"seq": "6,15"
+			"label": "television show's",
+			"seq": "6,22"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Brian_Graden",
@@ -2858,11 +2858,11 @@
 		"question": "How many things are crossed over by bridges which can carry cars?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/property/carries> <http://dbpedia.org/resource/Motor_vehicle> . ?x <http://dbpedia.org/property/crosses> ?uri  . }",
 		"sparql_id": "105",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/carries",
-			"label": "cars",
-			"seq": "60,63"
+			"label": "carry",
+			"seq": "54,58"
 		}, {
 			"uri": "http://dbpedia.org/property/crosses",
 			"label": "crossed",
@@ -2870,8 +2870,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Motor_vehicle",
-			"label": "",
-			"seq": "1000,999"
+			"label": "cars",
+			"seq": "60,63"
 		}]
 	},
 	{
@@ -2882,8 +2882,8 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/managerClub",
-			"label": "manage club",
-			"seq": "18,28"
+			"label": "manage a club",
+			"seq": "18,30"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Steve_Sampson",
@@ -2900,7 +2900,7 @@
 		"question": "What newspapers's owners is Schibsted",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/owners> <http://dbpedia.org/resource/Schibsted>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Newspaper>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/owners",
 			"label": "owners",
@@ -2921,15 +2921,15 @@
 		"question": "Which arena of WPC Dynamo Moscow is death location of Tigran Petrosian >",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/WPC_Dynamo_Moscow> <http://dbpedia.org/property/arena> ?uri. <http://dbpedia.org/resource/Tigran_Petrosian> <http://dbpedia.org/ontology/deathPlace> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/arena",
 			"label": "arena",
 			"seq": "6,10"
 		}, {
 			"uri": "http://dbpedia.org/ontology/deathPlace",
-			"label": "death",
-			"seq": "36,40"
+			"label": "death location",
+			"seq": "36,49"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/WPC_Dynamo_Moscow",
@@ -2946,7 +2946,7 @@
 		"question": "List the name of the soccer clubs whose chairman is Joan Laporta.",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/chairman> <http://dbpedia.org/resource/Joan_Laporta> . ?x <http://dbpedia.org/property/name> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/SoccerClub>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/chairman",
 			"label": "chairman",
@@ -2957,13 +2957,13 @@
 			"seq": "9,12"
 		}, {
 			"uri": "http://dbpedia.org/ontology/SoccerClub",
-			"label": "soccer",
-			"seq": "21,26"
+			"label": "soccer clubs",
+			"seq": "21,32"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Joan_Laporta",
-			"label": "",
-			"seq": "1000,999"
+			"label": "Joan Laporta",
+			"seq": "52,63"
 		}]
 	},
 	{
@@ -2971,7 +2971,7 @@
 		"question": "List all the layouts of the automobile whose one of the layout is four-wheel-drive layout ?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/layout> <http://dbpedia.org/resource/Front-engine,_four-wheel-drive_layout> . ?x <http://dbpedia.org/ontology/layout> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Automobile>}",
 		"sparql_id": "311",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/layout",
 			"label": "layout",
@@ -2979,7 +2979,7 @@
 		}, {
 			"uri": "http://dbpedia.org/ontology/layout",
 			"label": "layout",
-			"seq": "13,18"
+			"seq": "56,61"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Automobile",
 			"label": "automobile",
@@ -2988,7 +2988,7 @@
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Front-engine,_four-wheel-drive_layout",
 			"label": "four-wheel-drive layout",
-			"seq": "13,35"
+			"seq": "66,88"
 		}]
 	},
 	{
@@ -2996,7 +2996,7 @@
 		"question": "In which time zone is Pong Pha?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Pong_Pha> <http://dbpedia.org/ontology/timeZone> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/timeZone",
 			"label": "zone time",
@@ -3013,7 +3013,7 @@
 		"question": "What is the alma mater of the Angela Trusty and Charles Ayres?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Angela_Trusty> <http://dbpedia.org/ontology/almaMater> ?uri. <http://dbpedia.org/resource/Charles_Ayres> <http://dbpedia.org/ontology/almaMater> ?uri . }",
 		"sparql_id": "15",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/almaMater",
 			"label": "mater alma",
@@ -3038,24 +3038,24 @@
 		"question": "Which band had the members of The Conglomerate, and has made 'Before I let you go'?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/The_Conglomerate_(American_group)> <http://dbpedia.org/property/pastMembers> ?uri. <http://dbpedia.org/resource/Before_I_Let_You_Go> <http://dbpedia.org/ontology/musicalArtist> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/pastMembers",
 			"label": "members",
 			"seq": "19,25"
 		}, {
 			"uri": "http://dbpedia.org/ontology/musicalArtist",
-			"label": "conglomerate,",
-			"seq": "34,46"
+			"label": "band",
+			"seq": "6,9"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/The_Conglomerate_(American_group)",
-			"label": "",
-			"seq": "1000,999"
+			"label": "The Conglomerate",
+			"seq": "30,45"
 		}, {
 			"uri": "http://dbpedia.org/resource/Before_I_Let_You_Go",
-			"label": "",
-			"seq": "1000,999"
+			"label": "Before I let you go",
+			"seq": "62,80"
 		}]
 	},
 	{
@@ -3063,7 +3063,7 @@
 		"question": "What is the birth place of the cast of Lagnacha Dhumdhadaka?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Lagnacha_Dhumdhadaka> <http://dbpedia.org/property/starring> ?x . ?x <http://dbpedia.org/property/placeOfBirth> ?uri  . }",
 		"sparql_id": "3",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/starring",
 			"label": "cast",
@@ -3084,15 +3084,15 @@
 		"question": "How many rivers start in an English speaking country?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/officialLanguage> <http://dbpedia.org/resource/English_language> . ?uri <http://dbpedia.org/ontology/sourceCountry> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/River>}",
 		"sparql_id": "406",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/officialLanguage",
 			"label": "speaking",
 			"seq": "36,43"
 		}, {
 			"uri": "http://dbpedia.org/ontology/sourceCountry",
-			"label": "country",
-			"seq": "45,51"
+			"label": "start",
+			"seq": "16,20"
 		}, {
 			"uri": "http://dbpedia.org/ontology/River",
 			"label": "rivers",
@@ -3109,7 +3109,7 @@
 		"question": "What is the television show whose theme music composer's home town is El Sobrante, California?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/hometown> <http://dbpedia.org/resource/El_Sobrante,_California> . ?uri <http://dbpedia.org/property/themeMusicComposer> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "306",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/hometown",
 			"label": "town home",
@@ -3125,8 +3125,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/El_Sobrante,_California",
-			"label": "california sobrante,",
-			"seq": "73,92"
+			"label": "El Sobrante, California",
+			"seq": "70,92"
 		}]
 	},
 	{
@@ -3134,7 +3134,7 @@
 		"question": "What  is the Nickname of Daniel O'Regan ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Daniel_O'Regan> <http://dbpedia.org/property/nickname> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/nickname",
 			"label": "nickname",
@@ -3151,7 +3151,7 @@
 		"question": "Where are Aureus and Solidus used as currency?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Aureus> . ?uri <http://dbpedia.org/ontology/currency> <http://dbpedia.org/resource/Solidus_(coin)> . }",
 		"sparql_id": "7",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/currency",
 			"label": "currency",
@@ -3176,11 +3176,11 @@
 		"question": "Music for what was made by someone who died of a cardiovascular disease?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/deathCause> <http://dbpedia.org/resource/Cardiovascular_disease> . ?uri <http://dbpedia.org/property/music> ?x  . }",
 		"sparql_id": "6",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/deathCause",
-			"label": "disease",
-			"seq": "64,70"
+			"label": "died of",
+			"seq": "39,45"
 		}, {
 			"uri": "http://dbpedia.org/property/music",
 			"label": "music",
@@ -3197,7 +3197,7 @@
 		"question": "Is the chestnut white bellied rat a mammal?",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/Chestnut_white-bellied_rat> <http://dbpedia.org/ontology/class> <http://dbpedia.org/resource/Mammal> }",
 		"sparql_id": "151",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/class",
 			"label": "a",
@@ -3218,7 +3218,7 @@
 		"question": "Was Tim Gunn a guest on The Broken Code?",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/The_Broken_Code> <http://dbpedia.org/property/guests> <http://dbpedia.org/resource/Tim_Gunn> }",
 		"sparql_id": "152",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/guests",
 			"label": "guest",
@@ -3239,19 +3239,19 @@
 		"question": "In how many nations can I find dishes made of Shallot?",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/ingredient> <http://dbpedia.org/resource/Shallot> . ?x <http://dbpedia.org/ontology/country> ?uri  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Country>}",
 		"sparql_id": "405",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/ingredient",
 			"label": "find",
 			"seq": "26,29"
 		}, {
 			"uri": "http://dbpedia.org/ontology/country",
-			"label": "can",
-			"seq": "20,22"
+			"label": "nations",
+			"seq": "12,18"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Country",
-			"label": "can",
-			"seq": "20,22"
+			"label": "nations",
+			"seq": "12,18"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Shallot",
@@ -3264,15 +3264,15 @@
 		"question": "Who are some american football players whose high school is Oktoc, Mississippi?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/highSchool> <http://dbpedia.org/resource/Oktoc,_Mississippi>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/AmericanFootballPlayer>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/highSchool",
 			"label": "school high",
 			"seq": "45,55"
 		}, {
 			"uri": "http://dbpedia.org/ontology/AmericanFootballPlayer",
-			"label": "football american",
-			"seq": "13,29"
+			"label": "american football players",
+			"seq": "13,37"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Oktoc,_Mississippi",
@@ -3285,7 +3285,7 @@
 		"question": "What system is both a platform where Nord runs and also distributed The beauty inside?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Nord_(video_game)> <http://dbpedia.org/ontology/computingPlatform> ?uri. <http://dbpedia.org/resource/The_Beauty_Inside> <http://dbpedia.org/ontology/distributor> ?uri . }",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/computingPlatform",
 			"label": "platform",
@@ -3301,8 +3301,8 @@
 			"seq": "37,40"
 		}, {
 			"uri": "http://dbpedia.org/resource/The_Beauty_Inside",
-			"label": "inside beauty",
-			"seq": "72,84"
+			"label": "The beauty inside",
+			"seq": "68,84"
 		}]
 	},
 	{
@@ -3310,7 +3310,7 @@
 		"question": "Is Tirana the largest city of Albania?",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/Albania> <http://dbpedia.org/property/largestCity> <http://dbpedia.org/resource/Tirana> }",
 		"sparql_id": "151",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/largestCity",
 			"label": "largest city",
@@ -3331,24 +3331,24 @@
 		"question": "what are some common games played at both Fr Agnel Multipurpose School and Vishwajyot High School?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Fr._Agnel_Multipurpose_School_and_Junior_College> <http://dbpedia.org/ontology/sport> ?uri. <http://dbpedia.org/resource/Vishwajyot_High_School> <http://dbpedia.org/ontology/sport> ?uri . }",
 		"sparql_id": "15",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/sport",
-			"label": "some",
-			"seq": "9,12"
+			"label": "games",
+			"seq": "21,25"
 		}, {
 			"uri": "http://dbpedia.org/ontology/sport",
-			"label": "some",
-			"seq": "9,12"
+			"label": "games",
+			"seq": "21,25"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Fr._Agnel_Multipurpose_School_and_Junior_College",
-			"label": "multipurpose school",
-			"seq": "51,69"
+			"label": "Fr Agnel Multipurpose School",
+			"seq": "42,69"
 		}, {
 			"uri": "http://dbpedia.org/resource/Vishwajyot_High_School",
 			"label": "vishwajyot school high",
-			"seq": "64,85"
+			"seq": "75,96"
 		}]
 	},
 	{
@@ -3356,11 +3356,11 @@
 		"question": "Who were all the people in office when bob hawke was the PM?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/primeMinister> <http://dbpedia.org/resource/Bob_Hawke> } ",
 		"sparql_id": "1",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/primeMinister",
-			"label": "people",
-			"seq": "17,22"
+			"label": "PM",
+			"seq": "57,58"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Bob_Hawke",
@@ -3373,7 +3373,7 @@
 		"question": "Name some shows whose company is owned by the CBS Corporation?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE { ?x <http://dbpedia.org/ontology/owner> <http://dbpedia.org/resource/CBS_Corporation> . ?uri <http://dbpedia.org/property/company> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "306",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/owner",
 			"label": "owned",
@@ -3389,8 +3389,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/CBS_Corporation",
-			"label": "corporation",
-			"seq": "50,60"
+			"label": "CBS Corporation",
+			"seq": "46,60"
 		}]
 	},
 	{
