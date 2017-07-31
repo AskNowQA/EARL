@@ -3870,7 +3870,7 @@
 		"question": "Is Queen Latifah associated with Afrika Baby Bam?",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/Afrika_Baby_Bam> <http://dbpedia.org/ontology/associatedBand> <http://dbpedia.org/resource/Queen_Latifah> }",
 		"sparql_id": "152",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/associatedBand",
 			"label": "associated",
@@ -3894,12 +3894,12 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/keyPeople",
-			"label": "whose",
-			"seq": "38,42"
-		}, {
-			"uri": "http://dbpedia.org/ontology/manufacturer",
 			"label": "leader",
 			"seq": "44,49"
+		}, {
+			"uri": "http://dbpedia.org/ontology/manufacturer",
+			"label": "built by",
+			"seq": "19,26"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Kazuo_Hirai",
@@ -3912,16 +3912,16 @@
 		"question": "Name the sports played by PATTS College of Aeronautics?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/PATTS_College_of_Aeronautics> <http://dbpedia.org/property/athletics> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/athletics",
-			"label": "aeronautics",
-			"seq": "43,53"
+			"label": "sports",
+			"seq": "9,14"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/PATTS_College_of_Aeronautics",
-			"label": "aeronautics college patts",
-			"seq": "26,50"
+			"label": "PATTS College of Aeronautics",
+			"seq": "26,53"
 		}]
 	},
 	{
