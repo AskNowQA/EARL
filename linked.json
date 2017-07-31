@@ -2737,7 +2737,7 @@
 		"question": "Count all those who've played for the youth club which owns the Rosario, Santa Fe stadium.",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/property/ground> <http://dbpedia.org/resource/Rosario,_Santa_Fe> . ?uri <http://dbpedia.org/property/youthclubs> ?x  . }",
 		"sparql_id": "106",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/ground",
 			"label": "stadium",
@@ -2879,7 +2879,7 @@
 		"question": "Did Steve Sampson manage a club of Santa Clara university",
 		"sparql_query": "ASK WHERE { <http://dbpedia.org/resource/Steve_Sampson> <http://dbpedia.org/ontology/managerClub> <http://dbpedia.org/resource/Santa_Clara_University> }",
 		"sparql_id": "152",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/managerClub",
 			"label": "manage a club",
@@ -3473,7 +3473,7 @@
 		"question": "Raymond Johansen is the mayor of what city?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/leaderName> <http://dbpedia.org/resource/Raymond_Johansen>  . }",
 		"sparql_id": "1",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/leaderName",
 			"label": "mayor",
@@ -3624,20 +3624,20 @@
 		"question": "Where was the narrator of Spain on the Road Again born?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Spain..._on_the_Road_Again> <http://dbpedia.org/ontology/narrator> ?x . ?x <http://dbpedia.org/property/birthPlace> ?uri  . }",
 		"sparql_id": "3",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/narrator",
 			"label": "narrator",
 			"seq": "14,21"
 		}, {
 			"uri": "http://dbpedia.org/property/birthPlace",
-			"label": "the",
-			"seq": "10,12"
+			"label": "born",
+			"seq": "50,53"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Spain..._on_the_Road_Again",
-			"label": "spain again road the",
-			"seq": "10,29"
+			"label": "Spain on the Road Again",
+			"seq": "26,48"
 		}]
 	},
 	{
@@ -3645,15 +3645,15 @@
 		"question": "What is the common school of Chris Marve and Neria Douglass?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Chris_Marve> <http://dbpedia.org/ontology/school> ?uri. <http://dbpedia.org/resource/Neria_Douglass> <http://dbpedia.org/ontology/almaMater> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/school",
 			"label": "school",
 			"seq": "19,24"
 		}, {
 			"uri": "http://dbpedia.org/ontology/almaMater",
-			"label": "marve",
-			"seq": "35,39"
+			"label": "common",
+			"seq": "12,17"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Chris_Marve",
@@ -3670,7 +3670,7 @@
 		"question": "In which areas are the radio stations of Monticello, Maine available too?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/property/city> <http://dbpedia.org/resource/Monticello,_Maine> . ?x <http://dbpedia.org/property/area> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/RadioStation>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/city",
 			"label": "in",
@@ -3681,7 +3681,7 @@
 			"seq": "9,13"
 		}, {
 			"uri": "http://dbpedia.org/ontology/RadioStation",
-			"label": "stations",
+			"label": "radio stations",
 			"seq": "29,36"
 		}],
 		"entity mapping": [{
@@ -3695,7 +3695,7 @@
 		"question": "What relegious affiliation of Josiah Idowu-Fearon was canonized by john of Damasucs ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/John_of_Damascus> <http://dbpedia.org/ontology/canonizedBy> ?uri. <http://dbpedia.org/resource/Josiah_Idowu-Fearon> <http://dbpedia.org/ontology/religion> ?uri} ",
 		"sparql_id": "16",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/canonizedBy",
 			"label": "canonized by",
@@ -3707,8 +3707,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/John_of_Damascus",
-			"label": "",
-			"seq": "1000,999"
+			"label": "john of Damasucs",
+			"seq": "67,82"
 		}, {
 			"uri": "http://dbpedia.org/resource/Josiah_Idowu-Fearon",
 			"label": "idowu-fearon josiah",
@@ -3720,7 +3720,7 @@
 		"question": "Name the TV show whose composer is Judy Hart Angelo and company as Paramount Television ?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/composer> <http://dbpedia.org/resource/Judy_Hart_Angelo> . ?uri <http://dbpedia.org/property/company> <http://dbpedia.org/resource/Paramount_Television>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "308",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/composer",
 			"label": "composer",
@@ -3731,8 +3731,8 @@
 			"seq": "56,62"
 		}, {
 			"uri": "http://dbpedia.org/ontology/TelevisionShow",
-			"label": "television show",
-			"seq": "12,26"
+			"label": "TV show",
+			"seq": "9,15"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Judy_Hart_Angelo",
@@ -3749,11 +3749,11 @@
 		"question": "Rivers from which countries flow into the Caspian?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/riverMouth> <http://dbpedia.org/resource/Caspian_Sea> . ?x <http://dbpedia.org/ontology/sourceCountry> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/River>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/riverMouth",
-			"label": "rivers",
-			"seq": "0,5"
+			"label": "from",
+			"seq": "7,10"
 		}, {
 			"uri": "http://dbpedia.org/ontology/sourceCountry",
 			"label": "countries",
@@ -3774,7 +3774,7 @@
 		"question": "Name the military unit whose garrison is Arlington County, Virginia and command structure is United States Department of Defense?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/garrison> <http://dbpedia.org/resource/Arlington_County,_Virginia> . ?uri <http://dbpedia.org/ontology/commandStructure> <http://dbpedia.org/resource/United_States_Department_of_Defense>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/MilitaryUnit>}",
 		"sparql_id": "308",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/garrison",
 			"label": "garrison",
@@ -3794,8 +3794,8 @@
 			"seq": "41,66"
 		}, {
 			"uri": "http://dbpedia.org/resource/United_States_Department_of_Defense",
-			"label": "department defense united states",
-			"seq": "93,124"
+			"label": "United States Department of Defense",
+			"seq": "93,127"
 		}]
 	},
 	{
@@ -3803,15 +3803,15 @@
 		"question": "Where does the successor of Thongsuk Samdaengpan reside?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Thongsuk_Samdaengpan> <http://dbpedia.org/property/successor> ?x . ?x <http://dbpedia.org/ontology/location> ?uri  . }",
 		"sparql_id": "3",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/successor",
 			"label": "successor",
 			"seq": "15,23"
 		}, {
 			"uri": "http://dbpedia.org/ontology/location",
-			"label": "thongsuk",
-			"seq": "28,35"
+			"label": "Where",
+			"seq": "0,4"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Thongsuk_Samdaengpan",
@@ -3824,15 +3824,15 @@
 		"question": "what are some devices made by asus?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/ontology/manufacturer> <http://dbpedia.org/resource/Asus>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/InformationAppliance>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/manufacturer",
-			"label": "are",
-			"seq": "5,7"
+			"label": "made by",
+			"seq": "22,28"
 		}, {
 			"uri": "http://dbpedia.org/ontology/InformationAppliance",
-			"label": "some",
-			"seq": "9,12"
+			"label": "devices",
+			"seq": "14,20"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Asus",
@@ -3845,15 +3845,15 @@
 		"question": "Count the number of people who graduated from universities affiliated with the NCAA.",
 		"sparql_query": "SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/athletics> <http://dbpedia.org/resource/National_Collegiate_Athletic_Association> . ?uri <http://dbpedia.org/property/education> ?x  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Person>}",
 		"sparql_id": "406",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/athletics",
-			"label": "the",
-			"seq": "6,8"
+			"label": "@@@",
+			"seq": "-1,-1"
 		}, {
 			"uri": "http://dbpedia.org/property/education",
-			"label": "graduated",
-			"seq": "31,39"
+			"label": "@@@",
+			"seq": "-1,-1"
 		}, {
 			"uri": "http://dbpedia.org/ontology/Person",
 			"label": "people",
@@ -3861,8 +3861,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/National_Collegiate_Athletic_Association",
-			"label": "",
-			"seq": "1000,999"
+			"label": "NCAA",
+			"seq": "79,82"
 		}]
 	},
 	{
