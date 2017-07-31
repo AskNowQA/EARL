@@ -3398,7 +3398,7 @@
 		"question": "Which sports are played at institues in Taguig?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/city> <http://dbpedia.org/resource/Taguig> . ?x <http://dbpedia.org/ontology/sport> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/EducationalInstitution>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/city",
 			"label": "in",
@@ -3423,7 +3423,7 @@
 		"question": "Joe Hahn is the member of what band?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/currentMembers> <http://dbpedia.org/resource/Joe_Hahn>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/Band>}",
 		"sparql_id": "301",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/currentMembers",
 			"label": "member",
@@ -3444,7 +3444,7 @@
 		"question": "Name the television show whose distributor is Comedy central and  the character voice is given by Isaac hayes ?",
 		"sparql_query": "SELECT DISTINCT ?uri WHERE {?uri <http://dbpedia.org/property/distributor> <http://dbpedia.org/resource/Comedy_Central> . ?uri <http://dbpedia.org/property/voices> <http://dbpedia.org/resource/Isaac_Hayes>  . ?uri <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/TelevisionShow>}",
 		"sparql_id": "308",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/distributor",
 			"label": "distributor",
@@ -3476,8 +3476,8 @@
 		"checked": "false",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/leaderName",
-			"label": "raymond",
-			"seq": "0,6"
+			"label": "mayor",
+			"seq": "24,28"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Raymond_Johansen",
@@ -3490,7 +3490,7 @@
 		"question": "What is the nation of the speedway league where Ikaros Smederna played?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/Ikaros_Smederna> <http://dbpedia.org/ontology/league> ?x . ?x <http://dbpedia.org/ontology/country> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/SpeedwayLeague>}",
 		"sparql_id": "303",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/league",
 			"label": "league",
@@ -3515,11 +3515,11 @@
 		"question": "What are the kind of games one can play on windows?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/computingPlatform> <http://dbpedia.org/resource/Microsoft_Windows> . ?x <http://dbpedia.org/ontology/genre> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/VideoGame>}",
 		"sparql_id": "605",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/computingPlatform",
-			"label": "play",
-			"seq": "35,38"
+			"label": "on",
+			"seq": "27,28"
 		}, {
 			"uri": "http://dbpedia.org/ontology/genre",
 			"label": "one",
@@ -3540,7 +3540,7 @@
 		"question": "Count the number of sports played by schools which play hockey ?",
 		"sparql_query": " SELECT DISTINCT COUNT(?uri) WHERE { ?x <http://dbpedia.org/ontology/sport> <http://dbpedia.org/resource/Hockey> . ?x <http://dbpedia.org/ontology/sport> ?uri }",
 		"sparql_id": "111",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/sport",
 			"label": "sports",
@@ -3561,19 +3561,19 @@
 		"question": "Who holds stock in the railway lines ending in Washington DC?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { ?x <http://dbpedia.org/ontology/routeEnd> <http://dbpedia.org/resource/Union_Station_(Washington,_D.C.)> . ?x <http://dbpedia.org/property/owner> ?uri  . ?x <https://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://dbpedia.org/ontology/RailwayLine>}",
 		"sparql_id": "305",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/routeEnd",
 			"label": "ending",
 			"seq": "37,42"
 		}, {
 			"uri": "http://dbpedia.org/property/owner",
-			"label": "lines",
-			"seq": "31,35"
+			"label": "holds stock",
+			"seq": "4,14"
 		}, {
 			"uri": "http://dbpedia.org/ontology/RailwayLine",
-			"label": "railway",
-			"seq": "23,29"
+			"label": "railway lines",
+			"seq": "23,35"
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/Union_Station_(Washington,_D.C.)",
@@ -3586,7 +3586,7 @@
 		"question": "Where is Temenos Group founded ?",
 		"sparql_query": " SELECT DISTINCT ?uri WHERE { <http://dbpedia.org/resource/Temenos_Group> <http://dbpedia.org/property/foundation> ?uri } ",
 		"sparql_id": "2",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/property/foundation",
 			"label": "founded",
@@ -3603,7 +3603,7 @@
 		"question": "What was the language of the single which came before To Know Him Is to Love Him?",
 		"sparql_query": "SELECT DISTINCT ?uri, ?x WHERE { <http://dbpedia.org/resource/To_Know_Him_Is_to_Love_Him> <http://dbpedia.org/ontology/previousWork> ?x . ?x <http://dbpedia.org/property/language> ?uri  . }",
 		"sparql_id": "3",
-		"checked": "false",
+		"checked": "true",
 		"predicate mapping": [{
 			"uri": "http://dbpedia.org/ontology/previousWork",
 			"label": "before",
@@ -3615,8 +3615,8 @@
 		}],
 		"entity mapping": [{
 			"uri": "http://dbpedia.org/resource/To_Know_Him_Is_to_Love_Him",
-			"label": "love know",
-			"seq": "57,65"
+			"label": "To Know Him Is to Love Him",
+			"seq": "54,79"
 		}]
 	},
 	{
