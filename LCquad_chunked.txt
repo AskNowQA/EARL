@@ -98,7 +98,7 @@ location;;E-NP
 of;;S-PP
 the;;B-NP
 Yakov;;I-NP
-:strin;;E-NP
+Estrin;;E-NP
 \;;O
 ?;;O
 
@@ -137,7 +137,7 @@ scientist;;E-NP
 whose;;B-NP
 supervisor;;E-NP
 was;;S-VP
-:rnest;;B-NP
+Ernest;;B-NP
 Rutherford;;E-NP
 and;;O
 had;;S-VP
@@ -147,7 +147,7 @@ students;;E-NP
 named;;S-VP
 Charles;;B-NP
 Drummond;;I-NP
-:llis;;E-NP
+Ellis;;E-NP
 \;;O
 ?;;O
 
@@ -589,7 +589,7 @@ west;;I-NP
 thurrock;;E-NP
 come;;S-VP
 under;;S-PP
-:ssex;;B-NP
+Essex;;B-NP
 county;;E-NP
 \;;O
 ?;;O
@@ -730,7 +730,7 @@ who;;S-NP
 is;;S-VP
 successor;;S-ADJP
 to;;S-PP
-:lmer;;B-NP
+Elmer;;B-NP
 Burkett;;E-NP
 \;;O
 ?;;O
@@ -1990,7 +1990,7 @@ rivers;;E-NP
 start;;S-VP
 in;;S-PP
 an;;B-NP
-:nglish;;I-NP
+English;;I-NP
 speaking;;I-NP
 country;;E-NP
 \;;O
@@ -2009,7 +2009,7 @@ composer;;E-NP
 home;;I-NP
 town;;E-NP
 is;;S-VP
-:l;;B-NP
+El;;B-NP
 Sobrante;;E-NP
 ,;;O
 California;;S-NP
@@ -2512,7 +2512,7 @@ Name;;O
 the;;B-NP
 tenant;;E-NP
 of;;S-PP
-:ver;;B-NP
+Ever;;B-NP
 bank;;I-NP
 field;;E-NP
 which;;S-NP
@@ -2596,7 +2596,7 @@ whose;;B-NP
 predecessor;;E-NP
 is;;S-VP
 Henry;;B-NP
-:;;I-NP
+E;;I-NP
 Catto;;E-NP
 ,;;O
 Jr;;S-NP
@@ -2862,7 +2862,7 @@ to;;I-VP
 \;;E-VP
 ?;;O
 
-:U;;B-NP
+EU;;B-NP
 Broadcasting;;I-NP
 Union;;E-NP
 is;;S-VP
@@ -3753,7 +3753,7 @@ the;;B-NP
 key;;I-NP
 person;;E-NP
 as;;S-PP
-:dwin;;B-NP
+Edwin;;B-NP
 Catmull;;E-NP
 \;;O
 ?;;O
@@ -4402,7 +4402,7 @@ the;;B-NP
 subsequent;;I-NP
 work;;E-NP
 of;;S-PP
-:lla;;B-NP
+Ella;;B-NP
 Loves;;I-NP
 Cole;;E-NP
 \;;O
@@ -4591,12 +4591,12 @@ company;;E-NP
 's;;B-NP
 leader;;E-NP
 is;;S-VP
-:dwin;;B-NP
+Edwin;;B-NP
 Catmull;;E-NP
 \;;O
 ?;;O
 
-:ric;;B-NP
+Eric;;B-NP
 roth;;E-NP
 wrote;;S-VP
 how;;B-NP
@@ -4913,7 +4913,7 @@ whose;;B-NP
 producer;;E-NP
 is;;S-VP
 Stephen;;B-NP
-:;;I-NP
+E;;I-NP
 Ambrose;;E-NP
 \;;O
 ?;;O
@@ -4928,7 +4928,7 @@ time;;I-NP
 zone;;E-NP
 is;;S-VP
 Central;;B-NP
-:uropean;;I-NP
+European;;I-NP
 Summer;;I-NP
 Time;;E-NP
 
@@ -4988,7 +4988,7 @@ river;;E-NP
 ends;;S-VP
 at;;S-PP
 Thames;;B-NP
-:stuary;;E-NP
+Estuary;;E-NP
 and;;O
 North;;B-NP
 Sea;;E-NP
@@ -5078,7 +5078,7 @@ mascot;;E-NP
 's;;B-NP
 order;;E-NP
 is;;S-VP
-:ven;;B-NP
+Even;;B-NP
 toed;;I-NP
 ungulate;;E-NP
 \;;O
@@ -5157,7 +5157,7 @@ in;;S-PP
 organizations;;S-NP
 presided;;S-VP
 by;;S-PP
-:manuel;;B-NP
+Emanuel;;B-NP
 de;;I-NP
 Guzman;;E-NP
 \;;O
@@ -5732,7 +5732,7 @@ and;;I-NP
 predecessor;;E-NP
 is;;S-VP
 Henry;;B-NP
-:;;I-NP
+E;;I-NP
 Catto;;E-NP
 Jr;;O
 \;;O
@@ -5889,7 +5889,7 @@ airlines;;E-NP
 which;;S-NP
 also;;S-ADVP
 serves;;S-VP
-:urope;;S-NP
+Europe;;S-NP
 \;;O
 ?;;O
 
@@ -6434,7 +6434,7 @@ death;;I-NP
 place;;E-NP
 of;;S-PP
 the;;B-NP
-:lbieta;;I-NP
+Elbieta;;I-NP
 Czartoryska;;E-NP
 which;;S-NP
 is;;S-VP
@@ -6509,7 +6509,7 @@ Derg;;S-NP
 the;;B-NP
 anthem;;E-NP
 of;;S-PP
-:thopia;;S-NP
+Ethopia;;S-NP
 \;;O
 ?;;O
 
@@ -6720,7 +6720,7 @@ followed;;E-VP
 by;;S-PP
 Doctor;;S-NP
 Who;;S-NP
-:xtra;;S-VP
+Extra;;S-VP
 \;;O
 ?;;O
 
@@ -7504,7 +7504,7 @@ their;;B-NP
 work;;E-NP
 in;;S-PP
 the;;B-NP
-:lectric;;I-NP
+Electric;;I-NP
 Lady;;I-NP
 Studios;;E-NP
 \;;O
@@ -7640,7 +7640,7 @@ the;;B-NP
 producer;;E-NP
 of;;S-PP
 Captain;;B-NP
-:O;;E-NP
+EO;;E-NP
 \;;O
 ?;;O
 
@@ -7877,7 +7877,7 @@ air;;E-NP
 Which;;B-NP
 company;;E-NP
 owns;;S-VP
-:vraz;;S-NP
+Evraz;;S-NP
 \;;O
 ?;;O
 
@@ -7895,7 +7895,7 @@ Which;;S-NP
 parent;;B-NP
 company;;E-NP
 of;;S-PP
-:dsel;;S-NP
+Edsel;;S-NP
 was;;S-VP
 the;;B-NP
 first;;I-NP
@@ -8275,7 +8275,7 @@ college;;E-NP
 is;;S-VP
 Brockport;;B-NP
 Golden;;I-NP
-:agles;;E-NP
+Eagles;;E-NP
 \;;O
 ?;;O
 
@@ -8502,7 +8502,7 @@ is;;S-VP
 the;;B-NP
 coach;;E-NP
 of;;S-PP
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 21;;B-NP
@@ -8722,7 +8722,7 @@ Blade;;B-NP
 Runner;;I-NP
 2;;E-NP
 The;;B-NP
-:dge;;E-NP
+Edge;;E-NP
 of;;S-PP
 Human;;B-NP
 \;;E-NP
@@ -9059,7 +9059,7 @@ Playtone;;S-NP
 and;;O
 written;;S-VP
 by;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Jendresen;;E-NP
 \;;O
 ?;;O
@@ -9139,7 +9139,7 @@ whom;;S-NP
 did;;S-VP
 Charles;;B-NP
 Drummond;;I-NP
-:llis;;E-NP
+Ellis;;E-NP
 do;;S-VP
 his;;B-NP
 PhD;;E-NP
@@ -9324,7 +9324,7 @@ the;;B-NP
 manufacturer;;E-NP
 of;;S-PP
 the;;B-NP
-:dsel;;I-NP
+Edsel;;I-NP
 Ranger;;E-NP
 \;;O
 ?;;O
@@ -9488,7 +9488,7 @@ Hank;;B-NP
 Williams;;I-NP
 Jr;;E-NP
 make;;S-VP
-:arly;;S-ADVP
+Early;;S-ADVP
 in;;S-PP
 the;;B-NP
 Morning;;E-NP
@@ -9554,7 +9554,7 @@ rivers;;E-NP
 originating;;S-VP
 from;;S-PP
 an;;B-NP
-:nglish;;I-NP
+English;;I-NP
 speaking;;I-NP
 nation;;E-NP
 \;;O
@@ -9907,7 +9907,7 @@ debutant;;I-NP
 team;;E-NP
 of;;S-PP
 John;;B-NP
-:stes;;E-NP
+Estes;;E-NP
 \;;O
 ?;;O
 
@@ -10052,7 +10052,7 @@ the;;B-NP
 ceremonial;;I-NP
 county;;E-NP
 of;;S-PP
-:ast;;B-NP
+East;;B-NP
 Tilbury;;I-NP
 \;;E-NP
 ?;;O
@@ -10291,7 +10291,7 @@ how;;B-NP
 many;;I-NP
 regions;;E-NP
 is;;S-VP
-:nglish;;O
+English;;O
 American;;O
 spoken;;O
 \;;O
@@ -10380,7 +10380,7 @@ Jr;;S-NP
 ?;;O
 
 Is;;S-VP
-:lla;;B-NP
+Ella;;B-NP
 Fitzgerald;;E-NP
 associated;;S-VP
 with;;S-PP
@@ -10936,7 +10936,7 @@ Robert;;B-NP
 Carr;;E-NP
 ,;;O
 1st;;B-NP
-:arl;;E-NP
+Earl;;E-NP
 of;;S-PP
 Somerset;;S-NP
 \;;O
@@ -11005,7 +11005,7 @@ jurisdiction;;E-NP
 was;;S-VP
 German;;B-NP
 occupied;;I-NP
-:urope;;E-NP
+Europe;;E-NP
 
 Which;;B-NP
 company;;E-NP
@@ -11603,7 +11603,7 @@ the;;B-NP
 military;;I-NP
 unit;;E-NP
 of;;S-PP
-:rich;;B-NP
+Erich;;B-NP
 Kempka;;E-NP
 \;;O
 ?;;O
@@ -11780,7 +11780,7 @@ influenced;;S-VP
 the;;B-NP
 writers;;E-NP
 of;;S-PP
-:venor;;S-NP
+Evenor;;S-NP
 \;;O
 ?;;O
 
@@ -11867,7 +11867,7 @@ important;;I-NP
 people;;E-NP
 of;;S-PP
 The;;B-NP
-:lders;;E-NP
+Elders;;E-NP
 \;;O
 ?;;O
 
@@ -11964,7 +11964,7 @@ and;;I-NP
 mayor;;I-NP
 name;;E-NP
 is;;S-VP
-:sther;;B-NP
+Esther;;B-NP
 Alder;;E-NP
 \;;O
 ?;;O
@@ -12413,7 +12413,7 @@ of;;S-PP
 The;;B-NP
 Dragons;;E-NP
 of;;S-PP
-:den;;B-NP
+Eden;;B-NP
 deals;;E-NP
 with;;S-PP
 \;;O
@@ -12428,7 +12428,7 @@ members;;E-NP
 of;;S-PP
 Gods;;S-NP
 of;;S-PP
-:gypt;;S-NP
+Egypt;;S-NP
 win;;S-VP
 \;;O
 ?;;O
@@ -12502,7 +12502,7 @@ What;;B-NP
 sport;;E-NP
 has;;B-VP
 made;;E-VP
-:ric;;B-NP
+Eric;;B-NP
 Schiller;;E-NP
 famous;;S-ADJP
 ,;;O
@@ -12840,7 +12840,7 @@ coach;;E-NP
 of;;S-PP
 Marquette;;B-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 men;;E-NP
 's;;B-NP
 basketball;;I-NP
@@ -12925,7 +12925,7 @@ What;;S-NP
 are;;S-VP
 the;;B-NP
 things;;I-NP
-:ric;;I-NP
+Eric;;I-NP
 Schiller;;E-NP
 known;;S-VP
 for;;S-PP
@@ -13104,7 +13104,7 @@ both;;B-NP
 Arthur;;I-NP
 Ross;;E-NP
 and;;O
-:dward;;B-NP
+Edward;;B-NP
 Niesen;;E-NP
 come;;S-VP
 from;;S-PP
@@ -13710,7 +13710,7 @@ which;;S-NP
 meet;;S-VP
 at;;S-PP
 the;;B-NP
-:ast;;I-NP
+East;;I-NP
 Whiteland;;I-NP
 Township;;E-NP
 in;;S-PP
@@ -14160,7 +14160,7 @@ Music;;E-NP
 \;;O
 ?;;O
 
-:rik;;B-NP
+Erik;;B-NP
 Jendresen;;E-NP
 is;;S-VP
 the;;B-NP
@@ -14332,7 +14332,7 @@ person;;E-NP
 who;;S-NP
 founded;;S-VP
 the;;B-NP
-:mel;;I-NP
+Emel;;I-NP
 magazine;;E-NP
 \;;O
 ?;;O
@@ -14596,7 +14596,7 @@ in;;S-PP
 the;;B-NP
 Brockport;;I-NP
 Golden;;I-NP
-:agles;;E-NP
+Eagles;;E-NP
 \;;O
 ?;;O
 
@@ -14691,7 +14691,7 @@ and;;I-NP
 mouth;;I-NP
 place;;E-NP
 is;;S-VP
-:ssex;;S-NP
+Essex;;S-NP
 \;;O
 ?;;O
 
@@ -14835,7 +14835,7 @@ whose;;B-NP
 sculptor;;E-NP
 is;;S-VP
 C;;B-NP
-:;;I-NP
+E;;I-NP
 Webber;;E-NP
 and;;O
 composed;;S-VP
@@ -15000,7 +15000,7 @@ located;;S-VP
 
 Who;;S-NP
 penned;;S-VP
-:mma;;S-NP
+Emma;;S-NP
 and;;O
 Jane;;B-NP
 Austen;;E-NP
@@ -15119,7 +15119,7 @@ platform;;E-NP
 of;;S-PP
 Microsoft;;B-NP
 Expression;;I-NP
-:ncoder;;E-NP
+Encoder;;E-NP
 \;;O
 ?;;O
 
@@ -15389,7 +15389,7 @@ Darden;;E-NP
 and;;O
 that;;S-NP
 of;;S-PP
-:dwin;;B-NP
+Edwin;;B-NP
 F;;I-NP
 Hunter;;E-NP
 
@@ -15584,7 +15584,7 @@ is;;S-VP
 the;;B-NP
 builder;;E-NP
 of;;S-PP
-:stadio;;B-NP
+Estadio;;B-NP
 Nacional;;I-NP
 de;;I-NP
 Costa;;I-NP
@@ -15654,7 +15654,7 @@ academic;;I-NP
 advisor;;E-NP
 is;;S-VP
 Karl;;B-NP
-:wald;;I-NP
+Ewald;;I-NP
 Hasse;;I-NP
 and;;I-NP
 supervisor;;E-NP
@@ -15664,7 +15664,7 @@ Meissner;;E-NP
 \;;O
 ?;;O
 
-:rik;;B-NP
+Erik;;B-NP
 Jendresen;;E-NP
 is;;S-VP
 writer;;B-NP
@@ -15686,7 +15686,7 @@ resting;;I-NP
 place;;E-NP
 of;;S-PP
 Charles;;B-NP
-:dward;;I-NP
+Edward;;I-NP
 Magoon;;E-NP
 \;;O
 ?;;O
@@ -15757,7 +15757,7 @@ Manendragarh;;S-NP
 
 Where;;S-ADVP
 is;;S-VP
-:mmett;;B-NP
+Emmett;;B-NP
 Hughes;;E-NP
 from;;S-PP
 \;;O
@@ -16224,7 +16224,7 @@ served;;S-VP
 by;;S-PP
 Toll;;B-NP
 Global;;I-NP
-:xpress;;E-NP
+Express;;E-NP
 which;;S-NP
 is;;S-VP
 also;;S-ADVP
@@ -16414,7 +16414,7 @@ Pope;;B-NP
 Gregory;;I-NP
 1;;E-NP
 and;;O
-:dwin;;S-NP
+Edwin;;S-NP
 of;;S-PP
 northumbria;;S-NP
 reverred;;S-VP
@@ -16444,7 +16444,7 @@ are;;S-VP
 Sam;;B-NP
 Loyd;;E-NP
 and;;O
-:ric;;B-NP
+Eric;;B-NP
 Schiller;;E-NP
 both;;O
 famous;;O
@@ -16501,7 +16501,7 @@ who;;S-NP
 have;;B-VP
 died;;E-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -16591,7 +16591,7 @@ a;;B-NP
 place;;E-NP
 where;;S-ADVP
 Indian;;B-NP
-:nglish;;E-NP
+English;;E-NP
 is;;S-VP
 an;;B-NP
 official;;I-NP
@@ -16897,7 +16897,7 @@ has;;B-VP
 mouth;;E-VP
 place;;S-NP
 at;;S-PP
-:ssex;;S-NP
+Essex;;S-NP
 \;;O
 ?;;O
 
@@ -17397,7 +17397,7 @@ rivers;;E-NP
 who;;S-NP
 originate;;S-VP
 from;;S-PP
-:ssex;;S-NP
+Essex;;S-NP
 \;;O
 ?;;O
 
@@ -17808,7 +17808,7 @@ whose;;B-NP
 predecessor;;E-NP
 is;;S-VP
 Henry;;B-NP
-:;;I-NP
+E;;I-NP
 Catto;;E-NP
 ,;;O
 Jr;;B-NP
@@ -18122,7 +18122,7 @@ have;;B-VP
 been;;I-VP
 illustrated;;E-VP
 by;;S-PP
-:;;B-NP
+E;;B-NP
 W;;I-NP
 Kemble;;E-NP
 \;;O
@@ -18680,7 +18680,7 @@ burial;;I-NP
 place;;E-NP
 is;;S-VP
 Little;;B-NP
-:aston;;E-NP
+Easton;;E-NP
 \;;O
 ?;;O
 
@@ -18825,7 +18825,7 @@ the;;B-NP
 Peetz;;I-NP
 Table;;I-NP
 Wind;;I-NP
-:nergy;;I-NP
+Energy;;I-NP
 Center;;E-NP
 which;;S-NP
 is;;S-VP
@@ -18985,7 +18985,7 @@ a;;B-NP
 Peetz;;I-NP
 Table;;I-NP
 Wind;;I-NP
-:nergy;;I-NP
+Energy;;I-NP
 Center;;E-NP
 located;;S-VP
 too;;B-ADVP
@@ -19043,7 +19043,7 @@ the;;I-NP
 teams;;E-NP
 that;;S-SBAR
 Andrew;;B-NP
-:conomos;;E-NP
+Economos;;E-NP
 played;;S-VP
 for;;S-PP
 ,;;O
@@ -19307,7 +19307,7 @@ the;;B-NP
 parent;;I-NP
 company;;E-NP
 of;;S-PP
-:dsel;;S-NP
+Edsel;;S-NP
 \;;O
 ?;;O
 
@@ -19371,7 +19371,7 @@ had;;S-VP
 a;;B-NP
 son;;E-NP
 named;;S-VP
-:dith;;B-NP
+Edith;;B-NP
 Vonnegut;;E-NP
 \;;O
 ?;;O
@@ -19809,7 +19809,7 @@ worked;;S-VP
 in;;S-PP
 Church;;S-NP
 of;;S-PP
-:ngland;;S-NP
+England;;S-NP
 died;;S-VP
 in;;S-PP
 \;;O
@@ -20909,7 +20909,7 @@ has;;S-VP
 key;;B-NP
 person;;E-NP
 as;;S-PP
-:dwin;;S-NP
+Edwin;;S-NP
 catmull;;O
 \;;O
 ?;;O
@@ -21512,7 +21512,7 @@ appeared;;S-VP
 in;;S-PP
 Star;;B-NP
 Wars;;I-NP
-:pisode;;I-NP
+Episode;;I-NP
 3;;E-NP
 
 List;;S-NP
@@ -21746,7 +21746,7 @@ study;;E-NP
 whose;;B-NP
 VP;;E-NP
 was;;S-VP
-:milio;;B-NP
+Emilio;;B-NP
 Nez;;E-NP
 \;;O
 ?;;O
@@ -21931,7 +21931,7 @@ academic;;I-NP
 advisor;;E-NP
 was;;S-VP
 Karl;;B-NP
-:wald;;I-NP
+Ewald;;I-NP
 Hasse;;E-NP
 \;;O
 ?;;O
@@ -22121,7 +22121,7 @@ Water;;B-NP
 resources;;I-NP
 management;;E-NP
 in;;S-PP
-:l;;B-NP
+El;;B-NP
 Salvador;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -22143,7 +22143,7 @@ has;;S-VP
 music;;S-NP
 composed;;S-VP
 by;;S-PP
-:lliot;;B-NP
+Elliot;;B-NP
 Goldenthal;;I-NP
 and;;I-NP
 screenplay;;E-NP
@@ -22160,7 +22160,7 @@ their;;B-NP
 painters;;E-NP
 born;;S-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -22495,7 +22495,7 @@ Which;;S-NP
 first;;B-NP
 driver;;E-NP
 of;;S-PP
-:uropean;;B-NP
+European;;B-NP
 Grand;;I-NP
 Prix;;I-NP
 1993;;E-NP
@@ -22520,7 +22520,7 @@ of;;S-PP
 Vijay;;B-NP
 Chavan;;E-NP
 where;;S-ADVP
-:ka;;B-NP
+Eka;;B-NP
 Lagnachi;;I-NP
 Teesri;;I-NP
 Goshta;;E-NP
@@ -22545,7 +22545,7 @@ experts;;E-NP
 \;;O
 ?;;O
 
-:rnest;;B-NP
+Ernest;;B-NP
 Rutherford;;E-NP
 was;;S-VP
 the;;B-NP
@@ -23277,7 +23277,7 @@ who;;S-NP
 signed;;S-VP
 up;; S-PRT
 with;;S-PP
-:MI;;S-NP
+EMI;;S-NP
 \;;O
 ?;;O
 
@@ -23460,7 +23460,7 @@ key;;B-NP
 perosn;;E-NP
 of;;S-PP
 the;;B-NP
-:lders;;E-NP
+Elders;;E-NP
 is;;S-VP
 also;;S-ADVP
 the;;B-NP
@@ -23579,7 +23579,7 @@ of;;S-PP
 the;;B-NP
 Marquette;;I-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 mens;;I-NP
 team;;E-NP
 \;;O
@@ -23702,7 +23702,7 @@ received;;S-VP
 by;;S-PP
 spouse;;S-NP
 of;;S-PP
-:llen;;B-NP
+Ellen;;B-NP
 Lundstrom;;E-NP
 \;;O
 ?;;O
@@ -23772,7 +23772,7 @@ to;;S-PP
 Ptolemy;;B-NP
 XIV;;E-NP
 of;;S-PP
-:gypt;;S-NP
+Egypt;;S-NP
 \;;O
 ?;;O
 
@@ -23913,7 +23913,7 @@ the;;B-NP
 alma;;I-NP
 mater;;E-NP
 of;;S-PP
-:rnest;;B-NP
+Ernest;;B-NP
 de;;I-NP
 Saisset;;E-NP
 \;;O
@@ -24081,7 +24081,7 @@ the;;B-NP
 office;;E-NP
 of;;S-PP
 P;;B-NP
-:lmo;;I-NP
+Elmo;;I-NP
 Futrell;;E-NP
 Jr;;O
 \;;O
@@ -24378,7 +24378,7 @@ Pyusawhti;;S-NP
 ?;;O
 
 Is;;S-VP
-:sther;;B-NP
+Esther;;B-NP
 Alder;;E-NP
 the;;B-NP
 mayor;;E-NP
@@ -24456,7 +24456,7 @@ by;;S-PP
 relatives;;S-NP
 of;;S-PP
 Bodhi;;B-NP
-:lfman;;E-NP
+Elfman;;E-NP
 \;;O
 ?;;O
 
@@ -24700,7 +24700,7 @@ which;;S-NP
 television;;B-NP
 shows;;E-NP
 has;;S-VP
-:liza;;B-NP
+Eliza;;B-NP
 Schneider;;E-NP
 given;;S-VP
 her;;B-NP
@@ -24749,8 +24749,8 @@ location;;E-NP
 of;;S-PP
 the;;B-NP
 Walter;;I-NP
-:vans;;I-NP
-:dge;;I-NP
+Evans;;I-NP
+Edge;;I-NP
 office;;E-NP
 which;;S-NP
 is;;S-VP
@@ -25061,7 +25061,7 @@ is;;S-VP
 the;;B-NP
 citizenship;;E-NP
 of;;S-PP
-:rastus;;B-NP
+Erastus;;B-NP
 Wiman;;E-NP
 \;;O
 ?;;O
@@ -25083,7 +25083,7 @@ the;;B-NP
 nearest;;I-NP
 city;;E-NP
 to;;S-PP
-:lliott;;B-NP
+Elliott;;B-NP
 Bay;;E-NP
 \;;O
 ?;;O
@@ -25113,7 +25113,7 @@ screenplay;;E-NP
 is;;B-VP
 done;;E-VP
 by;;S-PP
-:ric;;B-NP
+Eric;;B-NP
 Roth;;E-NP
 \;;O
 ?;;O
@@ -25420,7 +25420,7 @@ the;;B-NP
 ones;;E-NP
 living;;S-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 
 Which;;B-NP
 club;;E-NP
@@ -25976,7 +25976,7 @@ served;;S-VP
 by;;S-PP
 Toll;;B-NP
 Global;;I-NP
-:xpress;;E-NP
+Express;;E-NP
 and;;O
 also;;S-ADVP
 borders;;S-VP
@@ -26023,7 +26023,7 @@ citizens;;S-NP
 of;;S-PP
 the;;B-NP
 Ottoman;;I-NP
-:mpire;;E-NP
+Empire;;E-NP
 \;;O
 ?;;O
 
@@ -26082,7 +26082,7 @@ States;;E-NP
 Which;;B-NP
 destination;;E-NP
 of;;S-PP
-:merald;;B-NP
+Emerald;;B-NP
 Air;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -26191,7 +26191,7 @@ To;;S-PP
 which;;S-NP
 books;;B-NP
 Thomas;;I-NP
-:gerton;;E-NP
+Egerton;;E-NP
 ,;;O
 an;;B-NP
 editor;;E-NP
@@ -26291,7 +26291,7 @@ doctoral;;I-NP
 student;;E-NP
 named;;S-VP
 Charles;;B-NP
-:llis;;E-NP
+Ellis;;E-NP
 \;;O
 ?;;O
 
@@ -26419,7 +26419,7 @@ which;;S-NP
 has;;S-VP
 the;;B-NP
 song;;E-NP
-:clipse;;S-NP
+Eclipse;;S-NP
 \;;O
 ?;;O
 
@@ -26555,7 +26555,7 @@ Which;;B-NP
 producer;;E-NP
 of;;S-PP
 Purvis;;B-NP
-:ureka;;I-NP
+Eureka;;I-NP
 engine;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -26571,7 +26571,7 @@ Did;;O
 John;;B-NP
 Byrne;;E-NP
 create;;S-VP
-:mma;;B-NP
+Emma;;B-NP
 Frost;;E-NP
 \;;O
 ?;;O
@@ -26686,7 +26686,7 @@ whose;;B-NP
 producer;;E-NP
 is;;S-VP
 Stephen;;B-NP
-:;;I-NP
+E;;I-NP
 Ambrose;;I-NP
 and;;I-NP
 company;;E-NP
@@ -26748,7 +26748,7 @@ coach;;E-NP
 of;;S-PP
 marquette;;B-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 men;;E-NP
 's;;B-NP
 basketball;;I-NP
@@ -26776,7 +26776,7 @@ made;;S-VP
 Jon;;B-NP
 Speelman;;E-NP
 and;;O
-:ric;;B-NP
+Eric;;B-NP
 Schiller;;E-NP
 famous;;O
 \;;O
@@ -26994,7 +26994,7 @@ by;;S-PP
 Maple;;B-NP
 Leaf;;I-NP
 S;;I-NP
-:;;E-NP
+E;;E-NP
 \;;O
 ?;;O
 
@@ -27283,7 +27283,7 @@ Water;;B-NP
 resources;;E-NP
 managemnt;;S-VP
 in;;S-PP
-:L;;B-NP
+EL;;B-NP
 Salvador;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -27598,7 +27598,7 @@ Name;;S-VP
 the;;B-NP
 members;;E-NP
 of;;S-PP
-:uropean;;B-NP
+European;;B-NP
 Go;;I-NP
 Federation;;E-NP
 \;;O
@@ -27755,7 +27755,7 @@ also;;S-ADVP
 the;;B-NP
 location;;E-NP
 fo;;O
-:llei;;O
+Ellei;;O
 Johndro;;O
 \;;O
 ?;;O
@@ -27765,11 +27765,11 @@ the;;B-NP
 countries;;E-NP
 through;;S-PP
 which;;S-NP
-:uropean;;B-NP
+European;;B-NP
 rout;;E-NP
-:39;;S-NP
+E39;;S-NP
 and;;O
-:8;;S-NP
+E8;;S-NP
 passes;;S-VP
 \;;O
 ?;;O
@@ -28069,7 +28069,7 @@ thesis;;E-NP
 were;;B-VP
 supervised;;E-VP
 by;;S-PP
-:rnest;;B-NP
+Ernest;;B-NP
 Rutherford;;E-NP
 \;;O
 ?;;O
@@ -28524,7 +28524,7 @@ debut;;I-NP
 team;;E-NP
 of;;S-PP
 ngel;;B-NP
-:scobar;;E-NP
+Escobar;;E-NP
 \;;O
 ?;;O
 
@@ -28756,7 +28756,7 @@ appearances;;E-NP
 on;;S-PP
 the;;B-NP
 TV;;I-NP
-:pisodes;;E-NP
+Episodes;;E-NP
 whose;;B-NP
 was;;I-NP
 music;;E-NP
@@ -28882,7 +28882,7 @@ the;;B-NP
 official;;I-NP
 language;;E-NP
 of;;S-PP
-:thiopia;;S-NP
+Ethiopia;;S-NP
 \;;O
 ?;;O
 
@@ -29204,7 +29204,7 @@ of;;S-PP
 14;;I-NP
 Marquette;;I-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 men;;E-NP
 's;;B-NP
 basketball;;I-NP
@@ -29626,7 +29626,7 @@ also;;S-ADVP
 the;;B-NP
 president;;E-NP
 of;;S-PP
-:dward;;B-NP
+Edward;;B-NP
 J;;I-NP
 Perkins;;E-NP
 \;;O
@@ -29729,7 +29729,7 @@ whose;;B-NP
 doctoral;;I-NP
 advisor;;E-NP
 is;;S-VP
-:rnest;;B-NP
+Ernest;;B-NP
 Rutherford;;E-NP
 and;;O
 are;;B-VP
@@ -29820,7 +29820,7 @@ whose;;B-NP
 vice;;I-NP
 president;;E-NP
 was;;S-VP
-:nrique;;B-NP
+Enrique;;B-NP
 Jos;;I-NP
 Varona;;E-NP
 \;;O
@@ -30318,7 +30318,7 @@ the;;B-NP
 scientist;;E-NP
 famous;;S-ADJP
 for;;S-PP
-:mail;;S-NP
+Email;;S-NP
 filtering;;S-VP
 \;;O
 ?;;O
@@ -30745,7 +30745,7 @@ PWD;;E-NP
 
 Who;;S-NP
 edited;;S-VP
-:asy;;B-NP
+Easy;;B-NP
 street;;E-NP
 \;;O
 ?;;O
@@ -30810,7 +30810,7 @@ in;;S-PP
 the;;B-NP
 Foundation;;E-NP
 for;;S-PP
-:conomic;;B-NP
+Economic;;B-NP
 Education;;E-NP
 \;;O
 ?;;O
@@ -31293,7 +31293,7 @@ of;;S-PP
 the;;B-NP
 restingplace;;E-NP
 is;;S-VP
-:ast;;B-NP
+East;;B-NP
 Norwalk;;I-NP
 Historical;;I-NP
 Cemetery;;E-NP
@@ -31876,12 +31876,12 @@ the;;B-NP
 drinks;;E-NP
 originated;;S-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 
 What;;B-NP
 place;;E-NP
 did;;S-VP
-:dwin;;B-NP
+Edwin;;B-NP
 Adams;;E-NP
 die;;S-VP
 at;;S-PP
@@ -31945,7 +31945,7 @@ Charlwood;;S-NP
 made;;S-VP
 in;;S-PP
 New;;B-NP
-:nglish;;I-NP
+English;;I-NP
 style;;E-NP
 of;;S-PP
 architecture;;S-NP
@@ -31995,7 +31995,7 @@ person;;E-NP
 to;;B-VP
 scale;;E-VP
 Mt;;B-NP
-:verest;;E-NP
+Everest;;E-NP
 \;;O
 ?;;O
 
@@ -32481,7 +32481,7 @@ also;;S-ADVP
 the;;B-NP
 president;;E-NP
 of;;S-PP
-:vans;;B-NP
+Evans;;B-NP
 Hughes;;E-NP
 \;;O
 ?;;O
@@ -32518,7 +32518,7 @@ coach;;E-NP
 has;;B-VP
 been;;E-VP
 Rodney;;B-NP
-:ade;;E-NP
+Eade;;E-NP
 
 Count;;S-VP
 all;;B-NP
@@ -32582,7 +32582,7 @@ has;;S-VP
 a;;B-NP
 mayor;;I-NP
 named;;I-NP
-:ster;;I-NP
+Ester;;I-NP
 Alder;;E-NP
 \;;O
 ?;;O
@@ -32783,7 +32783,7 @@ F;;I-NP
 C;;E-NP
 also;;S-ADVP
 owns;;S-VP
-:vraz;;S-NP
+Evraz;;S-NP
 \;;O
 ?;;O
 
@@ -32881,7 +32881,7 @@ of;;S-PP
 09;;I-NP
 Marquette;;I-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 men;;E-NP
 's;;B-NP
 basketball;;I-NP
@@ -33045,7 +33045,7 @@ by;;S-PP
 shooting;;B-NP
 rampage;;E-NP
 of;;S-PP
-:ric;;B-NP
+Eric;;B-NP
 Harris;;E-NP
 and;;O
 Dylan;;B-NP
@@ -33059,7 +33059,7 @@ shows;;E-NP
 with;;S-PP
 producer;;S-NP
 as;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Bork;;I-NP
 and;;I-NP
 company;;E-NP
@@ -33611,7 +33611,7 @@ has;;S-VP
 the;;B-NP
 label;;I-NP
 Seed;;I-NP
-:ight;;E-NP
+Eight;;E-NP
 \;;O
 ?;;O
 
@@ -33682,7 +33682,7 @@ Which;;B-NP
 producer;;E-NP
 of;;S-PP
 the;;B-NP
-:ristoff;;E-NP
+Eristoff;;E-NP
 is;;S-VP
 also;;S-ADVP
 the;;B-NP
@@ -33732,7 +33732,7 @@ of;;S-PP
 Doctor;;S-NP
 Who;;S-NP
 Evacuation;;S-VP
-:arth;;S-NP
+Earth;;S-NP
 \;;O
 ?;;O
 
@@ -33977,7 +33977,7 @@ the;;B-NP
 university;;E-NP
 to;;S-PP
 which;;S-NP
-:rica;;B-NP
+Erica;;B-NP
 Frank;;E-NP
 went;;S-VP
 ,;;O
@@ -34202,7 +34202,7 @@ university;;E-NP
 whose;;B-NP
 president;;E-NP
 is;;S-VP
-:manuel;;B-NP
+Emanuel;;B-NP
 de;;I-NP
 Guzman;;E-NP
 \;;O
@@ -34367,7 +34367,7 @@ who;;S-NP
 have;;B-VP
 managed;;E-VP
 the;;B-NP
-:ngland;;E-NP
+England;;E-NP
 's;;S-NP
 under;;S-PP
 20;;B-NP
@@ -34618,7 +34618,7 @@ the;;B-NP
 things;;E-NP
 built;;S-VP
 by;;S-PP
-:ristoff;;S-NP
+Eristoff;;S-NP
 \;;O
 ?;;O
 
@@ -34701,7 +34701,7 @@ people;;S-NP
 schooled;;S-VP
 in;;S-PP
 the;;B-NP
-:verton;;I-NP
+Everton;;I-NP
 park;;I-NP
 state;;E-NP
 high;;B-ADVP
@@ -34750,7 +34750,7 @@ North;;B-NP
 Sea;;E-NP
 and;;O
 Thames;;B-NP
-:stuary;;E-NP
+Estuary;;E-NP
 \;;O
 ?;;O
 
@@ -34832,7 +34832,7 @@ syndication;;E-NP
 and;;O
 voiced;;S-VP
 by;;S-PP
-:liza;;B-NP
+Eliza;;B-NP
 Schneider;;E-NP
 \;;O
 ?;;O
@@ -35545,7 +35545,7 @@ and;;I-NP
 music;;I-NP
 composer;;I-NP
 Danny;;I-NP
-:lfman;;E-NP
+Elfman;;E-NP
 \;;O
 ?;;O
 
@@ -36030,7 +36030,7 @@ a;;B-NP
 place;;E-NP
 where;;S-ADVP
 Indian;;B-NP
-:nglish;;E-NP
+English;;E-NP
 is;;S-VP
 an;;B-NP
 official;;I-NP
@@ -36114,7 +36114,7 @@ football;;I-NP
 teams;;E-NP
 did;;S-VP
 Carlos;;B-NP
-:mmons;;E-NP
+Emmons;;E-NP
 play;;S-VP
 \;;O
 ?;;O
@@ -36252,7 +36252,7 @@ who;;S-NP
 were;;B-VP
 born;;E-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -36670,7 +36670,7 @@ agencies;;S-NP
 in;;S-PP
 German;;B-NP
 occupied;;I-NP
-:urope;;E-NP
+Europe;;E-NP
 \;;O
 ?;;O
 
@@ -37058,7 +37058,7 @@ club;;E-NP
 managed;;S-VP
 by;;S-PP
 Luis;;B-NP
-:nrique;;E-NP
+Enrique;;E-NP
 \;;O
 ?;;O
 
@@ -37745,7 +37745,7 @@ was;;B-VP
 managed;;E-VP
 by;;S-PP
 Luis;;B-NP
-:nrique;;E-NP
+Enrique;;E-NP
 
 How;;B-NP
 many;;I-NP
@@ -37951,7 +37951,7 @@ FC;;O
 What;;B-NP
 sport;;E-NP
 is;;S-VP
-:ric;;B-NP
+Eric;;B-NP
 Schiller;;E-NP
 known;;S-VP
 for;;S-PP
@@ -38217,7 +38217,7 @@ have;;B-VP
 been;;I-VP
 produced;;E-VP
 by;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Bork;;E-NP
 \;;O
 ?;;O
@@ -38897,7 +38897,7 @@ College;;E-NP
 
 Who;;S-NP
 managed;;S-VP
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 20;;B-NP
@@ -39745,7 +39745,7 @@ lieutenant;;E-NP
 ?;;O
 
 Is;;S-VP
-:ssex;;S-NP
+Essex;;S-NP
 the;;B-NP
 Ceremonial;;I-NP
 County;;E-NP
@@ -40303,7 +40303,7 @@ place;;E-NP
 of;;S-PP
 Jos;;B-NP
 Bernardo;;I-NP
-:scobar;;E-NP
+Escobar;;E-NP
 \;;O
 ?;;O
 
@@ -40534,7 +40534,7 @@ Azerbaijan;;S-NP
 the;;B-NP
 membership;;E-NP
 of;;S-PP
-:uropean;;B-NP
+European;;B-NP
 Go;;I-NP
 Federation;;E-NP
 \;;O
@@ -40931,7 +40931,7 @@ belong;;S-VP
 Which;;B-NP
 builder;;E-NP
 of;;S-PP
-:dwin;;B-NP
+Edwin;;B-NP
 Andrews;;I-NP
 Air;;I-NP
 Base;;I-NP
@@ -41154,7 +41154,7 @@ a;;B-NP
 Time;;E-NP
 \;;O
 (;;O
-:m;;S-NP
+Em;;S-NP
 's;;B-NP
 Version;;E-NP
 \;;O
@@ -41256,7 +41256,7 @@ whose;;B-NP
 mouth;;I-NP
 mountain;;E-NP
 is;;S-VP
-:ssex;;S-NP
+Essex;;S-NP
 and;;O
 river;;B-NP
 mouth;;E-NP
@@ -41490,7 +41490,7 @@ ofof;;S-VP
 South;;B-NP
 Asia;;I-NP
 Subregional;;I-NP
-:conomic;;I-NP
+Economic;;I-NP
 Cooperation;;E-NP
 \;;O
 ?;;O
@@ -41669,7 +41669,7 @@ of;;S-PP
 Henry;;B-NP
 Bourchier;;E-NP
 of;;S-PP
-:ssex;;S-NP
+Essex;;S-NP
 buried;;S-VP
 \;;O
 ?;;O
@@ -41939,9 +41939,9 @@ engineer;;I-NP
 born;;E-NP
 who;;S-NP
 manufactured;;S-VP
-:P;;B-NP
+EP;;B-NP
 R;;I-NP
-:;;I-NP
+E;;I-NP
 P;;I-NP
 1;;E-NP
 \;;O
@@ -42041,7 +42041,7 @@ Airport;;E-NP
 serve;;S-VP
 the;;B-NP
 Inland;;I-NP
-:mpire;;E-NP
+Empire;;E-NP
 \;;O
 ?;;O
 
@@ -42054,7 +42054,7 @@ students;;I-NP
 erban;;I-NP
 ieica;;E-NP
 and;;O
-:rich;;B-NP
+Erich;;B-NP
 Bagge;;I-NP
 study;;E-NP
 \;;O
@@ -42111,7 +42111,7 @@ is;;S-VP
 the;;B-NP
 builder;;E-NP
 of;;S-PP
-:stadio;;B-NP
+Estadio;;B-NP
 Nacional;;I-NP
 de;;I-NP
 Costa;;I-NP
@@ -42134,7 +42134,7 @@ by;;S-PP
 Charles;;B-NP
 LeMaire;;E-NP
 and;;O
-:ric;;B-NP
+Eric;;B-NP
 Roth;;E-NP
 
 Where;;S-ADVP
@@ -42213,7 +42213,7 @@ team;;S-NP
 Which;;B-NP
 garrison;;E-NP
 of;;S-PP
-:ast;;B-NP
+East;;B-NP
 Indies;;I-NP
 Station;;E-NP
 is;;S-VP
@@ -42224,7 +42224,7 @@ end;;E-NP
 of;;S-PP
 Mumbai;;B-NP
 Vadodara;;I-NP
-:xpress;;E-NP
+Express;;E-NP
 \;;O
 ?;;O
 
@@ -42558,7 +42558,7 @@ city;;E-NP
 with;;S-PP
 leader;;S-NP
 as;;S-PP
-:sther;;B-NP
+Esther;;B-NP
 Alder;;E-NP
 and;;O
 neighboring;;B-NP
@@ -43050,7 +43050,7 @@ of;;S-PP
 the;;B-NP
 successor;;E-NP
 of;;S-PP
-:lla;;B-NP
+Ella;;B-NP
 T;;I-NP
 Grasso;;E-NP
 \;;O
@@ -43257,7 +43257,7 @@ Which;;B-NP
 city;;E-NP
 near;;S-PP
 to;;S-PP
-:lliott;;B-NP
+Elliott;;B-NP
 Bay;;E-NP
 was;;S-VP
 the;;B-NP
@@ -43336,7 +43336,7 @@ a;;B-NP
 doctoral;;I-NP
 student;;E-NP
 named;;S-VP
-:rban;;B-NP
+Erban;;B-NP
 Ieica;;E-NP
 \;;O
 ?;;O
@@ -43463,7 +43463,7 @@ Sheep;;E-NP
 Where;;S-ADVP
 is;;S-VP
 Dofinivka;;B-NP
-:stuary;;E-NP
+Estuary;;E-NP
 located;;S-VP
 \;;O
 ?;;O
@@ -44004,7 +44004,7 @@ by;;S-PP
 the;;B-NP
 South;;I-NP
 Side;;I-NP
-:levated;;I-NP
+Elevated;;I-NP
 Railroad;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -44305,7 +44305,7 @@ the;;B-NP
 common;;I-NP
 editor;;E-NP
 of;;S-PP
-:asy;;B-NP
+Easy;;B-NP
 Street;;E-NP
 \;;O
 (;;O
@@ -44443,7 +44443,7 @@ Carman;;S-NP
 \;;O
 ?;;O
 
-:ngland;;S-NP
+England;;S-NP
 is;;S-VP
 the;;B-NP
 origin;;E-NP
@@ -44580,7 +44580,7 @@ founded;;S-VP
 South;;B-NP
 Asia;;I-NP
 Subregional;;I-NP
-:conomic;;I-NP
+Economic;;I-NP
 Cooperation;;E-NP
 \;;O
 ?;;O
@@ -44738,7 +44738,7 @@ are;;S-VP
 there;;S-ADVP
 in;;S-PP
 the;;B-NP
-:uropean;;I-NP
+European;;I-NP
 Go;;I-NP
 Federation;;E-NP
 \;;O
@@ -45310,7 +45310,7 @@ Name;;O
 the;;B-NP
 agency;;E-NP
 of;;S-PP
-:lection;;B-NP
+Election;;B-NP
 Commission;;E-NP
 of;;S-PP
 Thailand;;S-NP
@@ -45562,9 +45562,9 @@ which;;S-NP
 lies;;S-VP
 on;;S-PP
 the;;B-NP
-:uropean;;I-NP
+European;;I-NP
 route;;I-NP
-:8;;E-NP
+E8;;E-NP
 ,;;O
 and;;O
 where;;S-ADVP
@@ -45757,7 +45757,7 @@ the;;B-NP
 sea;;E-NP
 located;;S-VP
 near;;S-PP
-:urope;;S-NP
+Europe;;S-NP
 and;;O
 has;;S-VP
 a;;B-NP
@@ -45824,7 +45824,7 @@ league;;E-NP
 Which;;S-NP
 founder;;S-NP
 of;;S-PP
-:uropean;;B-NP
+European;;B-NP
 School;;E-NP
 ,;;O
 karlsruhe;;S-NP
@@ -45833,7 +45833,7 @@ also;;S-ADVP
 the;;B-NP
 jursdiction;;E-NP
 of;;S-PP
-:urpoean;;B-NP
+Eurpoean;;B-NP
 Border;;E-NP
 of;;S-PP
 Coast;;B-NP
@@ -45948,7 +45948,7 @@ mater;;E-NP
 of;;S-PP
 the;;B-NP
 Mara;;I-NP
-:ugenia;;I-NP
+Eugenia;;I-NP
 Rojas;;I-NP
 Correa;;E-NP
 \;;O
@@ -46059,14 +46059,14 @@ of;;S-PP
 the;;B-NP
 managers;;E-NP
 of;;S-PP
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 20;;B-NP
 football;;I-NP
 team;;E-NP
 and;;O
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 21;;B-NP
@@ -46143,7 +46143,7 @@ Oz;;S-NP
 );;O
 and;;O
 Aunt;;B-NP
-:m;;E-NP
+Em;;E-NP
 \;;O
 ?;;O
 
@@ -46169,7 +46169,7 @@ ceremonial;;I-NP
 County;;E-NP
 of;;S-PP
 the;;B-NP
-:ast;;I-NP
+East;;I-NP
 Tilbury;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -46279,7 +46279,7 @@ TV;;E-NP
 Cleopatra;;B-NP
 V;;E-NP
 of;;S-PP
-:gypt;;S-NP
+Egypt;;S-NP
 is;;S-VP
 father;;S-NP
 to;;S-PP
@@ -46539,7 +46539,7 @@ Dunkleman;;E-NP
 ?;;O
 
 Mota;;B-NP
-:ngil;;E-NP
+Engil;;E-NP
 built;;S-VP
 bridges;;S-NP
 over;;S-PP
@@ -46555,12 +46555,12 @@ show;;E-NP
 producer;;E-NP
 is;;S-VP
 Stephen;;B-NP
-:;;I-NP
+E;;I-NP
 Ambrose;;E-NP
 and;;O
 written;;S-VP
 by;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Jendresen;;E-NP
 \;;O
 ?;;O
@@ -46819,7 +46819,7 @@ factions;;E-NP
 have;;B-VP
 fought;;E-VP
 when;;S-ADVP
-:gushawa;;S-NP
+Egushawa;;S-NP
 was;;S-VP
 a;;B-NP
 commander;;I-NP
@@ -47427,7 +47427,7 @@ Who;;S-NP
 battled;;S-VP
 under;;S-PP
 commander;;B-NP
-:gushawa;;E-NP
+Egushawa;;E-NP
 in;;S-PP
 a;;B-NP
 conflict;;E-NP
@@ -47493,7 +47493,7 @@ causes;;E-NP
 of;;S-PP
 death;;S-NP
 of;;S-PP
-:uropean;;B-NP
+European;;B-NP
 Americans;;E-NP
 \;;O
 ?;;O
@@ -47690,7 +47690,7 @@ first;;I-NP
 driver;;E-NP
 of;;S-PP
 1993;;B-NP
-:uropean;;I-NP
+European;;I-NP
 Grand;;I-NP
 Prix;;E-NP
 \;;O
@@ -49013,7 +49013,7 @@ South;;O
 Which;;S-NP
 region;;S-NP
 of;;S-PP
-:nglish;;B-NP
+English;;B-NP
 American;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -49062,7 +49062,7 @@ me;;S-NP
 the;;B-NP
 sitcoms;;E-NP
 where;;S-ADVP
-:liza;;B-NP
+Eliza;;B-NP
 Schneider;;E-NP
 and;;O
 Isaac;;B-NP
@@ -49330,7 +49330,7 @@ Boeing;;I-NP
 F;;E-NP
 A;;B-NP
 18;;I-NP
-:;;I-NP
+E;;I-NP
 F;;I-NP
 Hornet;;E-NP
 nad;;O
@@ -49358,7 +49358,7 @@ are;;S-VP
 some;;B-NP
 players;;E-NP
 of;;S-PP
-:ngland;;S-NP
+England;;S-NP
 national;;B-NP
 football;;I-NP
 team;;E-NP
@@ -49777,7 +49777,7 @@ team;;E-NP
 Which;;S-NP
 licensee;;S-NP
 of;;S-PP
-:XXV;;B-NP
+EXXV;;B-NP
 TV;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -49834,7 +49834,7 @@ common;;I-NP
 institution;;E-NP
 of;;S-PP
 the;;B-NP
-:rica;;I-NP
+Erica;;I-NP
 Frank;;E-NP
 and;;O
 Douglass;;S-NP
@@ -49904,7 +49904,7 @@ buildings;;S-NP
 are;;B-VP
 found;;E-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -50078,7 +50078,7 @@ Marv;;B-NP
 mcFadden;;E-NP
 and;;O
 Carlos;;B-NP
-:mmons;;E-NP
+Emmons;;E-NP
 \;;O
 ?;;O
 
@@ -50151,7 +50151,7 @@ of;;S-PP
 Robert;;B-NP
 hall;;E-NP
 and;;O
-:rica;;B-NP
+Erica;;B-NP
 Frank;;E-NP
 \;;O
 ?;;O
@@ -50258,7 +50258,7 @@ of;;S-PP
 the;;B-NP
 destinations;;E-NP
 of;;S-PP
-:merald;;B-NP
+Emerald;;B-NP
 Air;;E-NP
 \;;O
 ?;;O
@@ -51028,7 +51028,7 @@ the;;B-NP
 key;;I-NP
 person;;E-NP
 as;;S-PP
-:dwin;;B-NP
+Edwin;;B-NP
 Catmull;;E-NP
 and;;O
 produces;;S-VP
@@ -51364,7 +51364,7 @@ Run;;E-NP
 ?;;O
 
 Was;;S-VP
-:lton;;B-NP
+Elton;;B-NP
 John;;E-NP
 a;;B-NP
 chairman;;E-NP
@@ -51411,7 +51411,7 @@ of;;S-PP
 the;;B-NP
 ladonia;;I-NP
 and;;I-NP
-:mpire;;E-NP
+Empire;;E-NP
 of;;S-PP
 Atlantium;;S-NP
 \;;O
@@ -51789,7 +51789,7 @@ whose;;B-NP
 PhD;;I-NP
 students;;E-NP
 are;;S-VP
-:rich;;B-NP
+Erich;;B-NP
 Bagge;;E-NP
 and;;O
 erban;;O
@@ -51846,7 +51846,7 @@ who;;S-NP
 have;;B-VP
 worked;;E-VP
 in;;S-PP
-:thics;;S-NP
+Ethics;;S-NP
 \;;O
 ?;;O
 
@@ -51955,7 +51955,7 @@ was;;S-VP
 Cleopatra;;B-NP
 V;;E-NP
 of;;S-PP
-:gypt;;S-NP
+Egypt;;S-NP
 and;;O
 one;;S-NP
 of;;S-PP
@@ -52083,7 +52083,7 @@ from;;S-PP
 the;;B-NP
 order;;E-NP
 of;;S-PP
-:ven;;B-NP
+Even;;B-NP
 toed;;I-NP
 Ungulates;;E-NP
 \;;O
@@ -52230,7 +52230,7 @@ academic;;B-NP
 advisor;;E-NP
 as;;S-PP
 Karl;;B-NP
-:wald;;I-NP
+Ewald;;I-NP
 Hasse;;E-NP
 \;;O
 ?;;O
@@ -52385,7 +52385,7 @@ and;;I-NP
 also;;E-NP
 venerated;;S-VP
 the;;B-NP
-:dwin;;E-NP
+Edwin;;E-NP
 of;;S-PP
 Northumbria;;S-NP
 \;;O
@@ -52728,7 +52728,7 @@ Srie;;E-NP
 A;;O
 
 Is;;S-VP
-:ddie;;B-NP
+Eddie;;B-NP
 Bravo;;E-NP
 the;;B-NP
 trainer;;E-NP
@@ -52822,7 +52822,7 @@ river;;E-NP
 with;;S-PP
 mouth;;B-NP
 palce;;I-NP
-:ssex;;I-NP
+Essex;;I-NP
 and;;I-NP
 source;;I-NP
 place;;E-NP
@@ -52855,7 +52855,7 @@ the;;B-NP
 current;;I-NP
 champion;;E-NP
 of;;S-PP
-:gyptian;;B-NP
+Egyptian;;B-NP
 Open;;I-NP
 born;;E-NP
 \;;O
@@ -53165,7 +53165,7 @@ Which;;S-NP
 president;;S-NP
 of;;S-PP
 William;;B-NP
-:ustus;;E-NP
+Eustus;;E-NP
 also;;S-ADVP
 married;;S-VP
 to;;S-PP
@@ -53177,7 +53177,7 @@ Madison;;E-NP
 Is;;S-VP
 Charles;;B-NP
 Drummond;;I-NP
-:llis;;E-NP
+Ellis;;E-NP
 a;;B-NP
 doctoral;;I-NP
 student;;E-NP
@@ -53261,7 +53261,7 @@ TV;;I-NP
 show;;E-NP
 written;;S-VP
 by;;S-PP
-:rik;;S-NP
+Erik;;S-NP
 jendresen;;O
 \;;O
 ?;;O
@@ -53272,7 +53272,7 @@ did;;S-VP
 Joe;;B-NP
 Porter;;E-NP
 and;;O
-:ddie;;B-NP
+Eddie;;B-NP
 Anderson;;I-NP
 play;;E-NP
 for;;S-PP
@@ -53648,13 +53648,13 @@ History;;E-NP
 of;;S-PP
 Penny;;B-NP
 Arcade;;I-NP
-:xpo;;E-NP
+Expo;;E-NP
 located;;S-VP
 \;;O
 ?;;O
 
 Which;;S-NP
-:uropean;;B-NP
+European;;B-NP
 Broadcasting;;I-NP
 Union;;E-NP
 's;;B-NP
@@ -53786,7 +53786,7 @@ beverages;;E-NP
 whose;;B-NP
 origin;;E-NP
 is;;S-VP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -54107,7 +54107,7 @@ are;;S-VP
 from;;S-PP
 the;;B-NP
 class;;I-NP
-:utheria;;E-NP
+Eutheria;;E-NP
 \;;O
 ?;;O
 
@@ -54146,7 +54146,7 @@ are;;O
 where;;S-ADVP
 South;;B-NP
 side;;I-NP
-:levated;;I-NP
+Elevated;;I-NP
 Railroad;;E-NP
 operate;;B-VP
 and;;I-VP
@@ -54249,7 +54249,7 @@ shows;;E-NP
 whose;;B-NP
 company;;E-NP
 is;;S-VP
-:uropean;;B-NP
+European;;B-NP
 Broadcasting;;I-NP
 Union;;E-NP
 \;;O
@@ -54667,7 +54667,7 @@ fields;;E-NP
 are;;S-VP
 pupils;;S-NP
 of;;S-PP
-:douard;;B-NP
+Edouard;;B-NP
 Chavannes;;E-NP
 working;;S-VP
 \;;O
@@ -55006,7 +55006,7 @@ universities;;E-NP
 whose;;B-NP
 president;;E-NP
 is;;S-VP
-:manuel;;B-NP
+Emanuel;;B-NP
 de;;I-NP
 Guzman;;E-NP
 \;;O
@@ -55033,7 +55033,7 @@ of;;S-PP
 South;;B-NP
 Asia;;I-NP
 SubRegional;;I-NP
-:conomic;;I-NP
+Economic;;I-NP
 cooperation;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -55665,7 +55665,7 @@ the;;B-NP
 branch;;E-NP
 of;;S-PP
 Carroll;;B-NP
-:;;I-NP
+E;;I-NP
 Lanier;;E-NP
 \;;O
 ?;;O
@@ -55877,7 +55877,7 @@ first;;S-ADVP
 in;;S-PP
 the;;B-NP
 1993;;I-NP
-:uropean;;I-NP
+European;;I-NP
 Grand;;I-NP
 Prix;;E-NP
 \;;O
@@ -56301,7 +56301,7 @@ been;;S-VP
 
 Who;;S-NP
 discovered;;S-VP
-:uropa;;S-NP
+Europa;;S-NP
 and;;O
 Callisto;;S-NP
 \;;O
@@ -56325,7 +56325,7 @@ ceremonial;;I-NP
 County;;E-NP
 of;;S-PP
 the;;B-NP
-:ast;;I-NP
+East;;I-NP
 Tilbury;;E-NP
 is;;S-VP
 also;;S-ADVP
@@ -56438,8 +56438,8 @@ Whichi;;B-NP
 office;;E-NP
 of;;S-PP
 Walter;;B-NP
-:vnas;;I-NP
-:dge;;E-NP
+Evnas;;I-NP
+Edge;;E-NP
 is;;S-VP
 also;;S-ADVP
 the;;B-NP
@@ -56578,7 +56578,7 @@ is;;S-VP
 Ptolemy;;B-NP
 XIV;;E-NP
 of;;S-PP
-:gypt;;S-NP
+Egypt;;S-NP
 \;;O
 ?;;O
 
@@ -56620,7 +56620,7 @@ Butter;;S-NP
 's;;S-NP
 Very;;B-ADJP
 own;;E-ADJP
-:pisode;;S-NP
+Episode;;S-NP
 \;;O
 ?;;O
 
@@ -56661,7 +56661,7 @@ Was;;S-VP
 the;;B-NP
 body;;E-NP
 of;;S-PP
-:lsie;;B-NP
+Elsie;;B-NP
 Paroubek;;E-NP
 discovered;;S-VP
 in;;S-PP
@@ -57301,7 +57301,7 @@ Newton;;E-NP
 To;;S-PP
 which;;S-NP
 branch;;B-NP
-:dwin;;I-NP
+Edwin;;I-NP
 F;;I-NP
 Hunter;;E-NP
 belong;;S-VP
@@ -57390,7 +57390,7 @@ many;;I-NP
 groups;;E-NP
 speak;;S-VP
 the;;B-NP
-:nglish;;I-NP
+English;;I-NP
 Language;;E-NP
 \;;O
 ?;;O
@@ -57663,7 +57663,7 @@ Connecticut;;S-NP
 ?;;O
 
 Is;;S-VP
-:thics;;S-NP
+Ethics;;S-NP
 the;;B-NP
 main;;I-NP
 interests;;E-NP
@@ -57970,7 +57970,7 @@ of;;S-PP
 the;;B-NP
 successor;;E-NP
 of;;S-PP
-:dward;;B-NP
+Edward;;B-NP
 Wolcott;;E-NP
 \;;O
 ?;;O
@@ -58239,7 +58239,7 @@ To;;S-PP
 which;;S-NP
 students;;S-NP
 did;;S-VP
-:rnest;;B-NP
+Ernest;;B-NP
 Rutherford;;E-NP
 advised;;B-VP
 to;;I-VP
@@ -58377,7 +58377,7 @@ did;;S-VP
 the;;B-NP
 children;;E-NP
 of;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Bergman;;E-NP
 won;;S-VP
 \;;O
@@ -58786,7 +58786,7 @@ To;;S-PP
 which;;S-NP
 settlement;;S-NP
 does;;S-VP
-:lliot;;B-NP
+Elliot;;B-NP
 Bay;;E-NP
 belong;;S-VP
 to;;S-PP
@@ -58847,7 +58847,7 @@ does;;O
 the;;B-NP
 jurisdiction;;E-NP
 of;;S-PP
-:uropean;;B-NP
+European;;B-NP
 Border;;E-NP
 and;;O
 Coast;;B-NP
@@ -59024,7 +59024,7 @@ the;;B-NP
 partner;;E-NP
 is;;S-VP
 Thom;;B-NP
-:vans;;E-NP
+Evans;;E-NP
 \;;O
 ?;;O
 
@@ -59064,7 +59064,7 @@ by;;S-PP
 April;;B-NP
 Stewart;;I-NP
 and;;I-NP
-:liza;;I-NP
+Eliza;;I-NP
 Schneider;;E-NP
 \;;O
 ?;;O
@@ -59086,7 +59086,7 @@ do;;S-VP
 networks;;S-NP
 affiliated;;S-VP
 with;;S-PP
-:TC;;O
+ETC;;O
 broadcast;;O
 \;;O
 ?;;O
@@ -59313,7 +59313,7 @@ the;;B-NP
 venerated;;E-NP
 in;;S-PP
 of;;S-PP
-:dwin;;S-NP
+Edwin;;S-NP
 of;;S-PP
 Northumbria;;S-NP
 \;;O
@@ -59973,7 +59973,7 @@ system;;E-NP
 ?;;O
 
 Is;;S-VP
-:ddie;;B-NP
+Eddie;;B-NP
 Bravo;;E-NP
 the;;B-NP
 trainer;;E-NP
@@ -60119,7 +60119,7 @@ some;;B-NP
 developers;;E-NP
 which;;S-NP
 use;;S-VP
-:macs;;B-NP
+Emacs;;B-NP
 Lisp;;E-NP
 in;;S-PP
 their;;B-NP
@@ -60357,7 +60357,7 @@ also;;S-ADVP
 the;;B-NP
 coach;;E-NP
 of;;S-PP
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 21;;B-NP
@@ -60596,7 +60596,7 @@ and;;O
 produced;;S-VP
 From;;S-PP
 the;;B-NP
-:arth;;E-NP
+Earth;;E-NP
 to;;S-PP
 the;;B-NP
 Moon;;E-NP
@@ -60797,7 +60797,7 @@ the;;B-NP
 awards;;E-NP
 won;;S-VP
 by;;S-PP
-:lie;;B-NP
+Elie;;B-NP
 Wiesel;;E-NP
 \;;O
 ?;;O
@@ -61009,7 +61009,7 @@ with;;S-PP
 mouth;;S-NP
 as;;S-PP
 Thames;;B-NP
-:stuary;;E-NP
+Estuary;;E-NP
 and;;O
 passes;;S-VP
 through;;S-PP
@@ -61244,7 +61244,7 @@ show;;B-VP
 has;;I-VP
 writing;;E-VP
 of;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Jendresen;;I-NP
 and;;I-NP
 Graham;;I-NP
@@ -61393,7 +61393,7 @@ Location;;E-NP
 of;;S-PP
 the;;B-NP
 Dofinivka;;I-NP
-:stuary;;E-NP
+Estuary;;E-NP
 which;;S-NP
 is;;S-VP
 also;;S-ADVP
@@ -61466,7 +61466,7 @@ ethnicity;;E-NP
 of;;S-PP
 the;;B-NP
 Maike;;I-NP
-:vers;;E-NP
+Evers;;E-NP
 and;;O
 state;;S-NP
 of;;S-PP
@@ -61530,7 +61530,7 @@ ethnicity;;E-NP
 of;;S-PP
 the;;B-NP
 Maike;;I-NP
-:vers;;E-NP
+Evers;;E-NP
 and;;O
 Francisco;;B-NP
 Lachowski;;E-NP
@@ -61603,7 +61603,7 @@ is;;S-VP
 the;;B-NP
 deputy;;E-NP
 of;;S-PP
-:verett;;B-NP
+Everett;;B-NP
 Dirksen;;E-NP
 \;;O
 ?;;O
@@ -61621,7 +61621,7 @@ Memorial;;I-NP
 Park;;E-NP
 and;;O
 Henry;;B-NP
-:;;I-NP
+E;;I-NP
 Catto;;E-NP
 ,;;O
 Jr;;S-NP
@@ -61766,7 +61766,7 @@ whose;;B-NP
 producer;;E-NP
 is;;S-VP
 Stephen;;B-NP
-:;;I-NP
+E;;I-NP
 Ambros;;I-NP
 and;;I-NP
 writer;;E-NP
@@ -62125,7 +62125,7 @@ ones;;E-NP
 signed;;S-VP
 up;; S-PRT
 with;;S-PP
-:MI;;S-NP
+EMI;;S-NP
 \;;O
 ?;;O
 
@@ -62284,7 +62284,7 @@ is;;B-VP
 produced;;E-VP
 by;;S-PP
 Stephen;;B-NP
-:;;I-NP
+E;;I-NP
 Ambrose;;E-NP
 \;;O
 ?;;O
@@ -63365,7 +63365,7 @@ people;;E-NP
 are;;S-VP
 in;;S-PP
 the;;B-NP
-:ngland;;I-NP
+England;;I-NP
 national;;I-NP
 football;;I-NP
 team;;E-NP
@@ -63595,7 +63595,7 @@ by;;S-PP
 Stephen;;B-NP
 Ambrose;;E-NP
 and;;O
-:rik;;B-NP
+Erik;;B-NP
 Bork;;E-NP
 \;;O
 ?;;O
@@ -63711,7 +63711,7 @@ play;;E-NP
 for;;S-PP
 the;;B-NP
 New;;I-NP
-:ngland;;I-NP
+England;;I-NP
 Patriots;;E-NP
 \;;O
 ?;;O
@@ -64436,7 +64436,7 @@ series;;E-NP
 was;;B-VP
 written;;E-VP
 by;;S-PP
-:ric;;B-NP
+Eric;;B-NP
 Jendresen;;E-NP
 and;;O
 John;;B-NP
@@ -64595,7 +64595,7 @@ is;;S-VP
 the;;B-NP
 appointer;;E-NP
 of;;S-PP
-:arl;;B-NP
+Earl;;B-NP
 B;;I-NP
 Ruth;;E-NP
 \;;O
@@ -64662,7 +64662,7 @@ the;;B-NP
 city;;E-NP
 of;;S-PP
 Phil;;S-NP
-:llena;;S-VP
+Ellena;;S-VP
 \;;O
 ?;;O
 
@@ -64940,7 +64940,7 @@ Middlesbrough;;B-NP
 F;;I-NP
 C;;E-NP
 and;;O
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 21;;B-NP
@@ -64954,7 +64954,7 @@ commanders;;E-NP
 are;;S-VP
 John;;B-NP
 Mc;;I-NP
-:wen;;I-NP
+Ewen;;I-NP
 and;;I-NP
 Park;;I-NP
 Chunghee;;E-NP
@@ -65066,7 +65066,7 @@ branch;;E-NP
 of;;S-PP
 military;;S-NP
 of;;S-PP
-:dward;;B-NP
+Edward;;B-NP
 Joseph;;I-NP
 Schwartz;;E-NP
 and;;O
@@ -65088,7 +65088,7 @@ where;;S-ADVP
 Apostolic;;B-NP
 Vicariate;;E-NP
 of;;S-PP
-:l;;B-NP
+El;;B-NP
 Petn;;E-NP
 is;;B-VP
 located;;E-VP
@@ -65293,7 +65293,7 @@ everyone;;S-NP
 who;;S-NP
 died;;S-VP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -65380,7 +65380,7 @@ musical;;E-NP
 whose;;B-NP
 composer;;E-NP
 is;;S-VP
-:mil;;B-NP
+Emil;;B-NP
 Dean;;I-NP
 Zoghby;;E-NP
 \;;O
@@ -65510,7 +65510,7 @@ followed;;E-VP
 by;;S-PP
 people;;S-NP
 in;;S-PP
-:ngland;;S-NP
+England;;S-NP
 \;;O
 ?;;O
 
@@ -65559,7 +65559,7 @@ is;;S-VP
 the;;B-NP
 province;;E-NP
 of;;S-PP
-:gypt;;B-NP
+Egypt;;B-NP
 Nanotechnology;;I-NP
 Center;;E-NP
 \;;O
@@ -65746,12 +65746,12 @@ are;;B-VP
 utilised;;E-VP
 by;;S-PP
 Purvis;;B-NP
-:ureka;;E-NP
+Eureka;;E-NP
 \;;O
 ?;;O
 
 Is;;S-VP
-:gyptian;;B-NP
+Egyptian;;B-NP
 Arabic;;E-NP
 belong;;S-VP
 to;;S-PP
@@ -65946,7 +65946,7 @@ anthrax;;S-NP
 and;;O
 has;;S-VP
 Karl;;B-NP
-:wald;;I-NP
+Ewald;;I-NP
 Hasse;;E-NP
 as;;S-PP
 his;;B-NP
@@ -66078,7 +66078,7 @@ School;;E-NP
 and;;O
 has;;S-VP
 Henry;;B-NP
-:;;I-NP
+E;;I-NP
 Catto;;E-NP
 ,;;O
 Jr;;S-NP
@@ -66105,7 +66105,7 @@ philosopher;;E-NP
 died;;S-VP
 on;;S-PP
 island;;B-NP
-:uboea;;E-NP
+Euboea;;E-NP
 \;;O
 ?;;O
 
@@ -66215,7 +66215,7 @@ served;;S-VP
 by;;S-PP
 Toll;;B-NP
 Global;;I-NP
-:xpress;;E-NP
+Express;;E-NP
 \;;O
 ?;;O
 
@@ -66933,7 +66933,7 @@ of;;S-PP
 \;;O
 ?;;O
 
-:stimate;;S-VP
+Estimate;;S-VP
 the;;B-NP
 number;;E-NP
 of;;S-PP
@@ -67027,7 +67027,7 @@ holder;;E-NP
 whose;;B-NP
 predecessor;;E-NP
 is;;S-VP
-:dward;;B-NP
+Edward;;B-NP
 Douglass;;I-NP
 White;;E-NP
 and;;O
@@ -67337,7 +67337,7 @@ whose;;B-NP
 doctoral;;I-NP
 student;;E-NP
 is;;S-VP
-:rich;;B-NP
+Erich;;B-NP
 Bagge;;E-NP
 \;;O
 ?;;O
@@ -67548,7 +67548,7 @@ main;;I-NP
 language;;E-NP
 is;;S-VP
 American;;O
-:nglish;;O
+English;;O
 \;;O
 ?;;O
 
@@ -67580,7 +67580,7 @@ is;;S-VP
 the;;B-NP
 licensee;;E-NP
 of;;S-PP
-:XXV;;B-NP
+EXXV;;B-NP
 TV;;E-NP
 \;;O
 ?;;O
@@ -67694,7 +67694,7 @@ Howard;;E-NP
 ,;;O
 the;;B-NP
 Northampton;;I-NP
-:arl;;E-NP
+Earl;;E-NP
 \;;O
 ?;;O
 
@@ -67800,7 +67800,7 @@ language;;E-NP
 as;;S-PP
 Languages;;S-NP
 of;;S-PP
-:thiopia;;S-NP
+Ethiopia;;S-NP
 \;;O
 ?;;O
 
@@ -67812,7 +67812,7 @@ II;;E-NP
 ,;;O
 Count;;S-NP
 of;;S-PP
-:ast;;B-NP
+East;;B-NP
 Frisia;;E-NP
 was;;B-VP
 born;;E-VP
@@ -68085,7 +68085,7 @@ Lvi;;E-NP
 ?;;O
 
 Which;;S-NP
-:uropean;;B-NP
+European;;B-NP
 sea;;E-NP
 has;;S-VP
 Oulu;;S-NP
@@ -68310,7 +68310,7 @@ in;;S-PP
 the;;B-NP
 German;;E-NP
 occupied;;S-VP
-:urope;;S-NP
+Europe;;S-NP
 \;;O
 ?;;O
 
@@ -68390,7 +68390,7 @@ of;;S-PP
 the;;B-NP
 Spider;;I-NP
 Man;;I-NP
-:dge;;E-NP
+Edge;;E-NP
 of;;S-PP
 Time;;S-NP
 is;;S-VP
@@ -68659,7 +68659,7 @@ hoffmann;;O
 Which;;B-NP
 coach;;E-NP
 of;;S-PP
-:ngland;;S-NP
+England;;S-NP
 national;;S-ADJP
 under;;S-PP
 21;;B-NP
@@ -68745,7 +68745,7 @@ Garland;;E-NP
 a;;B-NP
 character;;E-NP
 of;;S-PP
-:nd;;S-NP
+End;;S-NP
 of;;S-PP
 the;;B-NP
 Rainbow;;E-NP
@@ -69464,7 +69464,7 @@ took;;S-VP
 place;;S-NP
 at;;S-PP
 Autodromo;;B-NP
-:nzo;;I-NP
+Enzo;;I-NP
 e;;E-NP
 Dino;;B-NP
 Ferrari;;E-NP
@@ -69558,7 +69558,7 @@ series;;E-NP
 was;;B-VP
 produced;;E-VP
 by;;S-PP
-:rik;;B-NP
+Erik;;B-NP
 Bork;;E-NP
 \;;O
 ?;;O
@@ -69613,7 +69613,7 @@ which;;S-NP
 are;;S-VP
 under;;S-PP
 Rolv;;B-NP
-:rik;;I-NP
+Erik;;I-NP
 Ryssdal;;E-NP
 \;;O
 ?;;O
@@ -69652,7 +69652,7 @@ to;;S-PP
 
 What;;S-NP
 developed;;S-VP
-:MMS;;S-NP
+EMMS;;S-NP
 \;;O
 ?;;O
 
@@ -70076,7 +70076,7 @@ show;;E-NP
 producer;;E-NP
 is;;S-VP
 Stephen;;B-NP
-:;;I-NP
+E;;I-NP
 Ambrose;;I-NP
 and;;I-NP
 company;;E-NP
@@ -70113,7 +70113,7 @@ company;;E-NP
 that;;S-NP
 made;;S-VP
 the;;B-NP
-:dsel;;I-NP
+Edsel;;I-NP
 Villager;;E-NP
 \;;O
 ?;;O
@@ -70991,8 +70991,8 @@ Which;;B-NP
 location;;I-NP
 country;;E-NP
 of;;S-PP
-:nnejma;;B-NP
-:zzahra;;E-NP
+Ennejma;;B-NP
+Ezzahra;;E-NP
 is;;S-VP
 also;;S-ADVP
 the;;B-NP
@@ -71092,7 +71092,7 @@ show;;E-NP
 's;;B-NP
 writer;;E-NP
 is;;S-VP
-:rik;;B-NP
+Erik;;B-NP
 Jendresen;;I-NP
 and;;I-NP
 distributor;;E-NP
@@ -71193,7 +71193,7 @@ whose;;B-NP
 doctoral;;I-NP
 students;;E-NP
 are;;S-VP
-:rich;;B-NP
+Erich;;B-NP
 Bagge;;E-NP
 and;;O
 erban;;O
@@ -71396,7 +71396,7 @@ is;;S-VP
 the;;B-NP
 father;;E-NP
 of;;S-PP
-:dith;;B-NP
+Edith;;B-NP
 Vonnegut;;E-NP
 and;;O
 is;;S-VP
@@ -71561,7 +71561,7 @@ headcoach;;S-NP
 of;;S-PP
 Marquette;;B-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 men;;E-NP
 's;;B-NP
 basketball;;I-NP
@@ -71576,7 +71576,7 @@ coach;;E-NP
 of;;S-PP
 Marquette;;B-NP
 Golden;;I-NP
-:agles;;I-NP
+Eagles;;I-NP
 team;;E-NP
 \;;O
 ?;;O
