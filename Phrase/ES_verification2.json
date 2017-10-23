@@ -900,10 +900,7 @@
         "uri": "http://dbpedia.org/property/starring"
       },
       {},
-      {
-        "label": "movies",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 76
   },
@@ -1071,10 +1068,7 @@
         "label": "team",
         "uri": "http://dbpedia.org/property/currentteam"
       },
-      {
-        "label": "player",
-        "uri": "http://dbpedia.org/ontology/Athlete"
-      }
+      {}
     ],
     "id": 90
   },
@@ -1134,10 +1128,7 @@
         "label": "editors",
         "uri": "http://dbpedia.org/ontology/editing"
       },
-      {
-        "label": "movies",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 94
   },
@@ -1571,14 +1562,8 @@
         "label": "find",
         "uri": "http://dbpedia.org/ontology/ingredient"
       },
-      {
-        "label": "nations",
-        "uri": "http://dbpedia.org/ontology/country"
-      },
-      {
-        "label": "nations",
-        "uri": "http://dbpedia.org/ontology/Country"
-      }
+      {},
+      {}
     ],
     "id": 131
   },
@@ -1698,7 +1683,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/country"
+      },
       {
         "label": "speedway league",
         "uri": "http://dbpedia.org/ontology/SpeedwayLeague"
@@ -1929,7 +1917,10 @@
     "ques": "Name the sports played by PATTS College of Aeronautics?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "sports",
+        "uri": "http://dbpedia.org/property/athletics"
+      }
     ],
     "id": 157
   },
@@ -2270,10 +2261,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 189
   },
@@ -2549,10 +2537,7 @@
     "ques": "In which state is the Channel district?",
     "ES_content": [
       {},
-      {
-        "label": "district",
-        "uri": "http://dbpedia.org/ontology/state"
-      }
+      {}
     ],
     "id": 216
   },
@@ -2779,10 +2764,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 239
   },
@@ -2793,10 +2775,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 240
   },
@@ -2844,7 +2823,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "mountain",
+        "uri": "http://dbpedia.org/ontology/mountainRange"
+      },
       {},
       {}
     ],
@@ -3250,10 +3232,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 279
   },
@@ -3369,10 +3348,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 290
   },
@@ -3574,7 +3550,10 @@
     "ques": "For how many other teams have the former players of Boston Bruins played?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "former",
+        "uri": "http://dbpedia.org/ontology/formerTeam"
+      },
       {
         "label": "team",
         "uri": "http://dbpedia.org/property/playedFor"
@@ -3640,8 +3619,14 @@
     "ques": "Count the number teams which have  former ice hockey players which also included American Hockey League ?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "former",
+        "uri": "http://dbpedia.org/ontology/formerTeam"
+      },
+      {
+        "label": "former",
+        "uri": "http://dbpedia.org/ontology/formerTeam"
+      }
     ],
     "id": 314
   },
@@ -3649,10 +3634,7 @@
     "ques": "What is the largest city of the country which hosted the 1951 Asian Games?",
     "ES_content": [
       {},
-      {
-        "label": "city",
-        "uri": "http://dbpedia.org/property/hostCity"
-      },
+      {},
       {},
       {}
     ],
@@ -4029,10 +4011,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 352
   },
@@ -4165,10 +4144,7 @@
         "label": "direct",
         "uri": "http://dbpedia.org/ontology/director"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 364
   },
@@ -4231,10 +4207,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      },
+      {},
       {}
     ],
     "id": 370
@@ -4809,10 +4782,7 @@
         "uri": "http://dbpedia.org/property/associatedActs"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 424
   },
@@ -4834,7 +4804,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "battle",
+        "uri": "http://dbpedia.org/property/battleHonours"
+      }
     ],
     "id": 426
   },
@@ -5097,10 +5070,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 450
   },
@@ -5185,10 +5155,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 457
   },
@@ -5262,10 +5229,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 464
   },
@@ -5420,7 +5384,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "judge",
+        "uri": "http://dbpedia.org/property/judges"
+      },
       {},
       {
         "label": "show",
@@ -5757,10 +5724,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 512
   },
@@ -6168,10 +6132,7 @@
         "label": "stars",
         "uri": "http://dbpedia.org/ontology/starring"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 549
   },
@@ -6737,10 +6698,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 603
   },
@@ -7314,8 +7272,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/country"
+      },
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/country"
+      }
     ],
     "id": 658
   },
@@ -7484,10 +7448,7 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/ontology/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 674
   },
@@ -7737,10 +7698,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 697
   },
@@ -7904,10 +7862,7 @@
         "uri": "http://dbpedia.org/property/associatedActs"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 712
   },
@@ -8110,10 +8065,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 730
   },
@@ -8182,10 +8134,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 736
   },
@@ -8336,7 +8285,10 @@
     "ques": "List the other members of the band of which Juelz Santana is a part?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/currentMembers"
+      },
       {
         "label": "members",
         "uri": "http://dbpedia.org/ontology/bandMember"
@@ -8500,10 +8452,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "author",
-        "uri": "http://dbpedia.org/property/writer"
-      },
+      {},
       {}
     ],
     "id": 767
@@ -8981,14 +8930,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      },
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      },
+      {},
+      {},
       {}
     ],
     "id": 812
@@ -9613,10 +9556,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 873
   },
@@ -9919,10 +9859,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 899
   },
@@ -9957,10 +9894,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 902
   },
@@ -10106,10 +10040,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 916
   },
@@ -10163,10 +10094,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 920
   },
@@ -10554,10 +10482,7 @@
         "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 957
   },
@@ -10577,10 +10502,7 @@
         "label": "united World College",
         "uri": "http://dbpedia.org/resource/United_World_Colleges"
       },
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      },
+      {},
       {}
     ],
     "id": 959
@@ -11303,10 +11225,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1026
   },
@@ -11315,15 +11234,9 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "music",
-        "uri": "http://dbpedia.org/ontology/musicComposer"
-      },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {},
+      {}
     ],
     "id": 1027
   },
@@ -11702,7 +11615,10 @@
     "ques": "List the state of the universities whose nation is United States ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/country"
+      },
       {},
       {
         "label": "universities",
@@ -11842,10 +11758,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1075
   },
@@ -11930,10 +11843,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1083
   },
@@ -12061,7 +11971,10 @@
     "ques": "Name the river which flows through the closest city of Mount Raimer ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "city",
+        "uri": "http://dbpedia.org/property/nearestCity"
+      },
       {}
     ],
     "id": 1095
@@ -12088,10 +12001,7 @@
         "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1097
   },
@@ -12171,10 +12081,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1106
   },
@@ -12256,10 +12163,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1114
   },
@@ -12317,7 +12221,10 @@
     "ques": "Name the members of European Go Federation?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/membership"
+      }
     ],
     "id": 1119
   },
@@ -12555,14 +12462,8 @@
         "label": "in",
         "uri": "http://dbpedia.org/property/starring"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {},
+      {}
     ],
     "id": 1141
   },
@@ -12852,10 +12753,7 @@
       {},
       {},
       {},
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      }
+      {}
     ],
     "id": 1166
   },
@@ -13116,10 +13014,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1192
   },
@@ -13257,10 +13152,7 @@
       {},
       {},
       {},
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      }
+      {}
     ],
     "id": 1205
   },
@@ -13604,10 +13496,7 @@
         "uri": "http://dbpedia.org/property/education"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1238
   },
@@ -14269,10 +14158,7 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1299
   },
@@ -14439,10 +14325,7 @@
         "uri": "http://dbpedia.org/property/deathPlace"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1312
   },
@@ -14530,10 +14413,7 @@
         "uri": "http://dbpedia.org/property/editing"
       },
       {},
-      {
-        "label": "work",
-        "uri": "http://dbpedia.org/ontology/Work"
-      }
+      {}
     ],
     "id": 1320
   },
@@ -14917,7 +14797,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/country"
+      },
       {
         "label": "league",
         "uri": "http://dbpedia.org/ontology/SportsLeague"
@@ -15257,10 +15140,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1385
   },
@@ -16137,7 +16017,10 @@
     "ques": "Who influenced the author of The Shooting of Dan McGrew ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "author",
+        "uri": "http://dbpedia.org/ontology/writer"
+      },
       {}
     ],
     "id": 1466
@@ -16818,10 +16701,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1526
   },
@@ -17079,10 +16959,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "source",
-        "uri": "http://dbpedia.org/property/sourceLocation"
-      },
+      {},
       {
         "label": "mouth",
         "uri": "http://dbpedia.org/property/mouthLocation"
@@ -17095,7 +16972,10 @@
     "ques": "What is the river which comes from Southend-on-Sea mountain?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "mountain",
+        "uri": "http://dbpedia.org/ontology/mouthMountain"
+      },
       {}
     ],
     "id": 1550
@@ -17118,10 +16998,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1552
   },
@@ -17326,10 +17203,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1570
   },
@@ -17870,10 +17744,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1620
   },
@@ -17982,10 +17853,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1631
   },
@@ -18531,10 +18399,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1684
   },
@@ -18573,7 +18438,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/membership"
+      }
     ],
     "id": 1688
   },
@@ -18894,10 +18762,7 @@
     "ques": "Count everyone who was in the military unit which is structured like the Marine Aircraft Group 13 ?",
     "ES_content": [
       {},
-      {
-        "label": "structured",
-        "uri": "http://dbpedia.org/property/commandStructure"
-      },
+      {},
       {}
     ],
     "id": 1719
@@ -19771,10 +19636,7 @@
     "ques": "Which musical artists have collaborated with Waylon Jennings?",
     "ES_content": [
       {},
-      {
-        "label": "musical",
-        "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
-      },
+      {},
       {
         "label": "musical artist",
         "uri": "http://dbpedia.org/ontology/MusicalArtist"
@@ -19798,10 +19660,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1797
   },
@@ -19850,7 +19709,10 @@
     "ques": "How many members are there in the European Go Federation?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/membership"
+      }
     ],
     "id": 1802
   },
@@ -19862,10 +19724,7 @@
         "label": "in",
         "uri": "http://dbpedia.org/ontology/starring"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1803
   },
@@ -19882,10 +19741,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1805
   },
@@ -19926,10 +19782,7 @@
       {},
       {},
       {},
-      {
-        "label": "work",
-        "uri": "http://dbpedia.org/ontology/Work"
-      }
+      {}
     ],
     "id": 1809
   },
@@ -20024,10 +19877,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1819
   },
@@ -20254,10 +20104,7 @@
       {},
       {},
       {},
-      {
-        "label": "work",
-        "uri": "http://dbpedia.org/ontology/Work"
-      }
+      {}
     ],
     "id": 1838
   },
@@ -20352,7 +20199,10 @@
     "ques": "Which gadgets are made by companies of New Taipei City?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "city",
+        "uri": "http://dbpedia.org/property/locationCity"
+      },
       {
         "label": "made by",
         "uri": "http://dbpedia.org/ontology/manufacturer"
@@ -20543,7 +20393,10 @@
         "uri": "http://dbpedia.org/resource/Rising_Star_(U.S._TV_series)"
       },
       {},
-      {}
+      {
+        "label": "judge",
+        "uri": "http://dbpedia.org/property/judges"
+      }
     ],
     "id": 1861
   },
@@ -21014,10 +20867,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1906
   },
@@ -21143,10 +20993,7 @@
         "label": "editor",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1918
   },
@@ -21564,10 +21411,7 @@
         "uri": "http://dbpedia.org/ontology/editing"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1956
   },
@@ -21625,7 +21469,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "notable",
+        "uri": "http://dbpedia.org/ontology/notableWork"
+      }
     ],
     "id": 1961
   },
@@ -21784,10 +21631,7 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 1975
   },
@@ -22087,10 +21931,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "key",
-        "uri": "http://dbpedia.org/property/keyPeople"
-      },
+      {},
       {},
       {}
     ],
@@ -22220,10 +22061,7 @@
       },
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2011
   },
@@ -22319,7 +22157,10 @@
         "label": "citizens",
         "uri": "http://dbpedia.org/property/citizenship"
       },
-      {}
+      {
+        "label": "death",
+        "uri": "http://dbpedia.org/ontology/deathCause"
+      }
     ],
     "id": 2020
   },
@@ -22355,10 +22196,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2024
   },
@@ -22438,10 +22276,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2031
   },
@@ -22777,10 +22612,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2061
   },
@@ -23980,7 +23812,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "coach",
+        "uri": "http://dbpedia.org/property/headCoach"
+      }
     ],
     "id": 2170
   },
@@ -24077,10 +23912,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2179
   },
@@ -24319,10 +24151,7 @@
     "ques": "What river is it whose source is Dowra?",
     "ES_content": [
       {},
-      {
-        "label": "source",
-        "uri": "http://dbpedia.org/property/sourceLocation"
-      },
+      {},
       {}
     ],
     "id": 2200
@@ -24585,10 +24414,7 @@
         "label": "editor",
         "uri": "http://dbpedia.org/ontology/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2224
   },
@@ -25946,10 +25772,7 @@
         "uri": "http://dbpedia.org/ontology/recordLabel"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2352
   },
@@ -25966,10 +25789,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2354
   },
@@ -26542,10 +26362,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2404
   },
@@ -26554,10 +26371,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2405
   },
@@ -26953,10 +26767,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2441
   },
@@ -27202,10 +27013,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2462
   },
@@ -27219,10 +27027,7 @@
         "uri": "http://dbpedia.org/ontology/editing"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2463
   },
@@ -27353,10 +27158,7 @@
     "ques": "Give me a count of musical artists collaborating with Waylon Jennings?",
     "ES_content": [
       {},
-      {
-        "label": "musical",
-        "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
-      },
+      {},
       {
         "label": "musical artist",
         "uri": "http://dbpedia.org/ontology/MusicalArtist"
@@ -27824,8 +27626,14 @@
     "ques": "Count the number of members of the organization which have Austria as one of the member ?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/membership"
+      },
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/membership"
+      }
     ],
     "id": 2518
   },
@@ -28080,10 +27888,7 @@
         "label": "edit",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2543
   },
@@ -28308,10 +28113,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2564
   },
@@ -29120,10 +28922,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2637
   },
@@ -29227,10 +29026,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2647
   },
@@ -29435,8 +29231,14 @@
     "ques": "List the judge of the TV show whose one of the judge is Ludacris ?",
     "ES_content": [
       {},
-      {},
-      {},
+      {
+        "label": "judge",
+        "uri": "http://dbpedia.org/property/judges"
+      },
+      {
+        "label": "judge",
+        "uri": "http://dbpedia.org/property/judges"
+      },
       {
         "label": "show",
         "uri": "http://dbpedia.org/ontology/TelevisionShow"
@@ -29469,10 +29271,7 @@
         "label": "editor",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2668
   },
@@ -29480,7 +29279,10 @@
     "ques": "List the area of radio stations whose sister station is WBCQ-FM?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "stations",
+        "uri": "http://dbpedia.org/property/sisterStations"
+      },
       {}
     ],
     "id": 2669
@@ -29683,7 +29485,10 @@
     "ques": "What is the career of George Arceneaux, Jr. ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "career",
+        "uri": "http://dbpedia.org/ontology/occupation"
+      }
     ],
     "id": 2689
   },
@@ -29859,10 +29664,7 @@
       {},
       {},
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2707
   },
@@ -30787,10 +30589,7 @@
         "label": "editor",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2794
   },
@@ -31068,10 +30867,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "regions",
-        "uri": "http://dbpedia.org/ontology/regionServed"
-      }
+      {}
     ],
     "id": 2820
   },
@@ -31237,10 +31033,7 @@
         "label": "resting place",
         "uri": "http://dbpedia.org/property/restingplace"
       },
-      {
-        "label": "has kids",
-        "uri": "http://dbpedia.org/ontology/child"
-      }
+      {}
     ],
     "id": 2835
   },
@@ -31289,10 +31082,7 @@
         "uri": "http://dbpedia.org/ontology/recordLabel"
       },
       {},
-      {
-        "label": "movie",
-        "uri": "http://dbpedia.org/ontology/Film"
-      }
+      {}
     ],
     "id": 2840
   },
