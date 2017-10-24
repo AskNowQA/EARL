@@ -7,10 +7,7 @@
         "label": "painted by",
         "uri": "http://dbpedia.org/ontology/creator"
       },
-      {
-        "label": "comic characters",
-        "uri": "http://dbpedia.org/ontology/ComicsCharacter"
-      }
+      {}
     ],
     "id": 1
   },
@@ -530,10 +527,7 @@
         "label": "died",
         "uri": "http://dbpedia.org/property/deathPlace"
       },
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 44
   },
@@ -990,10 +984,7 @@
         "label": "Which",
         "uri": "http://dbpedia.org/ontology/locationCity"
       },
-      {
-        "label": "american football team",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballTeam"
-      }
+      {}
     ],
     "id": 84
   },
@@ -1411,10 +1402,7 @@
       {},
       {},
       {},
-      {
-        "label": "soccer clubs",
-        "uri": "http://dbpedia.org/ontology/SoccerClub"
-      }
+      {}
     ],
     "id": 119
   },
@@ -1550,10 +1538,7 @@
         "label": "find",
         "uri": "http://dbpedia.org/ontology/ingredient"
       },
-      {
-        "label": "nations",
-        "uri": "http://dbpedia.org/ontology/country"
-      },
+      {},
       {}
     ],
     "id": 131
@@ -1563,10 +1548,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "american football players",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 132
   },
@@ -1675,10 +1657,7 @@
         "label": "nation",
         "uri": "http://dbpedia.org/ontology/country"
       },
-      {
-        "label": "speedway league",
-        "uri": "http://dbpedia.org/ontology/SpeedwayLeague"
-      }
+      {}
     ],
     "id": 141
   },
@@ -1725,10 +1704,7 @@
         "label": "holds stock",
         "uri": "http://dbpedia.org/property/owner"
       },
-      {
-        "label": "railway lines",
-        "uri": "http://dbpedia.org/ontology/RailwayLine"
-      }
+      {}
     ],
     "id": 144
   },
@@ -1899,7 +1875,10 @@
     "ques": "Name the sports played by PATTS College of Aeronautics?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "sports",
+        "uri": "http://dbpedia.org/property/athletics"
+      }
     ],
     "id": 157
   },
@@ -1930,10 +1909,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 160
   },
@@ -1989,10 +1965,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 165
   },
@@ -2056,10 +2029,7 @@
       {},
       {},
       {},
-      {
-        "label": "water body of",
-        "uri": "http://dbpedia.org/ontology/BodyOfWater"
-      }
+      {}
     ],
     "id": 172
   },
@@ -2453,10 +2423,7 @@
       {},
       {},
       {},
-      {
-        "label": "fashion designer",
-        "uri": "http://dbpedia.org/ontology/FashionDesigner"
-      }
+      {}
     ],
     "id": 211
   },
@@ -2752,10 +2719,7 @@
         "uri": "http://dbpedia.org/ontology/isPartOf"
       },
       {},
-      {
-        "label": "public transit system",
-        "uri": "http://dbpedia.org/ontology/PublicTransitSystem"
-      }
+      {}
     ],
     "id": 241
   },
@@ -2896,10 +2860,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 254
   },
@@ -3051,10 +3012,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 268
   },
@@ -3149,10 +3107,7 @@
         "label": "co-founder",
         "uri": "http://dbpedia.org/ontology/foundedBy"
       },
-      {
-        "label": "profit",
-        "uri": "http://dbpedia.org/ontology/Non-ProfitOrganisation"
-      }
+      {}
     ],
     "id": 276
   },
@@ -3428,10 +3383,7 @@
         "label": "university attended",
         "uri": "http://dbpedia.org/property/education"
       },
-      {
-        "label": "baseball player",
-        "uri": "http://dbpedia.org/ontology/BaseballPlayer"
-      }
+      {}
     ],
     "id": 302
   },
@@ -3595,10 +3547,7 @@
     "ques": "Which political figures were awarded Screen Actors Guild Life Achievement Award?",
     "ES_content": [
       {},
-      {
-        "label": "awarded",
-        "uri": "http://dbpedia.org/ontology/award"
-      }
+      {}
     ],
     "id": 317
   },
@@ -3702,10 +3651,7 @@
       {},
       {},
       {},
-      {
-        "label": "non-profit organisation",
-        "uri": "http://dbpedia.org/ontology/Non-ProfitOrganisation"
-      }
+      {}
     ],
     "id": 328
   },
@@ -3772,10 +3718,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 335
   },
@@ -3864,10 +3807,7 @@
       {},
       {},
       {},
-      {
-        "label": "soccer club",
-        "uri": "http://dbpedia.org/ontology/SoccerClub"
-      }
+      {}
     ],
     "id": 344
   },
@@ -3937,10 +3877,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 351
   },
@@ -4098,10 +4035,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "automobile engine",
-        "uri": "http://dbpedia.org/ontology/AutomobileEngine"
-      }
+      {}
     ],
     "id": 366
   },
@@ -4516,10 +4450,7 @@
         "uri": "http://dbpedia.org/property/spouse"
       },
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 406
   },
@@ -4631,10 +4562,7 @@
       {},
       {},
       {},
-      {
-        "label": "figure skater",
-        "uri": "http://dbpedia.org/ontology/FigureSkater"
-      }
+      {}
     ],
     "id": 417
   },
@@ -4739,10 +4667,7 @@
       {},
       {},
       {},
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 427
   },
@@ -4752,10 +4677,7 @@
       {},
       {},
       {},
-      {
-        "label": "handball team",
-        "uri": "http://dbpedia.org/ontology/HandballTeam"
-      }
+      {}
     ],
     "id": 428
   },
@@ -5225,10 +5147,7 @@
       {},
       {},
       {},
-      {
-        "label": "government",
-        "uri": "http://dbpedia.org/ontology/GovernmentAgency"
-      }
+      {}
     ],
     "id": 472
   },
@@ -5415,7 +5334,10 @@
     "ques": "List the origin of the weapons which were used in the American Revolutionary War.",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "used",
+        "uri": "http://dbpedia.org/ontology/usedInWar"
+      },
       {},
       {}
     ],
@@ -5492,10 +5414,7 @@
       {},
       {},
       {},
-      {
-        "label": "football team",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballTeam"
-      }
+      {}
     ],
     "id": 498
   },
@@ -5503,7 +5422,10 @@
     "ques": "What are the current music bands of Chester Bennington?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "current",
+        "uri": "http://dbpedia.org/property/currentMembers"
+      }
     ],
     "id": 499
   },
@@ -5767,10 +5689,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "baseball team",
-        "uri": "http://dbpedia.org/ontology/BaseballTeam"
-      }
+      {}
     ],
     "id": 525
   },
@@ -6132,10 +6051,7 @@
       {},
       {},
       {},
-      {
-        "label": "historic place",
-        "uri": "http://dbpedia.org/ontology/HistoricPlace"
-      }
+      {}
     ],
     "id": 559
   },
@@ -6221,10 +6137,7 @@
       {},
       {},
       {},
-      {
-        "label": "gridiron football player",
-        "uri": "http://dbpedia.org/ontology/GridironFootballPlayer"
-      }
+      {}
     ],
     "id": 567
   },
@@ -6442,10 +6355,7 @@
       },
       {},
       {},
-      {
-        "label": "figure skater",
-        "uri": "http://dbpedia.org/ontology/FigureSkater"
-      }
+      {}
     ],
     "id": 588
   },
@@ -6495,10 +6405,7 @@
         "label": "central processing unit",
         "uri": "http://dbpedia.org/ontology/cpu"
       },
-      {
-        "label": "appliance",
-        "uri": "http://dbpedia.org/ontology/InformationAppliance"
-      }
+      {}
     ],
     "id": 593
   },
@@ -6718,10 +6625,7 @@
     "ques": "Count everyone who was in a youthclub chaired by Josep Maria Bartomeu ?",
     "ES_content": [
       {},
-      {
-        "label": "chaired",
-        "uri": "http://dbpedia.org/property/chairman"
-      },
+      {},
       {}
     ],
     "id": 615
@@ -6797,10 +6701,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "formula one racer",
-        "uri": "http://dbpedia.org/ontology/FormulaOneRacer"
-      }
+      {}
     ],
     "id": 623
   },
@@ -7140,10 +7041,7 @@
         "uri": "http://dbpedia.org/property/editing"
       },
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 656
   },
@@ -7762,14 +7660,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "nation",
-        "uri": "http://dbpedia.org/property/country"
-      },
-      {
-        "label": "nation",
-        "uri": "http://dbpedia.org/property/country"
-      }
+      {},
+      {}
     ],
     "id": 715
   },
@@ -7789,10 +7681,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 717
   },
@@ -7910,10 +7799,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 728
   },
@@ -7991,10 +7877,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 735
   },
@@ -8107,10 +7990,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 746
   },
@@ -8156,7 +8036,10 @@
     "ques": "List the other members of the band of which Juelz Santana is a part?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "members",
+        "uri": "http://dbpedia.org/property/currentMembers"
+      },
       {
         "label": "members",
         "uri": "http://dbpedia.org/ontology/bandMember"
@@ -8994,10 +8877,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "division",
-        "uri": "http://dbpedia.org/property/divisions"
-      }
+      {}
     ],
     "id": 832
   },
@@ -9386,10 +9266,7 @@
       {},
       {},
       {},
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 871
   },
@@ -9477,10 +9354,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 880
   },
@@ -9528,10 +9402,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "baseball team",
-        "uri": "http://dbpedia.org/ontology/BaseballTeam"
-      }
+      {}
     ],
     "id": 884
   },
@@ -9588,10 +9459,7 @@
         "label": "start,",
         "uri": "http://dbpedia.org/ontology/routeStart"
       },
-      {
-        "label": "railway",
-        "uri": "http://dbpedia.org/ontology/RailwayLine"
-      }
+      {}
     ],
     "id": 889
   },
@@ -9601,10 +9469,7 @@
       {},
       {},
       {},
-      {
-        "label": "ice hockey player",
-        "uri": "http://dbpedia.org/ontology/IceHockeyPlayer"
-      }
+      {}
     ],
     "id": 890
   },
@@ -9846,10 +9711,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "baseball team",
-        "uri": "http://dbpedia.org/ontology/BaseballTeam"
-      }
+      {}
     ],
     "id": 913
   },
@@ -9913,10 +9775,7 @@
       {},
       {},
       {},
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 918
   },
@@ -9971,7 +9830,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "resting",
+        "uri": "http://dbpedia.org/ontology/restingPlace"
+      }
     ],
     "id": 923
   },
@@ -10025,14 +9887,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "nation",
-        "uri": "http://dbpedia.org/property/country"
-      },
-      {
-        "label": "nation",
-        "uri": "http://dbpedia.org/ontology/Country"
-      }
+      {},
+      {}
     ],
     "id": 929
   },
@@ -10075,10 +9931,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 933
   },
@@ -10228,10 +10081,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "golf player",
-        "uri": "http://dbpedia.org/ontology/GolfPlayer"
-      }
+      {}
     ],
     "id": 948
   },
@@ -10548,10 +10398,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 977
   },
@@ -10588,10 +10435,7 @@
       {},
       {},
       {},
-      {
-        "label": "video game",
-        "uri": "http://dbpedia.org/ontology/VideoGame"
-      }
+      {}
     ],
     "id": 980
   },
@@ -10617,10 +10461,7 @@
       {},
       {},
       {},
-      {
-        "label": "baseball team",
-        "uri": "http://dbpedia.org/ontology/BaseballTeam"
-      }
+      {}
     ],
     "id": 983
   },
@@ -10756,10 +10597,7 @@
         "label": "played for",
         "uri": "http://dbpedia.org/ontology/team"
       },
-      {
-        "label": "baseball player",
-        "uri": "http://dbpedia.org/ontology/BaseballPlayer"
-      }
+      {}
     ],
     "id": 997
   },
@@ -10859,10 +10697,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 1007
   },
@@ -11141,10 +10976,7 @@
       },
       {},
       {},
-      {
-        "label": "soccer club",
-        "uri": "http://dbpedia.org/ontology/SoccerClub"
-      }
+      {}
     ],
     "id": 1034
   },
@@ -11214,10 +11046,7 @@
       {},
       {},
       {},
-      {
-        "label": "golf player",
-        "uri": "http://dbpedia.org/ontology/GolfPlayer"
-      }
+      {}
     ],
     "id": 1041
   },
@@ -11259,10 +11088,7 @@
       {},
       {},
       {},
-      {
-        "label": "football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 1045
   },
@@ -11345,10 +11171,7 @@
       {},
       {},
       {},
-      {
-        "label": "video game",
-        "uri": "http://dbpedia.org/ontology/VideoGame"
-      }
+      {}
     ],
     "id": 1053
   },
@@ -11489,10 +11312,7 @@
         "uri": "http://dbpedia.org/property/birthPlace"
       },
       {},
-      {
-        "label": "baseball player",
-        "uri": "http://dbpedia.org/ontology/BaseballPlayer"
-      }
+      {}
     ],
     "id": 1066
   },
@@ -11668,10 +11488,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 1084
   },
@@ -11712,10 +11529,7 @@
         "uri": "http://dbpedia.org/ontology/birthPlace"
       },
       {},
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 1088
   },
@@ -11774,10 +11588,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 1094
   },
@@ -12119,10 +11930,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "hockey team",
-        "uri": "http://dbpedia.org/ontology/HockeyTeam"
-      }
+      {}
     ],
     "id": 1127
   },
@@ -12326,10 +12134,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "educational institution",
-        "uri": "http://dbpedia.org/ontology/EducationalInstitution"
-      }
+      {}
     ],
     "id": 1146
   },
@@ -12386,10 +12191,7 @@
       },
       {},
       {},
-      {
-        "label": "historic place",
-        "uri": "http://dbpedia.org/ontology/HistoricPlace"
-      }
+      {}
     ],
     "id": 1151
   },
@@ -12406,10 +12208,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1153
   },
@@ -12708,10 +12507,7 @@
       {},
       {},
       {},
-      {
-        "label": "military conflict",
-        "uri": "http://dbpedia.org/ontology/MilitaryConflict"
-      }
+      {}
     ],
     "id": 1181
   },
@@ -12789,10 +12585,7 @@
         "label": "current",
         "uri": "http://dbpedia.org/property/currentclub"
       },
-      {
-        "label": "soccer player",
-        "uri": "http://dbpedia.org/ontology/SoccerPlayer"
-      }
+      {}
     ],
     "id": 1189
   },
@@ -12976,10 +12769,7 @@
         "label": "created by",
         "uri": "http://dbpedia.org/property/creators"
       },
-      {
-        "label": "comics character",
-        "uri": "http://dbpedia.org/ontology/ComicsCharacter"
-      }
+      {}
     ],
     "id": 1207
   },
@@ -13077,10 +12867,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "basketball league",
-        "uri": "http://dbpedia.org/ontology/BasketballLeague"
-      }
+      {}
     ],
     "id": 1217
   },
@@ -13127,10 +12914,7 @@
       {},
       {},
       {},
-      {
-        "label": "military person",
-        "uri": "http://dbpedia.org/ontology/MilitaryPerson"
-      }
+      {}
     ],
     "id": 1222
   },
@@ -13152,10 +12936,7 @@
         "uri": "http://dbpedia.org/ontology/deathPlace"
       },
       {},
-      {
-        "label": "baseball player",
-        "uri": "http://dbpedia.org/ontology/BaseballPlayer"
-      }
+      {}
     ],
     "id": 1224
   },
@@ -13673,10 +13454,7 @@
         "label": "coached",
         "uri": "http://dbpedia.org/property/headCoach"
       },
-      {
-        "label": "hockey team",
-        "uri": "http://dbpedia.org/ontology/HockeyTeam"
-      }
+      {}
     ],
     "id": 1274
   },
@@ -13743,10 +13521,7 @@
         "uri": "http://dbpedia.org/ontology/deathPlace"
       },
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1280
   },
@@ -13998,10 +13773,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1304
   },
@@ -14049,10 +13821,7 @@
         "label": "belongs to",
         "uri": "http://dbpedia.org/property/owner"
       },
-      {
-        "label": "baseball team",
-        "uri": "http://dbpedia.org/ontology/BaseballTeam"
-      }
+      {}
     ],
     "id": 1308
   },
@@ -14177,10 +13946,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "silver medal",
-        "uri": "http://dbpedia.org/ontology/silverMedalist"
-      }
+      {}
     ],
     "id": 1319
   },
@@ -14205,10 +13971,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1321
   },
@@ -14576,7 +14339,10 @@
         "label": "nation",
         "uri": "http://dbpedia.org/ontology/country"
       },
-      {}
+      {
+        "label": "league",
+        "uri": "http://dbpedia.org/ontology/SportsLeague"
+      }
     ],
     "id": 1357
   },
@@ -14585,10 +14351,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "military conflict",
-        "uri": "http://dbpedia.org/ontology/MilitaryConflict"
-      }
+      {}
     ],
     "id": 1358
   },
@@ -14669,10 +14432,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "soccer manager",
-        "uri": "http://dbpedia.org/ontology/SoccerManager"
-      }
+      {}
     ],
     "id": 1365
   },
@@ -15409,10 +15169,7 @@
       {},
       {},
       {},
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 1431
   },
@@ -15745,10 +15502,7 @@
       {},
       {},
       {},
-      {
-        "label": "conflict",
-        "uri": "http://dbpedia.org/ontology/MilitaryConflict"
-      }
+      {}
     ],
     "id": 1465
   },
@@ -15756,7 +15510,10 @@
     "ques": "Who influenced the author of The Shooting of Dan McGrew ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "author",
+        "uri": "http://dbpedia.org/ontology/writer"
+      },
       {}
     ],
     "id": 1466
@@ -16002,10 +15759,7 @@
       {},
       {},
       {},
-      {
-        "label": "volleyball player",
-        "uri": "http://dbpedia.org/ontology/VolleyballPlayer"
-      }
+      {}
     ],
     "id": 1489
   },
@@ -16051,10 +15805,7 @@
         "uri": "http://dbpedia.org/ontology/isPartOf"
       },
       {},
-      {
-        "label": "administrative region",
-        "uri": "http://dbpedia.org/ontology/AdministrativeRegion"
-      }
+      {}
     ],
     "id": 1493
   },
@@ -16419,10 +16170,7 @@
         "label": "buried in",
         "uri": "http://dbpedia.org/ontology/restingPlace"
       },
-      {
-        "label": "awarded",
-        "uri": "http://dbpedia.org/ontology/award"
-      }
+      {}
     ],
     "id": 1527
   },
@@ -16672,7 +16420,10 @@
     "ques": "What is the river which comes from Southend-on-Sea mountain?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "mountain",
+        "uri": "http://dbpedia.org/ontology/mouthMountain"
+      },
       {}
     ],
     "id": 1550
@@ -16863,10 +16614,7 @@
         "uri": "http://dbpedia.org/property/debutteam"
       },
       {},
-      {
-        "label": "American football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 1567
   },
@@ -17778,10 +17526,7 @@
       {},
       {},
       {},
-      {
-        "label": "soccer club season",
-        "uri": "http://dbpedia.org/ontology/SoccerClubSeason"
-      }
+      {}
     ],
     "id": 1657
   },
@@ -17798,10 +17543,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "protected area",
-        "uri": "http://dbpedia.org/ontology/ProtectedArea"
-      }
+      {}
     ],
     "id": 1659
   },
@@ -18179,7 +17921,10 @@
     "ques": "Which river has its roots in Baikal Mountains?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "mountains",
+        "uri": "http://dbpedia.org/ontology/sourceMountain"
+      }
     ],
     "id": 1694
   },
@@ -18429,10 +18174,7 @@
     "ques": "Count everyone who was in the military unit which is structured like the Marine Aircraft Group 13 ?",
     "ES_content": [
       {},
-      {
-        "label": "structured",
-        "uri": "http://dbpedia.org/property/commandStructure"
-      },
+      {},
       {}
     ],
     "id": 1719
@@ -18512,10 +18254,7 @@
         "uri": "http://dbpedia.org/ontology/team"
       },
       {},
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 1726
   },
@@ -18969,10 +18708,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 1768
   },
@@ -18982,10 +18718,7 @@
       {},
       {},
       {},
-      {
-        "label": "historic place",
-        "uri": "http://dbpedia.org/ontology/HistoricPlace"
-      }
+      {}
     ],
     "id": 1769
   },
@@ -19014,10 +18747,7 @@
       },
       {},
       {},
-      {
-        "label": "figure skater",
-        "uri": "http://dbpedia.org/ontology/FigureSkater"
-      }
+      {}
     ],
     "id": 1771
   },
@@ -19063,10 +18793,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1775
   },
@@ -19233,10 +18960,7 @@
       {},
       {},
       {},
-      {
-        "label": "figure skater",
-        "uri": "http://dbpedia.org/ontology/FigureSkater"
-      }
+      {}
     ],
     "id": 1790
   },
@@ -19282,7 +19006,10 @@
     "ques": "Which musical artists have collaborated with Waylon Jennings?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "musical",
+        "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
+      },
       {}
     ],
     "id": 1795
@@ -19436,10 +19163,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 1810
   },
@@ -19582,10 +19306,7 @@
       {},
       {},
       {},
-      {
-        "label": "soccer",
-        "uri": "http://dbpedia.org/ontology/SoccerClubSeason"
-      }
+      {}
     ],
     "id": 1824
   },
@@ -19905,10 +19626,7 @@
       },
       {},
       {},
-      {
-        "label": "ice hockey player",
-        "uri": "http://dbpedia.org/ontology/IceHockeyPlayer"
-      }
+      {}
     ],
     "id": 1851
   },
@@ -20012,10 +19730,7 @@
     "ques": "What are the television shows whose distributor is a division of Warner Bros. International TV?",
     "ES_content": [
       {},
-      {
-        "label": "division",
-        "uri": "http://dbpedia.org/property/divisions"
-      },
+      {},
       {},
       {}
     ],
@@ -20212,10 +19927,7 @@
         "label": "party",
         "uri": "http://dbpedia.org/ontology/otherParty"
       },
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1877
   },
@@ -20521,7 +20233,10 @@
         "uri": "http://dbpedia.org/resource/Feminism"
       },
       {},
-      {}
+      {
+        "label": "nations",
+        "uri": "http://dbpedia.org/ontology/nationality"
+      }
     ],
     "id": 1908
   },
@@ -20609,10 +20324,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "military",
-        "uri": "http://dbpedia.org/ontology/MilitaryPerson"
-      }
+      {}
     ],
     "id": 1917
   },
@@ -20692,10 +20404,7 @@
         "label": "created",
         "uri": "http://dbpedia.org/property/creators"
       },
-      {
-        "label": "comics character",
-        "uri": "http://dbpedia.org/ontology/ComicsCharacter"
-      }
+      {}
     ],
     "id": 1925
   },
@@ -20829,10 +20538,7 @@
       {},
       {},
       {},
-      {
-        "label": "figure skater",
-        "uri": "http://dbpedia.org/ontology/FigureSkater"
-      }
+      {}
     ],
     "id": 1937
   },
@@ -20869,10 +20575,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 1940
   },
@@ -21084,10 +20787,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 1960
   },
@@ -21097,7 +20797,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "notable",
+        "uri": "http://dbpedia.org/ontology/notableWork"
+      }
     ],
     "id": 1961
   },
@@ -21345,7 +21048,10 @@
     "ques": "Total number of places where people drafted in the detroit pistons have died?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "drafted",
+        "uri": "http://dbpedia.org/ontology/draftTeam"
+      },
       {
         "label": "places",
         "uri": "http://dbpedia.org/property/placeOfDeath"
@@ -21388,10 +21094,7 @@
         "label": "owns",
         "uri": "http://dbpedia.org/ontology/owner"
       },
-      {
-        "label": "american football team",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballTeam"
-      }
+      {}
     ],
     "id": 1987
   },
@@ -21410,10 +21113,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "martial artist",
-        "uri": "http://dbpedia.org/ontology/MartialArtist"
-      }
+      {}
     ],
     "id": 1989
   },
@@ -22171,10 +21871,7 @@
       {},
       {},
       {},
-      {
-        "label": "american football league",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballLeague"
-      }
+      {}
     ],
     "id": 2058
   },
@@ -22223,7 +21920,10 @@
     "ques": "From how many different places did the weapons used in the American Indian wars originate?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "used",
+        "uri": "http://dbpedia.org/ontology/usedInWar"
+      },
       {},
       {}
     ],
@@ -22313,10 +22013,7 @@
         "label": "maker",
         "uri": "http://dbpedia.org/property/manufacturer"
       },
-      {
-        "label": "information appliance",
-        "uri": "http://dbpedia.org/ontology/InformationAppliance"
-      }
+      {}
     ],
     "id": 2071
   },
@@ -22355,10 +22052,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 2074
   },
@@ -22531,10 +22225,7 @@
         "uri": "http://dbpedia.org/property/spouse"
       },
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2089
   },
@@ -23015,10 +22706,7 @@
       {},
       {},
       {},
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 2134
   },
@@ -23055,10 +22743,7 @@
       {},
       {},
       {},
-      {
-        "label": "rugby player",
-        "uri": "http://dbpedia.org/ontology/RugbyPlayer"
-      }
+      {}
     ],
     "id": 2137
   },
@@ -23159,10 +22844,7 @@
       {},
       {},
       {},
-      {
-        "label": "football",
-        "uri": "http://dbpedia.org/ontology/GridironFootballPlayer"
-      }
+      {}
     ],
     "id": 2148
   },
@@ -23341,10 +23023,7 @@
         "uri": "http://dbpedia.org/ontology/leaderName"
       },
       {},
-      {
-        "label": "administrative region",
-        "uri": "http://dbpedia.org/ontology/AdministrativeRegion"
-      }
+      {}
     ],
     "id": 2165
   },
@@ -23735,10 +23414,7 @@
     "ques": "Name the company who owns HBO division?",
     "ES_content": [
       {},
-      {
-        "label": "division",
-        "uri": "http://dbpedia.org/property/divisions"
-      },
+      {},
       {}
     ],
     "id": 2202
@@ -23805,10 +23481,7 @@
       {},
       {},
       {},
-      {
-        "label": "appliance\u0027s",
-        "uri": "http://dbpedia.org/ontology/InformationAppliance"
-      }
+      {}
     ],
     "id": 2208
   },
@@ -24007,10 +23680,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2227
   },
@@ -24037,10 +23707,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2230
   },
@@ -24399,10 +24066,7 @@
         "label": "WTA Tour Championships",
         "uri": "http://dbpedia.org/resource/WTA_Tour_Championships"
       },
-      {
-        "label": "nation",
-        "uri": "http://dbpedia.org/property/country"
-      }
+      {}
     ],
     "id": 2264
   },
@@ -24675,10 +24339,7 @@
         "label": "drafted",
         "uri": "http://dbpedia.org/property/draftTeam"
       },
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 2290
   },
@@ -24741,10 +24402,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2296
   },
@@ -24939,10 +24597,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2316
   },
@@ -25138,10 +24793,7 @@
       {},
       {},
       {},
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 2335
   },
@@ -25378,10 +25030,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2358
   },
@@ -25680,10 +25329,7 @@
         "label": "child",
         "uri": "http://dbpedia.org/property/children"
       },
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2385
   },
@@ -26156,10 +25802,7 @@
       {},
       {},
       {},
-      {
-        "label": "military conflict",
-        "uri": "http://dbpedia.org/ontology/MilitaryConflict"
-      }
+      {}
     ],
     "id": 2429
   },
@@ -26389,10 +26032,7 @@
       {},
       {},
       {},
-      {
-        "label": "netball player",
-        "uri": "http://dbpedia.org/ontology/NetballPlayer"
-      }
+      {}
     ],
     "id": 2449
   },
@@ -26522,10 +26162,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2461
   },
@@ -26587,10 +26224,7 @@
       {},
       {},
       {},
-      {
-        "label": "educational",
-        "uri": "http://dbpedia.org/ontology/EducationalInstitution"
-      }
+      {}
     ],
     "id": 2466
   },
@@ -26681,7 +26315,10 @@
     "ques": "Give me a count of musical artists collaborating with Waylon Jennings?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "musical",
+        "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
+      },
       {}
     ],
     "id": 2475
@@ -26732,10 +26369,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 2480
   },
@@ -26753,10 +26387,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 2482
   },
@@ -26765,10 +26396,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "awarded",
-        "uri": "http://dbpedia.org/ontology/award"
-      },
+      {},
       {}
     ],
     "id": 2483
@@ -26875,10 +26503,7 @@
         "label": "played for",
         "uri": "http://dbpedia.org/ontology/team"
       },
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 2493
   },
@@ -27304,10 +26929,7 @@
       {},
       {},
       {},
-      {
-        "label": "public transit system",
-        "uri": "http://dbpedia.org/ontology/PublicTransitSystem"
-      }
+      {}
     ],
     "id": 2533
   },
@@ -27614,10 +27236,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 2563
   },
@@ -27720,10 +27339,7 @@
         "uri": "http://dbpedia.org/property/birthPlace"
       },
       {},
-      {
-        "label": "baseball player",
-        "uri": "http://dbpedia.org/ontology/BaseballPlayer"
-      }
+      {}
     ],
     "id": 2573
   },
@@ -27794,10 +27410,7 @@
         "label": "owns",
         "uri": "http://dbpedia.org/property/owner"
       },
-      {
-        "label": "tunnels",
-        "uri": "http://dbpedia.org/ontology/RoadTunnel"
-      }
+      {}
     ],
     "id": 2580
   },
@@ -27979,10 +27592,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2597
   },
@@ -28349,10 +27959,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 2632
   },
@@ -28543,10 +28150,7 @@
       {},
       {},
       {},
-      {
-        "label": "American football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 2649
   },
@@ -28611,10 +28215,7 @@
         "uri": "http://dbpedia.org/property/city"
       },
       {},
-      {
-        "label": "american football player",
-        "uri": "http://dbpedia.org/ontology/AmericanFootballPlayer"
-      }
+      {}
     ],
     "id": 2655
   },
@@ -28900,10 +28501,7 @@
         "label": "has son",
         "uri": "http://dbpedia.org/ontology/child"
       },
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2682
   },
@@ -28972,7 +28570,10 @@
     "ques": "What is the career of George Arceneaux, Jr. ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "career",
+        "uri": "http://dbpedia.org/ontology/occupation"
+      }
     ],
     "id": 2689
   },
@@ -29101,10 +28702,7 @@
       {},
       {},
       {},
-      {
-        "label": "fictional character",
-        "uri": "http://dbpedia.org/ontology/FictionalCharacter"
-      }
+      {}
     ],
     "id": 2702
   },
@@ -29237,10 +28835,7 @@
         "label": "played for",
         "uri": "http://dbpedia.org/ontology/team"
       },
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 2716
   },
@@ -29512,10 +29107,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "video game",
-        "uri": "http://dbpedia.org/ontology/VideoGame"
-      }
+      {}
     ],
     "id": 2743
   },
@@ -29525,10 +29117,7 @@
       {},
       {},
       {},
-      {
-        "label": "video game",
-        "uri": "http://dbpedia.org/ontology/VideoGame"
-      }
+      {}
     ],
     "id": 2744
   },
@@ -29612,10 +29201,7 @@
       {},
       {},
       {},
-      {
-        "label": "appliance",
-        "uri": "http://dbpedia.org/ontology/InformationAppliance"
-      }
+      {}
     ],
     "id": 2753
   },
@@ -29799,10 +29385,7 @@
     "ques": "Which company\u0027s division is Audi India? Correct Question",
     "ES_content": [
       {},
-      {
-        "label": "division",
-        "uri": "http://dbpedia.org/property/divisions"
-      }
+      {}
     ],
     "id": 2770
   },
@@ -29849,10 +29432,7 @@
         "uri": "http://dbpedia.org/resource/National_Basketball_Association"
       },
       {},
-      {
-        "label": "basketball player",
-        "uri": "http://dbpedia.org/ontology/BasketballPlayer"
-      }
+      {}
     ],
     "id": 2774
   },
@@ -29994,10 +29574,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "hockey team",
-        "uri": "http://dbpedia.org/ontology/HockeyTeam"
-      }
+      {}
     ],
     "id": 2787
   },
@@ -30105,10 +29682,7 @@
         "label": "stockholder",
         "uri": "http://dbpedia.org/ontology/owner"
       },
-      {
-        "label": "soccer club",
-        "uri": "http://dbpedia.org/ontology/SoccerClub"
-      }
+      {}
     ],
     "id": 2796
   },
@@ -30283,10 +29857,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2814
   },
@@ -30418,10 +29989,7 @@
       {},
       {},
       {},
-      {
-        "label": "office holder",
-        "uri": "http://dbpedia.org/ontology/OfficeHolder"
-      }
+      {}
     ],
     "id": 2826
   },
@@ -30454,10 +30022,7 @@
       {},
       {},
       {},
-      {
-        "label": "military conflict",
-        "uri": "http://dbpedia.org/ontology/MilitaryConflict"
-      }
+      {}
     ],
     "id": 2829
   },
