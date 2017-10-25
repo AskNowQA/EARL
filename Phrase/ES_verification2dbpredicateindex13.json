@@ -421,10 +421,7 @@
     "ques": "Which magazine\u0027s editor is married to Crystal Harris?",
     "ES_content": [
       {},
-      {
-        "label": "married",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
+      {},
       {},
       {}
     ],
@@ -450,7 +447,10 @@
         "uri": "http://dbpedia.org/resource/Niederkirchnerstraße"
       },
       {},
-      {}
+      {
+        "label": "headed",
+        "uri": "http://dbpedia.org/ontology/leader"
+      }
     ],
     "id": 37
   },
@@ -458,7 +458,10 @@
     "ques": "In which television shows have Steven Moffat served as an executive producer?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {}
     ],
     "id": 38
@@ -580,10 +583,7 @@
         "label": "Sherlock",
         "uri": "http://dbpedia.org/resource/Sherlock_(software)"
       },
-      {
-        "label": "work for",
-        "uri": "http://dbpedia.org/ontology/occupation"
-      },
+      {},
       {
         "label": "development",
         "uri": "http://dbpedia.org/ontology/developer"
@@ -868,14 +868,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "war",
-        "uri": "http://dbpedia.org/ontology/battle"
-      },
-      {
-        "label": "war",
-        "uri": "http://dbpedia.org/ontology/battle"
-      }
+      {},
+      {}
     ],
     "id": 75
   },
@@ -888,7 +882,10 @@
         "uri": "http://dbpedia.org/property/starring"
       },
       {},
-      {}
+      {
+        "label": "movies",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 76
   },
@@ -1053,10 +1050,7 @@
         "label": "team",
         "uri": "http://dbpedia.org/property/currentteam"
       },
-      {
-        "label": "player",
-        "uri": "http://dbpedia.org/ontology/Athlete"
-      }
+      {}
     ],
     "id": 90
   },
@@ -1073,10 +1067,7 @@
     "ques": "How many factions have fought in wars where Francois Marie Le Marchand de Lignery was involved?",
     "ES_content": [
       {},
-      {
-        "label": "fought",
-        "uri": "http://dbpedia.org/ontology/battle"
-      },
+      {},
       {
         "label": "wars",
         "uri": "http://dbpedia.org/property/combatant"
@@ -1116,7 +1107,10 @@
         "label": "editors",
         "uri": "http://dbpedia.org/ontology/editing"
       },
-      {}
+      {
+        "label": "movies",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 94
   },
@@ -1138,10 +1132,7 @@
         "label": "successor",
         "uri": "http://dbpedia.org/property/predecessor"
       },
-      {
-        "label": "married",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
+      {},
       {
         "label": "royal person",
         "uri": "http://dbpedia.org/ontology/Royalty"
@@ -1281,7 +1272,10 @@
     "ques": "What awards have been won by the executive producer of Timmy Time ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {}
     ],
     "id": 108
@@ -1308,7 +1302,10 @@
     "ques": "Count all those who\u0027ve played for the youth club which owns the Rosario, Santa Fe stadium.",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "stadium",
+        "uri": "http://dbpedia.org/property/ground"
+      },
       {}
     ],
     "id": 111
@@ -1367,7 +1364,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "manage a club",
+        "uri": "http://dbpedia.org/ontology/managerClub"
+      }
     ],
     "id": 116
   },
@@ -1486,7 +1486,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "composer\u0027s",
+        "uri": "http://dbpedia.org/property/themeMusicComposer"
+      },
       {}
     ],
     "id": 126
@@ -1538,8 +1541,14 @@
         "label": "find",
         "uri": "http://dbpedia.org/ontology/ingredient"
       },
-      {},
-      {}
+      {
+        "label": "nations",
+        "uri": "http://dbpedia.org/ontology/country"
+      },
+      {
+        "label": "nations",
+        "uri": "http://dbpedia.org/ontology/Country"
+      }
     ],
     "id": 131
   },
@@ -1560,7 +1569,10 @@
         "uri": "http://dbpedia.org/resource/Nord_(video_game)"
       },
       {},
-      {},
+      {
+        "label": "platform",
+        "uri": "http://dbpedia.org/ontology/computingPlatform"
+      },
       {}
     ],
     "id": 133
@@ -1875,10 +1887,7 @@
     "ques": "Name the sports played by PATTS College of Aeronautics?",
     "ES_content": [
       {},
-      {
-        "label": "sports",
-        "uri": "http://dbpedia.org/property/athletics"
-      }
+      {}
     ],
     "id": 157
   },
@@ -1945,7 +1954,10 @@
     "ques": "How many battles have involved commanders of 1st Free French Division?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commanders",
+        "uri": "http://dbpedia.org/property/notableCommanders"
+      },
       {}
     ],
     "id": 163
@@ -1974,7 +1986,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/property/executiveProducer"
+      },
       {}
     ],
     "id": 166
@@ -2045,7 +2060,10 @@
     "ques": "Who founded the sister stations of Discovery Communications?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "sister",
+        "uri": "http://dbpedia.org/property/sisterNames"
+      },
       {}
     ],
     "id": 174
@@ -2173,7 +2191,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "performer",
+        "uri": "http://dbpedia.org/ontology/artist"
+      }
     ],
     "id": 187
   },
@@ -2193,9 +2214,15 @@
     "ques": "Which label released the movie written by Thomas Meehan?",
     "ES_content": [
       {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {},
-      {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 189
   },
@@ -2391,7 +2418,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {
         "label": "person",
         "uri": "http://dbpedia.org/ontology/keyPerson"
@@ -2551,11 +2581,11 @@
     "ques": "How many maintainers are there of the bridges that can carry motor vehicles over them?",
     "ES_content": [
       {},
+      {},
       {
-        "label": "carry",
-        "uri": "http://dbpedia.org/property/carries"
-      },
-      {}
+        "label": "maintainer",
+        "uri": "http://dbpedia.org/ontology/maintainedBy"
+      }
     ],
     "id": 224
   },
@@ -2695,7 +2725,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 239
   },
@@ -2706,7 +2739,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 240
   },
@@ -2824,8 +2860,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {},
+      {
+        "label": "river",
+        "uri": "http://dbpedia.org/ontology/riverMouth"
+      },
+      {
+        "label": "river",
+        "uri": "http://dbpedia.org/ontology/riverMouth"
+      },
       {}
     ],
     "id": 251
@@ -3099,15 +3141,12 @@
     "ques": "List all the co-founders of the non for profit which have founding member as David pressman ?",
     "ES_content": [
       {},
+      {},
+      {},
       {
-        "label": "co-founder",
-        "uri": "http://dbpedia.org/ontology/foundedBy"
-      },
-      {
-        "label": "co-founder",
-        "uri": "http://dbpedia.org/ontology/foundedBy"
-      },
-      {}
+        "label": "profit",
+        "uri": "http://dbpedia.org/ontology/Non-ProfitOrganisation"
+      }
     ],
     "id": 276
   },
@@ -3136,7 +3175,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 279
   },
@@ -3249,7 +3291,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 290
   },
@@ -3287,7 +3332,10 @@
     "ques": "Who is the performer of Bengali in Platforms ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "performer",
+        "uri": "http://dbpedia.org/ontology/artist"
+      }
     ],
     "id": 294
   },
@@ -3394,7 +3442,10 @@
         "label": "little black river",
         "uri": "http://dbpedia.org/resource/Little_Black_River_(Missouri_-_Arkansas)"
       },
-      {},
+      {
+        "label": "tributary",
+        "uri": "http://dbpedia.org/ontology/leftTributary"
+      },
       {
         "label": "in",
         "uri": "http://dbpedia.org/ontology/city"
@@ -3547,7 +3598,10 @@
     "ques": "Which political figures were awarded Screen Actors Guild Life Achievement Award?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "awarded",
+        "uri": "http://dbpedia.org/ontology/award"
+      }
     ],
     "id": 317
   },
@@ -3558,7 +3612,10 @@
         "label": "Faisal Aman Khan",
         "uri": "http://dbpedia.org/resource/Faisal_Aman_Khan"
       },
-      {},
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      },
       {}
     ],
     "id": 318
@@ -3603,7 +3660,10 @@
     "ques": "What are the cities located on the sea into which the Aegean Sea flows?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "flows",
+        "uri": "http://dbpedia.org/ontology/outflow"
+      },
       {}
     ],
     "id": 323
@@ -3613,7 +3673,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "burial place",
+        "uri": "http://dbpedia.org/ontology/placeOfBurial"
+      },
       {}
     ],
     "id": 324
@@ -3781,7 +3844,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "performer",
+        "uri": "http://dbpedia.org/ontology/artist"
+      }
     ],
     "id": 341
   },
@@ -3887,8 +3953,14 @@
       {},
       {},
       {},
-      {},
-      {}
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 352
   },
@@ -4018,7 +4090,10 @@
         "label": "direct",
         "uri": "http://dbpedia.org/ontology/director"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 364
   },
@@ -4078,7 +4153,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      },
       {}
     ],
     "id": 370
@@ -4097,7 +4175,10 @@
     "ques": "How many cities are around the sea into which the aegean sea flows?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "flows",
+        "uri": "http://dbpedia.org/ontology/outflow"
+      },
       {},
       {}
     ],
@@ -4216,10 +4297,7 @@
         "uri": "http://dbpedia.org/resource/Newark_station_(Delaware)"
       },
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      }
+      {}
     ],
     "id": 383
   },
@@ -4435,7 +4513,10 @@
       {},
       {},
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {}
     ],
     "id": 405
@@ -4503,7 +4584,10 @@
     "ques": "Who first ascented a mountain of Mount Hoffmann ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "ascented",
+        "uri": "http://dbpedia.org/ontology/firstAscentPerson"
+      }
     ],
     "id": 412
   },
@@ -4560,7 +4644,10 @@
     "ques": "Who are the former partners of the figure skaters whose performance have been choreographed by Catarina Lindgren in the past?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "choreographed",
+        "uri": "http://dbpedia.org/ontology/formerChoreographer"
+      },
       {},
       {}
     ],
@@ -4635,7 +4722,10 @@
         "uri": "http://dbpedia.org/property/associatedActs"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 424
   },
@@ -4817,14 +4907,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/ontology/spouse"
-      },
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/ontology/spouse"
-      }
+      {},
+      {}
     ],
     "id": 442
   },
@@ -4866,7 +4950,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "hub",
+        "uri": "http://dbpedia.org/ontology/hubAirport"
+      }
     ],
     "id": 446
   },
@@ -4906,9 +4993,15 @@
     "ES_content": [
       {},
       {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {},
-      {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 450
   },
@@ -4995,8 +5088,14 @@
     "ques": "List the movies directed by Stanley Kubrick?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 457
   },
@@ -5069,8 +5168,14 @@
     "ques": "What are the movies directed by Joel Schumacher?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 464
   },
@@ -5087,7 +5192,10 @@
     "ques": "What is the military rank of the commanders of Regiment of Mounted Grenadiers?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commanders",
+        "uri": "http://dbpedia.org/property/notableCommanders"
+      },
       {}
     ],
     "id": 466
@@ -5147,7 +5255,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "government",
+        "uri": "http://dbpedia.org/ontology/GovernmentAgency"
+      }
     ],
     "id": 472
   },
@@ -5219,10 +5330,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "judge",
-        "uri": "http://dbpedia.org/property/judges"
-      },
+      {},
       {},
       {
         "label": "show",
@@ -5244,7 +5352,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "airport",
+        "uri": "http://dbpedia.org/ontology/targetAirport"
+      }
     ],
     "id": 481
   },
@@ -5316,7 +5427,10 @@
         "uri": "http://dbpedia.org/resource/Politics_of_Brunei"
       },
       {},
-      {}
+      {
+        "label": "maintains",
+        "uri": "http://dbpedia.org/ontology/maintainedBy"
+      }
     ],
     "id": 488
   },
@@ -5347,7 +5461,10 @@
     "ques": "To which military division does Clark Daniel Stearns belong?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "military",
+        "uri": "http://dbpedia.org/ontology/militaryBranch"
+      }
     ],
     "id": 491
   },
@@ -5546,7 +5663,10 @@
     "ques": "List down the important people of The Elders ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "people",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      }
     ],
     "id": 511
   },
@@ -5556,7 +5676,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 512
   },
@@ -5597,7 +5720,10 @@
     "ques": "What is the television show whose executive producer is Douglas Netter?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {}
     ],
     "id": 516
@@ -5671,7 +5797,10 @@
         "label": "domain",
         "uri": "http://dbpedia.org/property/discipline"
       },
-      {}
+      {
+        "label": "journals",
+        "uri": "http://dbpedia.org/ontology/AcademicJournal"
+      }
     ],
     "id": 523
   },
@@ -5765,7 +5894,10 @@
     "ques": "Where did Whitney Wistert debut?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "debut",
+        "uri": "http://dbpedia.org/property/debutteam"
+      }
     ],
     "id": 532
   },
@@ -5949,7 +6081,10 @@
         "label": "stars",
         "uri": "http://dbpedia.org/ontology/starring"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 549
   },
@@ -5997,10 +6132,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "country",
-        "uri": "http://dbpedia.org/ontology/county"
-      },
+      {},
       {}
     ],
     "id": 554
@@ -6108,10 +6240,7 @@
         "label": "Tony Ramo",
         "uri": "http://dbpedia.org/resource/Tony_Romo"
       },
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/partner"
-      }
+      {}
     ],
     "id": 565
   },
@@ -6164,7 +6293,10 @@
     "ques": "Who first ascented a mountain of Cathedral Peak (California) ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "ascented",
+        "uri": "http://dbpedia.org/ontology/firstAscentPerson"
+      }
     ],
     "id": 570
   },
@@ -6192,10 +6324,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "war",
-        "uri": "http://dbpedia.org/ontology/battle"
-      }
+      {}
     ],
     "id": 573
   },
@@ -6313,7 +6442,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "builder",
+        "uri": "http://dbpedia.org/ontology/manufacturer"
+      }
     ],
     "id": 584
   },
@@ -6342,7 +6474,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "builder",
+        "uri": "http://dbpedia.org/ontology/manufacturer"
+      }
     ],
     "id": 587
   },
@@ -6405,7 +6540,10 @@
         "label": "central processing unit",
         "uri": "http://dbpedia.org/ontology/cpu"
       },
-      {}
+      {
+        "label": "appliance",
+        "uri": "http://dbpedia.org/ontology/InformationAppliance"
+      }
     ],
     "id": 593
   },
@@ -6503,7 +6641,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 603
   },
@@ -6775,7 +6916,10 @@
     "ques": "Who is the developer of the software which serves the platform for King\u0027s Quest VI?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "platform",
+        "uri": "http://dbpedia.org/ontology/computingPlatform"
+      },
       {},
       {}
     ],
@@ -6849,10 +6993,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "sculptor",
-        "uri": "http://dbpedia.org/ontology/creator"
-      },
+      {},
       {},
       {}
     ],
@@ -6904,7 +7045,10 @@
     "ques": "What is the game platform of Google Cloud Connect ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "game platform",
+        "uri": "http://dbpedia.org/ontology/computingPlatform"
+      }
     ],
     "id": 643
   },
@@ -6912,10 +7056,7 @@
     "ques": "Which city\u0027s mayor is married to Jean Marc Germain?",
     "ES_content": [
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
+      {},
       {}
     ],
     "id": 644
@@ -7177,10 +7318,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/ontology/owner"
-      },
+      {},
       {}
     ],
     "id": 669
@@ -7232,7 +7370,10 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/ontology/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 674
   },
@@ -7360,10 +7501,7 @@
     "ques": "Which city\u0027s governing body is led by Bruce Harrell?",
     "ES_content": [
       {},
-      {
-        "label": "led",
-        "uri": "http://dbpedia.org/ontology/leader"
-      },
+      {},
       {}
     ],
     "id": 687
@@ -7473,7 +7611,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 697
   },
@@ -7565,7 +7706,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "television.",
+        "uri": "http://dbpedia.org/ontology/TelevisionShow"
+      }
     ],
     "id": 706
   },
@@ -7631,7 +7775,10 @@
         "uri": "http://dbpedia.org/property/associatedActs"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 712
   },
@@ -7650,8 +7797,14 @@
     "ques": "List the total number of executive producer of TV show which have one of the executiive producer as Steven Moffat ?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/property/executiveProducer"
+      }
     ],
     "id": 714
   },
@@ -7660,8 +7813,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/property/country"
+      },
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/property/country"
+      }
     ],
     "id": 715
   },
@@ -7815,10 +7974,7 @@
         "label": "actor",
         "uri": "http://dbpedia.org/property/starring"
       },
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/spouse"
-      }
+      {}
     ],
     "id": 729
   },
@@ -7828,7 +7984,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 730
   },
@@ -7888,7 +8047,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 736
   },
@@ -8163,7 +8325,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "theme",
+        "uri": "http://dbpedia.org/property/opentheme"
+      }
     ],
     "id": 763
   },
@@ -8180,10 +8345,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "currencies",
-        "uri": "http://dbpedia.org/ontology/currency"
-      }
+      {}
     ],
     "id": 765
   },
@@ -8263,7 +8425,10 @@
     "ques": "Which are the previous broadcast networks of sister channels of WGBC?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "sister",
+        "uri": "http://dbpedia.org/property/sisterStations"
+      },
       {
         "label": "broadcast",
         "uri": "http://dbpedia.org/ontology/formerBroadcastNetwork"
@@ -8351,8 +8516,14 @@
     "ques": "List the tomb of the royalties whose burial place is Little Easton ?",
     "ES_content": [
       {},
-      {},
-      {},
+      {
+        "label": "burial place",
+        "uri": "http://dbpedia.org/property/placeOfBurial"
+      },
+      {
+        "label": "burial place",
+        "uri": "http://dbpedia.org/property/placeOfBurial"
+      },
       {
         "label": "royalties",
         "uri": "http://dbpedia.org/ontology/Royalty"
@@ -8397,10 +8568,7 @@
     "ques": "What sports are played by school which owns Fr. Agnel Stadium ?",
     "ES_content": [
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      },
+      {},
       {},
       {}
     ],
@@ -8437,10 +8605,7 @@
       {},
       {},
       {},
-      {
-        "label": "land",
-        "uri": "http://dbpedia.org/ontology/country"
-      }
+      {}
     ],
     "id": 789
   },
@@ -8508,10 +8673,7 @@
     "ques": "Sentinel High School  team is known as ?",
     "ES_content": [
       {},
-      {
-        "label": "team",
-        "uri": "http://dbpedia.org/property/teamName"
-      }
+      {}
     ],
     "id": 797
   },
@@ -8519,7 +8681,10 @@
     "ques": "How many shows belong to the networks one of whose sister station is BBC News?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "sister",
+        "uri": "http://dbpedia.org/property/sisterNames"
+      },
       {},
       {
         "label": "shows",
@@ -8547,7 +8712,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "musical",
+        "uri": "http://dbpedia.org/ontology/musicBy"
+      }
     ],
     "id": 800
   },
@@ -8640,11 +8808,11 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/ontology/spouse"
-      },
       {},
+      {
+        "label": "son",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {}
     ],
     "id": 809
@@ -8672,8 +8840,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {},
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      },
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      },
       {}
     ],
     "id": 812
@@ -8692,7 +8866,10 @@
     "ques": "List the maintainers of Pandaruan Bridge?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "maintainer",
+        "uri": "http://dbpedia.org/ontology/maintainedBy"
+      }
     ],
     "id": 814
   },
@@ -8777,10 +8954,7 @@
     "ques": "Name a person who was educated in Humes High School ?",
     "ES_content": [
       {},
-      {
-        "label": "edu",
-        "uri": "http://dbpedia.org/ontology/education"
-      },
+      {},
       {}
     ],
     "id": 823
@@ -8928,7 +9102,10 @@
     "ques": "What is the denomination of S. H. Kapadia ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "denomination",
+        "uri": "http://dbpedia.org/property/religion"
+      }
     ],
     "id": 837
   },
@@ -8981,7 +9158,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {},
       {
         "label": "show\u0027s",
@@ -9068,7 +9248,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "broadcasted",
+        "uri": "http://dbpedia.org/ontology/broadcastArea"
+      },
       {}
     ],
     "id": 851
@@ -9256,7 +9439,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "member band",
+        "uri": "http://dbpedia.org/ontology/formerBandMember"
+      }
     ],
     "id": 870
   },
@@ -9282,8 +9468,14 @@
     "ques": "What are the movies whose music is composed by Vangelis?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "composed",
+        "uri": "http://dbpedia.org/ontology/musicComposer"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 873
   },
@@ -9391,7 +9583,10 @@
     "ques": "Where did the plays written by Robert Schenkkan take place?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {},
       {}
     ],
@@ -9459,7 +9654,10 @@
         "label": "start,",
         "uri": "http://dbpedia.org/ontology/routeStart"
       },
-      {}
+      {
+        "label": "railway",
+        "uri": "http://dbpedia.org/ontology/RailwayLine"
+      }
     ],
     "id": 889
   },
@@ -9533,10 +9731,7 @@
       {},
       {},
       {},
-      {
-        "label": "ethnic",
-        "uri": "http://dbpedia.org/property/ethnicity"
-      }
+      {}
     ],
     "id": 896
   },
@@ -9568,7 +9763,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 899
   },
@@ -9603,7 +9801,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 902
   },
@@ -9746,7 +9947,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 916
   },
@@ -9795,9 +9999,15 @@
     "ques": "What are the movies whose director\u0027s daughter is Luke Scott?",
     "ES_content": [
       {},
+      {
+        "label": "daughter",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {},
-      {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 920
   },
@@ -9849,7 +10059,10 @@
     "ques": "Ernest Rutherford was the advisor of how many people?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "advisor",
+        "uri": "http://dbpedia.org/property/doctoralAdvisor"
+      }
     ],
     "id": 925
   },
@@ -9887,8 +10100,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/property/country"
+      },
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/Country"
+      }
     ],
     "id": 929
   },
@@ -9967,7 +10186,10 @@
     "ques": "Which nation is the origin of Dornier Aerodyne ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "origin nation",
+        "uri": "http://dbpedia.org/property/nationalOrigin"
+      }
     ],
     "id": 937
   },
@@ -10021,7 +10243,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "parent",
+        "uri": "http://dbpedia.org/ontology/parentOrganisation"
+      },
       {}
     ],
     "id": 942
@@ -10173,7 +10398,10 @@
         "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 957
   },
@@ -10193,7 +10421,10 @@
         "label": "united World College",
         "uri": "http://dbpedia.org/resource/United_World_Colleges"
       },
-      {},
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      },
       {}
     ],
     "id": 959
@@ -10706,7 +10937,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "musical",
+        "uri": "http://dbpedia.org/ontology/MusicalArtist"
+      }
     ],
     "id": 1008
   },
@@ -10883,7 +11117,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1026
   },
@@ -10897,7 +11134,10 @@
         "uri": "http://dbpedia.org/ontology/musicComposer"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1027
   },
@@ -11239,7 +11479,10 @@
     "ques": "What awards have been given to citizens of the Ottoman Empire?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "citizens",
+        "uri": "http://dbpedia.org/ontology/citizenship"
+      },
       {}
     ],
     "id": 1060
@@ -11265,7 +11508,10 @@
         "label": "nation",
         "uri": "http://dbpedia.org/ontology/country"
       },
-      {},
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/ontology/state"
+      },
       {
         "label": "universities",
         "uri": "http://dbpedia.org/ontology/University"
@@ -11329,7 +11575,10 @@
     "ques": "What award was won by executive producer of Shaun the Sheep?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {}
     ],
     "id": 1068
@@ -11395,7 +11644,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1075
   },
@@ -11477,7 +11729,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1083
   },
@@ -11625,8 +11880,14 @@
         "label": "associated music",
         "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
       },
-      {},
-      {}
+      {
+        "label": "composed",
+        "uri": "http://dbpedia.org/ontology/musicComposer"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1097
   },
@@ -11706,7 +11967,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1106
   },
@@ -11785,7 +12049,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1114
   },
@@ -12081,8 +12348,14 @@
         "label": "in",
         "uri": "http://dbpedia.org/property/starring"
       },
-      {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1141
   },
@@ -12216,7 +12489,10 @@
     "ques": "What is the river whose tributary is Zarqa River?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "tributary",
+        "uri": "http://dbpedia.org/ontology/leftTributary"
+      },
       {}
     ],
     "id": 1154
@@ -12340,14 +12616,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "constituencies",
-        "uri": "http://dbpedia.org/property/constituency"
-      },
-      {
-        "label": "constituencies",
-        "uri": "http://dbpedia.org/property/constituency"
-      }
+      {},
+      {}
     ],
     "id": 1165
   },
@@ -12357,7 +12627,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      }
     ],
     "id": 1166
   },
@@ -12365,7 +12638,10 @@
     "ques": "Which cities have the river one of whose Tributary is the Missouri\u0027s big spring?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "tributary",
+        "uri": "http://dbpedia.org/ontology/rightTributary"
+      },
       {
         "label": "in",
         "uri": "http://dbpedia.org/ontology/city"
@@ -12435,7 +12711,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "official language",
+        "uri": "http://dbpedia.org/ontology/officialLanguage"
+      }
     ],
     "id": 1174
   },
@@ -12497,7 +12776,10 @@
     "ques": "GetTV is owned by which organisation?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "organisation",
+        "uri": "http://dbpedia.org/ontology/parentOrganisation"
+      }
     ],
     "id": 1180
   },
@@ -12611,8 +12893,14 @@
     "ques": "What movies have been written by authors of Monty Python ?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/ontology/writer"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1192
   },
@@ -12747,7 +13035,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      }
     ],
     "id": 1205
   },
@@ -12764,7 +13055,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "created by",
+        "uri": "http://dbpedia.org/ontology/creator"
+      },
       {
         "label": "created by",
         "uri": "http://dbpedia.org/property/creators"
@@ -12827,7 +13121,10 @@
     "ques": "What is the architecture of First National Bank and Trust Building (Lima, Ohio) ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "architecture",
+        "uri": "http://dbpedia.org/ontology/architecturalStyle"
+      }
     ],
     "id": 1213
   },
@@ -12893,10 +13190,7 @@
     "ques": "Who is married to Susan Weber Soros?",
     "ES_content": [
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/spouse"
-      }
+      {}
     ],
     "id": 1220
   },
@@ -13073,7 +13367,10 @@
         "uri": "http://dbpedia.org/property/education"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1238
   },
@@ -13096,8 +13393,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "architecture",
+        "uri": "http://dbpedia.org/ontology/architecturalStyle"
+      },
+      {
+        "label": "architecture",
+        "uri": "http://dbpedia.org/ontology/architecturalStyle"
+      }
     ],
     "id": 1240
   },
@@ -13624,7 +13927,10 @@
     "ques": "What is the military rank of the important commander of Peruvian Army?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commander",
+        "uri": "http://dbpedia.org/ontology/notableCommander"
+      },
       {}
     ],
     "id": 1291
@@ -13712,12 +14018,18 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      },
       {
         "label": "edited by",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1299
   },
@@ -13875,7 +14187,10 @@
         "uri": "http://dbpedia.org/property/deathPlace"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1312
   },
@@ -13945,8 +14260,14 @@
     "ques": "Who won the silver medal when the bronze was won by Yang Yilin?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "bronze medal",
+        "uri": "http://dbpedia.org/ontology/bronzeMedalist"
+      },
+      {
+        "label": "silver medal",
+        "uri": "http://dbpedia.org/ontology/silverMedalist"
+      }
     ],
     "id": 1319
   },
@@ -13959,7 +14280,10 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {},
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      },
       {}
     ],
     "id": 1320
@@ -13970,7 +14294,10 @@
       {},
       {},
       {},
-      {},
+      {
+        "label": "kid",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {}
     ],
     "id": 1321
@@ -14031,7 +14358,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "television",
+        "uri": "http://dbpedia.org/ontology/TelevisionShow"
+      }
     ],
     "id": 1327
   },
@@ -14079,7 +14409,10 @@
     "ques": "Who is the musician of Before I let you Go ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "musician",
+        "uri": "http://dbpedia.org/ontology/musicalArtist"
+      }
     ],
     "id": 1332
   },
@@ -14371,7 +14704,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "platform",
+        "uri": "http://dbpedia.org/ontology/computingPlatform"
+      }
     ],
     "id": 1360
   },
@@ -14431,7 +14767,10 @@
     "ques": "How many soccer manager have been in the Spain nation football team?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "nation team",
+        "uri": "http://dbpedia.org/property/nationalteam"
+      },
       {}
     ],
     "id": 1365
@@ -14490,10 +14829,7 @@
         "label": "in",
         "uri": "http://dbpedia.org/ontology/city"
       },
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/ontology/owner"
-      },
+      {},
       {}
     ],
     "id": 1370
@@ -14503,7 +14839,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "member",
+        "uri": "http://dbpedia.org/ontology/bandMember"
+      }
     ],
     "id": 1371
   },
@@ -14657,7 +14996,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1385
   },
@@ -14747,8 +15089,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {},
+      {
+        "label": "river",
+        "uri": "http://dbpedia.org/ontology/riverMouth"
+      },
+      {
+        "label": "river",
+        "uri": "http://dbpedia.org/ontology/riverMouth"
+      },
       {}
     ],
     "id": 1394
@@ -14836,7 +15184,10 @@
       {},
       {},
       {},
-      {},
+      {
+        "label": "advisor",
+        "uri": "http://dbpedia.org/property/doctoralAdvisor"
+      },
       {}
     ],
     "id": 1401
@@ -14895,7 +15246,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "job",
+        "uri": "http://dbpedia.org/ontology/occupation"
+      },
       {}
     ],
     "id": 1406
@@ -14928,7 +15282,10 @@
     "ques": "What is the political party of the daughter of Jawaharlal Nehru ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "daughter",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {}
     ],
     "id": 1409
@@ -15424,7 +15781,10 @@
     "ques": "List the import people of Maryland Jockey Club ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "people",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      }
     ],
     "id": 1458
   },
@@ -15445,7 +15805,10 @@
       {},
       {},
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {
         "label": "show",
         "uri": "http://dbpedia.org/ontology/TelevisionShow"
@@ -15502,7 +15865,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "conflict",
+        "uri": "http://dbpedia.org/ontology/MilitaryConflict"
+      }
     ],
     "id": 1465
   },
@@ -15510,10 +15876,7 @@
     "ques": "Who influenced the author of The Shooting of Dan McGrew ?",
     "ES_content": [
       {},
-      {
-        "label": "author",
-        "uri": "http://dbpedia.org/ontology/writer"
-      },
+      {},
       {}
     ],
     "id": 1466
@@ -15555,10 +15918,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "married",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
+      {},
       {
         "label": "actor",
         "uri": "http://dbpedia.org/ontology/starring"
@@ -16017,7 +16377,10 @@
         "label": "are",
         "uri": "http://dbpedia.org/property/label"
       },
-      {}
+      {
+        "label": "musician",
+        "uri": "http://dbpedia.org/ontology/MusicalArtist"
+      }
     ],
     "id": 1513
   },
@@ -16158,7 +16521,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1526
   },
@@ -16170,7 +16536,10 @@
         "label": "buried in",
         "uri": "http://dbpedia.org/ontology/restingPlace"
       },
-      {}
+      {
+        "label": "awarded",
+        "uri": "http://dbpedia.org/ontology/award"
+      }
     ],
     "id": 1527
   },
@@ -16200,10 +16569,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "edit",
-        "uri": "http://dbpedia.org/property/editing"
-      }
+      {}
     ],
     "id": 1530
   },
@@ -16297,7 +16663,10 @@
     "ques": "What is the alma mater of the scientist  whose PhD advisor is Jean-Claude Latombe ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "PhD advisor",
+        "uri": "http://dbpedia.org/ontology/doctoralAdvisor"
+      },
       {},
       {}
     ],
@@ -16374,7 +16743,10 @@
     "ques": "Which airlines fly to Gimhae International Airport?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "airport",
+        "uri": "http://dbpedia.org/ontology/targetAirport"
+      }
     ],
     "id": 1546
   },
@@ -16407,7 +16779,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "source",
+        "uri": "http://dbpedia.org/property/sourceLocation"
+      },
       {
         "label": "mouth",
         "uri": "http://dbpedia.org/property/mouthLocation"
@@ -16446,7 +16821,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1552
   },
@@ -16499,10 +16877,7 @@
     "ques": "What is the religion of the ethnic group to which Clara Ng belongs?",
     "ES_content": [
       {},
-      {
-        "label": "ethnic",
-        "uri": "http://dbpedia.org/ontology/ethnicity"
-      },
+      {},
       {},
       {}
     ],
@@ -16531,10 +16906,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/ontology/owner"
-      },
+      {},
       {}
     ],
     "id": 1560
@@ -16645,7 +17017,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1570
   },
@@ -16683,7 +17058,10 @@
     "ques": "How many cities are around the sea in which the ionian sea flows?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "flows",
+        "uri": "http://dbpedia.org/ontology/outflow"
+      },
       {},
       {}
     ],
@@ -16872,7 +17250,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "citizen of",
+        "uri": "http://dbpedia.org/ontology/citizenship"
+      }
     ],
     "id": 1592
   },
@@ -17100,10 +17481,7 @@
     "ques": "Which artist married to Lee Krasner?",
     "ES_content": [
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
+      {},
       {}
     ],
     "id": 1614
@@ -17168,7 +17546,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1620
   },
@@ -17222,10 +17603,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "debuted",
-        "uri": "http://dbpedia.org/ontology/debutTeam"
-      }
+      {}
     ],
     "id": 1626
   },
@@ -17277,7 +17655,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1631
   },
@@ -17612,10 +17993,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "currencies",
-        "uri": "http://dbpedia.org/property/currency"
-      }
+      {}
     ],
     "id": 1666
   },
@@ -17676,7 +18054,10 @@
     "ques": "Georg Meissner was doctoral supervisor of which scientist ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "doctoral supervisor",
+        "uri": "http://dbpedia.org/property/doctoralAdvisor"
+      },
       {}
     ],
     "id": 1671
@@ -17817,7 +18198,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1684
   },
@@ -17952,10 +18336,7 @@
     "ques": "Whose children are married to Fredric Joliot-Curie?",
     "ES_content": [
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
+      {},
       {}
     ],
     "id": 1697
@@ -17990,10 +18371,7 @@
         "label": "Victoria",
         "uri": "http://dbpedia.org/resource/Victoria_(ship)"
       },
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/ontology/owner"
-      }
+      {}
     ],
     "id": 1700
   },
@@ -18174,7 +18552,10 @@
     "ques": "Count everyone who was in the military unit which is structured like the Marine Aircraft Group 13 ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "structured",
+        "uri": "http://dbpedia.org/property/commandStructure"
+      },
       {}
     ],
     "id": 1719
@@ -18202,8 +18583,14 @@
         "label": "Jose Luis Narom",
         "uri": "http://dbpedia.org/resource/José_Luis_Narom"
       },
-      {},
-      {},
+      {
+        "label": "music",
+        "uri": "http://dbpedia.org/ontology/musicBy"
+      },
+      {
+        "label": "based upon",
+        "uri": "http://dbpedia.org/ontology/basedOn"
+      },
       {}
     ],
     "id": 1722
@@ -18289,7 +18676,10 @@
     "ques": "What is the television show whose executive producer is Steven Peterman?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/property/executiveProducer"
+      },
       {}
     ],
     "id": 1730
@@ -18345,10 +18735,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "ideologies",
-        "uri": "http://dbpedia.org/ontology/ideology"
-      },
+      {},
       {}
     ],
     "id": 1735
@@ -18361,10 +18748,7 @@
         "label": "in",
         "uri": "http://dbpedia.org/ontology/locatedInArea"
       },
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      },
+      {},
       {}
     ],
     "id": 1736
@@ -18384,10 +18768,7 @@
         "label": "Gerard Piqu?",
         "uri": "http://dbpedia.org/resource/Gerard_Piqué"
       },
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/partner"
-      }
+      {}
     ],
     "id": 1738
   },
@@ -18461,14 +18842,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "debuted",
-        "uri": "http://dbpedia.org/ontology/debutTeam"
-      },
-      {
-        "label": "debuted",
-        "uri": "http://dbpedia.org/ontology/debutTeam"
-      }
+      {},
+      {}
     ],
     "id": 1745
   },
@@ -18479,7 +18854,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "television",
+        "uri": "http://dbpedia.org/ontology/TelevisionShow"
+      }
     ],
     "id": 1746
   },
@@ -18577,7 +18955,10 @@
         "label": "tomb",
         "uri": "http://dbpedia.org/ontology/restingPlace"
       },
-      {}
+      {
+        "label": "parliament",
+        "uri": "http://dbpedia.org/ontology/MemberOfParliament"
+      }
     ],
     "id": 1756
   },
@@ -18589,10 +18970,7 @@
         "label": "in",
         "uri": "http://dbpedia.org/property/city"
       },
-      {
-        "label": "teams",
-        "uri": "http://dbpedia.org/property/teamName"
-      },
+      {},
       {}
     ],
     "id": 1757
@@ -18660,7 +19038,10 @@
         "label": "in",
         "uri": "http://dbpedia.org/property/discipline"
       },
-      {}
+      {
+        "label": "journals",
+        "uri": "http://dbpedia.org/ontology/AcademicJournal"
+      }
     ],
     "id": 1764
   },
@@ -18840,7 +19221,10 @@
         "label": "at",
         "uri": "http://dbpedia.org/ontology/operator"
       },
-      {},
+      {
+        "label": "airport",
+        "uri": "http://dbpedia.org/ontology/hubAirport"
+      },
       {}
     ],
     "id": 1780
@@ -18901,7 +19285,10 @@
     "ques": "Which are the television show which have been created by Donald Wilson?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "created by",
+        "uri": "http://dbpedia.org/ontology/creator"
+      },
       {}
     ],
     "id": 1785
@@ -18986,7 +19373,10 @@
     "ques": "What religion is followed by the commander of Defense Security Command?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commander",
+        "uri": "http://dbpedia.org/ontology/notableCommander"
+      },
       {}
     ],
     "id": 1793
@@ -19030,7 +19420,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1797
   },
@@ -19094,7 +19487,10 @@
         "label": "in",
         "uri": "http://dbpedia.org/ontology/starring"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1803
   },
@@ -19111,7 +19507,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1805
   },
@@ -19142,7 +19541,10 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {}
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      }
     ],
     "id": 1808
   },
@@ -19244,7 +19646,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1819
   },
@@ -19306,7 +19711,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "soccer",
+        "uri": "http://dbpedia.org/ontology/SoccerClubSeason"
+      }
     ],
     "id": 1824
   },
@@ -19745,10 +20153,7 @@
         "uri": "http://dbpedia.org/resource/Rising_Star_(U.S._TV_series)"
       },
       {},
-      {
-        "label": "judge",
-        "uri": "http://dbpedia.org/property/judges"
-      }
+      {}
     ],
     "id": 1861
   },
@@ -19756,10 +20161,7 @@
     "ques": "What city has the football team in which Lee Robinson debuted?",
     "ES_content": [
       {},
-      {
-        "label": "debuted",
-        "uri": "http://dbpedia.org/ontology/debutTeam"
-      },
+      {},
       {
         "label": "city",
         "uri": "http://dbpedia.org/ontology/locationCity"
@@ -19884,7 +20286,10 @@
       {},
       {},
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {}
     ],
     "id": 1873
@@ -20089,7 +20494,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "mountains",
+        "uri": "http://dbpedia.org/ontology/mountainRange"
+      },
       {
         "label": "in",
         "uri": "http://dbpedia.org/ontology/locatedInArea"
@@ -20134,7 +20542,10 @@
     "ques": "How many religion\u0027s commanders have served in the Royal Thai Army?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commanders",
+        "uri": "http://dbpedia.org/property/notableCommanders"
+      },
       {}
     ],
     "id": 1897
@@ -20212,8 +20623,14 @@
       {},
       {},
       {},
-      {},
-      {}
+      {
+        "label": "directed by",
+        "uri": "http://dbpedia.org/ontology/director"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1906
   },
@@ -20324,7 +20741,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "military",
+        "uri": "http://dbpedia.org/ontology/MilitaryPerson"
+      }
     ],
     "id": 1917
   },
@@ -20336,7 +20756,10 @@
         "label": "editor",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1918
   },
@@ -20392,7 +20815,10 @@
     "ques": "From where does the river Upper Neretva start flowing?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "river",
+        "uri": "http://dbpedia.org/ontology/riverMouth"
+      }
     ],
     "id": 1924
   },
@@ -20437,7 +20863,10 @@
     "ques": "What did Steven T Mason\u0027s father die from?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "son",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {
         "label": "die from",
         "uri": "http://dbpedia.org/ontology/deathCause"
@@ -20742,7 +21171,10 @@
         "uri": "http://dbpedia.org/ontology/editing"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1956
   },
@@ -20883,7 +21315,10 @@
     "ques": "What are the other notable work of the executive producer of The Runaway Bride episode of Doctor Who?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {}
     ],
     "id": 1969
@@ -20935,7 +21370,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "official language",
+        "uri": "http://dbpedia.org/ontology/officialLanguage"
+      },
       {
         "label": "area",
         "uri": "http://dbpedia.org/ontology/academicDiscipline"
@@ -20953,7 +21391,10 @@
         "label": "edited by",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 1975
   },
@@ -21009,7 +21450,10 @@
     "ques": "Give me the mascot of the military unit in which Stewart Bovell served?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "military",
+        "uri": "http://dbpedia.org/ontology/militaryBranch"
+      },
       {},
       {}
     ],
@@ -21090,10 +21534,7 @@
     "ques": "Bud Adams owns which american football team?",
     "ES_content": [
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/ontology/owner"
-      },
+      {},
       {}
     ],
     "id": 1987
@@ -21163,7 +21604,10 @@
     "ques": "ARM Architecture acts as a game platform for how many things?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "game platform",
+        "uri": "http://dbpedia.org/ontology/computingPlatform"
+      }
     ],
     "id": 1994
   },
@@ -21238,7 +21682,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "key",
+        "uri": "http://dbpedia.org/property/keyPeople"
+      },
       {},
       {}
     ],
@@ -21249,10 +21696,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "ideologies",
-        "uri": "http://dbpedia.org/ontology/ideology"
-      }
+      {}
     ],
     "id": 2002
   },
@@ -21371,7 +21815,10 @@
         "uri": "http://dbpedia.org/property/partner"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2011
   },
@@ -21388,7 +21835,10 @@
     "ques": "what mountains are in sierra nevada?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "mountains",
+        "uri": "http://dbpedia.org/ontology/mountainRange"
+      }
     ],
     "id": 2013
   },
@@ -21463,7 +21913,10 @@
         "label": "American",
         "uri": "http://dbpedia.org/resource/United_States"
       },
-      {},
+      {
+        "label": "citizens",
+        "uri": "http://dbpedia.org/property/citizenship"
+      },
       {
         "label": "death",
         "uri": "http://dbpedia.org/ontology/deathCause"
@@ -21503,7 +21956,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2024
   },
@@ -21532,10 +21988,7 @@
     "ques": "Which countries were led by Pietro Parolin?",
     "ES_content": [
       {},
-      {
-        "label": "led",
-        "uri": "http://dbpedia.org/ontology/leader"
-      },
+      {},
       {
         "label": "countries",
         "uri": "http://dbpedia.org/ontology/Country"
@@ -21548,7 +22001,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "architecture",
+        "uri": "http://dbpedia.org/ontology/architecturalStyle"
+      }
     ],
     "id": 2028
   },
@@ -21582,8 +22038,14 @@
     "ques": "What are the movies written by Nick Castle?",
     "ES_content": [
       {},
-      {},
-      {}
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/ontology/writer"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2031
   },
@@ -21640,10 +22102,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      },
+      {},
       {}
     ],
     "id": 2037
@@ -21705,14 +22164,8 @@
     "ques": "List the interest of the scientists whose one of the field is Chinese poetry ?",
     "ES_content": [
       {},
-      {
-        "label": "field",
-        "uri": "http://dbpedia.org/property/fields"
-      },
-      {
-        "label": "field",
-        "uri": "http://dbpedia.org/property/fields"
-      },
+      {},
+      {},
       {}
     ],
     "id": 2043
@@ -21814,8 +22267,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "official language",
+        "uri": "http://dbpedia.org/ontology/officialLanguage"
+      },
+      {
+        "label": "official language",
+        "uri": "http://dbpedia.org/ontology/officialLanguage"
+      }
     ],
     "id": 2053
   },
@@ -21904,7 +22363,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2061
   },
@@ -21937,7 +22399,10 @@
         "label": "music",
         "uri": "http://dbpedia.org/ontology/associatedMusicalArtist"
       },
-      {},
+      {
+        "label": "composers",
+        "uri": "http://dbpedia.org/property/themeMusicComposer"
+      },
       {
         "label": "shows",
         "uri": "http://dbpedia.org/ontology/TelevisionShow"
@@ -21996,10 +22461,7 @@
     "ques": "who married crystal harris?",
     "ES_content": [
       {},
-      {
-        "label": "married",
-        "uri": "http://dbpedia.org/property/spouse"
-      }
+      {}
     ],
     "id": 2070
   },
@@ -22104,7 +22566,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "based upon",
+        "uri": "http://dbpedia.org/ontology/basedOn"
+      },
       {}
     ],
     "id": 2079
@@ -22154,7 +22619,10 @@
         "label": "died in",
         "uri": "http://dbpedia.org/ontology/deathPlace"
       },
-      {}
+      {
+        "label": "employment",
+        "uri": "http://dbpedia.org/ontology/occupation"
+      }
     ],
     "id": 2083
   },
@@ -22192,14 +22660,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "war",
-        "uri": "http://dbpedia.org/ontology/battle"
-      },
-      {
-        "label": "war",
-        "uri": "http://dbpedia.org/ontology/battle"
-      }
+      {},
+      {}
     ],
     "id": 2087
   },
@@ -22207,7 +22669,10 @@
     "ques": "List the religions of the commanders of Royal Thai Army.",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commanders",
+        "uri": "http://dbpedia.org/property/notableCommanders"
+      },
       {}
     ],
     "id": 2088
@@ -22220,11 +22685,11 @@
         "label": "Montpelier",
         "uri": "http://dbpedia.org/resource/Montpelier_(Orange,_Virginia)"
       },
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/property/spouse"
-      },
       {},
+      {
+        "label": "resting",
+        "uri": "http://dbpedia.org/property/restingplace"
+      },
       {}
     ],
     "id": 2089
@@ -22844,7 +23309,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "football",
+        "uri": "http://dbpedia.org/ontology/GridironFootballPlayer"
+      }
     ],
     "id": 2148
   },
@@ -22852,7 +23320,10 @@
     "ques": "What is the capital of the region which maintains the South Park Bridge ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "maintains",
+        "uri": "http://dbpedia.org/ontology/maintainedBy"
+      },
       {
         "label": "capital",
         "uri": "http://dbpedia.org/ontology/countySeat"
@@ -22887,7 +23358,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "commanders",
+        "uri": "http://dbpedia.org/property/notableCommanders"
+      }
     ],
     "id": 2152
   },
@@ -22915,7 +23389,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "doctoral supervisor",
+        "uri": "http://dbpedia.org/property/doctoralAdvisor"
+      },
       {}
     ],
     "id": 2155
@@ -22976,7 +23453,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "created by",
+        "uri": "http://dbpedia.org/ontology/creator"
+      },
       {}
     ],
     "id": 2161
@@ -23032,10 +23512,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      },
+      {},
       {}
     ],
     "id": 2166
@@ -23168,7 +23645,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2179
   },
@@ -23202,7 +23682,10 @@
         "label": "discipline",
         "uri": "http://dbpedia.org/ontology/academicDiscipline"
       },
-      {}
+      {
+        "label": "journals",
+        "uri": "http://dbpedia.org/ontology/AcademicJournal"
+      }
     ],
     "id": 2182
   },
@@ -23211,8 +23694,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "citizens",
+        "uri": "http://dbpedia.org/ontology/citizenship"
+      },
+      {
+        "label": "citizens",
+        "uri": "http://dbpedia.org/ontology/citizenship"
+      }
     ],
     "id": 2183
   },
@@ -23302,7 +23791,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "faith",
+        "uri": "http://dbpedia.org/ontology/religion"
+      }
     ],
     "id": 2191
   },
@@ -23380,10 +23872,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "university attended",
-        "uri": "http://dbpedia.org/property/almaMater"
-      },
+      {},
       {
         "label": "university attended",
         "uri": "http://dbpedia.org/property/education"
@@ -23395,7 +23884,10 @@
     "ques": "What river is it whose source is Dowra?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "source",
+        "uri": "http://dbpedia.org/property/sourceLocation"
+      },
       {}
     ],
     "id": 2200
@@ -23432,11 +23924,11 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "edu",
-        "uri": "http://dbpedia.org/ontology/education"
-      },
       {},
+      {
+        "label": "son",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {}
     ],
     "id": 2204
@@ -23481,7 +23973,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "appliance\u0027s",
+        "uri": "http://dbpedia.org/ontology/InformationAppliance"
+      }
     ],
     "id": 2208
   },
@@ -23542,7 +24037,10 @@
     "ques": "What is the faith of Kwai Chang Caine ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "faith",
+        "uri": "http://dbpedia.org/ontology/religion"
+      }
     ],
     "id": 2214
   },
@@ -23554,7 +24052,10 @@
         "label": "in",
         "uri": "http://dbpedia.org/property/city"
       },
-      {},
+      {
+        "label": "river",
+        "uri": "http://dbpedia.org/ontology/riverMouth"
+      },
       {}
     ],
     "id": 2215
@@ -23649,7 +24150,10 @@
         "label": "editor",
         "uri": "http://dbpedia.org/ontology/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2224
   },
@@ -23941,7 +24445,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "job",
+        "uri": "http://dbpedia.org/ontology/occupation"
+      },
       {}
     ],
     "id": 2252
@@ -24066,7 +24573,10 @@
         "label": "WTA Tour Championships",
         "uri": "http://dbpedia.org/resource/WTA_Tour_Championships"
       },
-      {}
+      {
+        "label": "nation",
+        "uri": "http://dbpedia.org/property/country"
+      }
     ],
     "id": 2264
   },
@@ -24362,7 +24872,10 @@
         "label": "Bjelimićka Rijeka",
         "uri": "http://dbpedia.org/resource/Bjelimićka_Rijeka"
       },
-      {},
+      {
+        "label": "tributary",
+        "uri": "http://dbpedia.org/ontology/rightTributary"
+      },
       {
         "label": "mouth",
         "uri": "http://dbpedia.org/ontology/mouthCountry"
@@ -24489,8 +25002,14 @@
     "ES_content": [
       {},
       {},
-      {},
-      {}
+      {
+        "label": "created by",
+        "uri": "http://dbpedia.org/ontology/creator"
+      },
+      {
+        "label": "created by",
+        "uri": "http://dbpedia.org/ontology/creator"
+      }
     ],
     "id": 2305
   },
@@ -24635,7 +25154,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "government",
+        "uri": "http://dbpedia.org/ontology/governmentType"
+      }
     ],
     "id": 2320
   },
@@ -24703,7 +25225,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {
         "label": "written by",
         "uri": "http://dbpedia.org/ontology/author"
@@ -24744,7 +25269,10 @@
     "ques": "Who gave the musical score  of 9 to 5 (musical) ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "musical",
+        "uri": "http://dbpedia.org/ontology/musicBy"
+      }
     ],
     "id": 2330
   },
@@ -24782,7 +25310,10 @@
         "uri": "http://dbpedia.org/resource/6th_Infantry_Regiment_(United_States)"
       },
       {},
-      {}
+      {
+        "label": "commander",
+        "uri": "http://dbpedia.org/ontology/notableCommander"
+      }
     ],
     "id": 2334
   },
@@ -24841,11 +25372,11 @@
     "ques": "What is the field of interest of the advisor of Henri Maspero ?",
     "ES_content": [
       {},
-      {},
       {
-        "label": "field",
-        "uri": "http://dbpedia.org/property/fields"
-      }
+        "label": "advisor",
+        "uri": "http://dbpedia.org/ontology/academicAdvisor"
+      },
+      {}
     ],
     "id": 2340
   },
@@ -24973,8 +25504,14 @@
         "label": "records",
         "uri": "http://dbpedia.org/ontology/recordLabel"
       },
-      {},
-      {}
+      {
+        "label": "composed",
+        "uri": "http://dbpedia.org/ontology/musicComposer"
+      },
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2352
   },
@@ -24991,7 +25528,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2354
   },
@@ -25179,7 +25719,10 @@
     "ques": "Which labels have published songs written by Harry Connick Jr?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/ontology/writer"
+      },
       {},
       {}
     ],
@@ -25207,7 +25750,10 @@
         "label": "city",
         "uri": "http://dbpedia.org/property/cities"
       },
-      {},
+      {
+        "label": "flows",
+        "uri": "http://dbpedia.org/property/outflow"
+      },
       {}
     ],
     "id": 2374
@@ -25236,7 +25782,10 @@
     "ques": "What is the mascot of the military unit whose commander is Herbert Bautista ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "commander",
+        "uri": "http://dbpedia.org/ontology/notableCommander"
+      },
       {},
       {}
     ],
@@ -25304,10 +25853,7 @@
     "ques": "Who owns Torrey Pines Gliderport?",
     "ES_content": [
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      }
+      {}
     ],
     "id": 2383
   },
@@ -25315,7 +25861,10 @@
     "ques": "where did Deion Sanders debut?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "debut",
+        "uri": "http://dbpedia.org/property/debutteam"
+      }
     ],
     "id": 2384
   },
@@ -25534,7 +26083,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2404
   },
@@ -25543,7 +26095,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2405
   },
@@ -25570,10 +26125,7 @@
     "ques": "AH141 highway is a part of which country?",
     "ES_content": [
       {},
-      {
-        "label": "country",
-        "uri": "http://dbpedia.org/ontology/county"
-      }
+      {}
     ],
     "id": 2408
   },
@@ -25656,7 +26208,10 @@
     "ques": "What is the birth location of the advisor of Richard Hofstadter ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "advisor",
+        "uri": "http://dbpedia.org/property/doctoralAdvisor"
+      },
       {
         "label": "birth location",
         "uri": "http://dbpedia.org/ontology/birthPlace"
@@ -25670,7 +26225,10 @@
       {},
       {},
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {
         "label": "shows",
         "uri": "http://dbpedia.org/ontology/TelevisionShow"
@@ -25704,10 +26262,7 @@
         "label": "produced",
         "uri": "http://dbpedia.org/ontology/executiveProducer"
       },
-      {
-        "label": "starred",
-        "uri": "http://dbpedia.org/property/starring"
-      }
+      {}
     ],
     "id": 2420
   },
@@ -25735,7 +26290,10 @@
     "ques": "What is the home town of the musician of Jack your Body ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "musician",
+        "uri": "http://dbpedia.org/ontology/musicalArtist"
+      },
       {}
     ],
     "id": 2423
@@ -25744,10 +26302,7 @@
     "ques": "What is the residence of the person, who starred in Men Will Be Men ?",
     "ES_content": [
       {},
-      {
-        "label": "starred",
-        "uri": "http://dbpedia.org/ontology/starring"
-      },
+      {},
       {},
       {}
     ],
@@ -25822,10 +26377,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "religion",
-        "uri": "http://dbpedia.org/property/denomination"
-      },
+      {},
       {}
     ],
     "id": 2431
@@ -25859,7 +26411,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "broadcast",
+        "uri": "http://dbpedia.org/ontology/broadcastNetwork"
+      }
     ],
     "id": 2434
   },
@@ -25933,7 +26488,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2441
   },
@@ -25984,7 +26542,10 @@
         "label": "in",
         "uri": "http://dbpedia.org/ontology/locatedInArea"
       },
-      {}
+      {
+        "label": "mountains",
+        "uri": "http://dbpedia.org/ontology/mountainRange"
+      }
     ],
     "id": 2445
   },
@@ -26050,10 +26611,7 @@
     "ques": "For how many different teams have the players debuted in Houston Astros played?",
     "ES_content": [
       {},
-      {
-        "label": "debuted",
-        "uri": "http://dbpedia.org/ontology/debutTeam"
-      },
+      {},
       {},
       {
         "label": "team",
@@ -26124,7 +26682,10 @@
     "ques": "Count the different religions followed by Second Lieutenants in military.",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "military.",
+        "uri": "http://dbpedia.org/ontology/militaryRank"
+      },
       {}
     ],
     "id": 2458
@@ -26173,7 +26734,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2462
   },
@@ -26187,7 +26751,10 @@
         "uri": "http://dbpedia.org/ontology/editing"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2463
   },
@@ -26224,7 +26791,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "educational",
+        "uri": "http://dbpedia.org/ontology/EducationalInstitution"
+      }
     ],
     "id": 2466
   },
@@ -26385,7 +26955,10 @@
     "ques": "Ricky Gervais is the executive producer of the series having how many fictional characters?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {},
       {}
     ],
@@ -26396,7 +26969,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "awarded",
+        "uri": "http://dbpedia.org/ontology/award"
+      },
       {}
     ],
     "id": 2483
@@ -26459,7 +27035,10 @@
     "ques": "What religions are followed by members of the societies whose architectural influences can be seen on the Sanggar Agung ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "architectural",
+        "uri": "http://dbpedia.org/property/architecturalStyle"
+      },
       {}
     ],
     "id": 2489
@@ -26881,7 +27460,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "discovered",
+        "uri": "http://dbpedia.org/property/bodyDiscovered"
+      }
     ],
     "id": 2529
   },
@@ -27026,11 +27608,11 @@
         "label": "Mark Steven",
         "uri": "http://dbpedia.org/resource/Mark_Stevens_(film_editor)"
       },
+      {},
       {
-        "label": "edit",
-        "uri": "http://dbpedia.org/property/editing"
-      },
-      {}
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2543
   },
@@ -27195,7 +27777,10 @@
     "ques": "From where did the son of Gustavo Rojas Pinilla graduate?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "son",
+        "uri": "http://dbpedia.org/ontology/child"
+      },
       {
         "label": "graduate",
         "uri": "http://dbpedia.org/property/almaMater"
@@ -27244,9 +27829,15 @@
     "ques": "who are starring in the movies written by Mark Sandrich ?",
     "ES_content": [
       {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/ontology/writer"
+      },
       {},
-      {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2564
   },
@@ -27406,11 +27997,11 @@
         "label": "",
         "uri": "http://dbpedia.org/ontology/operatedBy"
       },
+      {},
       {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      },
-      {}
+        "label": "tunnels",
+        "uri": "http://dbpedia.org/ontology/RoadTunnel"
+      }
     ],
     "id": 2580
   },
@@ -27528,14 +28119,8 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/ontology/partner"
-      },
-      {
-        "label": "married to",
-        "uri": "http://dbpedia.org/ontology/partner"
-      }
+      {},
+      {}
     ],
     "id": 2592
   },
@@ -27545,10 +28130,7 @@
       {},
       {},
       {},
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/ontology/owner"
-      }
+      {}
     ],
     "id": 2593
   },
@@ -27559,10 +28141,7 @@
         "label": "San Francisco 49ers",
         "uri": "http://dbpedia.org/resource/San_Francisco_49ers"
       },
-      {
-        "label": "debuted",
-        "uri": "http://dbpedia.org/ontology/debutTeam"
-      }
+      {}
     ],
     "id": 2594
   },
@@ -27657,10 +28236,7 @@
         "label": "in",
         "uri": "http://dbpedia.org/ontology/city"
       },
-      {
-        "label": "owns",
-        "uri": "http://dbpedia.org/property/owner"
-      },
+      {},
       {}
     ],
     "id": 2603
@@ -27867,7 +28443,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "television",
+        "uri": "http://dbpedia.org/ontology/TelevisionShow"
+      }
     ],
     "id": 2622
   },
@@ -28019,7 +28598,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2637
   },
@@ -28123,7 +28705,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2647
   },
@@ -28322,14 +28907,8 @@
     "ques": "List the judge of the TV show whose one of the judge is Ludacris ?",
     "ES_content": [
       {},
-      {
-        "label": "judge",
-        "uri": "http://dbpedia.org/property/judges"
-      },
-      {
-        "label": "judge",
-        "uri": "http://dbpedia.org/property/judges"
-      },
+      {},
+      {},
       {
         "label": "show",
         "uri": "http://dbpedia.org/ontology/TelevisionShow"
@@ -28362,7 +28941,10 @@
         "label": "editor",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2668
   },
@@ -28383,7 +28965,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "official language",
+        "uri": "http://dbpedia.org/ontology/officialLanguage"
+      }
     ],
     "id": 2670
   },
@@ -28593,7 +29178,10 @@
         "label": "cross",
         "uri": "http://dbpedia.org/ontology/crosses"
       },
-      {},
+      {
+        "label": "maintainer",
+        "uri": "http://dbpedia.org/ontology/maintainedBy"
+      },
       {}
     ],
     "id": 2691
@@ -28746,7 +29334,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2707
   },
@@ -28994,7 +29585,10 @@
     "ques": "who is the husband of Rosie Huntington Whiteley?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "husband",
+        "uri": "http://dbpedia.org/ontology/partner"
+      }
     ],
     "id": 2731
   },
@@ -29078,7 +29672,10 @@
     "ques": "What are the software which uses  platforms as ARM architecture?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "platforms",
+        "uri": "http://dbpedia.org/ontology/computingPlatform"
+      },
       {}
     ],
     "id": 2740
@@ -29098,7 +29695,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "commander",
+        "uri": "http://dbpedia.org/ontology/notableCommander"
+      }
     ],
     "id": 2742
   },
@@ -29116,7 +29716,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "written by",
+        "uri": "http://dbpedia.org/property/writer"
+      },
       {}
     ],
     "id": 2744
@@ -29126,10 +29729,7 @@
     "ES_content": [
       {},
       {},
-      {
-        "label": "workplace",
-        "uri": "http://dbpedia.org/ontology/employer"
-      },
+      {},
       {}
     ],
     "id": 2745
@@ -29138,7 +29738,10 @@
     "ques": "Who is the executive producer of Into the Dalek ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/property/executiveProducer"
+      }
     ],
     "id": 2746
   },
@@ -29155,7 +29758,10 @@
     "ques": "What is the prize awarded to Bruce Beutler ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "prize awarded",
+        "uri": "http://dbpedia.org/ontology/award"
+      }
     ],
     "id": 2748
   },
@@ -29181,7 +29787,10 @@
     "ques": "Name some comic characters created by Bruce Timm?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "created by",
+        "uri": "http://dbpedia.org/ontology/creator"
+      }
     ],
     "id": 2751
   },
@@ -29201,7 +29810,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "appliance",
+        "uri": "http://dbpedia.org/ontology/InformationAppliance"
+      }
     ],
     "id": 2753
   },
@@ -29285,7 +29897,10 @@
     "ques": "How many TV shows have executive producer as Steven Moffat ?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "executive producer",
+        "uri": "http://dbpedia.org/ontology/executiveProducer"
+      },
       {
         "label": "shows",
         "uri": "http://dbpedia.org/ontology/TelevisionShow"
@@ -29297,7 +29912,10 @@
     "ques": "BBC Two is the sister channel of networks having which shows?",
     "ES_content": [
       {},
-      {},
+      {
+        "label": "sister",
+        "uri": "http://dbpedia.org/property/sisterNames"
+      },
       {},
       {
         "label": "shows",
@@ -29345,10 +29963,7 @@
     "ques": "In what wars was Steve Buyer involved?",
     "ES_content": [
       {},
-      {
-        "label": "war",
-        "uri": "http://dbpedia.org/ontology/battle"
-      }
+      {}
     ],
     "id": 2766
   },
@@ -29603,7 +30218,10 @@
     "ES_content": [
       {},
       {},
-      {}
+      {
+        "label": "broadcasted",
+        "uri": "http://dbpedia.org/ontology/broadcastArea"
+      }
     ],
     "id": 2790
   },
@@ -29656,7 +30274,10 @@
         "label": "editor",
         "uri": "http://dbpedia.org/property/editing"
       },
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2794
   },
@@ -29709,7 +30330,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "television",
+        "uri": "http://dbpedia.org/ontology/TelevisionShow"
+      }
     ],
     "id": 2798
   },
@@ -29735,7 +30359,10 @@
     "ques": "Whose shrine is in aachen cathedral?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "shrine",
+        "uri": "http://dbpedia.org/property/majorShrine"
+      }
     ],
     "id": 2801
   },
@@ -29824,7 +30451,10 @@
     "ES_content": [
       {},
       {},
-      {},
+      {
+        "label": "shrines",
+        "uri": "http://dbpedia.org/ontology/majorShrine"
+      },
       {}
     ],
     "id": 2811
@@ -30082,7 +30712,10 @@
       {},
       {},
       {},
-      {}
+      {
+        "label": "has kids",
+        "uri": "http://dbpedia.org/ontology/child"
+      }
     ],
     "id": 2835
   },
@@ -30108,7 +30741,10 @@
     "ques": "What is the burial place of Iyoas I ?",
     "ES_content": [
       {},
-      {}
+      {
+        "label": "burial place",
+        "uri": "http://dbpedia.org/property/placeOfBurial"
+      }
     ],
     "id": 2838
   },
@@ -30131,7 +30767,10 @@
         "uri": "http://dbpedia.org/ontology/recordLabel"
       },
       {},
-      {}
+      {
+        "label": "movie",
+        "uri": "http://dbpedia.org/ontology/Film"
+      }
     ],
     "id": 2840
   },
