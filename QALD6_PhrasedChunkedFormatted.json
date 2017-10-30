@@ -1,0 +1,2454 @@
+{
+  "PhraseChunked_LC-QuAD": [
+    {
+      "Sr.No.": 1,
+      "Words": "[Give, me, all, cosmonauts, .]",
+      "CleanPhrase": "[[Give], [], [cosmonauts]]",
+      "Phrase": "[[Give], [me], [all cosmonauts]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 2,
+      "Words": "[In, which, country, does, the, Ganges, start, ?]",
+      "CleanPhrase": "[[], [], [country], [], [Ganges], [start]]",
+      "Phrase": "[[In], [which], [country], [does], [the Ganges], [start]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 3,
+      "Words": "[When, is, the, movie, Worst, Case, Scenario, going, to, be, in, cinemas, in, the, Netherlands, ?]",
+      "CleanPhrase": "[[], [], [movie Worst Case Scenario], [], [], [cinemas], [], [Netherlands]]",
+      "Phrase": "[[When], [is], [the movie Worst Case Scenario], [going to be], [in], [cinemas], [in], [the Netherlands]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, B-VP, I-VP, E-VP, S-PP, S-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 4,
+      "Words": "[Which, German, cities, have, more, than, 250000, inhabitants, ?]",
+      "CleanPhrase": "[[German cities], [], [250000 inhabitants]]",
+      "Phrase": "[[Which German cities], [have], [more than 250000 inhabitants]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 5,
+      "Words": "[Who, was, John, F., Kennedy, \u0027s, vice, president, ?]",
+      "CleanPhrase": "[[], [], [John F. Kennedy], [\u0027s vice president]]",
+      "Phrase": "[[Who], [was], [John F. Kennedy], [\u0027s vice president]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 6,
+      "Words": "[Who, is, the, mayor, of, Tel, Aviv, ?]",
+      "CleanPhrase": "[[], [], [mayor], [], [Tel Aviv]]",
+      "Phrase": "[[Who], [is], [the mayor], [of], [Tel Aviv]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 7,
+      "Words": "[How, many, students, does, the, Free, University, in, Amsterdam, have, ?]",
+      "CleanPhrase": "[[students], [], [Free University], [], [Amsterdam], []]",
+      "Phrase": "[[How many students], [does], [the Free University], [in], [Amsterdam], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 8,
+      "Words": "[What, is, the, second, highest, mountain, on, Earth, ?]",
+      "CleanPhrase": "[[], [], [highest mountain], [], [Earth]]",
+      "Phrase": "[[What], [is], [the second highest mountain], [on], [Earth]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 9,
+      "Words": "[Give, me, all, professional, skateboarders, from, Sweden, .]",
+      "CleanPhrase": "[[Give], [], [professional skateboarders], [], [Sweden]]",
+      "Phrase": "[[Give], [me], [all professional skateboarders], [from], [Sweden]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 10,
+      "Words": "[When, was, Alberta, admitted, as, province, ?]",
+      "CleanPhrase": "[[], [], [Alberta], [admitted], [], [province]]",
+      "Phrase": "[[When], [was], [Alberta], [admitted], [as], [province]]",
+      "Tags": "[S-ADVP, S-VP, S-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 11,
+      "Words": "[To, which, countries, does, the, Himalayan, mountain, system, extend, ?]",
+      "CleanPhrase": "[[], [], [countries], [], [Himalayan mountain system], [extend]]",
+      "Phrase": "[[To], [which], [countries], [does], [the Himalayan mountain system], [extend]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 12,
+      "Words": "[Give, me, a, list, of, all, bandleaders, that, play, trumpet, .]",
+      "CleanPhrase": "[[Give], [], [list], [], [bandleaders], [], [play], [trumpet]]",
+      "Phrase": "[[Give], [me], [a list], [of], [all bandleaders], [that], [play], [trumpet]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 13,
+      "Words": "[Which, countries, have, more, than, ten, caves, ?]",
+      "CleanPhrase": "[[countries], [], [ten caves]]",
+      "Phrase": "[[Which countries], [have], [more than ten caves]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 14,
+      "Words": "[What, is, the, total, amount, of, men, and, women, serving, in, the, FDNY, ?]",
+      "CleanPhrase": "[[], [], [total amount], [], [men women], [serving], [], [FDNY]]",
+      "Phrase": "[[What], [is], [the total amount], [of], [men and women], [serving], [in], [the FDNY]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 15,
+      "Words": "[Who, produces, Orangina, ?]",
+      "CleanPhrase": "[[], [produces], [Orangina]]",
+      "Phrase": "[[Who], [produces], [Orangina]]",
+      "Tags": "[S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 16,
+      "Words": "[Who, is, the, Formula, 1, race, driver, with, the, most, races, ?]",
+      "CleanPhrase": "[[], [], [Formula 1 race driver], [], [races]]",
+      "Phrase": "[[Who], [is], [the Formula 1 race driver], [with], [the most races]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 17,
+      "Words": "[Give, me, all, world, heritage, sites, designated, within, the, past, two, years.]",
+      "CleanPhrase": "[[Give], [], [world heritage sites], [designated], [], [past years.]]",
+      "Phrase": "[[Give], [me], [all world heritage sites], [designated], [within], [the past two years.]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, S-VP, S-PP, B-NP, I-NP, I-NP, E-NP]"
+    },
+    {
+      "Sr.No.": 18,
+      "Words": "[Who, is, the, youngest, player, in, the, Premier, League, ?]",
+      "CleanPhrase": "[[], [], [youngest player], [], [Premier League]]",
+      "Phrase": "[[Who], [is], [the youngest player], [in], [the Premier League]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 19,
+      "Words": "[Give, me, all, members, of, Prodigy, .]",
+      "CleanPhrase": "[[Give], [], [members], [], [Prodigy]]",
+      "Phrase": "[[Give], [me], [all members], [of], [Prodigy]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 20,
+      "Words": "[What, is, the, longest, river, ?]",
+      "CleanPhrase": "[[], [], [longest river]]",
+      "Phrase": "[[What], [is], [the longest river]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 21,
+      "Words": "[Does, Breaking, Bad, have, more, episodes, than, Game, of, Thrones, ?]",
+      "CleanPhrase": "[[Breaking Bad], [], [episodes], [], [Game], [], [Thrones]]",
+      "Phrase": "[[Breaking Bad], [have], [more episodes], [than], [Game], [of], [Thrones]]",
+      "Tags": "[O, B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, S-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 22,
+      "Words": "[Give, me, all, cars, that, are, produced, in, Germany, .]",
+      "CleanPhrase": "[[Give], [], [cars], [], [produced], [], [Germany]]",
+      "Phrase": "[[Give], [me], [all cars], [that], [are produced], [in], [Germany]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 23,
+      "Words": "[What, were, the, main, discoveries, of, the, Mars, rover, Curiosity, ?]",
+      "CleanPhrase": "[[], [], [main discoveries], [], [Mars rover Curiosity]]",
+      "Phrase": "[[What], [were], [the main discoveries], [of], [the Mars rover Curiosity]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 24,
+      "Words": "[Give, me, all, people, that, were, born, in, Vienna, and, died, in, Berlin, .]",
+      "CleanPhrase": "[[Give], [], [people], [], [born], [], [Vienna], [died], [], [Berlin]]",
+      "Phrase": "[[Give], [me], [all people], [that], [were born], [in], [Vienna], [died], [in], [Berlin]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, B-VP, E-VP, S-PP, S-NP, O, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 25,
+      "Words": "[Is, proinsulin, a, protein, ?]",
+      "CleanPhrase": "[[proinsulin], [protein]]",
+      "Phrase": "[[Is proinsulin], [a protein]]",
+      "Tags": "[B-VP, E-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 26,
+      "Words": "[How, tall, is, Michael, Jordan, ?]",
+      "CleanPhrase": "[[tall], [], [Michael Jordan]]",
+      "Phrase": "[[How tall], [is], [Michael Jordan]]",
+      "Tags": "[B-ADJP, E-ADJP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 27,
+      "Words": "[What, is, the, capital, of, Canada, ?]",
+      "CleanPhrase": "[[], [], [capital], [], [Canada]]",
+      "Phrase": "[[What], [is], [the capital], [of], [Canada]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 28,
+      "Words": "[Who, is, the, governor, of, Wyoming, ?]",
+      "CleanPhrase": "[[], [], [governor], [], [Wyoming]]",
+      "Phrase": "[[Who], [is], [the governor], [of], [Wyoming]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 29,
+      "Words": "[Do, Prince, Harry, and, Prince, William, have, the, same, parents, ?]",
+      "CleanPhrase": "[[Prince Harry], [Prince William], [], [parents]]",
+      "Phrase": "[[Prince Harry], [Prince William], [have], [the same parents]]",
+      "Tags": "[O, B-NP, E-NP, O, B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 30,
+      "Words": "[Who, was, the, father, of, Queen, Elizabeth, II, ?]",
+      "CleanPhrase": "[[], [], [father], [], [Queen Elizabeth II]]",
+      "Phrase": "[[Who], [was], [the father], [of], [Queen Elizabeth II]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 31,
+      "Words": "[Which, U.S., state, has, been, admitted, latest, ?]",
+      "CleanPhrase": "[[], [U.S. state], [admitted], [latest]]",
+      "Phrase": "[[Which], [U.S. state], [has been admitted], [latest]]",
+      "Tags": "[S-NP, B-NP, E-NP, B-VP, I-VP, E-VP, S-ADVP, O]"
+    },
+    {
+      "Sr.No.": 32,
+      "Words": "[How, many, languages, are, spoken, in, Turkmenistan, ?]",
+      "CleanPhrase": "[[languages], [spoken], [], [Turkmenistan]]",
+      "Phrase": "[[How many languages], [are spoken], [in], [Turkmenistan]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 33,
+      "Words": "[Butch, Otter, is, the, governor, of, which, U.S., state, ?]",
+      "CleanPhrase": "[[Butch Otter], [], [governor], [], [], [U.S. state]]",
+      "Phrase": "[[Butch Otter], [is], [the governor], [of], [which], [U.S. state]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, S-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 34,
+      "Words": "[Give, me, all, movies, directed, by, Francis, Ford, Coppola, .]",
+      "CleanPhrase": "[[Give], [], [movies], [directed], [], [Francis Ford Coppola]]",
+      "Phrase": "[[Give], [me], [all movies], [directed], [by], [Francis Ford Coppola]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 35,
+      "Words": "[Give, me, all, actors, starring, in, movies, directed, by, William, Shatner, .]",
+      "CleanPhrase": "[[Give], [], [actors], [starring], [], [movies], [directed], [], [William Shatner]]",
+      "Phrase": "[[Give], [me], [all actors], [starring], [in], [movies], [directed], [by], [William Shatner]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, S-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 36,
+      "Words": "[Are, tree, frogs, a, type, of, amphibian, ?]",
+      "CleanPhrase": "[[], [tree frogs], [type], [], [amphibian]]",
+      "Phrase": "[[Are], [tree frogs], [a type], [of], [amphibian]]",
+      "Tags": "[S-VP, B-NP, E-NP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 37,
+      "Words": "[What, is, the, birth, name, of, Angela, Merkel, ?]",
+      "CleanPhrase": "[[], [], [birth], [], [Angela Merkel]]",
+      "Phrase": "[[What], [is], [the birth name], [of], [Angela Merkel]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 38,
+      "Words": "[Give, me, all, Methodist, politicians, .]",
+      "CleanPhrase": "[[Give], [], [Methodist politicians]]",
+      "Phrase": "[[Give], [me], [all Methodist politicians]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 39,
+      "Words": "[How, often, did, Jane, Fonda, marry, ?]",
+      "CleanPhrase": "[[], [], [], [Jane Fonda], [marry]]",
+      "Phrase": "[[How], [often], [did], [Jane Fonda], [marry]]",
+      "Tags": "[S-ADVP, S-ADVP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 40,
+      "Words": "[Give, me, all, Australian, nonprofit, organizations, .]",
+      "CleanPhrase": "[[Give], [], [Australian nonprofit organizations]]",
+      "Phrase": "[[Give], [me], [all Australian nonprofit organizations]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 41,
+      "Words": "[In, which, military, conflicts, did, Lawrence, of, Arabia, participate, ?]",
+      "CleanPhrase": "[[], [], [military conflicts], [], [Lawrence], [], [Arabia], [participate]]",
+      "Phrase": "[[In], [which], [military conflicts], [did], [Lawrence], [of], [Arabia], [participate]]",
+      "Tags": "[S-PP, S-NP, B-NP, E-NP, S-VP, S-NP, S-PP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 42,
+      "Words": "[Who, developed, Minecraft, ?]",
+      "CleanPhrase": "[[], [developed], [Minecraft]]",
+      "Phrase": "[[Who], [developed], [Minecraft]]",
+      "Tags": "[S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 43,
+      "Words": "[What, is, the, melting, point, of, copper, ?]",
+      "CleanPhrase": "[[], [], [melting point], [], [copper]]",
+      "Phrase": "[[What], [is], [the melting point], [of], [copper]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 44,
+      "Words": "[Give, me, all, sister, cities, of, Brno, .]",
+      "CleanPhrase": "[[Give], [], [sister cities], [], [Brno]]",
+      "Phrase": "[[Give], [me], [all sister cities], [of], [Brno]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 45,
+      "Words": "[How, many, inhabitants, does, Maribor, have, ?]",
+      "CleanPhrase": "[[inhabitants], [Maribor], []]",
+      "Phrase": "[[How many inhabitants], [Maribor], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, O, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 46,
+      "Words": "[Give, me, all, companies, in, Munich, .]",
+      "CleanPhrase": "[[Give], [], [companies], [], [Munich]]",
+      "Phrase": "[[Give], [me], [all companies], [in], [Munich]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 47,
+      "Words": "[How, tall, is, Amazon, Eve, ?]",
+      "CleanPhrase": "[[tall], [], [Amazon Eve]]",
+      "Phrase": "[[How tall], [is], [Amazon Eve]]",
+      "Tags": "[B-ADJP, E-ADJP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 48,
+      "Words": "[List, all, games, by, GMT, .]",
+      "CleanPhrase": "[[List games], [], [GMT]]",
+      "Phrase": "[[List all games], [by], [GMT]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 49,
+      "Words": "[Who, founded, Intel, ?]",
+      "CleanPhrase": "[[], [founded], [Intel]]",
+      "Phrase": "[[Who], [founded], [Intel]]",
+      "Tags": "[S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 50,
+      "Words": "[Who, is, the, husband, of, Amanda, Palmer, ?]",
+      "CleanPhrase": "[[], [], [husband], [], [Amanda Palmer]]",
+      "Phrase": "[[Who], [is], [the husband], [of], [Amanda Palmer]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 51,
+      "Words": "[Give, me, all, breeds, of, the, German, Shepherd, dog, .]",
+      "CleanPhrase": "[[Give], [], [breeds], [], [German Shepherd dog]]",
+      "Phrase": "[[Give], [me], [all breeds], [of], [the German Shepherd dog]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 52,
+      "Words": "[Which, cities, does, the, Weser, flow, through, ?]",
+      "CleanPhrase": "[[cities], [], [Weser flow], []]",
+      "Phrase": "[[Which cities], [does], [the Weser flow], [through]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 53,
+      "Words": "[Which, countries, are, connected, by, the, Rhine, ?]",
+      "CleanPhrase": "[[countries], [connected], [], [Rhine]]",
+      "Phrase": "[[Which countries], [are connected], [by], [the Rhine]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 54,
+      "Words": "[Which, professional, surfers, were, born, in, Australia, ?]",
+      "CleanPhrase": "[[professional surfers], [born], [], [Australia]]",
+      "Phrase": "[[Which professional surfers], [were born], [in], [Australia]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 55,
+      "Words": "[What, is, the, average, temperature, on, Hawaii, ?]",
+      "CleanPhrase": "[[], [], [average temperature], [], [Hawaii]]",
+      "Phrase": "[[What], [is], [the average temperature], [on], [Hawaii]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 56,
+      "Words": "[In, which, UK, city, are, the, headquarters, of, the, MI6, ?]",
+      "CleanPhrase": "[[], [], [UK city], [], [headquarters], [], [MI6]]",
+      "Phrase": "[[In], [which], [UK city], [are], [the headquarters], [of], [the MI6]]",
+      "Tags": "[S-PP, S-NP, B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 57,
+      "Words": "[Which, weapons, did, Heckler, \u0026, Koch, develop, ?]",
+      "CleanPhrase": "[[weapons], [], [Heckler \u0026 Koch], [develop]]",
+      "Phrase": "[[Which weapons], [did], [Heckler \u0026 Koch], [develop]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 58,
+      "Words": "[Who, created, Goofy, ?]",
+      "CleanPhrase": "[[], [created], [Goofy]]",
+      "Phrase": "[[Who], [created], [Goofy]]",
+      "Tags": "[S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 59,
+      "Words": "[Was, the, Cuban, Missile, Crisis, earlier, than, the, Bay, of, Pigs, Invasion, ?]",
+      "CleanPhrase": "[[], [Cuban Missile Crisis], [earlier], [], [Bay], [], [Pigs Invasion]]",
+      "Phrase": "[[Was], [the Cuban Missile Crisis], [earlier], [than], [the Bay], [of], [Pigs Invasion]]",
+      "Tags": "[S-VP, B-NP, I-NP, I-NP, E-NP, S-ADVP, S-PP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 60,
+      "Words": "[Give, me, all, islands, that, belong, to, Japan, .]",
+      "CleanPhrase": "[[Give], [], [islands], [], [belong], [], [Japan]]",
+      "Phrase": "[[Give], [me], [all islands], [that], [belong], [to], [Japan]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 61,
+      "Words": "[Who, invented, the, zipper, ?]",
+      "CleanPhrase": "[[], [invented], [zipper]]",
+      "Phrase": "[[Who], [invented], [the zipper]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 62,
+      "Words": "[What, is, the, ruling, party, in, Lisbon, ?]",
+      "CleanPhrase": "[[], [], [ruling party], [], [Lisbon]]",
+      "Phrase": "[[What], [is], [the ruling party], [in], [Lisbon]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 63,
+      "Words": "[What, are, the, nicknames, of, San, Francisco, ?]",
+      "CleanPhrase": "[[], [], [nicknames], [], [San Francisco]]",
+      "Phrase": "[[What], [are], [the nicknames], [of], [San Francisco]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 64,
+      "Words": "[Which, Greek, goddesses, dwelt, on, Mount, Olympus, ?]",
+      "CleanPhrase": "[[], [Greek goddesses], [dwelt], [], [Mount Olympus]]",
+      "Phrase": "[[Which], [Greek goddesses], [dwelt], [on], [Mount Olympus]]",
+      "Tags": "[S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 65,
+      "Words": "[When, were, the, Hells, Angels, founded, ?]",
+      "CleanPhrase": "[[], [], [Hells Angels], [founded]]",
+      "Phrase": "[[When], [were], [the Hells Angels], [founded]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 66,
+      "Words": "[Give, me, all, Apollo, 14, astronauts, .]",
+      "CleanPhrase": "[[Give], [], [Apollo 14 astronauts]]",
+      "Phrase": "[[Give], [me], [all Apollo 14 astronauts]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 67,
+      "Words": "[What, is, the, time, zone, of, Salt, Lake, City, ?]",
+      "CleanPhrase": "[[], [], [time zone], [], [Salt Lake City]]",
+      "Phrase": "[[What], [is], [the time zone], [of], [Salt Lake City]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 68,
+      "Words": "[Which, U.S., states, are, in, the, same, time, zone, as, Utah, ?]",
+      "CleanPhrase": "[[], [U.S. states], [], [], [time zone], [], [Utah]]",
+      "Phrase": "[[Which], [U.S. states], [are], [in], [the same time zone], [as], [Utah]]",
+      "Tags": "[S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 69,
+      "Words": "[Give, me, the, capitals, of, all, countries, in, Africa, .]",
+      "CleanPhrase": "[[Give], [], [capitals], [], [countries], [], [Africa]]",
+      "Phrase": "[[Give], [me], [the capitals], [of], [all countries], [in], [Africa]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 70,
+      "Words": "[Give, me, a, list, of, all, lakes, in, Denmark, .]",
+      "CleanPhrase": "[[Give], [], [list], [], [lakes], [], [Denmark]]",
+      "Phrase": "[[Give], [me], [a list], [of], [all lakes], [in], [Denmark]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 71,
+      "Words": "[How, many, missions, does, the, Soyuz, programme, have, ?]",
+      "CleanPhrase": "[[], [missions], [], [Soyuz programme], []]",
+      "Phrase": "[[How], [many missions], [does], [the Soyuz programme], [have]]",
+      "Tags": "[S-ADVP, B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 72,
+      "Words": "[Did, Socrates, influence, Aristotle, ?]",
+      "CleanPhrase": "[[Socrates influence], [Aristotle]]",
+      "Phrase": "[[Socrates influence], [Aristotle]]",
+      "Tags": "[O, B-NP, E-NP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 73,
+      "Words": "[Give, me, all, Danish, movies, .]",
+      "CleanPhrase": "[[Give], [], [Danish movies]]",
+      "Phrase": "[[Give], [me], [all Danish movies]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 74,
+      "Words": "[Give, me, all, launch, pads, operated, by, NASA, .]",
+      "CleanPhrase": "[[Give], [], [launch pads], [operated], [], [NASA]]",
+      "Phrase": "[[Give], [me], [all launch pads], [operated], [by], [NASA]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 75,
+      "Words": "[Which, instruments, does, Cat, Stevens, play, ?]",
+      "CleanPhrase": "[[instruments], [], [Cat Stevens play]]",
+      "Phrase": "[[Which instruments], [does], [Cat Stevens play]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 76,
+      "Words": "[Which, ships, were, called, after, Benjamin, Franklin, ?]",
+      "CleanPhrase": "[[ships], [called], [], [Benjamin Franklin]]",
+      "Phrase": "[[Which ships], [were called], [after], [Benjamin Franklin]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 77,
+      "Words": "[Who, are, the, parents, of, the, wife, of, Juan, Carlos, I, ?]",
+      "CleanPhrase": "[[], [], [parents], [], [wife], [], [Juan Carlos], []]",
+      "Phrase": "[[Who], [are], [the parents], [of], [the wife], [of], [Juan Carlos], [I]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, B-NP, E-NP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 78,
+      "Words": "[How, many, employees, does, Google, have, ?]",
+      "CleanPhrase": "[[employees], [], [Google], []]",
+      "Phrase": "[[How many employees], [does], [Google], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 79,
+      "Words": "[Did, Tesla, win, a, nobel, prize, in, physics, ?]",
+      "CleanPhrase": "[[Tesla], [win], [nobel prize], [], [physics]]",
+      "Phrase": "[[Tesla], [win], [a nobel prize], [in], [physics]]",
+      "Tags": "[O, S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 80,
+      "Words": "[Give, me, all, cities, in, New, Jersey, with, more, than, 100000, inhabitants, .]",
+      "CleanPhrase": "[[Give], [], [cities], [], [Jersey], [], [100000 inhabitants]]",
+      "Phrase": "[[Give], [me], [all cities], [in], [New Jersey], [with], [more than 100000 inhabitants]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 81,
+      "Words": "[Is, Rita, Wilson, the, wife, of, Tom, Hanks, ?]",
+      "CleanPhrase": "[[], [Rita Wilson], [wife], [], [Tom Hanks]]",
+      "Phrase": "[[Is], [Rita Wilson], [the wife], [of], [Tom Hanks]]",
+      "Tags": "[S-VP, B-NP, E-NP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 82,
+      "Words": "[When, was, the, Statue, of, Liberty, built, ?]",
+      "CleanPhrase": "[[], [], [Statue], [], [Liberty], [built]]",
+      "Phrase": "[[When], [was], [the Statue], [of], [Liberty], [built]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, E-NP, S-PP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 83,
+      "Words": "[Where, is, Fort, Knox, located, ?]",
+      "CleanPhrase": "[[], [], [Fort Knox], [located]]",
+      "Phrase": "[[Where], [is], [Fort Knox], [located]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 84,
+      "Words": "[How, many, children, did, Benjamin, Franklin, have, ?]",
+      "CleanPhrase": "[[children], [], [Benjamin Franklin], []]",
+      "Phrase": "[[How many children], [did], [Benjamin Franklin], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 85,
+      "Words": "[When, did, Michael, Jackson, die, ?]",
+      "CleanPhrase": "[[], [Michael Jackson], [die]]",
+      "Phrase": "[[When], [Michael Jackson], [die]]",
+      "Tags": "[S-ADVP, O, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 86,
+      "Words": "[Which, Chess, players, died, in, the, same, place, they, were, born, in, ?]",
+      "CleanPhrase": "[[], [Chess players], [died], [], [place], [], [born], []]",
+      "Phrase": "[[Which], [Chess players], [died], [in], [the same place], [they], [were born], [in]]",
+      "Tags": "[S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, S-NP, B-VP, E-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 87,
+      "Words": "[List, the, children, of, Margaret, Thatcher, .]",
+      "CleanPhrase": "[[children], [], [Margaret Thatcher]]",
+      "Phrase": "[[the children], [of], [Margaret Thatcher]]",
+      "Tags": "[O, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 88,
+      "Words": "[Who, was, called, Frank, The, Tank, ?]",
+      "CleanPhrase": "[[], [called], [Frank], [Tank]]",
+      "Phrase": "[[Who], [was called], [Frank], [The Tank]]",
+      "Tags": "[S-NP, B-VP, E-VP, S-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 89,
+      "Words": "[Was, Margaret, Thatcher, a, chemist, ?]",
+      "CleanPhrase": "[[], [Margaret Thatcher], [chemist]]",
+      "Phrase": "[[Was], [Margaret Thatcher], [a chemist]]",
+      "Tags": "[S-VP, B-NP, E-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 90,
+      "Words": "[Was, Marc, Chagall, a, jew, ?]",
+      "CleanPhrase": "[[], [Marc Chagall], [jew]]",
+      "Phrase": "[[Was], [Marc Chagall], [a jew]]",
+      "Tags": "[S-VP, B-NP, E-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 91,
+      "Words": "[Which, museum, exhibits, The, Scream, by, Munch, ?]",
+      "CleanPhrase": "[[museum], [exhibits], [Scream], [], [Munch]]",
+      "Phrase": "[[Which museum], [exhibits], [The Scream], [by], [Munch]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 92,
+      "Words": "[Give, me, all, books, by, William, Goldman, with, more, than, 300, pages, .]",
+      "CleanPhrase": "[[Give], [], [books], [], [William Goldman], [], [300 pages]]",
+      "Phrase": "[[Give], [me], [all books], [by], [William Goldman], [with], [more than 300 pages]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 93,
+      "Words": "[Which, books, by, Kerouac, were, published, by, Viking, Press, ?]",
+      "CleanPhrase": "[[books], [], [Kerouac], [published], [], [Viking Press]]",
+      "Phrase": "[[Which books], [by], [Kerouac], [were published], [by], [Viking Press]]",
+      "Tags": "[B-NP, E-NP, S-PP, S-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 94,
+      "Words": "[Give, me, a, list, of, all, American, inventions, .]",
+      "CleanPhrase": "[[Give], [], [list], [], [American inventions]]",
+      "Phrase": "[[Give], [me], [a list], [of], [all American inventions]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 95,
+      "Words": "[How, high, is, the, Mount, Everest, ?]",
+      "CleanPhrase": "[[high], [], [Mount Everest]]",
+      "Phrase": "[[How high], [is], [the Mount Everest]]",
+      "Tags": "[B-ADJP, E-ADJP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 96,
+      "Words": "[Who, created, Batman, ?]",
+      "CleanPhrase": "[[], [created], [Batman]]",
+      "Phrase": "[[Who], [created], [Batman]]",
+      "Tags": "[S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 97,
+      "Words": "[How, many, people, live, in, the, capital, of, Australia, ?]",
+      "CleanPhrase": "[[people], [live], [], [capital], [], [Australia]]",
+      "Phrase": "[[How many people], [live], [in], [the capital], [of], [Australia]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 98,
+      "Words": "[What, is, the, largest, city, in, Australia, ?]",
+      "CleanPhrase": "[[], [], [largest city], [], [Australia]]",
+      "Phrase": "[[What], [is], [the largest city], [in], [Australia]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 99,
+      "Words": "[Who, composed, the, music, for, Harold, and, Maude, ?]",
+      "CleanPhrase": "[[], [composed], [music], [], [Harold], [Maude]]",
+      "Phrase": "[[Who], [composed], [the music], [for], [Harold], [Maude]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O, S-NP, O]"
+    },
+    {
+      "Sr.No.": 100,
+      "Words": "[Which, films, starring, Clint, Eastwood, did, he, direct, himself, ?]",
+      "CleanPhrase": "[[films], [starring], [Clint Eastwood], [], [], [direct], []]",
+      "Phrase": "[[Which films], [starring], [Clint Eastwood], [did], [he], [direct], [himself]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, S-VP, S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 101,
+      "Words": "[In, which, city, was, the, former, Dutch, queen, Juliana, buried, ?]",
+      "CleanPhrase": "[[], [], [city], [], [Dutch queen Juliana], [buried]]",
+      "Phrase": "[[In], [which], [city], [was], [the former Dutch queen Juliana], [buried]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 102,
+      "Words": "[Is, Egypts, largest, city, also, its, capital, ?]",
+      "CleanPhrase": "[[], [Egypts largest city], [], [capital]]",
+      "Phrase": "[[Is], [Egypts largest city], [also], [its capital]]",
+      "Tags": "[S-VP, B-NP, I-NP, E-NP, S-ADVP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 103,
+      "Words": "[Where, is, the, residence, of, the, prime, minister, of, Spain, ?]",
+      "CleanPhrase": "[[], [], [residence], [], [prime minister], [], [Spain]]",
+      "Phrase": "[[Where], [is], [the residence], [of], [the prime minister], [of], [Spain]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 104,
+      "Words": "[Which, U.S., state, has, the, abbreviation, MN, ?]",
+      "CleanPhrase": "[[], [U.S. state], [], [abbreviation MN]]",
+      "Phrase": "[[Which], [U.S. state], [has], [the abbreviation MN]]",
+      "Tags": "[S-NP, B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 105,
+      "Words": "[Show, me, all, songs, from, Bruce, Springsteen, released, between, 1980, and, 1990.]",
+      "CleanPhrase": "[[Show], [], [songs], [], [Bruce Springsteen], [released], [], [1980 1990.]]",
+      "Phrase": "[[Show], [me], [all songs], [from], [Bruce Springsteen], [released], [between], [1980 and 1990.]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP]"
+    },
+    {
+      "Sr.No.": 106,
+      "Words": "[Which, movies, did, Kurosawa, direct, ?]",
+      "CleanPhrase": "[[], [movies], [], [Kurosawa], [direct]]",
+      "Phrase": "[[Which], [movies], [did], [Kurosawa], [direct]]",
+      "Tags": "[S-NP, S-NP, S-VP, S-NP, S-ADJP, O]"
+    },
+    {
+      "Sr.No.": 107,
+      "Words": "[What, is, the, founding, year, of, the, brewery, that, produces, Pilsner, Urquell, ?]",
+      "CleanPhrase": "[[], [], [founding year], [], [brewery], [], [produces], [Pilsner Urquell]]",
+      "Phrase": "[[What], [is], [the founding year], [of], [the brewery], [that], [produces], [Pilsner Urquell]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, S-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 108,
+      "Words": "[Who, wrote, the, lyrics, for, the, Polish, national, anthem, ?]",
+      "CleanPhrase": "[[], [wrote], [lyrics], [], [Polish national anthem]]",
+      "Phrase": "[[Who], [wrote], [the lyrics], [for], [the Polish national anthem]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 109,
+      "Words": "[Give, me, all, B-, sides, of, the, Ramones, .]",
+      "CleanPhrase": "[[Give], [], [B- sides], [], [Ramones]]",
+      "Phrase": "[[Give], [me], [all B- sides], [of], [the Ramones]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 110,
+      "Words": "[Who, painted, The, Storm, on, the, Sea, of, Galilee, ?]",
+      "CleanPhrase": "[[], [painted], [Storm], [], [Sea], [], [Galilee]]",
+      "Phrase": "[[Who], [painted], [The Storm], [on], [the Sea], [of], [Galilee]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 111,
+      "Words": "[Which, country, does, the, creator, of, Miffy, come, from, ?]",
+      "CleanPhrase": "[[country], [], [creator], [], [Miffy], [], []]",
+      "Phrase": "[[Which country], [does], [the creator], [of], [Miffy], [come], [from]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, S-NP, S-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 112,
+      "Words": "[For, which, label, did, Elvis, record, his, first, album, ?]",
+      "CleanPhrase": "[[], [], [label], [Elvis record], [album]]",
+      "Phrase": "[[For], [which], [label], [Elvis record], [his first album]]",
+      "Tags": "[S-PP, S-NP, S-NP, O, B-NP, E-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 113,
+      "Words": "[Give, me, the, birthdays, of, all, actors, of, the, television, show, Charmed, .]",
+      "CleanPhrase": "[[Give], [], [birthdays], [], [actors], [], [television show], [Charmed]]",
+      "Phrase": "[[Give], [me], [the birthdays], [of], [all actors], [of], [the television show], [Charmed]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 114,
+      "Words": "[How, many, employees, does, IBM, have, ?]",
+      "CleanPhrase": "[[employees], [], [IBM], []]",
+      "Phrase": "[[How many employees], [does], [IBM], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 115,
+      "Words": "[Which, states, border, Illinois, ?]",
+      "CleanPhrase": "[[], [states], [border Illinois]]",
+      "Phrase": "[[Which], [states], [border Illinois]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 116,
+      "Words": "[In, which, country, is, the, Limerick, Lake, ?]",
+      "CleanPhrase": "[[], [], [country], [], [Limerick Lake]]",
+      "Phrase": "[[In], [which], [country], [is], [the Limerick Lake]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 117,
+      "Words": "[Which, television, shows, were, created, by, John, Cleese, ?]",
+      "CleanPhrase": "[[television shows], [created], [], [John Cleese]]",
+      "Phrase": "[[Which television shows], [were created], [by], [John Cleese]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 118,
+      "Words": "[Which, mountain, is, the, highest, after, the, Annapurna, ?]",
+      "CleanPhrase": "[[mountain], [], [highest], [], [Annapurna]]",
+      "Phrase": "[[Which mountain], [is], [the highest], [after], [the Annapurna]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 119,
+      "Words": "[In, which, films, directed, by, Garry, Marshall, was, Julia, Roberts, starring, ?]",
+      "CleanPhrase": "[[], [films], [directed], [], [Garry Marshall], [], [Julia Roberts], [starring]]",
+      "Phrase": "[[In], [which films], [directed], [by], [Garry Marshall], [was], [Julia Roberts], [starring]]",
+      "Tags": "[S-PP, B-NP, E-NP, S-VP, S-PP, B-NP, E-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 120,
+      "Words": "[Which, bridges, are, of, the, same, type, as, the, Manhattan, Bridge, ?]",
+      "CleanPhrase": "[[bridges], [], [], [type], [], [Manhattan Bridge]]",
+      "Phrase": "[[Which bridges], [are], [of], [the same type], [as], [the Manhattan Bridge]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 121,
+      "Words": "[Was, U.S., president, Jackson, involved, in, a, war, ?]",
+      "CleanPhrase": "[[], [U.S. president Jackson], [involved], [], [war]]",
+      "Phrase": "[[Was], [U.S. president Jackson], [involved], [in], [a war]]",
+      "Tags": "[S-VP, B-NP, I-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 122,
+      "Words": "[Give, me, all, communist, countries.]",
+      "CleanPhrase": "[[Give], [], [communist countries.]]",
+      "Phrase": "[[Give], [me], [all communist countries.]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP]"
+    },
+    {
+      "Sr.No.": 123,
+      "Words": "[Which, awards, did, Douglas, Hofstadter, win, ?]",
+      "CleanPhrase": "[[], [awards], [], [Douglas Hofstadter], [win]]",
+      "Phrase": "[[Which], [awards], [did], [Douglas Hofstadter], [win]]",
+      "Tags": "[S-NP, S-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 124,
+      "Words": "[Who, is, the, daughter, of, Robert, Kennedy, married, to, ?]",
+      "CleanPhrase": "[[], [], [daughter], [], [Robert Kennedy], [married], []]",
+      "Phrase": "[[Who], [is], [the daughter], [of], [Robert Kennedy], [married], [to]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 125,
+      "Words": "[Which, U.S., state, has, the, highest, population, density, ?]",
+      "CleanPhrase": "[[], [U.S. state], [], [highest population density]]",
+      "Phrase": "[[Which], [U.S. state], [has], [the highest population density]]",
+      "Tags": "[S-NP, B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 126,
+      "Words": "[What, is, the, currency, of, the, Czech, Republic, ?]",
+      "CleanPhrase": "[[], [], [currency], [], [Czech Republic]]",
+      "Phrase": "[[What], [is], [the currency], [of], [the Czech Republic]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 127,
+      "Words": "[Which, countries, adopted, the, Euro, ?]",
+      "CleanPhrase": "[[countries], [adopted], [Euro]]",
+      "Phrase": "[[Which countries], [adopted], [the Euro]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 128,
+      "Words": "[What, is, the, area, code, of, Berlin, ?]",
+      "CleanPhrase": "[[], [], [area code], [], [Berlin]]",
+      "Phrase": "[[What], [is], [the area code], [of], [Berlin]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 129,
+      "Words": "[Which, countries, have, more, than, two, official, languages, ?]",
+      "CleanPhrase": "[[countries], [], [official languages]]",
+      "Phrase": "[[Which countries], [have], [more than two official languages]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 130,
+      "Words": "[Who, is, the, owner, of, Rolls-Royce, ?]",
+      "CleanPhrase": "[[], [], [owner], [], [Rolls-Royce]]",
+      "Phrase": "[[Who], [is], [the owner], [of], [Rolls-Royce]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 131,
+      "Words": "[Through, which, countries, does, the, Yenisei, river, flow, ?]",
+      "CleanPhrase": "[[], [], [countries], [], [Yenisei river flow]]",
+      "Phrase": "[[Through], [which], [countries], [does], [the Yenisei river flow]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 132,
+      "Words": "[When, did, Latvia, join, the, EU, ?]",
+      "CleanPhrase": "[[], [Latvia], [join], [EU]]",
+      "Phrase": "[[When], [Latvia], [join], [the EU]]",
+      "Tags": "[S-ADVP, O, S-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 133,
+      "Words": "[Which, politicians, were, married, to, a, German, ?]",
+      "CleanPhrase": "[[politicians], [married], [], [German]]",
+      "Phrase": "[[Which politicians], [were married], [to], [a German]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 134,
+      "Words": "[When, was, the, Battle, of, Gettysburg, ?]",
+      "CleanPhrase": "[[], [], [Battle], [], [Gettysburg]]",
+      "Phrase": "[[When], [was], [the Battle], [of], [Gettysburg]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 135,
+      "Words": "[Which, river, does, the, Brooklyn, Bridge, cross, ?]",
+      "CleanPhrase": "[[river], [], [Brooklyn Bridge cross]]",
+      "Phrase": "[[Which river], [does], [the Brooklyn Bridge cross]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 136,
+      "Words": "[What, is, the, highest, mountain, in, Australia, ?]",
+      "CleanPhrase": "[[], [], [highest mountain], [], [Australia]]",
+      "Phrase": "[[What], [is], [the highest mountain], [in], [Australia]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 137,
+      "Words": "[Give, me, all, soccer, clubs, in, Spain, .]",
+      "CleanPhrase": "[[Give], [], [soccer clubs], [], [Spain]]",
+      "Phrase": "[[Give], [me], [all soccer clubs], [in], [Spain]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 138,
+      "Words": "[What, is, the, official, language, of, Suriname, ?]",
+      "CleanPhrase": "[[], [], [official language], [], [Suriname]]",
+      "Phrase": "[[What], [is], [the official language], [of], [Suriname]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 139,
+      "Words": "[Who, is, the, mayor, of, Tel, Aviv, ?]",
+      "CleanPhrase": "[[], [], [mayor], [], [Tel Aviv]]",
+      "Phrase": "[[Who], [is], [the mayor], [of], [Tel Aviv]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 140,
+      "Words": "[Who, designed, the, Brooklyn, Bridge, ?]",
+      "CleanPhrase": "[[], [designed], [Brooklyn Bridge]]",
+      "Phrase": "[[Who], [designed], [the Brooklyn Bridge]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 141,
+      "Words": "[Which, telecommunications, organizations, are, located, in, Belgium, ?]",
+      "CleanPhrase": "[[telecommunications organizations], [located], [], [Belgium]]",
+      "Phrase": "[[Which telecommunications organizations], [are located], [in], [Belgium]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 142,
+      "Words": "[Is, Frank, Herbert, still, alive, ?]",
+      "CleanPhrase": "[[], [Frank Herbert], [], [alive]]",
+      "Phrase": "[[Is], [Frank Herbert], [still], [alive]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-ADVP, S-ADJP, O]"
+    },
+    {
+      "Sr.No.": 143,
+      "Words": "[What, is, the, highest, place, of, the, Urals, ?]",
+      "CleanPhrase": "[[], [], [highest place], [], [Urals]]",
+      "Phrase": "[[What], [is], [the highest place], [of], [the Urals]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 144,
+      "Words": "[Who, is, the, editor, of, Forbes, ?]",
+      "CleanPhrase": "[[], [], [editor], [], [Forbes]]",
+      "Phrase": "[[Who], [is], [the editor], [of], [Forbes]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 145,
+      "Words": "[Give, me, all, companies, in, the, advertising, industry, .]",
+      "CleanPhrase": "[[Give], [], [companies], [], [advertising industry]]",
+      "Phrase": "[[Give], [me], [all companies], [in], [the advertising industry]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 146,
+      "Words": "[How, many, countries, are, there, in, Europe, ?]",
+      "CleanPhrase": "[[countries], [], [], [], [Europe]]",
+      "Phrase": "[[How many countries], [are], [there], [in], [Europe]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-ADVP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 147,
+      "Words": "[What, did, Bruce, Carver, die, from, ?]",
+      "CleanPhrase": "[[], [], [Bruce Carver], [die], []]",
+      "Phrase": "[[What], [did], [Bruce Carver], [die], [from]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 148,
+      "Words": "[Give, me, all, libraries, established, earlier, than, 1400.]",
+      "CleanPhrase": "[[Give], [], [libraries], [established], [earlier], []]",
+      "Phrase": "[[Give], [me], [all libraries], [established], [earlier], [than]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-ADVP, S-SBAR, O]"
+    },
+    {
+      "Sr.No.": 149,
+      "Words": "[Which, presidents, were, born, in, 1945, ?]",
+      "CleanPhrase": "[[], [presidents], [born], [], [1945]]",
+      "Phrase": "[[Which], [presidents], [were born], [in], [1945]]",
+      "Tags": "[S-NP, S-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 150,
+      "Words": "[Give, me, all, federal, chancellors, of, Germany, .]",
+      "CleanPhrase": "[[Give], [], [federal chancellors], [], [Germany]]",
+      "Phrase": "[[Give], [me], [all federal chancellors], [of], [Germany]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 151,
+      "Words": "[Who, was, the, wife, of, U.S., president, Lincoln, ?]",
+      "CleanPhrase": "[[], [], [wife], [], [U.S. president Lincoln]]",
+      "Phrase": "[[Who], [was], [the wife], [of], [U.S. president Lincoln]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 152,
+      "Words": "[Who, developed, the, video, game, World, of, Warcraft, ?]",
+      "CleanPhrase": "[[], [developed], [video game World], [], [Warcraft]]",
+      "Phrase": "[[Who], [developed], [the video game World], [of], [Warcraft]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 153,
+      "Words": "[What, is, the, official, website, of, Tom, Cruise, ?]",
+      "CleanPhrase": "[[], [], [official website], [], [Tom Cruise]]",
+      "Phrase": "[[What], [is], [the official website], [of], [Tom Cruise]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 154,
+      "Words": "[List, all, episodes, of, the, first, season, of, the, HBO, television, series, The, Sopranos, .]",
+      "CleanPhrase": "[[List episodes], [], [season], [], [HBO television series], [Sopranos]]",
+      "Phrase": "[[List all episodes], [of], [the first season], [of], [the HBO television series], [The Sopranos]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 155,
+      "Words": "[Who, produced, the, most, films, ?]",
+      "CleanPhrase": "[[], [produced], [films]]",
+      "Phrase": "[[Who], [produced], [the most films]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 156,
+      "Words": "[Give, me, all, people, with, first, name, Jimmy, .]",
+      "CleanPhrase": "[[Give], [], [people], [], [Jimmy]]",
+      "Phrase": "[[Give], [me], [all people], [with], [first name Jimmy]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 157,
+      "Words": "[In, which, city, did, John, F., Kennedy, die, ?]",
+      "CleanPhrase": "[[], [], [city], [], [John F. Kennedy], [die]]",
+      "Phrase": "[[In], [which], [city], [did], [John F. Kennedy], [die]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 158,
+      "Words": "[Is, there, a, video, game, called, Battle, Chess, ?]",
+      "CleanPhrase": "[[], [], [video game], [called], [Battle Chess]]",
+      "Phrase": "[[Is], [there], [a video game], [called], [Battle Chess]]",
+      "Tags": "[S-VP, S-ADVP, B-NP, I-NP, E-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 159,
+      "Words": "[Which, mountains, are, higher, than, the, Nanga, Parbat, ?]",
+      "CleanPhrase": "[[mountains], [], [higher], [], [Nanga Parbat]]",
+      "Phrase": "[[Which mountains], [are], [higher], [than], [the Nanga Parbat]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-ADJP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 160,
+      "Words": "[Who, created, Wikipedia, ?]",
+      "CleanPhrase": "[[], [created], [Wikipedia]]",
+      "Phrase": "[[Who], [created], [Wikipedia]]",
+      "Tags": "[S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 161,
+      "Words": "[Give, me, all, actors, starring, in, Last, Action, Hero, .]",
+      "CleanPhrase": "[[Give], [], [actors], [starring], [], [Action Hero]]",
+      "Phrase": "[[Give], [me], [all actors], [starring], [in], [Last Action Hero]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 162,
+      "Words": "[Which, software, has, been, developed, by, organizations, founded, in, California, ?]",
+      "CleanPhrase": "[[software], [developed], [], [organizations], [founded], [], [California]]",
+      "Phrase": "[[Which software], [has been developed], [by], [organizations], [founded], [in], [California]]",
+      "Tags": "[B-NP, E-NP, B-VP, I-VP, E-VP, S-PP, S-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 163,
+      "Words": "[Which, companies, work, in, the, aerospace, industry, as, well, as, in, medicine, ?]",
+      "CleanPhrase": "[[companies], [work], [], [aerospace industry], [], [], [medicine]]",
+      "Phrase": "[[Which companies], [work], [in], [the aerospace industry], [as well as], [in], [medicine]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, B-CONJP, I-CONJP, E-CONJP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 164,
+      "Words": "[Is, Christian, Bale, starring, in, Velvet, Goldmine, ?]",
+      "CleanPhrase": "[[], [Christian Bale], [starring], [], [Velvet Goldmine]]",
+      "Phrase": "[[Is], [Christian Bale], [starring], [in], [Velvet Goldmine]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 165,
+      "Words": "[Give, me, the, websites, of, companies, with, more, than, 500000, employees, .]",
+      "CleanPhrase": "[[Give], [], [websites], [], [companies], [], [500000 employees]]",
+      "Phrase": "[[Give], [me], [the websites], [of], [companies], [with], [more than 500000 employees]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, S-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 166,
+      "Words": "[Which, actors, were, born, in, Germany, ?]",
+      "CleanPhrase": "[[actors], [born], [], [Germany]]",
+      "Phrase": "[[Which actors], [were born], [in], [Germany]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 167,
+      "Words": "[Which, caves, have, more, than, 3, entrances, ?]",
+      "CleanPhrase": "[[caves], [], [3 entrances]]",
+      "Phrase": "[[Which caves], [have], [more than 3 entrances]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 168,
+      "Words": "[Was, the, wife, of, president, Lincoln, called, Mary, ?]",
+      "CleanPhrase": "[[], [wife], [], [president Lincoln], [called], [Mary]]",
+      "Phrase": "[[Was], [the wife], [of], [president Lincoln], [called], [Mary]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 169,
+      "Words": "[Give, me, all, films, produced, by, Hal, Roach, .]",
+      "CleanPhrase": "[[Give], [], [films], [produced], [], [Hal Roach]]",
+      "Phrase": "[[Give], [me], [all films], [produced], [by], [Hal Roach]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 170,
+      "Words": "[Give, me, all, video, games, published, by, Mean, Hamster, Software, .]",
+      "CleanPhrase": "[[Give], [], [video games], [published], [], [Hamster Software]]",
+      "Phrase": "[[Give], [me], [all video games], [published], [by], [Mean Hamster Software]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 171,
+      "Words": "[Which, languages, are, spoken, in, Estonia, ?]",
+      "CleanPhrase": "[[languages], [spoken], [], [Estonia]]",
+      "Phrase": "[[Which languages], [are spoken], [in], [Estonia]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 172,
+      "Words": "[How, many, Aldi, stores, are, there, ?]",
+      "CleanPhrase": "[[Aldi stores], [], []]",
+      "Phrase": "[[How many Aldi stores], [are], [there]]",
+      "Tags": "[B-NP, I-NP, I-NP, E-NP, S-VP, S-ADVP, O]"
+    },
+    {
+      "Sr.No.": 173,
+      "Words": "[Which, capitals, in, Europe, were, host, cities, of, the, summer, olympic, games, ?]",
+      "CleanPhrase": "[[capitals], [], [Europe], [], [host cities], [], [summer olympic games]]",
+      "Phrase": "[[Which capitals], [in], [Europe], [were], [host cities], [of], [the summer olympic games]]",
+      "Tags": "[B-NP, E-NP, S-PP, S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 174,
+      "Words": "[Who, was, the, 16th, president, of, the, United, States, ?]",
+      "CleanPhrase": "[[], [], [16th president], [], [United States]]",
+      "Phrase": "[[Who], [was], [the 16th president], [of], [the United States]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 175,
+      "Words": "[How, many, films, did, Hal, Roach, produce, ?]",
+      "CleanPhrase": "[[films], [], [Hal Roach], [produce]]",
+      "Phrase": "[[How many films], [did], [Hal Roach], [produce]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 176,
+      "Words": "[Which, music, albums, contain, the, song, Last, Christmas, ?]",
+      "CleanPhrase": "[[music albums], [], [song], [Christmas]]",
+      "Phrase": "[[Which music albums], [contain], [the song], [Last Christmas]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, E-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 177,
+      "Words": "[Give, me, all, books, written, by, Danielle, Steel, .]",
+      "CleanPhrase": "[[Give], [], [books], [written], [], [Danielle Steel]]",
+      "Phrase": "[[Give], [me], [all books], [written], [by], [Danielle Steel]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 178,
+      "Words": "[Which, airports, are, located, in, California, , USA, ?]",
+      "CleanPhrase": "[[], [airports], [located], [], [California], [USA]]",
+      "Phrase": "[[Which], [airports], [are located], [in], [California], [USA]]",
+      "Tags": "[S-NP, S-NP, B-VP, E-VP, S-PP, S-NP, , S-NP, O]"
+    },
+    {
+      "Sr.No.": 179,
+      "Words": "[Which, states, of, Germany, are, governed, by, the, Social, Democratic, Party, ?]",
+      "CleanPhrase": "[[], [states], [], [Germany], [governed], [], [Social Democratic Party]]",
+      "Phrase": "[[Which], [states], [of], [Germany], [are governed], [by], [the Social Democratic Party]]",
+      "Tags": "[S-NP, S-NP, S-PP, S-NP, B-VP, E-VP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 180,
+      "Words": "[Give, me, all, Canadian, Grunge, record, labels, .]",
+      "CleanPhrase": "[[Give], [], [Canadian Grunge record labels]]",
+      "Phrase": "[[Give], [me], [all Canadian Grunge record labels]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 181,
+      "Words": "[Which, country, has, the, most, official, languages, ?]",
+      "CleanPhrase": "[[country], [], [official languages]]",
+      "Phrase": "[[Which country], [has], [the most official languages]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 182,
+      "Words": "[In, which, programming, language, is, GIMP, written, ?]",
+      "CleanPhrase": "[[], [], [programming language], [], [GIMP], [written]]",
+      "Phrase": "[[In], [which], [programming language], [is], [GIMP], [written]]",
+      "Tags": "[S-PP, S-NP, B-NP, E-NP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 183,
+      "Words": "[Who, produced, films, starring, Natalie, Portman, ?]",
+      "CleanPhrase": "[[], [produced], [films], [starring], [Natalie Portman]]",
+      "Phrase": "[[Who], [produced], [films], [starring], [Natalie Portman]]",
+      "Tags": "[S-NP, S-VP, S-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 184,
+      "Words": "[Give, me, all, movies, with, Tom, Cruise, .]",
+      "CleanPhrase": "[[Give], [], [movies], [], [Tom Cruise]]",
+      "Phrase": "[[Give], [me], [all movies], [with], [Tom Cruise]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 185,
+      "Words": "[In, which, films, did, Julia, Roberts, as, well, as, Richard, Gere, play, ?]",
+      "CleanPhrase": "[[], [], [films], [], [Julia Roberts], [], [Richard Gere play]]",
+      "Phrase": "[[In], [which], [films], [did], [Julia Roberts], [as well as], [Richard Gere play]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, E-NP, B-CONJP, I-CONJP, E-CONJP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 186,
+      "Words": "[Give, me, all, female, given, names, .]",
+      "CleanPhrase": "[[Give], [], [female names]]",
+      "Phrase": "[[Give], [me], [all female given names]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 187,
+      "Words": "[Who, wrote, the, book, The, Pillars, of, the, Earth, ?]",
+      "CleanPhrase": "[[], [wrote], [book], [Pillars], [], [Earth]]",
+      "Phrase": "[[Who], [wrote], [the book], [The Pillars], [of], [the Earth]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 188,
+      "Words": "[How, many, films, did, Leonardo, DiCaprio, star, in, ?]",
+      "CleanPhrase": "[[films], [], [Leonardo DiCaprio star], []]",
+      "Phrase": "[[How many films], [did], [Leonardo DiCaprio star], [in]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 189,
+      "Words": "[Give, me, all, soccer, clubs, in, the, Premier, League, .]",
+      "CleanPhrase": "[[Give], [], [soccer clubs], [], [Premier League]]",
+      "Phrase": "[[Give], [me], [all soccer clubs], [in], [the Premier League]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 190,
+      "Words": "[In, which, U.S., state, is, Mount, McKinley, located, ?]",
+      "CleanPhrase": "[[], [], [U.S. state], [], [Mount McKinley], [located]]",
+      "Phrase": "[[In], [which], [U.S. state], [is], [Mount McKinley], [located]]",
+      "Tags": "[S-PP, S-NP, B-NP, E-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 191,
+      "Words": "[When, was, Jack, Wolfskin, founded, ?]",
+      "CleanPhrase": "[[], [], [Jack Wolfskin], [founded]]",
+      "Phrase": "[[When], [was], [Jack Wolfskin], [founded]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 192,
+      "Words": "[Which, organizations, were, founded, in, 1930, ?]",
+      "CleanPhrase": "[[organizations], [founded], [], [1930]]",
+      "Phrase": "[[Which organizations], [were founded], [in], [1930]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 193,
+      "Words": "[What, is, the, highest, mountain, ?]",
+      "CleanPhrase": "[[], [], [highest mountain]]",
+      "Phrase": "[[What], [is], [the highest mountain]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 194,
+      "Words": "[Was, Natalie, Portman, born, in, the, United, States, ?]",
+      "CleanPhrase": "[[], [Natalie Portman], [born], [], [United States]]",
+      "Phrase": "[[Was], [Natalie Portman], [born], [in], [the United States]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 195,
+      "Words": "[Which, budget, did, the, first, movie, of, Zdenek, Sverak, have, ?]",
+      "CleanPhrase": "[[budget], [], [movie], [], [Zdenek Sverak], []]",
+      "Phrase": "[[Which budget], [did], [the first movie], [of], [Zdenek Sverak], [have]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 196,
+      "Words": "[How, many, big, fires, struck, Paris, during, the, Middle, Ages, ?]",
+      "CleanPhrase": "[[big fires], [struck], [Paris], [], [Middle Ages]]",
+      "Phrase": "[[How many big fires], [struck], [Paris], [during], [the Middle Ages]]",
+      "Tags": "[B-NP, I-NP, I-NP, E-NP, S-VP, S-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 197,
+      "Words": "[Is, Pamela, Anderson, a, vegan, ?]",
+      "CleanPhrase": "[[], [Pamela Anderson], [vegan]]",
+      "Phrase": "[[Is], [Pamela Anderson], [a vegan]]",
+      "Tags": "[S-VP, B-NP, E-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 198,
+      "Words": "[How, often, was, Michael, Jordan, divorced, ?]",
+      "CleanPhrase": "[[], [], [], [Michael Jordan], [divorced]]",
+      "Phrase": "[[How], [often], [was], [Michael Jordan], [divorced]]",
+      "Tags": "[S-ADVP, S-ADVP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 199,
+      "Words": "[What, is, the, most, beautiful, painting, ?]",
+      "CleanPhrase": "[[], [], [beautiful painting]]",
+      "Phrase": "[[What], [is], [the most beautiful painting]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 200,
+      "Words": "[Give, me, all, animal, species, that, live, in, the, Amazon, rainforest, .]",
+      "CleanPhrase": "[[Give], [], [animal species], [], [live], [], [Amazon rainforest]]",
+      "Phrase": "[[Give], [me], [all animal species], [that], [live], [in], [the Amazon rainforest]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 201,
+      "Words": "[How, many, inhabitants, does, the, largest, city, in, Canada, have, ?]",
+      "CleanPhrase": "[[inhabitants], [], [largest city], [], [Canada], []]",
+      "Phrase": "[[How many inhabitants], [does], [the largest city], [in], [Canada], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 202,
+      "Words": "[In, which, studio, did, the, Beatles, record, their, first, album, ?]",
+      "CleanPhrase": "[[], [], [studio], [], [Beatles record], [album]]",
+      "Phrase": "[[In], [which], [studio], [did], [the Beatles record], [their first album]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, E-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 203,
+      "Words": "[Who, was, the, first, to, climb, Mount, Everest, ?]",
+      "CleanPhrase": "[[], [], [], [climb], [Mount Everest]]",
+      "Phrase": "[[Who], [was], [the first], [to climb], [Mount Everest]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, B-VP, E-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 204,
+      "Words": "[How, many, programming, languages, are, there, ?]",
+      "CleanPhrase": "[[programming languages], [], []]",
+      "Phrase": "[[How many programming languages], [are], [there]]",
+      "Tags": "[B-NP, I-NP, I-NP, E-NP, S-VP, S-ADVP, O]"
+    },
+    {
+      "Sr.No.": 205,
+      "Words": "[What, is, the, official, color, of, the, University, of, Oxford, ?]",
+      "CleanPhrase": "[[], [], [official color], [], [University], [], [Oxford]]",
+      "Phrase": "[[What], [is], [the official color], [of], [the University], [of], [Oxford]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 206,
+      "Words": "[How, many, gold, medals, did, Michael, Phelps, win, at, the, 2008, Olympics, ?]",
+      "CleanPhrase": "[[gold medals], [], [Michael Phelps], [win], [], [2008 Olympics]]",
+      "Phrase": "[[How many gold medals], [did], [Michael Phelps], [win], [at], [the 2008 Olympics]]",
+      "Tags": "[B-NP, I-NP, I-NP, E-NP, S-VP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 207,
+      "Words": "[To, which, artistic, movement, did, the, painter, of, The, Three, Dancers, belong, ?]",
+      "CleanPhrase": "[[], [], [artistic movement], [], [painter], [], [Dancers], [belong]]",
+      "Phrase": "[[To], [which], [artistic movement], [did], [the painter], [of], [The Three Dancers], [belong]]",
+      "Tags": "[S-PP, S-NP, B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 208,
+      "Words": "[Give, me, all, animals, that, are, extinct, .]",
+      "CleanPhrase": "[[Give], [], [animals], [], [], [extinct]]",
+      "Phrase": "[[Give], [me], [all animals], [that], [are], [extinct]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, S-VP, S-ADJP, O]"
+    },
+    {
+      "Sr.No.": 209,
+      "Words": "[Does, Abraham, Lincoln, \u0027s, death, place, have, a, website, ?]",
+      "CleanPhrase": "[[Abraham Lincoln], [\u0027s death place], [], [website]]",
+      "Phrase": "[[Abraham Lincoln], [\u0027s death place], [have], [a website]]",
+      "Tags": "[O, B-NP, E-NP, B-NP, I-NP, E-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 210,
+      "Words": "[How, deep, is, Lake, Chiemsee, ?]",
+      "CleanPhrase": "[[deep], [], [Lake Chiemsee]]",
+      "Phrase": "[[How deep], [is], [Lake Chiemsee]]",
+      "Tags": "[B-ADJP, E-ADJP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 211,
+      "Words": "[Give, me, the, grandchildren, of, Elvis, Presley, .]",
+      "CleanPhrase": "[[Give], [], [grandchildren], [], [Elvis Presley]]",
+      "Phrase": "[[Give], [me], [the grandchildren], [of], [Elvis Presley]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 212,
+      "Words": "[Who, is, the, youngest, Darts, player, ?]",
+      "CleanPhrase": "[[], [], [youngest Darts player]]",
+      "Phrase": "[[Who], [is], [the youngest Darts player]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 213,
+      "Words": "[Where, was, Bach, born, ?]",
+      "CleanPhrase": "[[], [], [Bach], [born]]",
+      "Phrase": "[[Where], [was], [Bach], [born]]",
+      "Tags": "[S-ADVP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 214,
+      "Words": "[In, which, countries, can, you, pay, using, the, West, African, CFA, franc, ?]",
+      "CleanPhrase": "[[], [], [countries], [], [], [pay], [West African CFA franc]]",
+      "Phrase": "[[In], [which], [countries], [can], [you], [pay using], [the West African CFA franc]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, S-NP, B-VP, E-VP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 215,
+      "Words": "[What, are, the, top-10, action, role, -, playing, video, games, according, to, IGN, ?]",
+      "CleanPhrase": "[[], [], [top-10 action role], [playing], [video games], [], [], [IGN]]",
+      "Phrase": "[[What], [are], [the top-10 action role], [playing], [video games], [according], [to], [IGN]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O, S-VP, B-NP, E-NP, S-PP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 216,
+      "Words": "[What, is, the, most, frequent, cause, of, death, ?]",
+      "CleanPhrase": "[[], [], [frequent], [], [death]]",
+      "Phrase": "[[What], [is], [the most frequent cause], [of], [death]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 217,
+      "Words": "[Does, the, Isar, flow, into, a, lake, ?]",
+      "CleanPhrase": "[[Isar flow], [], [lake]]",
+      "Phrase": "[[the Isar flow], [into], [a lake]]",
+      "Tags": "[O, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 218,
+      "Words": "[Give, me, all, films, produced, by, Steven, Spielberg, with, a, budget, of, at, least, $, 80, million, .]",
+      "CleanPhrase": "[[Give], [], [films], [produced], [], [Steven Spielberg], [], [budget], [], [$ 80 million]]",
+      "Phrase": "[[Give], [me], [all films], [produced], [by], [Steven Spielberg], [with], [a budget], [of], [at least $ 80 million]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 219,
+      "Words": "[Give, me, all, writers, that, won, the, Nobel, Prize, in, literature, .]",
+      "CleanPhrase": "[[Give], [], [writers], [], [won], [Nobel Prize], [], [literature]]",
+      "Phrase": "[[Give], [me], [all writers], [that], [won], [the Nobel Prize], [in], [literature]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 220,
+      "Words": "[Give, me, all, taikonauts, .]",
+      "CleanPhrase": "[[Give], [], [taikonauts]]",
+      "Phrase": "[[Give], [me], [all taikonauts]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 221,
+      "Words": "[How, many, pages, does, War, and, Peace, have, ?]",
+      "CleanPhrase": "[[pages], [], [War Peace], []]",
+      "Phrase": "[[How many pages], [does], [War and Peace], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 222,
+      "Words": "[What, is, the, bridge, with, the, longest, span, ?]",
+      "CleanPhrase": "[[], [], [bridge], [], [longest span]]",
+      "Phrase": "[[What], [is], [the bridge], [with], [the longest span]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 223,
+      "Words": "[Give, me, all, actors, called, Baldwin, .]",
+      "CleanPhrase": "[[Give], [], [actors], [called], [Baldwin]]",
+      "Phrase": "[[Give], [me], [all actors], [called], [Baldwin]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 224,
+      "Words": "[Who, is, the, tallest, player, of, the, Atlanta, Falcons, ?]",
+      "CleanPhrase": "[[], [], [tallest player], [], [Atlanta Falcons]]",
+      "Phrase": "[[Who], [is], [the tallest player], [of], [the Atlanta Falcons]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 225,
+      "Words": "[Which, rivers, flow, into, a, German, lake, ?]",
+      "CleanPhrase": "[[], [rivers], [flow], [], [German lake]]",
+      "Phrase": "[[Which], [rivers], [flow], [into], [a German lake]]",
+      "Tags": "[S-NP, S-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 226,
+      "Words": "[How, many, James, Bond, movies, are, there, ?]",
+      "CleanPhrase": "[[James Bond movies], [], []]",
+      "Phrase": "[[How many James Bond movies], [are], [there]]",
+      "Tags": "[B-NP, I-NP, I-NP, I-NP, E-NP, S-VP, S-ADVP, O]"
+    },
+    {
+      "Sr.No.": 227,
+      "Words": "[Which, rockets, were, launched, from, Baikonur, ?]",
+      "CleanPhrase": "[[rockets], [launched], [], [Baikonur]]",
+      "Phrase": "[[Which rockets], [were launched], [from], [Baikonur]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 228,
+      "Words": "[Which, pope, succeeded, John, Paul, II, ?]",
+      "CleanPhrase": "[[pope], [succeeded], [John Paul II]]",
+      "Phrase": "[[Which pope], [succeeded], [John Paul II]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 229,
+      "Words": "[Give, me, all, Dutch, parties, .]",
+      "CleanPhrase": "[[Give], [], [Dutch parties]]",
+      "Phrase": "[[Give], [me], [all Dutch parties]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 230,
+      "Words": "[When, is, Halloween, ?]",
+      "CleanPhrase": "[[], [], [Halloween]]",
+      "Phrase": "[[When], [is], [Halloween]]",
+      "Tags": "[S-ADVP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 231,
+      "Words": "[Give, me, all, Swedish, oceanographers, .]",
+      "CleanPhrase": "[[Give], [], [Swedish oceanographers]]",
+      "Phrase": "[[Give], [me], [all Swedish oceanographers]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 232,
+      "Words": "[Give, me, all, actors, who, were, born, in, Berlin, .]",
+      "CleanPhrase": "[[Give], [], [actors], [], [born], [], [Berlin]]",
+      "Phrase": "[[Give], [me], [all actors], [who], [were born], [in], [Berlin]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 233,
+      "Words": "[What, was, the, last, movie, with, Alec, Guinness, ?]",
+      "CleanPhrase": "[[], [], [movie], [], [Alec Guinness]]",
+      "Phrase": "[[What], [was], [the last movie], [with], [Alec Guinness]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 234,
+      "Words": "[Which, poet, wrote, the, most, books, ?]",
+      "CleanPhrase": "[[poet], [wrote], [books]]",
+      "Phrase": "[[Which poet], [wrote], [the most books]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 235,
+      "Words": "[How, many, languages, are, spoken, in, Colombia, ?]",
+      "CleanPhrase": "[[languages], [spoken], [], [Colombia]]",
+      "Phrase": "[[How many languages], [are spoken], [in], [Colombia]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 236,
+      "Words": "[What, does, ICRO, stand, for, ?]",
+      "CleanPhrase": "[[], [ICRO], [stand], []]",
+      "Phrase": "[[What], [ICRO], [stand], [for]]",
+      "Tags": "[S-NP, O, S-NP, S-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 237,
+      "Words": "[What, was, Brazil, \u0027s, lowest, rank, in, the, FIFA, World, Ranking, ?]",
+      "CleanPhrase": "[[], [], [Brazil], [\u0027s lowest rank], [], [FIFA World Ranking]]",
+      "Phrase": "[[What], [was], [Brazil], [\u0027s lowest rank], [in], [the FIFA World Ranking]]",
+      "Tags": "[S-NP, S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 238,
+      "Words": "[Give, me, the, capitals, of, all, countries, that, the, Himalayas, run, through, .]",
+      "CleanPhrase": "[[Give], [], [capitals], [], [countries], [], [Himalayas], [run], []]",
+      "Phrase": "[[Give], [me], [the capitals], [of], [all countries], [that], [the Himalayas], [run], [through]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, S-SBAR, B-NP, E-NP, S-VP, S-ADVP, O]"
+    },
+    {
+      "Sr.No.": 239,
+      "Words": "[Which, actor, played, Chewbacca, ?]",
+      "CleanPhrase": "[[actor], [played], [Chewbacca]]",
+      "Phrase": "[[Which actor], [played], [Chewbacca]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 240,
+      "Words": "[Which, ingredients, do, I, need, for, carrot, cake, ?]",
+      "CleanPhrase": "[[ingredients], [], [], [], [], [carrot cake]]",
+      "Phrase": "[[Which ingredients], [do], [I], [need], [for], [carrot cake]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 241,
+      "Words": "[Is, Cola, a, beverage, ?]",
+      "CleanPhrase": "[[], [Cola beverage]]",
+      "Phrase": "[[Is], [Cola a beverage]]",
+      "Tags": "[S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 242,
+      "Words": "[Who, has, Tom, Cruise, been, married, to, ?]",
+      "CleanPhrase": "[[], [], [Tom Cruise], [married], []]",
+      "Phrase": "[[Who], [has], [Tom Cruise], [been married], [to]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, B-VP, E-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 243,
+      "Words": "[Which, of, Tim, Burton, \u0027s, films, had, the, highest, budget, ?]",
+      "CleanPhrase": "[[], [], [Tim Burton], [\u0027s films], [], [highest budget]]",
+      "Phrase": "[[Which], [of], [Tim Burton], [\u0027s films], [had], [the highest budget]]",
+      "Tags": "[S-NP, S-PP, B-NP, E-NP, B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 244,
+      "Words": "[How, heavy, is, Jupiter, \u0027s, lightest, moon, ?]",
+      "CleanPhrase": "[[heavy], [], [Jupiter], [\u0027s lightest moon]]",
+      "Phrase": "[[How heavy], [is], [Jupiter], [\u0027s lightest moon]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 245,
+      "Words": "[Which, actor, was, casted, in, the, most, movies, ?]",
+      "CleanPhrase": "[[], [actor], [casted], [], [movies]]",
+      "Phrase": "[[Which], [actor], [was casted], [in], [the most movies]]",
+      "Tags": "[S-NP, S-NP, B-VP, E-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 246,
+      "Words": "[Is, James, Bond, married, ?]",
+      "CleanPhrase": "[[], [James Bond], [married]]",
+      "Phrase": "[[Is], [James Bond], [married]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 247,
+      "Words": "[Give, me, all, Australian, metalcore, bands, .]",
+      "CleanPhrase": "[[Give], [], [Australian metalcore bands]]",
+      "Phrase": "[[Give], [me], [all Australian metalcore bands]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 248,
+      "Words": "[Give, me, all, actors, who, were, born, in, Paris, after, 1950.]",
+      "CleanPhrase": "[[Give], [], [actors], [], [born], [], [Paris], [], [1950.]]",
+      "Phrase": "[[Give], [me], [all actors], [who], [were born], [in], [Paris], [after], [1950.]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, B-VP, E-VP, S-PP, S-NP, S-PP, S-NP]"
+    },
+    {
+      "Sr.No.": 249,
+      "Words": "[When, was, Olof, Palme, shot, ?]",
+      "CleanPhrase": "[[], [], [Olof Palme shot]]",
+      "Phrase": "[[When], [was], [Olof Palme shot]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 250,
+      "Words": "[Who, are, the, four, youngest, MVP, basketball, players, ?]",
+      "CleanPhrase": "[[], [], [youngest MVP basketball players]]",
+      "Phrase": "[[Who], [are], [the four youngest MVP basketball players]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 251,
+      "Words": "[Which, companies, have, more, than, 1, million, employees, ?]",
+      "CleanPhrase": "[[companies], [], [1 million employees]]",
+      "Phrase": "[[Which companies], [have], [more than 1 million employees]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 252,
+      "Words": "[Give, all, swimmers, that, were, born, in, Moscow, .]",
+      "CleanPhrase": "[[Give], [swimmers], [], [born], [], [Moscow]]",
+      "Phrase": "[[Give], [all swimmers], [that], [were born], [in], [Moscow]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 253,
+      "Words": "[Who, was, called, Rodzilla, ?]",
+      "CleanPhrase": "[[], [called], [Rodzilla]]",
+      "Phrase": "[[Who], [was called], [Rodzilla]]",
+      "Tags": "[S-NP, B-VP, E-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 254,
+      "Words": "[Show, me, the, book, that, Muhammad, Ali, wrote, .]",
+      "CleanPhrase": "[[Show], [], [book], [], [Muhammad Ali], [wrote]]",
+      "Phrase": "[[Show], [me], [the book], [that], [Muhammad Ali], [wrote]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-SBAR, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 255,
+      "Words": "[How, many, museums, does, Paris, have, ?]",
+      "CleanPhrase": "[[museums], [], [Paris], []]",
+      "Phrase": "[[How many museums], [does], [Paris], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 256,
+      "Words": "[Which, city, has, the, most, inhabitants, ?]",
+      "CleanPhrase": "[[city], [], [inhabitants]]",
+      "Phrase": "[[Which city], [has], [the most inhabitants]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 257,
+      "Words": "[Which, city, has, the, least, inhabitants, ?]",
+      "CleanPhrase": "[[city], [], [inhabitants]]",
+      "Phrase": "[[Which city], [has], [the least inhabitants]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 258,
+      "Words": "[Give, me, all, the, TV, shows, with, Neil, Patrick, Harris, .]",
+      "CleanPhrase": "[[Give], [], [TV shows], [], [Neil Patrick Harris]]",
+      "Phrase": "[[Give], [me], [all the TV shows], [with], [Neil Patrick Harris]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 259,
+      "Words": "[Who, wrote, The, Hunger, Games, ?]",
+      "CleanPhrase": "[[], [wrote], [Hunger Games]]",
+      "Phrase": "[[Who], [wrote], [The Hunger Games]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 260,
+      "Words": "[Show, a, list, of, soccer, clubs, that, play, in, the, Bundesliga, .]",
+      "CleanPhrase": "[[Show], [list], [], [soccer clubs], [], [play], [], [Bundesliga]]",
+      "Phrase": "[[Show], [a list], [of], [soccer clubs], [that], [play], [in], [the Bundesliga]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 261,
+      "Words": "[What, country, is, Mount, Everest, in, ?]",
+      "CleanPhrase": "[[country], [], [Mount Everest], []]",
+      "Phrase": "[[What country], [is], [Mount Everest], [in]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 262,
+      "Words": "[Who, is, the, founder, of, Penguin, Books, ?]",
+      "CleanPhrase": "[[], [], [founder], [], [Penguin Books]]",
+      "Phrase": "[[Who], [is], [the founder], [of], [Penguin Books]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 263,
+      "Words": "[Which, programming, languages, influenced, Javascript, ?]",
+      "CleanPhrase": "[[programming languages], [influenced], [Javascript]]",
+      "Phrase": "[[Which programming languages], [influenced], [Javascript]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 264,
+      "Words": "[Did, Che, Guevara, have, children, ?]",
+      "CleanPhrase": "[[Che Guevara], [], [children]]",
+      "Phrase": "[[Che Guevara], [have], [children]]",
+      "Tags": "[O, B-NP, E-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 265,
+      "Words": "[List, all, the, musicals, with, music, by, Leonard, Bernstein, .]",
+      "CleanPhrase": "[[List], [musicals], [], [music], [], [Leonard Bernstein]]",
+      "Phrase": "[[List], [all the musicals], [with], [music], [by], [Leonard Bernstein]]",
+      "Tags": "[S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 266,
+      "Words": "[Show, me, all, the, breweries, in, Australia, .]",
+      "CleanPhrase": "[[Show], [], [breweries], [], [Australia]]",
+      "Phrase": "[[Show], [me], [all the breweries], [in], [Australia]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 267,
+      "Words": "[When, was, the, Titanic, completed, ?]",
+      "CleanPhrase": "[[], [], [Titanic], [completed]]",
+      "Phrase": "[[When], [was], [the Titanic], [completed]]",
+      "Tags": "[S-ADVP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 268,
+      "Words": "[How, much, did, Pulp, Fiction, cost, ?]",
+      "CleanPhrase": "[[], [], [Pulp Fiction cost]]",
+      "Phrase": "[[How much], [did], [Pulp Fiction cost]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 269,
+      "Words": "[How, many, airlines, are, there, ?]",
+      "CleanPhrase": "[[airlines], [], []]",
+      "Phrase": "[[How many airlines], [are], [there]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-ADVP, O]"
+    },
+    {
+      "Sr.No.": 270,
+      "Words": "[Who, played, Agent, Smith, in, Matrix, ?]",
+      "CleanPhrase": "[[], [played], [Agent Smith], [], [Matrix]]",
+      "Phrase": "[[Who], [played], [Agent Smith], [in], [Matrix]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 271,
+      "Words": "[How, much, carbs, does, peanut, butter, have, ?]",
+      "CleanPhrase": "[[carbs], [peanut butter], []]",
+      "Phrase": "[[How much carbs], [peanut butter], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, O, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 272,
+      "Words": "[Which, book, has, the, most, pages, ?]",
+      "CleanPhrase": "[[book], [], [pages]]",
+      "Phrase": "[[Which book], [has], [the most pages]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 273,
+      "Words": "[Which, bridges, cross, the, Seine, ?]",
+      "CleanPhrase": "[[bridges], [cross], [Seine]]",
+      "Phrase": "[[Which bridges], [cross], [the Seine]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 274,
+      "Words": "[Who, is, the, mayor, of, the, capital, of, French, Polynesia, ?]",
+      "CleanPhrase": "[[], [], [mayor], [], [capital], [], [French Polynesia]]",
+      "Phrase": "[[Who], [is], [the mayor], [of], [the capital], [of], [French Polynesia]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 275,
+      "Words": "[When, did, Dracula, \u0027s, creator, die, ?]",
+      "CleanPhrase": "[[], [Dracula], [\u0027s creator], [die]]",
+      "Phrase": "[[When], [Dracula], [\u0027s creator], [die]]",
+      "Tags": "[S-ADVP, O, S-NP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 276,
+      "Words": "[What, is, the, location, of, the, Houses, of, Parliament, ?]",
+      "CleanPhrase": "[[], [], [location], [], [Houses], [], [Parliament]]",
+      "Phrase": "[[What], [is], [the location], [of], [the Houses], [of], [Parliament]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 277,
+      "Words": "[Show, me, all, English, Gothic, buildings, in, Kent, .]",
+      "CleanPhrase": "[[Show], [], [English Gothic buildings], [], [Kent]]",
+      "Phrase": "[[Show], [me], [all English Gothic buildings], [in], [Kent]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 278,
+      "Words": "[Who, was, the, pope, that, founded, the, Vatican, Television, ?]",
+      "CleanPhrase": "[[], [], [pope], [], [founded], [Vatican Television]]",
+      "Phrase": "[[Who], [was], [the pope], [that], [founded], [the Vatican Television]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 279,
+      "Words": "[What, airlines, are, part, of, the, SkyTeam, alliance, ?]",
+      "CleanPhrase": "[[airlines], [], [part], [], [SkyTeam alliance]]",
+      "Phrase": "[[What airlines], [are], [part], [of], [the SkyTeam alliance]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 280,
+      "Words": "[What, is, the, total, population, of, Melbourne, , Florida, ?]",
+      "CleanPhrase": "[[], [], [total population], [], [Melbourne], [Florida]]",
+      "Phrase": "[[What], [is], [the total population], [of], [Melbourne], [Florida]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, , S-NP, O]"
+    },
+    {
+      "Sr.No.": 281,
+      "Words": "[Which, airports, does, Yeti, Airlines, serve, ?]",
+      "CleanPhrase": "[[], [airports], [], [Yeti Airlines], [serve]]",
+      "Phrase": "[[Which], [airports], [does], [Yeti Airlines], [serve]]",
+      "Tags": "[S-NP, S-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 282,
+      "Words": "[In, which, year, was, Rachel, Stevens, born, ?]",
+      "CleanPhrase": "[[], [], [year], [], [Rachel Stevens], [born]]",
+      "Phrase": "[[In], [which], [year], [was], [Rachel Stevens], [born]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 283,
+      "Words": "[Where, was, JFK, assassinated, ?]",
+      "CleanPhrase": "[[], [], [JFK], [assassinated]]",
+      "Phrase": "[[Where], [was], [JFK], [assassinated]]",
+      "Tags": "[S-ADVP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 284,
+      "Words": "[How, many, politicians, graduated, from, Columbia, University, ?]",
+      "CleanPhrase": "[[politicians], [graduated], [], [Columbia University]]",
+      "Phrase": "[[How many politicians], [graduated], [from], [Columbia University]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 285,
+      "Words": "[Which, scientist, is, known, for, the, Manhattan, Project, and, the, Nobel, Peace, Prize, ?]",
+      "CleanPhrase": "[[scientist], [], [], [Manhattan Project], [Nobel Peace Prize]]",
+      "Phrase": "[[Which scientist], [is known], [for], [the Manhattan Project], [the Nobel Peace Prize]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, B-NP, I-NP, E-NP, O, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 286,
+      "Words": "[What, is, the, highest, volcano, in, Africa, ?]",
+      "CleanPhrase": "[[], [], [highest volcano], [], [Africa]]",
+      "Phrase": "[[What], [is], [the highest volcano], [in], [Africa]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 287,
+      "Words": "[Which, beer, originated, in, Ireland, ?]",
+      "CleanPhrase": "[[beer], [originated], [], [Ireland]]",
+      "Phrase": "[[Which beer], [originated], [in], [Ireland]]",
+      "Tags": "[B-NP, E-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 288,
+      "Words": "[What, are, the, specialities, of, the, UNC, Health, Care, ?]",
+      "CleanPhrase": "[[], [], [specialities], [], [UNC Health Care]]",
+      "Phrase": "[[What], [are], [the specialities], [of], [the UNC Health Care]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 289,
+      "Words": "[Who, is, the, owner, of, Facebook, ?]",
+      "CleanPhrase": "[[], [], [owner], [], [Facebook]]",
+      "Phrase": "[[Who], [is], [the owner], [of], [Facebook]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 290,
+      "Words": "[From, which, region, is, the, Melon, de, Bourgogne, ?]",
+      "CleanPhrase": "[[], [], [region], [], [Melon de Bourgogne]]",
+      "Phrase": "[[From], [which], [region], [is], [the Melon de Bourgogne]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 291,
+      "Words": "[Who, was, influenced, by, Socrates, ?]",
+      "CleanPhrase": "[[], [influenced], [], [Socrates]]",
+      "Phrase": "[[Who], [was influenced], [by], [Socrates]]",
+      "Tags": "[S-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 292,
+      "Words": "[Who, was, president, of, Pakistan, in, 1978, ?]",
+      "CleanPhrase": "[[], [], [president], [], [Pakistan], [], [1978]]",
+      "Phrase": "[[Who], [was], [president], [of], [Pakistan], [in], [1978]]",
+      "Tags": "[S-NP, S-VP, S-NP, S-PP, S-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 293,
+      "Words": "[Give, me, English, actors, starring, in, Lovesick, .]",
+      "CleanPhrase": "[[Give], [], [English actors], [starring], [], [Lovesick]]",
+      "Phrase": "[[Give], [me], [English actors], [starring], [in], [Lovesick]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 294,
+      "Words": "[Give, me, all, types, of, eating, disorders, .]",
+      "CleanPhrase": "[[Give], [], [types], [], [eating disorders]]",
+      "Phrase": "[[Give], [me], [all types], [of], [eating disorders]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 295,
+      "Words": "[Who, was, married, to, president, Chirac, ?]",
+      "CleanPhrase": "[[], [married], [], [president Chirac]]",
+      "Phrase": "[[Who], [was married], [to], [president Chirac]]",
+      "Tags": "[S-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 296,
+      "Words": "[What, is, the, largest, metropolitan, area, in, Washington, state, ?]",
+      "CleanPhrase": "[[], [], [largest metropolitan area], [], [Washington state]]",
+      "Phrase": "[[What], [is], [the largest metropolitan area], [in], [Washington state]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 297,
+      "Words": "[Where, in, France, is, sparkling, wine, produced, ?]",
+      "CleanPhrase": "[[], [], [France], [], [sparkling wine], [produced]]",
+      "Phrase": "[[Where], [in], [France], [is], [sparkling wine], [produced]]",
+      "Tags": "[S-ADVP, S-PP, S-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 298,
+      "Words": "[Where, did, Hillel, Slovak, die, ?]",
+      "CleanPhrase": "[[], [Hillel Slovak], [die]]",
+      "Phrase": "[[Where], [Hillel Slovak], [die]]",
+      "Tags": "[S-ADVP, O, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 299,
+      "Words": "[What, is, the, timezone, in, San, Pedro, de, Atacama, ?]",
+      "CleanPhrase": "[[], [], [timezone], [], [San Pedro de Atacama]]",
+      "Phrase": "[[What], [is], [the timezone], [in], [San Pedro de Atacama]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 300,
+      "Words": "[In, which, city, does, the, Chile, Route, 68, end, ?]",
+      "CleanPhrase": "[[], [], [city], [], [Chile Route 68 end]]",
+      "Phrase": "[[In], [which], [city], [does], [the Chile Route 68 end]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 301,
+      "Words": "[Give, me, all, ESA, astronauts, .]",
+      "CleanPhrase": "[[Give], [], [ESA astronauts]]",
+      "Phrase": "[[Give], [me], [all ESA astronauts]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 302,
+      "Words": "[Give, me, all, Swedish, holidays, .]",
+      "CleanPhrase": "[[Give], [], [Swedish holidays]]",
+      "Phrase": "[[Give], [me], [all Swedish holidays]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 303,
+      "Words": "[Who, is, the, youngest, Pulitzer, Prize, winner, ?]",
+      "CleanPhrase": "[[], [], [youngest Pulitzer Prize winner]]",
+      "Phrase": "[[Who], [is], [the youngest Pulitzer Prize winner]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 304,
+      "Words": "[Which, animals, are, critically, endangered, ?]",
+      "CleanPhrase": "[[], [animals], [critically endangered]]",
+      "Phrase": "[[Which], [animals], [are critically endangered]]",
+      "Tags": "[S-NP, S-NP, B-VP, I-VP, E-VP, O]"
+    },
+    {
+      "Sr.No.": 305,
+      "Words": "[Which, soccer, players, were, born, on, Malta, ?]",
+      "CleanPhrase": "[[], [soccer players], [born], [], [Malta]]",
+      "Phrase": "[[Which], [soccer players], [were born], [on], [Malta]]",
+      "Tags": "[S-NP, B-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 306,
+      "Words": "[Did, Arnold, Schwarzenegger, attend, a, university, ?]",
+      "CleanPhrase": "[[Arnold Schwarzenegger], [attend], [university]]",
+      "Phrase": "[[Arnold Schwarzenegger], [attend], [a university]]",
+      "Tags": "[O, B-NP, E-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 307,
+      "Words": "[Which, programming, languages, were, influenced, by, Perl, ?]",
+      "CleanPhrase": "[[programming languages], [influenced], [], [Perl]]",
+      "Phrase": "[[Which programming languages], [were influenced], [by], [Perl]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 308,
+      "Words": "[Is, Barack, Obama, a, democrat, ?]",
+      "CleanPhrase": "[[], [Barack Obama], [democrat]]",
+      "Phrase": "[[Is], [Barack Obama], [a democrat]]",
+      "Tags": "[S-VP, B-NP, E-NP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 309,
+      "Words": "[How, many, children, does, Eddie, Murphy, have, ?]",
+      "CleanPhrase": "[[children], [], [Eddie Murphy], []]",
+      "Phrase": "[[How many children], [does], [Eddie Murphy], [have]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 310,
+      "Words": "[Who, is, the, oldest, child, of, Meryl, Streep, ?]",
+      "CleanPhrase": "[[], [], [oldest child], [], [Meryl Streep]]",
+      "Phrase": "[[Who], [is], [the oldest child], [of], [Meryl Streep]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 311,
+      "Words": "[Who, killed, John, Lennon, ?]",
+      "CleanPhrase": "[[], [killed], [John Lennon]]",
+      "Phrase": "[[Who], [killed], [John Lennon]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 312,
+      "Words": "[Which, frequent, flyer, program, has, the, most, airlines, ?]",
+      "CleanPhrase": "[[frequent flyer program], [], [airlines]]",
+      "Phrase": "[[Which frequent flyer program], [has], [the most airlines]]",
+      "Tags": "[B-NP, I-NP, I-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 313,
+      "Words": "[In, which, city, is, Air, China, headquartered, ?]",
+      "CleanPhrase": "[[], [city], [], [Air China], [headquartered]]",
+      "Phrase": "[[In], [which city], [is], [Air China], [headquartered]]",
+      "Tags": "[S-PP, B-NP, E-NP, S-VP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 314,
+      "Words": "[Which, artists, were, born, on, the, same, date, as, Rachel, Stevens, ?]",
+      "CleanPhrase": "[[artists], [born], [], [date], [], [Rachel Stevens]]",
+      "Phrase": "[[Which artists], [were born], [on], [the same date], [as], [Rachel Stevens]]",
+      "Tags": "[B-NP, E-NP, B-VP, E-VP, S-PP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 315,
+      "Words": "[How, many, scientists, graduated, from, an, Ivy, League, university, ?]",
+      "CleanPhrase": "[[scientists], [graduated], [], [Ivy League university]]",
+      "Phrase": "[[How many scientists], [graduated], [from], [an Ivy League university]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 316,
+      "Words": "[Which, types, of, grapes, grow, in, Oregon, ?]",
+      "CleanPhrase": "[[types], [], [grapes], [grow], [], [Oregon]]",
+      "Phrase": "[[Which types], [of], [grapes], [grow], [in], [Oregon]]",
+      "Tags": "[B-NP, E-NP, S-PP, S-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 317,
+      "Words": "[Who, is, starring, in, Spanish, movies, produced, by, Benicio, del, Toro, ?]",
+      "CleanPhrase": "[[], [starring], [], [Spanish movies], [produced], [], [Benicio del Toro]]",
+      "Phrase": "[[Who], [is starring], [in], [Spanish movies], [produced], [by], [Benicio del Toro]]",
+      "Tags": "[S-NP, B-VP, E-VP, S-PP, B-NP, E-NP, S-VP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 318,
+      "Words": "[Who, is, the, manager, of, Real, Madrid, ?]",
+      "CleanPhrase": "[[], [], [manager], [], [Real Madrid]]",
+      "Phrase": "[[Who], [is], [the manager], [of], [Real Madrid]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 319,
+      "Words": "[Give, me, the, currency, of, China, .]",
+      "CleanPhrase": "[[Give], [], [currency], [], [China]]",
+      "Phrase": "[[Give], [me], [the currency], [of], [China]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 320,
+      "Words": "[Which, movies, starring, Mickey, Rourke, were, directed, by, Guy, Ritchie, ?]",
+      "CleanPhrase": "[[], [movies], [starring], [Mickey Rourke], [directed], [], [Guy Ritchie]]",
+      "Phrase": "[[Which], [movies], [starring], [Mickey Rourke], [were directed], [by], [Guy Ritchie]]",
+      "Tags": "[S-NP, S-NP, S-VP, B-NP, E-NP, B-VP, E-VP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 321,
+      "Words": "[Is, Darth, Vader, Luke, s, father, ?]",
+      "CleanPhrase": "[[], [Darth Vader Luke s father]]",
+      "Phrase": "[[Is], [Darth Vader Luke s father]]",
+      "Tags": "[S-VP, B-NP, I-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 322,
+      "Words": "[How, many, companies, were, founded, by, the, founder, of, Facebook, ?]",
+      "CleanPhrase": "[[companies], [founded], [], [founder], [], [Facebook]]",
+      "Phrase": "[[How many companies], [were founded], [by], [the founder], [of], [Facebook]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 323,
+      "Words": "[How, many, companies, were, founded, in, the, same, year, as, Google, ?]",
+      "CleanPhrase": "[[companies], [founded], [], [year], [], [Google]]",
+      "Phrase": "[[How many companies], [were founded], [in], [the same year], [as], [Google]]",
+      "Tags": "[B-NP, I-NP, E-NP, B-VP, E-VP, S-PP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 324,
+      "Words": "[Which, subsidiary, of, TUI, Travel, serves, both, Glasgow, and, Dublin, ?]",
+      "CleanPhrase": "[[], [subsidiary], [], [TUI Travel], [serves], [Glasgow Dublin]]",
+      "Phrase": "[[Which], [subsidiary], [of], [TUI Travel], [serves], [both Glasgow and Dublin]]",
+      "Tags": "[S-NP, S-NP, S-PP, B-NP, E-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 325,
+      "Words": "[How, many, airlines, are, members, of, the, Star, Alliance, ?]",
+      "CleanPhrase": "[[airlines], [], [members], [], [Star Alliance]]",
+      "Phrase": "[[How many airlines], [are], [members], [of], [the Star Alliance]]",
+      "Tags": "[B-NP, I-NP, E-NP, S-VP, S-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 326,
+      "Words": "[Give, me, all, spacecrafts, that, flew, to, Mars, .]",
+      "CleanPhrase": "[[Give], [], [spacecrafts], [], [flew], [], [Mars]]",
+      "Phrase": "[[Give], [me], [all spacecrafts], [that], [flew], [to], [Mars]]",
+      "Tags": "[S-VP, S-NP, B-NP, E-NP, S-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 327,
+      "Words": "[Which, musician, wrote, the, most, books, ?]",
+      "CleanPhrase": "[[musician], [wrote], [books]]",
+      "Phrase": "[[Which musician], [wrote], [the most books]]",
+      "Tags": "[B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 328,
+      "Words": "[Show, me, everyone, who, was, born, on, Halloween, .]",
+      "CleanPhrase": "[[Show], [], [], [], [born], [], [Halloween]]",
+      "Phrase": "[[Show], [me], [everyone], [who], [was born], [on], [Halloween]]",
+      "Tags": "[S-VP, S-NP, S-NP, S-NP, B-VP, E-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 329,
+      "Words": "[Give, me, all, Swiss, non-profit, organizations, .]",
+      "CleanPhrase": "[[Give], [], [Swiss non-profit organizations]]",
+      "Phrase": "[[Give], [me], [all Swiss non-profit organizations]]",
+      "Tags": "[S-VP, S-NP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 330,
+      "Words": "[In, which, country, is, Mecca, located, ?]",
+      "CleanPhrase": "[[], [], [country], [], [Mecca], [located]]",
+      "Phrase": "[[In], [which], [country], [is], [Mecca], [located]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, S-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 331,
+      "Words": "[What, is, the, net, income, of, Apple, ?]",
+      "CleanPhrase": "[[], [], [net income], [], [Apple]]",
+      "Phrase": "[[What], [is], [the net income], [of], [Apple]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 332,
+      "Words": "[What, does, the, abbreviation, FIFA, stand, for, ?]",
+      "CleanPhrase": "[[], [stand], []]",
+      "Phrase": "[[What], [stand], [for]]",
+      "Tags": "[S-NP, O, O, O, O, S-VP, S-PP, O]"
+    },
+    {
+      "Sr.No.": 333,
+      "Words": "[When, did, the, Ming, dynasty, dissolve, ?]",
+      "CleanPhrase": "[[], [Ming dynasty], [dissolve]]",
+      "Phrase": "[[When], [the Ming dynasty], [dissolve]]",
+      "Tags": "[S-ADVP, O, B-NP, I-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 334,
+      "Words": "[Which, museum, in, New, York, has, the, most, visitors, ?]",
+      "CleanPhrase": "[[museum], [], [York], [], [visitors]]",
+      "Phrase": "[[Which museum], [in], [New York], [has], [the most visitors]]",
+      "Tags": "[B-NP, E-NP, S-PP, B-NP, E-NP, S-VP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 335,
+      "Words": "[Is, Lake, Baikal, bigger, than, the, Great, Bear, Lake, ?]",
+      "CleanPhrase": "[[], [Lake Baikal], [bigger], [], [Great Bear Lake]]",
+      "Phrase": "[[Is], [Lake Baikal], [bigger], [than], [the Great Bear Lake]]",
+      "Tags": "[S-VP, B-NP, E-NP, S-ADJP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 336,
+      "Words": "[Desserts, from, which, country, contain, fish, ?]",
+      "CleanPhrase": "[[Desserts], [], [], [country], [], [fish]]",
+      "Phrase": "[[Desserts], [from], [which], [country], [contain], [fish]]",
+      "Tags": "[S-NP, S-PP, S-NP, S-NP, S-VP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 337,
+      "Words": "[What, is, the, highest, mountain, in, Italy, ?]",
+      "CleanPhrase": "[[], [], [highest mountain], [], [Italy]]",
+      "Phrase": "[[What], [is], [the highest mountain], [in], [Italy]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 338,
+      "Words": "[Where, did, the, architect, of, the, Eiffel, Tower, study, ?]",
+      "CleanPhrase": "[[], [architect], [], [Eiffel Tower study]]",
+      "Phrase": "[[Where], [the architect], [of], [the Eiffel Tower study]]",
+      "Tags": "[S-ADVP, O, B-NP, E-NP, S-PP, B-NP, I-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 339,
+      "Words": "[Which, Greek, parties, are, pro-European, ?]",
+      "CleanPhrase": "[[], [Greek parties], [], [pro-European]]",
+      "Phrase": "[[Which], [Greek parties], [are], [pro-European]]",
+      "Tags": "[S-NP, B-NP, E-NP, S-VP, S-ADJP, O]"
+    },
+    {
+      "Sr.No.": 340,
+      "Words": "[What, is, the, height, difference, between, Mount, Everest, and, K2, ?]",
+      "CleanPhrase": "[[], [], [height difference], [], [Mount Everest], [K2]]",
+      "Phrase": "[[What], [is], [the height difference], [between], [Mount Everest], [K2]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, E-NP, O, S-NP, O]"
+    },
+    {
+      "Sr.No.": 341,
+      "Words": "[Who, is, the, mayor, of, Rotterdam, ?]",
+      "CleanPhrase": "[[], [], [mayor], [], [Rotterdam]]",
+      "Phrase": "[[Who], [is], [the mayor], [of], [Rotterdam]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 342,
+      "Words": "[In, which, city, were, the, parents, of, Che, Guevara, born, ?]",
+      "CleanPhrase": "[[], [], [city], [], [parents], [], [Che Guevara], [born]]",
+      "Phrase": "[[In], [which], [city], [were], [the parents], [of], [Che Guevara], [born]]",
+      "Tags": "[S-PP, S-NP, S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, S-VP, O]"
+    },
+    {
+      "Sr.No.": 343,
+      "Words": "[How, high, is, the, lighthouse, in, Colombo, ?]",
+      "CleanPhrase": "[[high], [], [lighthouse], [], [Colombo]]",
+      "Phrase": "[[How high], [is], [the lighthouse], [in], [Colombo]]",
+      "Tags": "[B-ADJP, E-ADJP, S-VP, B-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 344,
+      "Words": "[Are, Taiko, a, kind, of, Japanese, musical, instruments, ?]",
+      "CleanPhrase": "[[], [Taiko kind], [], [Japanese musical instruments]]",
+      "Phrase": "[[Are], [Taiko a kind], [of], [Japanese musical instruments]]",
+      "Tags": "[S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 345,
+      "Words": "[How, many, ethnic, groups, live, in, Slovenia, ?]",
+      "CleanPhrase": "[[ethnic groups], [live], [], [Slovenia]]",
+      "Phrase": "[[How many ethnic groups], [live], [in], [Slovenia]]",
+      "Tags": "[B-NP, I-NP, I-NP, E-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 346,
+      "Words": "[List, the, seven, kings, of, Rome, .]",
+      "CleanPhrase": "[[List], [kings], [], [Rome]]",
+      "Phrase": "[[List], [the seven kings], [of], [Rome]]",
+      "Tags": "[S-VP, B-NP, I-NP, E-NP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 347,
+      "Words": "[Who, were, the, parents, of, Queen, Victoria, ?]",
+      "CleanPhrase": "[[], [], [parents], [], [Queen Victoria]]",
+      "Phrase": "[[Who], [were], [the parents], [of], [Queen Victoria]]",
+      "Tags": "[S-NP, S-VP, B-NP, E-NP, S-PP, B-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 348,
+      "Words": "[Who, is, the, heaviest, player, of, the, Chicago, Bulls, ?]",
+      "CleanPhrase": "[[], [], [heaviest player], [], [Chicago Bulls]]",
+      "Phrase": "[[Who], [is], [the heaviest player], [of], [the Chicago Bulls]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, E-NP, S-PP, B-NP, I-NP, E-NP, O]"
+    },
+    {
+      "Sr.No.": 349,
+      "Words": "[Which, volcanos, in, Japan, erupted, since, 2000, ?]",
+      "CleanPhrase": "[[volcanos], [], [Japan], [erupted], [], [2000]]",
+      "Phrase": "[[Which volcanos], [in], [Japan], [erupted], [since], [2000]]",
+      "Tags": "[B-NP, E-NP, S-PP, S-NP, S-VP, S-PP, S-NP, O]"
+    },
+    {
+      "Sr.No.": 350,
+      "Words": "[Who, is, the, tallest, basketball, player, ?]",
+      "CleanPhrase": "[[], [], [tallest basketball player]]",
+      "Phrase": "[[Who], [is], [the tallest basketball player]]",
+      "Tags": "[S-NP, S-VP, B-NP, I-NP, I-NP, E-NP, O]"
+    }
+  ]
+}
