@@ -1,5 +1,7 @@
 # EARL
-Entity And Relation mapping
+Entity And Relation Linking
+
+NOTE: This repository is not yet in an usable state. We are working on it actively.
 
 The objective of this package is to link or identify relation/predicate. Named
 Entity Recognition tools are able to identify the named entites however the
