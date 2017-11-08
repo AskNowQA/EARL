@@ -80,7 +80,7 @@ def predict_phrase(phrase):
    #phrase_clean = clean_str(phrase)
    phrase_clean = phrase 
    #load the dictionary
-   char_dict = np.load('char_dict.npy').item()
+   char_dict = np.load('EARL/models/char_dict.npy').item()
    #phrase_clean = [char for char in phrase_clean]
    #print phrase_clean
    
