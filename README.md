@@ -26,7 +26,7 @@ cd scripts/
 
 python api.py 5000
 
-This starts the api server. Install all dependencies required.
+This starts the api server. Install all dependencies required. Download bloom files from <> and store them at data/blooms/.
 
 To consume the API
 
