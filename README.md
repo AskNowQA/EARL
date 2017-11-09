@@ -1,8 +1,6 @@
 # EARL
 Entity And Relation Linking
 
-NOTE: This repository is not yet in an usable state. We are working on it actively.
-
 The objective of this package is to link or identify relation/predicate. Named
 Entity Recognition tools are able to identify the named entites however the
 relations is left unlinked. Eg.
@@ -21,3 +19,15 @@ Where was [Barack Obama](http://dbpedia.org/resource/Barack_Obama)
 The hypothesis is that jointly linking relation and entity would help in
 disambiguation. This might also help in bringing the context of entity at the
 sentence level which can also in turn help in answering complex questions.
+
+# INSTRUCTIONS
+
+cd scripts/
+
+python api.py 5000
+
+This starts the api server. Install all dependencies required.
+
+To consume the API
+
+curl -XPOST 'localhost:5000/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
