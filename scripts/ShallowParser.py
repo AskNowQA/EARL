@@ -3,7 +3,6 @@
 from practnlptools.tools import Annotator
 from stop_words import get_stop_words
 
-
 class ShallowParser:
     def __init__(self):
         print "Shallow Parser Initializing"
