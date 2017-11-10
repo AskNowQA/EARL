@@ -22,12 +22,12 @@ sentence level which can also in turn help in answering complex questions.
 
 # INSTRUCTIONS
 
-cd scripts/
+    $cd scripts/
+    $python api.py 5000
 
-python api.py 5000
-
-This starts the api server. Install all dependencies required. Download bloom files from <> and store them at data/blooms/.
+This starts the api server at port 5000. Install all dependencies required. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch instance.
 
 To consume the API
 
-curl -XPOST 'localhost:5000/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
+    curl -XPOST 'localhost:5000/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
+
