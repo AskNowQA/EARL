@@ -19,7 +19,7 @@ class ReRanker:
     def reRank(self, topklists):
         rerankedlists = {}
         for k1,v1 in topklists['nodefeatures'].iteritems():
-            if k1 == 'chunktext':
+            if k1 == 'chunktext' or k1 == 'ertypes':
                 continue
             uris = []
             featurevectors = []
@@ -31,7 +31,7 @@ class ReRanker:
             predictions = self.model.predict(dtest)
             l = [(float(p),u) for p,u in zip(predictions,uris)]
             rerankedlists[k1] = sorted(l, key=lambda x: x[0], reverse=True)
-        return {'rerankedlists': rerankedlists, 'chunktext':topklists['chunktext']}
+        return {'rerankedlists': rerankedlists, 'chunktext':topklists['chunktext'], 'ertypes': topklists['ertypes']}
                 
 if __name__ == '__main__':
     r = ReRanker()
