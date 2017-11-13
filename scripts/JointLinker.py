@@ -40,12 +40,14 @@ class JointLinker:
         count = 0
         for listt in lists:
             rank = 0
+            if count not in nodestats:
+                nodestats[count] = {}
             for uri in listt:
                 rank += 1
-                if count not in nodestats:
-                    nodestats[count] = {}
                 if uri not in nodestats[count]:
                     nodestats[count][uri] = {'connections':0, 'sumofhops':0, 'esrank': rank}
+            if len(nodestats[count]) == 0:
+                nodestats[count]['null'] = {'connections':0, 'sumofhops':0, 'esrank': 100}
             count += 1
         for permutation in itertools.permutations(sequence, 2):
             for uri1 in lists[permutation[0]]:
