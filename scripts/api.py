@@ -22,6 +22,32 @@ sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 
+
+def prepare(rerankedlist, nlquery):
+    combinedrerankedlist = {}
+    combinedrerankedlist['question'] = nlquery
+    combinedrerankedlist['relations'] = []
+    combinedrerankedlist['entities'] = []
+    searchfrom = 0
+    for idx,chunk in enumerate(rerankedlist['chunktext']):
+        chunkdict = {}
+        chunkdict['uris'] = []
+        startinglocation = nlquery.find(chunk, searchfrom)
+        searchfrom = startinglocation+1
+        chunkdict['surface'] = [startinglocation, len(chunk)]
+        print rerankedlist
+        confidencescoresum = sum([ x[0] for x in rerankedlist['rerankedlists'][idx]])
+        for uri in rerankedlist['rerankedlists'][idx]:
+          chunkdict['uris'].append({'uri': uri[1], 'confidence': uri[0]/float(confidencescoresum)})
+        if rerankedlist['ertypes'][idx] == 'entity':
+            combinedrerankedlist['entities'].append(chunkdict)
+        else:
+            combinedrerankedlist['relations'].append(chunkdict)
+    return combinedrerankedlist 
+        
+        
+    
+
 @app.route('/processQuery', methods=['POST'])
 def processQuery():
     d = request.get_json(silent=True)
@@ -37,7 +63,8 @@ def processQuery():
     print "ER link features: %s"%jointlylinked
     rerankedlist = r.reRank(jointlylinked)
     print "Re-reanked lists: %s"%rerankedlist
-    return json.dumps(rerankedlist)
+    preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
+    return json.dumps(preparedlist)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)

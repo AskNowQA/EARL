@@ -25,7 +25,7 @@ class TextMatch:
                          break
                      if record['_source']['uri'] not in topkents:
                          topkents.append(record['_source']['uri'])
-                 matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkents})
+                 matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkents, 'class': 'entity'})
                  
                      
              if chunk['class'] == 'relation':
@@ -36,7 +36,7 @@ class TextMatch:
                          break
                      if record['_source']['uri'] not in topkrels:
                          topkrels.append(record['_source']['uri'])
-                 matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkrels})
+                 matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkrels, 'class': 'relation'})
         return matchedChunks 
                           
                      
