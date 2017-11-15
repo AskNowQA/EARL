@@ -35,7 +35,8 @@ def prepare(rerankedlist, nlquery):
         startinglocation = nlquery.find(chunk, searchfrom)
         searchfrom = startinglocation+1
         chunkdict['surface'] = [startinglocation, len(chunk)]
-        print rerankedlist
+        #print rerankedlist
+        rerankedlist['rerankedlists'][idx] = rerankedlist['rerankedlists'][idx][:10] #Hamid needs top 10 only
         confidencescoresum = sum([ x[0] for x in rerankedlist['rerankedlists'][idx]])
         for uri in rerankedlist['rerankedlists'][idx]:
           chunkdict['uris'].append({'uri': uri[1], 'confidence': uri[0]/float(confidencescoresum)})
