@@ -12,25 +12,33 @@ class ShallowParser:
 
     def shallowParse(self, text):
         filterednpchunks = []
-        result = self.annotator.getAnnotations(text)
+        result = self.annotator.getAnnotations(text)['chunk']
         print result
-        for chunk in result['chunk']:
-            if '-NP' in chunk[1]:
-                filteredchunk = []
-                filteredchunkstring = ''
-                for word in chunk[0].split(' '):
-                    if word.lower() not in self.stop_words:
-                        filteredchunk.append(word)
-                if len(filteredchunk) > 0:
-                    filteredchunkstring = ' '.join(filteredchunk)
-                    filterednpchunks.append(filteredchunkstring)
+        phrases = []
+        _phrase = []
+        for chunk in result:
+            if chunk[1] == 'S-NP':
+                phrases.append([chunk[0]])
+                continue
+            if chunk[1] == 'B-NP' or chunk[1] == 'I-NP':
+                _phrase.append(chunk[0])
+                continue
+            if chunk[1] == 'E-NP':
+                _phrase.append(chunk[0])
+                phrases.append(_phrase)
+                _phrase = []
+        for phrase in phrases:
+            filteredchunk = []
+            filteredchunkstring = ''
+            for word in phrase:
+                if word.lower() not in self.stop_words:
+                    filteredchunk.append(word)
+            if len(filteredchunk) > 0:
+                filteredchunkstring = ' '.join(filteredchunk)
+                filterednpchunks.append(filteredchunkstring)
         return filterednpchunks
                  
 
 if __name__=='__main__':
     s = ShallowParser()
-    print s.shallowParse("There are people dying make this world a better place for you and for me.")
-
-    
-        
- 
+    print s.shallowParse("Was Winston Churchill the prime minister of Selwyn Lloyd?")
