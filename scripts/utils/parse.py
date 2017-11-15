@@ -17,10 +17,11 @@ for item in d:
     req.add_header('Content-Type', 'application/json')
     inputjson = {'nlquery': item['question']}
     response = urllib2.urlopen(req, json.dumps(inputjson))
-    response = response.read()
-    j = json.dumps(response, indent=4)
-    print(j)
+    response = json.loads(response.read())
+    #j = json.dumps(response, indent=4)
+    print(count, len(d))
     result.append(response)
+    count += 1
 print(json.dumps(result),file=f1)
 f1.close()
 
