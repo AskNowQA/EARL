@@ -18,7 +18,7 @@ class TextMatch:
         matchedChunks = []
         for chunk in chunks:
              if chunk['class'] == 'entity':
-                 res = self.es.search(index="dbentityindex9", doc_type="records", body={"query":{"match":{"_all":{"query":chunk['chunk'], "fuzziness":"auto"}}},"size":200})
+                 res = self.es.search(index="dbentityindex9", doc_type="records", body={"query":{"match":{"_all":{"query":chunk['chunk']}}},"size":200})
                  topkents = []
                  for record in res['hits']['hits']:
                      if len(topkents) > 50:
