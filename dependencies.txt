@@ -1,8 +1,7 @@
-The following are python modules. Install them using "sudo pip install modulename".
+The following are python modules. Most of them can be installed using "sudo pip install modulename".
 
 Flask
 gevent
-json
 practNLPTools
 stop-words
 keras
@@ -11,3 +10,6 @@ gensim
 elasticsearch
 pybloom
 xgboost
+
+
+For practNLPTools go to  https://github.com/biplab-iitb/practNLPTools.git
