@@ -10,6 +10,7 @@ gensim
 elasticsearch
 pybloom
 xgboost
-
+tensorflow
+h5py
 
 For practNLPTools go to  https://github.com/biplab-iitb/practNLPTools.git
