@@ -1,0 +1,14 @@
+The following are python modules. Install them using "sudo pip install modulename".
+
+Flask
+gevent
+json
+practNLPTools
+stop-words
+keras
+sklearn
+re
+gensim
+elasticsearch
+pybloom
+xgboost
