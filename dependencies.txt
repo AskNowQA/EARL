@@ -7,7 +7,6 @@ practNLPTools
 stop-words
 keras
 sklearn
-re
 gensim
 elasticsearch
 pybloom
