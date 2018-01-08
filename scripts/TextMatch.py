@@ -21,7 +21,7 @@ class TextMatch:
                  res = self.es.search(index="dbentityindex9", doc_type="records", body={"query":{"match":{"_all":{"query":chunk['chunk']}}},"size":200})
                  topkents = []
                  for record in res['hits']['hits']:
-                     if len(topkents) > 50:
+                     if len(topkents) > 30:
                          break
                      if record['_source']['uri'] not in topkents:
                          topkents.append(record['_source']['uri'])
@@ -32,7 +32,7 @@ class TextMatch:
                  res = self.es.search(index="dbpredicateindex14", doc_type="records", body={"query":{"match":{"_all":{"query":chunk['chunk'], "fuzziness":"auto"}}},"size":200})
                  topkrels = []
                  for record in res['hits']['hits']:
-                     if len(topkrels) > 50:
+                     if len(topkrels) > 30:
                          break
                      if record['_source']['uri'] not in topkrels:
                          topkrels.append(record['_source']['uri'])
@@ -44,4 +44,4 @@ class TextMatch:
 
 if __name__ == '__main__':
     t = TextMatch()
-    print t.textMatch([{'chunk':'obama', 'class':'entity'}, {'chunk':'mother', 'class':'relation'}])
+    print t.textMatch([{'chunk':'Send It On', 'class':'entity'}])
