@@ -47,23 +47,22 @@ def prepare(rerankedlist, nlquery):
     return combinedrerankedlist 
         
         
-    
 
 @app.route('/processQuery', methods=['POST'])
 def processQuery():
     d = request.get_json(silent=True)
     nlquery = d['nlquery']
-    print "Query: %s"%nlquery
+    print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
-    print "Chunks: %s"%chunks
+    print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
-    print "ER Predictions: %s"%erpredictions
+    print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions)
-    print "Top text matches: %s"%topkmatches
+    print "Top text matches: %s"%json.dumps(topkmatches)
     jointlylinked = j.jointLinker(topkmatches)
-    print "ER link features: %s"%jointlylinked
+    print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
-    print "Re-reanked lists: %s"%rerankedlist
+    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
     return json.dumps(preparedlist)
 
