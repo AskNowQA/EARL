@@ -3,7 +3,7 @@
 from flask import request
 from flask import Flask
 from gevent.wsgi import WSGIServer
-import json,sys
+import json,sys,requests
 
 from ShallowParser import ShallowParser
 from ErPredictor import ErPredictor
@@ -28,6 +28,7 @@ def prepare(rerankedlist, nlquery):
     combinedrerankedlist['question'] = nlquery
     combinedrerankedlist['relations'] = []
     combinedrerankedlist['entities'] = []
+    combinedrerankedlist['kb'] = 'dbpedia'
     searchfrom = 0
     for idx,chunk in enumerate(rerankedlist['chunktext']):
         chunkdict = {}
@@ -46,6 +47,25 @@ def prepare(rerankedlist, nlquery):
             combinedrerankedlist['relations'].append(chunkdict)
     return combinedrerankedlist 
         
+def getsparql(preparedlist):
+    r = requests.post("http://localhost:5000/qg/api/v1.0/query", data=json.dumps(preparedlist), headers={"content-type": "application/json"})
+    return json.loads(r.text)
+
+def solvesparql(sparql):
+    answers = []
+    for query in sparql['queries']:
+        q = query
+        url = "http://131.220.153.66:8890/sparql"
+        p = {'query': q}
+        h = {'Accept': 'application/json'}
+        r = requests.get(url, params=p, headers=h)
+        print("code {}\n".format(r.status_code))
+        d =json.loads(r.text)
+        try:
+            answers.append(d['results']['bindings'])
+        except Exception,e:
+            answers.append([])
+    return answers
         
 
 @app.route('/processQuery', methods=['POST'])
@@ -64,7 +84,12 @@ def processQuery():
     rerankedlist = r.reRank(jointlylinked)
     print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
-    return json.dumps(preparedlist)
+    print "Pre-pared list: %s"%json.dumps(preparedlist)
+    sparql = getsparql(preparedlist)
+    print "sparql: %s"%json.dumps(sparql)
+    answers = solvesparql(sparql)
+    print "answer: %s"%json.dumps(answers)
+    return json.dumps(answers)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)
