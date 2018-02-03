@@ -1,1 +1,22 @@
-{"dbpredicateindex14":{"mappings":{"records":{"properties":{"mergedLabel":{"type":"text","index_options":"docs","fields":{"keyword":{"type":"keyword","ignore_above":256}},"analyzer":"english"},"uri":{"type":"keyword"},"urianalyzed":{"type":"text","index_options":"docs","fields":{"keyword":{"type":"keyword","ignore_above":256}}}}},"mapping1":{"properties":{"mergedLabel":{"type":"text","index_options":"docs","analyzer":"english"},"uri":{"type":"keyword"},"urianalyzed":{"type":"text","index_options":"docs"}}}}}}
+{
+	"dbpredicateindex14": {
+		"mappings": {
+			"mapping1": {
+				"properties": {
+					"mergedLabel": {
+						"type": "text",
+						"index_options": "docs",
+						"analyzer": "english"
+					},
+					"uri": {
+						"type": "keyword"
+					},
+					"urianalyzed": {
+						"type": "text",
+						"index_options": "docs"
+					}
+				}
+			}
+		}
+	}
+}
