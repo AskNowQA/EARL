@@ -1,7 +1,7 @@
 {
 	"dbpredicateindex14": {
 		"mappings": {
-			"mapping1": {
+			"records": {
 				"properties": {
 					"mergedLabel": {
 						"type": "text",
