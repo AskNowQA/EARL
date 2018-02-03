@@ -1,7 +1,7 @@
 {
 	"dbentityindex9": {
 		"mappings": {
-			"mapping1": {
+			"records": {
 				"properties": {
 					"dbpediaLabel": {
 						"type": "text",
