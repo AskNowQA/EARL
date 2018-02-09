@@ -27,6 +27,7 @@ class ShallowParser:
                 _phrase.append(chunk[0])
                 phrases.append(_phrase)
                 _phrase = []
+
         for phrase in phrases:
             filteredchunk = []
             filteredchunkstring = ''
@@ -41,4 +42,5 @@ class ShallowParser:
 
 if __name__=='__main__':
     s = ShallowParser()
-    print s.shallowParse("Was Winston Churchill the prime minister of Selwyn Lloyd?")
+    print s.shallowParse("What can be cooked out of things belonging to the order Sapindales?i")
+    #print s.shallowParse('Is Brazilian jiu-jitsu the trainer of Nick Diaz?')
