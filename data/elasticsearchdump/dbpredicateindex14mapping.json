@@ -6,7 +6,8 @@
 					"mergedLabel": {
 						"type": "text",
 						"index_options": "docs",
-						"analyzer": "english"
+						"analyzer": "english",
+                                                "similarity":"classic"
 					},
 					"uri": {
 						"type": "keyword"
