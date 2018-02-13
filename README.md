@@ -1,24 +1,7 @@
-# EARL
-Entity And Relation Linking
+# EARL 
+## Joint Entity and Relation Linking for Question Answering
 
-The objective of this package is to link or identify relation/predicate. Named
-Entity Recognition tools are able to identify the named entites however the
-relations is left unlinked. Eg.
-
-Let's consider the sentence: Where was Barack Obama born?
-
-If we pass this sentence into AskNow's NQS we can expect:
-
-Where was [Barack Obama](http://dbpedia.org/resource/Barack_Obama) born?
-
-However we aim to also link the relation like:
-
-Where was [Barack Obama](http://dbpedia.org/resource/Barack_Obama)
-[born](http://dbpedia.org/ontology/birthPlace)?
-
-The hypothesis is that jointly linking relation and entity would help in
-disambiguation. This might also help in bringing the context of entity at the
-sentence level which can also in turn help in answering complex questions.
+EARL (Entity and Relation Linker), a system for jointly linking entities and relations in a question to a knowledge graph. EARL treats entity linking and relation linking as a single task and thus aims to reduce the error caused by the dependent steps. To realise this, EARL uses the knowledge graph to jointly disambiguate entity and relations. EARL obtains the context for entity disambiguation by observing the relations surrounding the entity. Similarly, it obtains the context for relation disambiguation by looking at the surrounding entities. We support multiple entities and relations occurring in complex questions by modelling the joint entity and relation linking task as an instance of the Generalised Travelling Salesman Problem (GTSP).
 
 # INSTRUCTIONS
 
