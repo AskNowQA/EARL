@@ -33,9 +33,7 @@ def prepare(rerankedlist, nlquery):
     for idx,chunk in enumerate(rerankedlist['chunktext']):
         chunkdict = {}
         chunkdict['uris'] = []
-        startinglocation = nlquery.find(chunk, searchfrom)
-        searchfrom = startinglocation+1
-        chunkdict['surface'] = [startinglocation, len(chunk)]
+        chunkdict['surface'] = [chunk['surfacestart'], chunk['surfacelength']]
         #print rerankedlist
         rerankedlist['rerankedlists'][idx] = rerankedlist['rerankedlists'][idx][:10] #Hamid needs top 10 only
         confidencescoresum = sum([ x[0] for x in rerankedlist['rerankedlists'][idx]])
