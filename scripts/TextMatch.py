@@ -25,7 +25,7 @@ class TextMatch:
                          break
                      if record['_source']['uri'] not in topkents:
                          topkents.append(record['_source']['uri'])
-                 matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkents, 'class': 'entity'})
+                 matchedChunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
                  
                      
              if chunk['class'] == 'relation':
@@ -36,7 +36,7 @@ class TextMatch:
                          break
                      if record['_source']['uri'] not in topkrels:
                          topkrels.append(record['_source']['uri'])
-                 matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkrels, 'class': 'relation'})
+                 matchedChunks.append({'chunk':chunk, 'topkmatches': topkrels, 'class': 'relation'})
         return matchedChunks 
                           
                      
@@ -44,4 +44,4 @@ class TextMatch:
 
 if __name__ == '__main__':
     t = TextMatch()
-    print t.textMatch([{'chunk':'Send It On', 'class':'entity'}])
+    print t.textMatch([{'chunk': 'Who', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}, {'chunk': 'the parent organisation', 'surfacelength': 23, 'class': 'relation', 'surfacestart': 7}, {'chunk': 'Barack Obama', 'surfacelength': 12, 'class': 'entity', 'surfacestart': 34}, {'chunk': 'is', 'surfacelength': 2, 'class': 'relation', 'surfacestart': 4}])
