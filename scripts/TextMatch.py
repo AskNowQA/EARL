@@ -29,7 +29,7 @@ class TextMatch:
                  
                      
              if chunk['class'] == 'relation':
-                 res = self.es.search(index="dbpredicateindex14", doc_type="records", body={"query":{"match":{"_all":{"query":chunk['chunk'], "fuzziness":"auto"}}},"size":200})
+                 res = self.es.search(index="dbpredicateindex14", doc_type="records", body={"query":{"match":{"mergedLabel":{"query":chunk['chunk'], "fuzziness":"auto"}}},"size":200})
                  topkrels = []
                  for record in res['hits']['hits']:
                      if len(topkrels) > 30:
