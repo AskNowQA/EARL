@@ -14,7 +14,7 @@ f.close()
 count = 0
 for item in d: 
     question = item['question']
-    res = es.index(index="autocompleteindex1", doc_type='questions',  body={"question":{"input":[question]}})
+    res = es.index(index="autocompleteindex1", doc_type='questions', id=question, body={"question":{"input":[question]}})
     count += 1
     print(count)
     print(res)
