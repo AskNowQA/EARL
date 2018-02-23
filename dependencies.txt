@@ -12,5 +12,6 @@ pybloom
 xgboost
 tensorflow
 h5py
+nltk
 
 For practNLPTools go to  https://github.com/biplab-iitb/practNLPTools.git
