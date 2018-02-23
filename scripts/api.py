@@ -46,14 +46,14 @@ def prepare(rerankedlist, nlquery):
     return combinedrerankedlist 
         
 def getsparql(preparedlist):
-    r = requests.post("http://localhost:5000/qg/api/v1.0/query", data=json.dumps(preparedlist), headers={"content-type": "application/json"})
+    r = requests.post("http://localhost:5000/qg/api/v1.0/query", data=json.dumps(preparedlist), headers={"content-type": "application/json"}) # This sends a request to https://github.com/AskNowQA/SQG 
     return json.loads(r.text)
 
 def solvesparql(sparql):
     answers = []
     for query in sparql['queries']:
         q = query
-        url = "http://131.220.153.66:8890/sparql"
+        url = "http://131.220.153.66:8890/sparql" # or http://dbpedia.org/sparql
         p = {'query': q}
         h = {'Accept': 'application/json'}
         r = requests.get(url, params=p, headers=h)
