@@ -26,6 +26,11 @@ Then import the actual data:
     elasticdump --input=dbpredicateindex14.json  --output=http://localhost:9200/dbpredicateindex14 --type=data
     elasticdump --limit=10000 --input=dbentityindex9.json  --output=http://localhost:9200/dbentityindex9 --type=data
 
+You may need to add the following to the above elasticdump commands to make it work on some setups:
+
+    --headers='{"Content-Type": "application/json"}'
+    
+    
 To consume the API
 
     curl -XPOST 'localhost:5000/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
