@@ -2,16 +2,17 @@ The following are python modules. Most of them can be installed using "sudo pip 
 
 Flask
 gevent
-practNLPTools
 stop-words
 keras
 sklearn
 gensim
 elasticsearch
+editdistance
 pybloom
 xgboost
 tensorflow
 h5py
 nltk
+practNLPTools
 
 For practNLPTools go to  https://github.com/biplab-iitb/practNLPTools.git
