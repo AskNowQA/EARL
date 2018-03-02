@@ -8,9 +8,9 @@ Check out EARL's system paper (under review) https://arxiv.org/abs/1801.03825
 # INSTRUCTIONS
 
     $cd scripts/
-    $python api.py 5000
+    $python api.py 4999
 
-This starts the api server at port 5000. Install all dependencies required that are mentioned in dependencies.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 5.x instance. The mappings can be found in data/elasticsearchdump/ folder.
+This starts the api server at port 4999. Install all dependencies required that are mentioned in dependencies.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 5.x instance. The mappings can be found in data/elasticsearchdump/ folder.
 
 To import elasticsearch data one could install elasticdump https://www.npmjs.com/package/elasticdump
 
@@ -33,5 +33,5 @@ You may need to add the following to the above elasticdump commands to make it w
     
 To consume the API
 
-    curl -XPOST 'localhost:5000/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
+    curl -XPOST 'localhost:4999/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
 
