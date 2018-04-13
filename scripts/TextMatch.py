@@ -8,10 +8,10 @@ class TextMatch:
     def __init__(self):
         print "TextMatch initializing"
         try:
-            self.es = Elasticsearch()
+            self.es = Elasticsearch(hosts="sda-srv04:9200")
         except Exception,e:
             print e
-            sys.exit(1)            
+            sys.exit(1)
         print "TextMatch initialized"
 
     def textMatch(self, chunks):
@@ -26,8 +26,8 @@ class TextMatch:
                      if record['_source']['uri'] not in topkents:
                          topkents.append(record['_source']['uri'])
                  matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkents, 'class': 'entity'})
-                 
-                     
+
+
              if chunk['class'] == 'relation':
                  res = self.es.search(index="dbpredicateindex14", doc_type="records", body={"query":{"match":{"_all":{"query":chunk['chunk'], "fuzziness":"auto"}}},"size":200})
                  topkrels = []
@@ -37,9 +37,9 @@ class TextMatch:
                      if record['_source']['uri'] not in topkrels:
                          topkrels.append(record['_source']['uri'])
                  matchedChunks.append({'chunk':chunk['chunk'], 'topkmatches': topkrels, 'class': 'relation'})
-        return matchedChunks 
-                          
-                     
+        return matchedChunks
+
+
 
 
 if __name__ == '__main__':

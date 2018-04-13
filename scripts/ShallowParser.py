@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from practnlptools.tools import Annotator
-from stop_words import get_stop_words
+# from stop_words import get_stop_words
 from nltk.tree import Tree
 import nltk
 
