@@ -3,7 +3,6 @@
 
 EARL (Entity and Relation Linker), a system for jointly linking entities and relations in a question to a knowledge graph. EARL treats entity linking and relation linking as a single task and thus aims to reduce the error caused by the dependent steps. To realise this, EARL uses the knowledge graph to jointly disambiguate entity and relations. EARL obtains the context for entity disambiguation by observing the relations surrounding the entity. Similarly, it obtains the context for relation disambiguation by looking at the surrounding entities. We support multiple entities and relations occurring in complex questions by modelling the joint entity and relation linking task as an instance of the Generalised Travelling Salesman Problem (GTSP).
 
-Check out EARL's system paper (under review) https://arxiv.org/abs/1801.03825
 
 # INSTRUCTIONS
 
@@ -18,12 +17,12 @@ To import elasticsearch data one could install elasticdump https://www.npmjs.com
 
 Then import the two mappings:
 
-    elasticdump --input=dbpredicateindex14mapping.json  --output=http://localhost:9200/dbpredicateindex14 --type=mapping
+    elasticdump --input=dbontologyindex1mapping.json  --output=http://localhost:9200/dbontologyindex1 --type=mapping
     elasticdump --input=dbentityindex9mapping.json  --output=http://localhost:9200/dbentityindex9 --type=mapping
     
 Then import the actual data:
 
-    elasticdump --input=dbpredicateindex14.json  --output=http://localhost:9200/dbpredicateindex14 --type=data
+    elasticdump --input=dbontologyindex1.json  --output=http://localhost:9200/dbontologyindex1 --type=data
     elasticdump --limit=10000 --input=dbentityindex9.json  --output=http://localhost:9200/dbentityindex9 --type=data
 
 You may need to add the following to the above elasticdump commands to make it work on some setups:
