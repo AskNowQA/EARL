@@ -46,28 +46,47 @@ def prepare(rerankedlist, nlquery):
     return combinedrerankedlist 
         
 def getsparql(preparedlist):
-    r = requests.post("http://localhost:5000/qg/api/v1.0/query", data=json.dumps(preparedlist), headers={"content-type": "application/json"}) # This sends a request to https://github.com/AskNowQA/SQG 
+    r = requests.post("http://localhost:5000/qg/api/v1.0/query", data=json.dumps(preparedlist), headers={"content-type": "application/json"}) # This sends a request to https://github.com/AskNowQA/SQG
+    print r
     return json.loads(r.text)
 
 def solvesparql(sparql):
     answers = []
-    for query in sparql['queries']:
-        q = query
-        url = "http://131.220.153.66:8890/sparql" # or http://dbpedia.org/sparql
-        p = {'query': q}
-        h = {'Accept': 'application/json'}
-        r = requests.get(url, params=p, headers=h)
-        print("code {}\n".format(r.status_code))
-        d =json.loads(r.text)
-        try:
-            answers.append(d['results']['bindings'])
-        except Exception,e:
-            answers.append([])
+    if sparql:
+        for query in sparql['queries']:
+            q = query
+            url = "http://131.220.9.219/sparql" # or http://dbpedia.org/sparql
+            p = {'query': q}
+            h = {'Accept': 'application/json'}
+            r = requests.get(url, params=p, headers=h)
+            print("code {}\n".format(r.status_code))
+            d =json.loads(r.text)
+            try:
+                answers.append(d['results']['bindings'])
+            except Exception,e:
+                answers.append([])
     return answers
         
 
 @app.route('/processQuery', methods=['POST'])
 def processQuery():
+    d = request.get_json(silent=True)
+    nlquery = d['nlquery']
+    print "Query: %s"%json.dumps(nlquery)
+    chunks = s.shallowParse(nlquery)
+    print "Chunks: %s"%json.dumps(chunks)
+    erpredictions = e.erPredict(chunks)
+    print "ER Predictions: %s"%json.dumps(erpredictions)
+    topkmatches = t.textMatch(erpredictions)
+    print "Top text matches: %s"%json.dumps(topkmatches)
+    jointlylinked = j.jointLinker(topkmatches)
+    print "ER link features: %s"%json.dumps(jointlylinked)
+    rerankedlist = r.reRank(jointlylinked)
+    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    return json.dumps(rerankedlist)
+
+@app.route('/answer', methods=['POST'])
+def answer():
     d = request.get_json(silent=True)
     nlquery = d['nlquery']
     print "Query: %s"%json.dumps(nlquery)
@@ -88,6 +107,7 @@ def processQuery():
     answers = solvesparql(sparql)
     print "answer: %s"%json.dumps(answers)
     return json.dumps(answers)
+
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)
