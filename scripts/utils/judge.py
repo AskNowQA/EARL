@@ -27,14 +27,8 @@ d = json.loads(s)
 f.close()
 for item in d:
     itarr = []
-    for ent in item['entities']:
-         for uri in ent['uris']:
-             itarr.append(uri['uri'])
-             break
-    for rel in item['relations']:
-         for uri in rel['uris']:
-             itarr.append(uri['uri'])
-             break
+    for k,v in item['rerankedlists'].iteritems():
+        itarr.append(v[0][1])
     earltest.append(itarr)
 
 correct = 0
