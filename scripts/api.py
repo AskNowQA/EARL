@@ -2,7 +2,7 @@
 
 from flask import request
 from flask import Flask
-from gevent.wsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 import json,sys,requests
 
 from ShallowParser import ShallowParser
