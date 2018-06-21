@@ -40,19 +40,19 @@ class TextMatch:
         for phrase in phrase_1:
             try:
                 # print phrase
-                vw_phrase_1.append(model.word_vec(phrase.lower()))
+                vw_phrase_1.append(self.model.word_vec(phrase.lower()))
             except:
                 # print traceback.print_exc()
                 continue
         for phrase in phrase_2:
             try:
-                vw_phrase_2.append(model.word_vec(phrase.lower()))
+                vw_phrase_2.append(self.model.word_vec(phrase.lower()))
             except:
                 continue
         if len(vw_phrase_1) == 0 or len(vw_phrase_2) == 0:
             return 0
-        v_phrase_1 = ConvertVectorSetToVecAverageBased(vw_phrase_1)
-        v_phrase_2 = ConvertVectorSetToVecAverageBased(vw_phrase_2)
+        v_phrase_1 = self.ConvertVectorSetToVecAverageBased(vw_phrase_1)
+        v_phrase_2 = self.ConvertVectorSetToVecAverageBased(vw_phrase_2)
         cosine_similarity = np.dot(v_phrase_1, v_phrase_2) / (np.linalg.norm(v_phrase_1) * np.linalg.norm(v_phrase_2))
         return cosine_similarity
 
