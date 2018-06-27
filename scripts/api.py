@@ -65,6 +65,7 @@ def solvesparql(sparql):
                 answers.append(d['results']['bindings'])
             except Exception,e:
                 answers.append([])
+            break #Answer only top sparql
     return answers
         
 
