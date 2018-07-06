@@ -1,20 +1,20 @@
 {
-	"dbontologyindex1": {
+	"dbentityindex10": {
 		"mappings": {
 			"records": {
 				"properties": {
-					"mergedLabel": {
+					"dbpediaLabel": {
 						"type": "text",
 						"index_options": "docs",
-						"analyzer": "english",
-                                                "similarity":"classic"
+						"analyzer": "english"
 					},
 					"uri": {
 						"type": "keyword"
 					},
-					"urianalyzed": {
+					"wikidataLabel": {
 						"type": "text",
-						"index_options": "docs"
+						"index_options": "docs",
+						"analyzer": "english"
 					}
 				}
 			}
