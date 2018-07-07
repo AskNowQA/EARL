@@ -62,13 +62,19 @@ class TextMatch:
         matchedChunks = []
         for chunk in chunks:
              if chunk['class'] == 'entity':
-                 res = self.es.search(index="dbentityindex10", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel", "dbpediaLabel"]}},"size":200})
+                 res = self.es.search(index="dbentityindex11", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel", "dbpediaLabel"]}},"size":200})
+                 _topkents = []
                  topkents = []
                  for record in res['hits']['hits']:
-                     if len(topkents) > 30:
+                     _topkents.append((record['_source']['uri'],record['_source']['edgecount']))
+                 _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
+                 for record in _topkents:
+                     if len(topkents) >= 30:
                          break
-                     if record['_source']['uri'] not in topkents:
-                         topkents.append(record['_source']['uri'])
+                     if record[0] in topkents:
+                         continue
+                     else:
+                         topkents.append(record[0])
                  matchedChunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
                  
              if chunk['class'] == 'relation':
@@ -99,4 +105,5 @@ class TextMatch:
 
 if __name__ == '__main__':
     t = TextMatch()
-    print t.textMatch([{'chunk': 'Who', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}, {'chunk': 'the parent organisation', 'surfacelength': 23, 'class': 'relation', 'surfacestart': 7}, {'chunk': 'Barack Obama', 'surfacelength': 12, 'class': 'entity', 'surfacestart': 34}, {'chunk': 'is', 'surfacelength': 2, 'class': 'relation', 'surfacestart': 4}])
+    #print t.textMatch([{'chunk': 'Who', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}, {'chunk': 'the parent organisation', 'surfacelength': 23, 'class': 'relation', 'surfacestart': 7}, {'chunk': 'Barack Obama', 'surfacelength': 12, 'class': 'entity', 'surfacestart': 34}, {'chunk': 'is', 'surfacelength': 2, 'class': 'relation', 'surfacestart': 4}])
+    print t.textMatch([{'chunk': 'USA', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}])

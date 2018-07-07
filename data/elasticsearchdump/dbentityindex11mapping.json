@@ -1,5 +1,5 @@
 {
-	"dbentityindex10": {
+	"dbentityindex11": {
 		"mappings": {
 			"records": {
 				"properties": {
@@ -15,7 +15,10 @@
 						"type": "text",
 						"index_options": "docs",
 						"analyzer": "english"
-					}
+					},
+                                        "edgecount": {
+                                                "type":"integer"
+                                        }
 				}
 			}
 		}
