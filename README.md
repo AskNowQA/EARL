@@ -9,7 +9,7 @@ EARL (Entity and Relation Linker), a system for jointly linking entities and rel
     $cd scripts/
     $python api.py 4999
 
-This starts the api server at port 4999. Install all dependencies required that are mentioned in dependencies.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 5.x instance. The mappings can be found in data/elasticsearchdump/ folder.
+This starts the api server at port 4999. Install all dependencies required that are mentioned in dependencies.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 5.x instance. The mappings can be found in data/elasticsearchdump/ folder. Also download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder.
 
 To import elasticsearch data one could install elasticdump https://www.npmjs.com/package/elasticdump
 
@@ -18,12 +18,12 @@ To import elasticsearch data one could install elasticdump https://www.npmjs.com
 Then import the two mappings:
 
     elasticdump --input=dbontologyindex1mapping.json  --output=http://localhost:9200/dbontologyindex1 --type=mapping
-    elasticdump --input=dbentityindex9mapping.json  --output=http://localhost:9200/dbentityindex9 --type=mapping
+    elasticdump --input=dbentityindex11mapping.json  --output=http://localhost:9200/dbentityindex11 --type=mapping
     
 Then import the actual data:
 
     elasticdump --input=dbontologyindex1.json  --output=http://localhost:9200/dbontologyindex1 --type=data
-    elasticdump --limit=10000 --input=dbentityindex9.json  --output=http://localhost:9200/dbentityindex9 --type=data
+    elasticdump --limit=10000 --input=dbentityindex11.json  --output=http://localhost:9200/dbentityindex11 --type=data
 
 You may need to add the following to the above elasticdump commands to make it work on some setups:
 
