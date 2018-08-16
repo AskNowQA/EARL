@@ -12,7 +12,7 @@ class TextMatch:
     def __init__(self):
         print "TextMatch initializing"
         try:
-            self.es = Elasticsearch(['sda11'],port=9201)
+            self.es = Elasticsearch()
             self.labelhash = {}
             self.cache = {}
             f = open('../data/ontologylabeluridict.json')
