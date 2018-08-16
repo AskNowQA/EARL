@@ -17,14 +17,12 @@ To import elasticsearch data one could install elasticdump https://www.npmjs.com
 
     npm install elasticdump -g
 
-Then import the two mappings:
+Then import the mapping:
 
-    elasticdump --input=dbontologyindex1mapping.json  --output=http://localhost:9200/dbontologyindex1 --type=mapping
     elasticdump --input=dbentityindex11mapping.json  --output=http://localhost:9200/dbentityindex11 --type=mapping
     
 Then import the actual data:
 
-    elasticdump --input=dbontologyindex1.json  --output=http://localhost:9200/dbontologyindex1 --type=data
     elasticdump --limit=10000 --input=dbentityindex11.json  --output=http://localhost:9200/dbentityindex11 --type=data
 
 You may need to add the following to the above elasticdump commands to make it work on some setups:
