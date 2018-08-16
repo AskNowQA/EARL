@@ -12,13 +12,13 @@ class TextMatch:
     def __init__(self):
         print "TextMatch initializing"
         try:
-            self.es = Elasticsearch()
+            self.es = Elasticsearch(['sda11'],port=9201)
             self.labelhash = {}
             self.cache = {}
             f = open('../data/ontologylabeluridict.json')
             s = f.read()
             self.labelhash = json.loads(s)
-            self.model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
+            self.model =  gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
             
         except Exception,e:
             print e
@@ -58,7 +58,7 @@ class TextMatch:
 
 
 
-    def textMatch(self, chunks):
+    def textMatch(self, chunks, pagerankflag=False):
         matchedChunks = []
         for chunk in chunks:
              if chunk['class'] == 'entity':
@@ -67,7 +67,8 @@ class TextMatch:
                  topkents = []
                  for record in res['hits']['hits']:
                      _topkents.append((record['_source']['uri'],record['_source']['edgecount']))
-                 _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
+                 if pagerankflag:
+                     _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
                  for record in _topkents:
                      if len(topkents) >= 30:
                          break

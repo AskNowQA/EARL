@@ -73,12 +73,19 @@ def solvesparql(sparql):
 def processQuery():
     d = request.get_json(silent=True)
     nlquery = d['nlquery']
+    pagerankflag = False
+    try:
+        if 'pagerankflag' in d:
+            pagerankflag = d['pagerankflag']
+    except Exception,err:
+        print err
+        return 422
     print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
     print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
     print "ER Predictions: %s"%json.dumps(erpredictions)
-    topkmatches = t.textMatch(erpredictions)
+    topkmatches = t.textMatch(erpredictions, pagerankflag)
     print "Top text matches: %s"%json.dumps(topkmatches)
     jointlylinked = j.jointLinker(topkmatches)
     print "ER link features: %s"%json.dumps(jointlylinked)
@@ -90,13 +97,20 @@ def processQuery():
 def answer():
     d = request.get_json(silent=True)
     nlquery = d['nlquery']
+    pagerankflag = False
+    try:
+        if 'pagerankflag' in d:
+            pagerankflag = d['pagerankflag']
+    except Exception,err:
+        print err
+        return 422
     print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
     print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
     print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions)
-    print "Top text matches: %s"%json.dumps(topkmatches)
+    print "Top text matches: %s"%json.dumps(topkmatches,pagerankflag)
     jointlylinked = j.jointLinker(topkmatches)
     print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
@@ -113,13 +127,20 @@ def answer():
 def answerdetail():
     d = request.get_json(silent=True)
     nlquery = d['nlquery']
+    pagerankflag = False
+    try:
+        if 'pagerankflag' in d:
+            pagerankflag = d['pagerankflag']
+    except Exception,err:
+        print err
+        return 422
     print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
     print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
     print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions)
-    print "Top text matches: %s"%json.dumps(topkmatches)
+    print "Top text matches: %s"%json.dumps(topkmatches, pagerankflag)
     jointlylinked = j.jointLinker(topkmatches)
     print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
