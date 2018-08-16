@@ -109,6 +109,29 @@ def answer():
     print "answer: %s"%json.dumps(answers)
     return json.dumps(answers)
 
+@app.route('/answerdetail', methods=['POST'])
+def answerdetail():
+    d = request.get_json(silent=True)
+    nlquery = d['nlquery']
+    print "Query: %s"%json.dumps(nlquery)
+    chunks = s.shallowParse(nlquery)
+    print "Chunks: %s"%json.dumps(chunks)
+    erpredictions = e.erPredict(chunks)
+    print "ER Predictions: %s"%json.dumps(erpredictions)
+    topkmatches = t.textMatch(erpredictions)
+    print "Top text matches: %s"%json.dumps(topkmatches)
+    jointlylinked = j.jointLinker(topkmatches)
+    print "ER link features: %s"%json.dumps(jointlylinked)
+    rerankedlist = r.reRank(jointlylinked)
+    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
+    print "Pre-pared list: %s"%json.dumps(preparedlist)
+    sparql = getsparql(preparedlist)
+    print "sparql: %s"%json.dumps(sparql)
+    answers = solvesparql(sparql)
+    print "answer: %s"%json.dumps(answers)
+    return json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
+
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)
