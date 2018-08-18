@@ -11,7 +11,8 @@ https://drive.google.com/open?id=1blY-T86NGnLgdx8gOoOLa2J2-N2-EIFu ,
 https://drive.google.com/open?id=1JdZYWuoKyA6ev-QcAsd3woL8RI2wrN90 ,
 https://fasttext.cc/docs/en/english-vectors.html .
 
-After downloading put them inside 'Data_Processing' folder.
+After downloading put them inside 'Data_Processing' folder. Inside 'Data_Processing' folder create folder 'earlbinaries'.
+Then download the contents from the following link https://drive.google.com/open?id=1lp1rrPj9h5vTx2QJJiVxOqCtw0vsHQ_u and put them inside 'earlbinaries' folder.
 
 ## Prediction
 
