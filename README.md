@@ -1,5 +1,5 @@
 # Entity Relation Predictor
-Predicting Entitiy and Relationship using Bidirectional-LSTM
+Predicting Entitiy and Relationship using Bidirectional-LSTM.
 
 ## Data
 Before Running BiLSTM_ER_Predictor.py and BiLSTM_ER_predictor_with_kfold.py download 'names.csv' from https://drive.google.com/open?id=1kfHaP7KkustBwLE3FDPa8cR7JR9_TFU4 and put the csv file inside 'Data' folder.
