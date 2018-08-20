@@ -18,7 +18,7 @@ class TextMatch:
             f = open('../data/ontologylabeluridict.json')
             s = f.read()
             self.labelhash = json.loads(s)
-            self.model =  gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
+            self.model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
             
         except Exception,e:
             print e
@@ -62,7 +62,7 @@ class TextMatch:
         matchedChunks = []
         for chunk in chunks:
              if chunk['class'] == 'entity':
-                 res = self.es.search(index="dbentityindex11", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel", "dbpediaLabel"]}},"size":200})
+                 res = self.es.search(index="dbentityindex11", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":200})
                  _topkents = []
                  topkents = []
                  for record in res['hits']['hits']:
@@ -107,4 +107,4 @@ class TextMatch:
 if __name__ == '__main__':
     t = TextMatch()
     #print t.textMatch([{'chunk': 'Who', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}, {'chunk': 'the parent organisation', 'surfacelength': 23, 'class': 'relation', 'surfacestart': 7}, {'chunk': 'Barack Obama', 'surfacelength': 12, 'class': 'entity', 'surfacestart': 34}, {'chunk': 'is', 'surfacelength': 2, 'class': 'relation', 'surfacestart': 4}])
-    print t.textMatch([{"chunk": "prime minister", "surfacelength": 14, "class": "relation", "surfacestart": 0}])
+    print t.textMatch([{"chunk": "India", "surfacelength": 5, "class": "entity", "surfacestart": 0}])
