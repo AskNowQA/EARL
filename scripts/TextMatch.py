@@ -91,9 +91,7 @@ class TextMatch:
                      newresults = sorted(results, key=lambda k: k['score'], reverse=True)
                      uriarray = []
                      for result in newresults:
-                         for uri in result['uris']:
-                             if uri not in uriarray:
-                                 uriarray.append(uri)
+                         uriarray += result['uris']
                      uriarray = uriarray[:30]
                      self.cache[phrase] = uriarray
                      matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
