@@ -91,7 +91,9 @@ class TextMatch:
                      newresults = sorted(results, key=lambda k: k['score'], reverse=True)
                      uriarray = []
                      for result in newresults:
-                         uriarray += result['uris']
+                         for uri in result['uris']:
+                             if uri not in uriarray:
+                                 uriarray.append(uri)
                      uriarray = uriarray[:30]
                      self.cache[phrase] = uriarray
                      matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
@@ -107,4 +109,4 @@ class TextMatch:
 if __name__ == '__main__':
     t = TextMatch()
     #print t.textMatch([{'chunk': 'Who', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}, {'chunk': 'the parent organisation', 'surfacelength': 23, 'class': 'relation', 'surfacestart': 7}, {'chunk': 'Barack Obama', 'surfacelength': 12, 'class': 'entity', 'surfacestart': 34}, {'chunk': 'is', 'surfacelength': 2, 'class': 'relation', 'surfacestart': 4}])
-    print t.textMatch([{'chunk': 'USA', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}])
+    print t.textMatch([{"chunk": "prime minister", "surfacelength": 14, "class": "relation", "surfacestart": 0}])
