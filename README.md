@@ -9,6 +9,7 @@ EARL (Entity and Relation Linker), a system for jointly linking entities and rel
 # INSTRUCTIONS
 
     $cd scripts/
+    $python TextMatchServer.py 8888  (this takes several minutes to load)
     $python api.py 4999
 
 This starts the api server at port 4999. Install all dependencies required that are mentioned in dependencies.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 5.x instance. The mappings can be found in data/elasticsearchdump/ folder. Also download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder.
