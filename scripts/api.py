@@ -3,14 +3,13 @@
 from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
-import json,sys,requests
-
+import json,sys,requests,logging
 from ShallowParser import ShallowParser
 from ErPredictor import ErPredictor
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
-
+logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
 s = ShallowParser()
 e = ErPredictor()
 t = TextMatch()
@@ -80,17 +79,17 @@ def processQuery():
     except Exception,err:
         print err
         return 422
-    print "Query: %s"%json.dumps(nlquery)
+    #print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
-    print "Chunks: %s"%json.dumps(chunks)
+    #print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
-    print "ER Predictions: %s"%json.dumps(erpredictions)
+    #print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches)
+    #print "Top text matches: %s"%json.dumps(topkmatches)
     jointlylinked = j.jointLinker(topkmatches)
-    print "ER link features: %s"%json.dumps(jointlylinked)
+    #print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
-    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    #print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     return json.dumps(rerankedlist)
 
 @app.route('/answer', methods=['POST'])
@@ -104,23 +103,23 @@ def answer():
     except Exception,err:
         print err
         return 422
-    print "Query: %s"%json.dumps(nlquery)
+    #print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
-    print "Chunks: %s"%json.dumps(chunks)
+    #print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
-    print "ER Predictions: %s"%json.dumps(erpredictions)
+    #print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions)
-    print "Top text matches: %s"%json.dumps(topkmatches,pagerankflag)
+    #print "Top text matches: %s"%json.dumps(topkmatches,pagerankflag)
     jointlylinked = j.jointLinker(topkmatches)
-    print "ER link features: %s"%json.dumps(jointlylinked)
+    #print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
-    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    #print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
-    print "Pre-pared list: %s"%json.dumps(preparedlist)
+    #print "Pre-pared list: %s"%json.dumps(preparedlist)
     sparql = getsparql(preparedlist)
-    print "sparql: %s"%json.dumps(sparql)
+    #print "sparql: %s"%json.dumps(sparql)
     answers = solvesparql(sparql)
-    print "answer: %s"%json.dumps(answers)
+    #print "answer: %s"%json.dumps(answers)
     return json.dumps(answers)
 
 @app.route('/answerdetail', methods=['POST'])
@@ -134,23 +133,24 @@ def answerdetail():
     except Exception,err:
         print err
         return 422
-    print "Query: %s"%json.dumps(nlquery)
+    #print "Query: %s"%json.dumps(nlquery)
     chunks = s.shallowParse(nlquery)
-    print "Chunks: %s"%json.dumps(chunks)
+    #print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
-    print "ER Predictions: %s"%json.dumps(erpredictions)
+    #print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions)
-    print "Top text matches: %s"%json.dumps(topkmatches, pagerankflag)
+    #print "Top text matches: %s"%json.dumps(topkmatches, pagerankflag)
     jointlylinked = j.jointLinker(topkmatches)
-    print "ER link features: %s"%json.dumps(jointlylinked)
+    #print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
-    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    #print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
-    print "Pre-pared list: %s"%json.dumps(preparedlist)
+    #print "Pre-pared list: %s"%json.dumps(preparedlist)
     sparql = getsparql(preparedlist)
-    print "sparql: %s"%json.dumps(sparql)
+    #print "sparql: %s"%json.dumps(sparql)
     answers = solvesparql(sparql)
-    print "answer: %s"%json.dumps(answers)
+    #print "answer: %s"%json.dumps(answers)
+    logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
     return json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
 
 
