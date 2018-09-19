@@ -33,8 +33,8 @@ def prepare(rerankedlist, nlquery):
         chunkdict = {}
         chunkdict['uris'] = []
         chunkdict['surface'] = [chunk['surfacestart'], chunk['surfacelength']]
-        #print rerankedlist
-        rerankedlist['rerankedlists'][idx] = rerankedlist['rerankedlists'][idx]
+        if rerankedlist['ertypes'][idx] == 'entity':
+            rerankedlist['rerankedlists'][idx] = rerankedlist['rerankedlists'][idx][:1] #Send only top entity
         confidencescoresum = sum([ x[0] for x in rerankedlist['rerankedlists'][idx]])
         for uri in rerankedlist['rerankedlists'][idx]:
           chunkdict['uris'].append({'uri': uri[1], 'confidence': uri[0]/float(confidencescoresum)})
