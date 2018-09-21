@@ -133,7 +133,7 @@ def answerdetail():
         logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
         return json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
     else:
-        logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+        logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
         return json.dumps({'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
         
 
