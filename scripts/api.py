@@ -108,6 +108,8 @@ def processQuery():
 def answerdetail():
     d = request.get_json(silent=True)
     nlquery = d['nlquery']
+    if 'remote_addr' not in d:
+        d['remote_addr'] = None
     pagerankflag = False
     try:
         if 'pagerankflag' in d:
