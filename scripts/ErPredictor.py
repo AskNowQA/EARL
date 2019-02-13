@@ -45,31 +45,35 @@ class ErPredictor:
 
 
     def erPredict(self, chunks):
-        erpredictions = []
-        combinedchunks = []
-        for chunk in chunks:
-            wordlist = []
-            surfacestart = chunk[0][2]
-            for word in chunk:
-                wordlist.append(word[0])
-                surfacelength = word[2]+word[3] - surfacestart
-            wordlist = ' '.join(wordlist)
-            combinedchunks.append((wordlist,surfacestart,surfacelength))
-             
-        for chunk in combinedchunks:
-            chunkwords = chunk[0].translate(None, string.punctuation)
-            char_dict = np.load('../models/char_dict.npy').item()
-            chunk_clean = [char_dict[char] for char in chunkwords]
-            prediction = self.model.predict(np.concatenate((np.zeros((270-len(chunk_clean))), chunk_clean)).reshape(1,270))
-            pred = np.argmax(prediction[0])
-            if pred == 0:
-                erpredictions.append({'chunk':chunkwords, 'surfacestart': chunk[1], 'surfacelength': chunk[2] , 'class':'relation'})
-            else:
-                erpredictions.append({'chunk':chunkwords, 'surfacestart': chunk[1], 'surfacelength': chunk[2] , 'class':'entity'})
-        return erpredictions
+        try:
+            erpredictions = []
+            combinedchunks = []
+            for chunk in chunks:
+                wordlist = []
+                surfacestart = chunk[0][2]
+                for word in chunk:
+                    wordlist.append(word[0])
+                    surfacelength = word[2]+word[3] - surfacestart
+                wordlist = ' '.join(wordlist)
+                combinedchunks.append((wordlist,surfacestart,surfacelength))
+                 
+            for chunk in combinedchunks:
+                chunkk = chunk[0].encode('ascii','ignore')
+                chunkwords = chunkk.translate(None, string.punctuation)
+                char_dict = np.load('../models/char_dict.npy').item()
+                chunk_clean = [char_dict[char] for char in chunkwords]
+                prediction = self.model.predict(np.concatenate((np.zeros((270-len(chunk_clean))), chunk_clean)).reshape(1,270))
+                pred = np.argmax(prediction[0])
+                if pred == 0:
+                    erpredictions.append({'chunk':chunkwords, 'surfacestart': chunk[1], 'surfacelength': chunk[2] , 'class':'relation'})
+                else:
+                    erpredictions.append({'chunk':chunkwords, 'surfacestart': chunk[1], 'surfacelength': chunk[2] , 'class':'entity'})
+            return erpredictions
+        except Exception,e:
+            print e
 
 if __name__=='__main__':
     e = ErPredictor()
     #print e.erPredict(['There', 'people', 'world', 'better', 'place', 'me.'])
-    print e.erPredict([[('Who', 'S-NP', 0, 3)], [('the', 'B-NP', 7, 3), ('parent', 'I-NP', 11, 6), ('organisation', 'E-NP', 18, 12)], [('Barack', 'B-NP', 34, 6), ('Obama', 'E-NP', 41, 5)], [('is', 'S-VP', 4, 2)]])
+    print e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['Barack', 'B-NP', 34, 6], ['Obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]])
 

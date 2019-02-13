@@ -9,6 +9,7 @@ from ErPredictor import ErPredictor
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
+import json
 logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
 s = ShallowParser()
 e = ErPredictor()
@@ -83,6 +84,7 @@ def numberOfNodes(topkmatches):
 @app.route('/processQuery', methods=['POST'])
 def processQuery():
     d = request.get_json(silent=True)
+    print d
     nlquery = d['nlquery']
     pagerankflag = False
     try:
@@ -91,8 +93,12 @@ def processQuery():
     except Exception,err:
         print err
         return 422
-    #print "Query: %s"%json.dumps(nlquery)
-    chunks = s.shallowParse(nlquery)
+    #print "Query: %s"%json.dumps(nlquery) 
+    chunks = None
+    if 'chunks' not in d.keys():
+        chunks = s.shallowParse(nlquery)
+    else:
+        chunks = d['chunks']
     #print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
     #print "ER Predictions: %s"%json.dumps(erpredictions)
