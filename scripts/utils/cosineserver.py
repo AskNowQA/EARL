@@ -16,7 +16,7 @@ sys.setdefaultencoding('utf8')
 app = Flask(__name__)
 
 #model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.ngramsubwords.300d.W.pos.bin')
-model = Model('../data/lexvec.commoncrawl.ngramsubwords.300d.W.pos.bin')
+model = Model('../../data/lexvec.commoncrawl.ngramsubwords.300d.W.pos.bin')
 print "CosineServer initialized"
 
 def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
