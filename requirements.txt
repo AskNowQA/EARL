@@ -37,7 +37,6 @@ mock==2.0.0
 nltk==3.3
 numpy==1.14.3
 pbr==4.0.3
-practNLPTools==1.0
 protobuf==3.5.2.post1
 pybloom==1.1
 python-dateutil==2.7.3
