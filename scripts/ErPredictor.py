@@ -60,7 +60,7 @@ class ErPredictor:
             for chunk in combinedchunks:
                 chunkk = chunk[0].encode('ascii','ignore')
                 chunkwords = chunkk.translate(None, string.punctuation)
-                char_dict = np.load('../models/char_dict.npy').item()
+                char_dict = np.load('../models/char_dict.npy',allow_pickle=True).item()
                 chunk_clean = [char_dict[char] for char in chunkwords]
                 prediction = self.model.predict(np.concatenate((np.zeros((270-len(chunk_clean))), chunk_clean)).reshape(1,270))
                 pred = np.argmax(prediction[0])
