@@ -10,7 +10,7 @@ from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
-logging.basicConfig(filename='/var/log/asknow/asknowlog.txt',level=logging.INFO)
+logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
 s = ShallowParser()
 e = ErPredictorES()
 t = TextMatch()
