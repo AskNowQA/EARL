@@ -5,14 +5,14 @@ from flask import Flask
 from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
 from ShallowParser import ShallowParser
-from ErPredictor import ErPredictor
+from ErPredictorES import ErPredictorES
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknow/asknowlog.txt',level=logging.INFO)
 s = ShallowParser()
-e = ErPredictor()
+e = ErPredictorES()
 t = TextMatch()
 j = JointLinker()
 r = ReRanker()
@@ -99,15 +99,15 @@ def processQuery():
         chunks = s.shallowParse(nlquery)
     else:
         chunks = d['chunks']
-    #print "Chunks: %s"%json.dumps(chunks)
+    print "Chunks: %s"%json.dumps(chunks)
     erpredictions = e.erPredict(chunks)
-    #print "ER Predictions: %s"%json.dumps(erpredictions)
+    print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions, pagerankflag)
-    #print "Top text matches: %s"%json.dumps(topkmatches)
+    print "Top text matches: %s"%json.dumps(topkmatches)
     jointlylinked = j.jointLinker(topkmatches)
-    #print "ER link features: %s"%json.dumps(jointlylinked)
+    print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
-    #print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     return json.dumps(rerankedlist)
 
 @app.route('/answerdetail', methods=['POST'])
