@@ -2,7 +2,7 @@
 
 import numpy as np
 import re
-from gensim.models import FastText
+import gzip
 from elasticsearch import Elasticsearch
 import gensim.downloader as api
 import torch
@@ -10,11 +10,12 @@ import torch.nn as nn
 import torch.utils.data as utils
 import sys,json,string
 from fuzzywuzzy import fuzz
+from gensim.models import KeyedVectors
 
 class ErPredictorES:
     def __init__(self):
         print "Er Predictor ES Initializing"
-        self.fasttextmodel = api.load('fasttext-wiki-news-subwords-300')
+        self.fasttextmodel = KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
         self.es  = Elasticsearch(['sda11'],port=9201)
         n_in, n_h, n_out = 304, 200, 2
         self.ermodel = nn.Sequential(nn.Linear(n_in, n_h),
@@ -85,7 +86,7 @@ class ErPredictorES:
         return erpredictions
 
 if __name__=='__main__':
-    e = ErPredictor()
+    e = ErPredictorES()
     #print e.erPredict(['There', 'people', 'world', 'better', 'place', 'me.'])
     print e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['Barack', 'B-NP', 34, 6], ['Obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]])
     print e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['barack', 'B-NP', 34, 6], ['obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]])
