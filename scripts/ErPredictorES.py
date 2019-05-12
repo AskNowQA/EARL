@@ -11,7 +11,7 @@ import torch.utils.data as utils
 import sys,json,string
 from fuzzywuzzy import fuzz
 
-class ErPredictor:
+class ErPredictorES:
     def __init__(self):
         print "Er Predictor ES Initializing"
         self.fasttextmodel = api.load('fasttext-wiki-news-subwords-300')
