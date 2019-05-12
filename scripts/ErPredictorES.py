@@ -16,7 +16,7 @@ class ErPredictorES:
     def __init__(self):
         print "Er Predictor ES Initializing"
         self.fasttextmodel = KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-        self.es  = Elasticsearch(['sda11'],port=9201)
+        self.es  = Elasticsearch()
         n_in, n_h, n_out = 304, 200, 2
         self.ermodel = nn.Sequential(nn.Linear(n_in, n_h),
                  nn.ReLU(),
