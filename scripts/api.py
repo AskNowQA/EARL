@@ -5,14 +5,14 @@ from flask import Flask
 from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
 from ShallowParser import ShallowParser
-from ErPredictor import ErPredictor
+from ErPredictorES import ErPredictorES
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
 s = ShallowParser()
-e = ErPredictor()
+e = ErPredictorES()
 t = TextMatch()
 j = JointLinker()
 r = ReRanker()
