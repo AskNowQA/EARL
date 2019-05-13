@@ -2,20 +2,18 @@
 
 import numpy as np
 import re
+import urllib2
 import gzip
 from elasticsearch import Elasticsearch
-import gensim.downloader as api
 import torch
 import torch.nn as nn
 import torch.utils.data as utils
 import sys,json,string
 from fuzzywuzzy import fuzz
-from gensim.models import KeyedVectors
 
 class ErPredictorES:
     def __init__(self):
         print "Er Predictor ES Initializing"
-        self.fasttextmodel = KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
         self.es  = Elasticsearch()
         n_in, n_h, n_out = 304, 200, 2
         self.ermodel = nn.Sequential(nn.Linear(n_in, n_h),
@@ -28,25 +26,13 @@ class ErPredictorES:
         self.ermodel.eval()
         print "Er Predictor Initialized"
 
-    def ConvertVectorSetToVecAverageBased(self,vectorSet, ignore = []):
-        if len(ignore) == 0:
-            return np.mean(vectorSet, axis = 0)
-        else:
-            return np.dot(np.transpose(vectorSet),ignore)/sum(ignore)
-
-
     def embed(self, words):
-        phrase =  words.split(" ")
-        vw_phrase = []
-        for word in phrase:
-            try:
-                vw_phrase.append(model.word_vec(word))
-            except Exception,e:
-                continue
-        if len(vw_phrase) == 0:
-            return 300*[0]
-        v_phrase = self.ConvertVectorSetToVecAverageBased(vw_phrase)
-        return v_phrase
+        req = urllib2.Request('http://localhost:8888/ftwv')
+        req.add_header('Content-Type', 'application/json')
+        inputjson = {'chunk': words}
+        response = urllib2.urlopen(req, json.dumps(inputjson))
+        response = json.loads(response.read())
+        return response
 
     def erPredict(self, chunks):
         erpredictions = []
