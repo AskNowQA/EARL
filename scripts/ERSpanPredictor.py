@@ -45,9 +45,9 @@ class ERSpanDetector():
         fuzzscores = []
         wordvectors = []
         for chunk,word in zip(chunks,q.split(' ')):
-            req = urllib2.Request('http://localhost:8888/ftwv')
+            req = urllib2.Request('http://localhost:8887/ftwv')
             req.add_header('Content-Type', 'application/json')
-            inputjson = {'phrase':word}
+            inputjson = {'chunk':word}
             response = urllib2.urlopen(req, json.dumps(inputjson))
             embedding = json.loads(response.read())
             esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
@@ -91,10 +91,11 @@ class ERSpanDetector():
                 erpredictions.append({'chunk': chunk.strip(), 'surfacestart': -1, 'surfacelength':-1, 'class':'relation'})
         return erpredictions
 
-e = ERSpanDetector()
-print(e.erspan("who is the president of india?"))
-print(e.erspan("Who is the president of India?"))
-print(e.erspan("Who is the father of the mother of Barack Obama"))
-print(e.erspan("who is the father of the mother of barack obama"))
-print(e.erspan("How many rivers flow through Bonn?"))
-print(e.erspan("how many rivers flow through bonn?"))
+if __name__ == '__main__':
+    e = ERSpanDetector()
+    print(e.erspan("who is the president of india?"))
+    print(e.erspan("Who is the president of India?"))
+    print(e.erspan("Who is the father of the mother of Barack Obama"))
+    print(e.erspan("who is the father of the mother of barack obama"))
+    print(e.erspan("How many rivers flow through Bonn?"))
+    print(e.erspan("how many rivers flow through bonn?"))

@@ -4,13 +4,13 @@ from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
-from ERSpanPredictor import ERSpanPredictor
+from ERSpanPredictor import ERSpanDetector
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
-e = ERSpanPredictor()
+e = ERSpanDetector()
 t = TextMatch()
 j = JointLinker()
 r = ReRanker()
