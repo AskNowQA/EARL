@@ -8,7 +8,7 @@ class TextMatch:
         print "TextMatch initialized"
 
     def textMatch(self, chunks, pagerankflag=False):
-        req = urllib2.Request('http://localhost:8888/textMatch')
+        req = urllib2.Request('http://localhost:8887/textMatch')
         req.add_header('Content-Type', 'application/json')
         inputjson = {'chunks': chunks, 'pagerankflag':pagerankflag}
         response = urllib2.urlopen(req, json.dumps(inputjson))

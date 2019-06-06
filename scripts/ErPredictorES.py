@@ -27,7 +27,7 @@ class ErPredictorES:
         print "Er Predictor Initialized"
 
     def embed(self, words):
-        req = urllib2.Request('http://localhost:8888/ftwv')
+        req = urllib2.Request('http://localhost:8887/ftwv')
         req.add_header('Content-Type', 'application/json')
         inputjson = {'chunk': words}
         response = urllib2.urlopen(req, json.dumps(inputjson))

@@ -105,9 +105,8 @@ def processQuery():
 @app.route('/answerdetail', methods=['POST'])
 def answerdetail():
     d = request.get_json(silent=True)
+    print(d)
     nlquery = d['nlquery']
-    if 'remote_addr' not in d:
-        d['remote_addr'] = None
     pagerankflag = False
     try:
         if 'pagerankflag' in d:
@@ -118,30 +117,30 @@ def answerdetail():
     print "Query: %s"%json.dumps(nlquery)
     erpredictions = e.erPredict(nlquery)
     print "ER Predictions: %s"%json.dumps(erpredictions)
-    topkmatches = t.textMatch(erpredictions, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches, pagerankflag)
-    if not isSingleEntity(topkmatches):
-        if numberOfNodes(topkmatches) > 4:
-           print numberOfNodes(topkmatches)
-           logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'question':nlquery}))
-           return json.dumps({'answers':[],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'question':nlquery})
+    for erprediction in erpredictions:
+        topkmatches = t.textMatch(erprediction, pagerankflag)
+        print "Top text matches: %s"%json.dumps(topkmatches, pagerankflag)
+        if not isSingleEntity(topkmatches):
+            if numberOfNodes(topkmatches) > 4:
+               print numberOfNodes(topkmatches)
+               logging.info(json.dumps({'answers':[],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+               return json.dumps({'answers':[],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
+            else:
+                jointlylinked = j.jointLinker(topkmatches)
+                print "ER link features: %s"%json.dumps(jointlylinked)
+                rerankedlist = r.reRank(jointlylinked)
+                print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+                preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
+                print "Pre-pared list: %s"%json.dumps(preparedlist)
+                sparql = getsparql(preparedlist)
+                print "sparql: %s"%json.dumps(sparql)
+                answers = solvesparql(sparql)
+                print "answer: %s"%json.dumps(answers)
+                logging.info(json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+                return json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
         else:
-            jointlylinked = j.jointLinker(topkmatches)
-            print "ER link features: %s"%json.dumps(jointlylinked)
-            rerankedlist = r.reRank(jointlylinked)
-            print "Re-reanked lists: %s"%json.dumps(rerankedlist)
-            preparedlist = prepare(rerankedlist, nlquery) #For hamid's query processor
-            print "Pre-pared list: %s"%json.dumps(preparedlist)
-            sparql = getsparql(preparedlist)
-            print "sparql: %s"%json.dumps(sparql)
-            answers = solvesparql(sparql)
-            print "answer: %s"%json.dumps(answers)
-            logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'question':nlquery}))
-            return json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'question':nlquery})
-    else:
-        logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'question':nlquery}))
-        return json.dumps({'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'question':nlquery})
-        
+            logging.info(json.dumps({'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+            return json.dumps({'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
 
 
 if __name__ == '__main__':
