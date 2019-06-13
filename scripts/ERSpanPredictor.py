@@ -37,24 +37,31 @@ def beam_search_decoder(data, k):
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, tagset_size):
         super(LSTMTagger, self).__init__()
-        self.lstm = nn.LSTM(embedding_dim, hidden_dim//2, bidirectional=True)
-        self.hidden2tag1 = nn.Linear(hidden_dim, hidden_dim)
-        self.hidden2tag2 = nn.Linear(hidden_dim, tagset_size)
+        self.hidden_dim = hidden_dim
+        self.lstm = nn.LSTM(batch_first=True,input_size=embedding_dim, hidden_size=hidden_dim//2, num_layers=2,dropout=0.3, bidirectional=True)
+        self.dropout = nn.Dropout(p=0.3)
+        self.relu = nn.ReLU()
+        self.hidden2tag = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.BatchNorm1d(hidden_dim),
+            self.relu,
+            self.dropout,
+            nn.Linear(hidden_dim, 4)
+        )
 
     def forward(self, sentence):
         lstm_out, _ = self.lstm(sentence)
-        tag_space1 = self.hidden2tag1(lstm_out)
-        tag_space2 = self.hidden2tag2(tag_space1)
-        tag_scores = F.log_softmax(tag_space2, dim=1)
-        return tag_scores
-
+        batch_size = lstm_out.shape[0]
+        tags = self.hidden2tag(lstm_out.contiguous().view(-1, lstm_out.size(2)))
+        scores = F.log_softmax(tags, dim=1)
+        return scores
 
 class ERSpanDetector():
     def __init__(self):
        print("Initialising ER span detector")
        self.es = Elasticsearch()
-       self.model = LSTMTagger(341, 300, 4)#.cuda()
-       self.model.load_state_dict(torch.load('../data/erspan.model',map_location='cpu'))
+       self.model = LSTMTagger(366, 300, 4)#.cuda()
+       self.model.load_state_dict(torch.load('../data/erspaner.model',map_location='cpu'))
        self.model.eval()
        print("Initialised ER span detector")
 
@@ -66,9 +73,9 @@ class ERSpanDetector():
         fuzzscores = []
         wordvectors = []
         for chunk,word in zip(chunks,q.split(' ')):
-            req = urllib2.Request('http://localhost:8887/ftwv')
+            req = urllib2.Request('http://localhost:8888/ftwv')
             req.add_header('Content-Type', 'application/json')
-            inputjson = {'chunk':word}
+            inputjson = {'phrase':word}
             response = urllib2.urlopen(req, json.dumps(inputjson))
             embedding = json.loads(response.read())
             esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
@@ -77,22 +84,22 @@ class ERSpanDetector():
             if len(esresults) > 0:
                 for esresult in esresults:
                     if 'dbpediaLabel' in esresult['_source']:
-                        wordvector +=  [float(esresult['_score']), fuzz.ratio(word, esresult['_source']['dbpediaLabel']), fuzz.partial_ratio(word, esresult['_source']['dbpediaLabel']), fuzz.token_sort_ratio(word, esresult['_source']['dbpediaLabel'])]
+                        wordvector +=  [fuzz.ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['dbpediaLabel'])/100.0]
                     if 'wikidataLabel' in esresult['_source']:
-                        wordvector +=  [float(esresult['_score']), fuzz.ratio(word, esresult['_source']['wikidataLabel']), fuzz.partial_ratio(word, esresult['_source']['wikidataLabel']), fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])]
-                wordvector += (10-len(esresults)) * [0.0,0.0,0.0,0.0]
+                        wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
+                wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
             else:
-                wordvector +=  10*[0.0,0.0,0.0,0.0]
-            wordvector += [postags.index(chunk[1])]
+                wordvector +=  10*[0.0,0.0,0.0]
+            posonehot = len(postags)*[0.0]
+            posonehot[postags.index(chunk[1])] = 1
+            wordvector += posonehot
             wordvectors.append(wordvector)
-        nullvector = [-1]*341
+        nullvector = [-1]*366
         for i in range(50 - len(wordvectors)):
             wordvectors.append(nullvector)
-    
         testxtensors = torch.tensor([wordvectors],dtype=torch.float)
-        preds = self.model(testxtensors)[0][0:len(chunks)]
-        print(preds.shape)
-        seqs = beam_search_decoder(preds,4)
+        preds = self.model(testxtensors)[0:len(chunks)]
+        seqs = beam_search_decoder(preds.detach().cpu().numpy(),5)
         allerpredictions = []
         for seq in seqs:
             erpredictions = []
@@ -120,6 +127,7 @@ class ERSpanDetector():
 
 if __name__ == '__main__':
     e = ERSpanDetector()
+    print(e.erspan("name the place of qaqun"))
     print(e.erspan("who is the president of india?"))
     print(e.erspan("Who is the president of India?"))
     print(e.erspan("Who is the father of the mother of Barack Obama"))
