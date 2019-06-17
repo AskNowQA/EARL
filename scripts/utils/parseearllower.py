@@ -4,7 +4,7 @@ from __future__ import print_function
 import sys,json,urllib, urllib2, requests
 import requests
 
-f1 = open('outputerspanlower.json','w')
+f1 = open('outputerspanlowerfulllcquad.json','w')
 
 result = []
 count = 0

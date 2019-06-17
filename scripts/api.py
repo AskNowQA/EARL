@@ -94,13 +94,17 @@ def processQuery():
     print "Query: %s"%json.dumps(nlquery) 
     erpredictions = e.erspan(nlquery)
     print "ER Predictions: %s"%json.dumps(erpredictions)
-    topkmatches = t.textMatch(erpredictions, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches)
-    jointlylinked = j.jointLinker(topkmatches)
-    print "ER link features: %s"%json.dumps(jointlylinked)
-    rerankedlist = r.reRank(jointlylinked)
-    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
-    return json.dumps(rerankedlist)
+    rerankedlists = []
+    for erprediction in erpredictions:
+        topkmatches = t.textMatch(erprediction, pagerankflag)
+        print "Top text matches: %s"%json.dumps(topkmatches)
+        jointlylinked = j.jointLinker(topkmatches)
+        print "ER link features: %s"%json.dumps(jointlylinked)
+        rerankedlist = r.reRank(jointlylinked)
+        rerankedlists.append(rerankedlist)
+        print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    print(json.dumps(rerankedlists))
+    return json.dumps(rerankedlists)
 
 @app.route('/answerdetail', methods=['POST'])
 def answerdetail():
