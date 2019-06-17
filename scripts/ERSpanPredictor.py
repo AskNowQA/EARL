@@ -60,7 +60,7 @@ class ERSpanDetector():
     def __init__(self):
        print("Initialising ER span detector")
        self.es = Elasticsearch()
-       self.model = LSTMTagger(366, 300, 4)#.cuda()
+       self.model = LSTMTagger(426, 426, 4)#.cuda()
        self.model.load_state_dict(torch.load('../data/erspaner.model',map_location='cpu'))
        self.model.eval()
        print("Initialised ER span detector")
@@ -72,15 +72,37 @@ class ERSpanDetector():
         chunks = result.tags
         fuzzscores = []
         wordvectors = []
+        chunkswords = []
+        wordvector = []
         for chunk,word in zip(chunks,q.split(' ')):
-            req = urllib2.Request('http://localhost:8888/ftwv')
+            chunkswords.append((chunk,word))
+        for idx,chunkwordtuple in enumerate(chunkswords):
+            word = chunkwordtuple[1]
+            req = urllib2.Request('http://localhost:8887/ftwv')
             req.add_header('Content-Type', 'application/json')
-            inputjson = {'phrase':word}
+            inputjson = {'chunk':word}
             response = urllib2.urlopen(req, json.dumps(inputjson))
-            embedding = json.loads(response.read())
+            embedding = json.loads(response.read().decode('utf8'))
+            wordvector = embedding
+            #n-1,n
+            if idx > 0:
+                word = chunkswords[idx-1][1] + ' ' + chunkswords[idx][1]
+                esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
+                esresults = esresult['hits']['hits']
+                if len(esresults) > 0:
+                    for esresult in esresults:
+                        if 'dbpediaLabel' in esresult['_source']:
+                            wordvector +=  [fuzz.ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['dbpediaLabel'])/100.0]
+                        if 'wikidataLabel' in esresult['_source']:
+                            wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
+                    wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
+                else:
+                    wordvector +=  10*[0.0,0.0,0.0]
+            else:
+                wordvector +=  10*[0.0,0.0,0.0]
+            #n 
             esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
             esresults = esresult['hits']['hits']
-            wordvector = embedding
             if len(esresults) > 0:
                 for esresult in esresults:
                     if 'dbpediaLabel' in esresult['_source']:
@@ -90,11 +112,27 @@ class ERSpanDetector():
                 wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
             else:
                 wordvector +=  10*[0.0,0.0,0.0]
+            #n,n+1
+            if idx < len(chunkswords)-1:
+                word = chunkswords[idx][1] + ' ' + chunkswords[idx+1][1]
+                esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
+                esresults = esresult['hits']['hits']
+                if len(esresults) > 0:
+                    for esresult in esresults:
+                        if 'dbpediaLabel' in esresult['_source']:
+                            wordvector +=  [fuzz.ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['dbpediaLabel'])/100.0]
+                        if 'wikidataLabel' in esresult['_source']:
+                            wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
+                    wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
+                else:
+                    wordvector +=  10*[0.0,0.0,0.0]
+            else:
+                wordvector +=  10*[0.0,0.0,0.0]
             posonehot = len(postags)*[0.0]
             posonehot[postags.index(chunk[1])] = 1
             wordvector += posonehot
             wordvectors.append(wordvector)
-        nullvector = [-1]*366
+        nullvector = [-1]*426
         for i in range(50 - len(wordvectors)):
             wordvectors.append(nullvector)
         testxtensors = torch.tensor([wordvectors],dtype=torch.float)
