@@ -99,8 +99,13 @@ def processQuery():
         chunks = s.shallowParse(nlquery)
     else:
         chunks = d['chunks']
+    
     print "Chunks: %s"%json.dumps(chunks)
-    erpredictions = e.erPredict(chunks)
+    erpredictions = []
+    if 'erpredictions' not in d.keys():
+        erpredictions = e.erPredict(chunks)
+    else:
+        erpredictions = d['erpredictions']
     print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions, pagerankflag)
     print "Top text matches: %s"%json.dumps(topkmatches)
