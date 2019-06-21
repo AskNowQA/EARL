@@ -12,6 +12,7 @@ from textblob import TextBlob
 from itertools import groupby
 from numpy import array
 from numpy import argmax
+from sru import SRU, SRUCell
 
 torch.manual_seed(1)
 
@@ -38,7 +39,7 @@ class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, tagset_size):
         super(LSTMTagger, self).__init__()
         self.hidden_dim = hidden_dim
-        self.lstm = nn.LSTM(batch_first=True,input_size=embedding_dim, hidden_size=hidden_dim//2, num_layers=2,dropout=0.3, bidirectional=True)
+        self.sru = SRU(input_size=embedding_dim, hidden_size=hidden_dim//2, num_layers=3,dropout=0.3,layer_norm=True,bidirectional=True)
         self.dropout = nn.Dropout(p=0.3)
         self.relu = nn.ReLU()
         self.hidden2tag = nn.Sequential(
@@ -50,9 +51,9 @@ class LSTMTagger(nn.Module):
         )
 
     def forward(self, sentence):
-        lstm_out, _ = self.lstm(sentence)
-        batch_size = lstm_out.shape[0]
-        tags = self.hidden2tag(lstm_out.contiguous().view(-1, lstm_out.size(2)))
+        sru_out, _ = self.sru(sentence)
+        batch_size = sru_out.shape[0]
+        tags = self.hidden2tag(sru_out.contiguous().view(-1, sru_out.size(2)))
         scores = F.log_softmax(tags, dim=1)
         return scores
 
@@ -60,8 +61,8 @@ class ERSpanDetector():
     def __init__(self):
        print("Initialising ER span detector")
        self.es = Elasticsearch()
-       self.model = LSTMTagger(426, 426, 4)#.cuda()
-       self.model.load_state_dict(torch.load('../data/erspaner.model',map_location='cpu'))
+       self.model = LSTMTagger(456, 456, 4).cuda()
+       self.model.load_state_dict(torch.load('../data/erspanersru90.model'))#,map_location='cpu'))
        self.model.eval()
        print("Initialised ER span detector")
 
@@ -101,6 +102,7 @@ class ERSpanDetector():
             else:
                 wordvector +=  10*[0.0,0.0,0.0]
             #n 
+            word = chunkwordtuple[1]
             esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
             esresults = esresult['hits']['hits']
             if len(esresults) > 0:
@@ -128,14 +130,30 @@ class ERSpanDetector():
                     wordvector +=  10*[0.0,0.0,0.0]
             else:
                 wordvector +=  10*[0.0,0.0,0.0]
+            #n-1,n,n+1
+            if idx > 0 and idx < len(chunkswords)-1:
+                word = chunkswords[idx-1][1] + ' ' + chunkswords[idx][1] + ' ' + chunkswords[idx+1][1]
+                esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":10})
+                esresults = esresult['hits']['hits']
+                if len(esresults) > 0:
+                    for esresult in esresults:
+                        if 'dbpediaLabel' in esresult['_source']:
+                            wordvector +=  [fuzz.ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['dbpediaLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['dbpediaLabel'])/100.0]
+                        if 'wikidataLabel' in esresult['_source']:
+                            wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
+                    wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
+                else:
+                    wordvector +=  10*[0.0,0.0,0.0]
+            else:
+                wordvector +=  10*[0.0,0.0,0.0]
             posonehot = len(postags)*[0.0]
             posonehot[postags.index(chunk[1])] = 1
             wordvector += posonehot
             wordvectors.append(wordvector)
-        nullvector = [-1]*426
+        nullvector = [-1]*456
         for i in range(50 - len(wordvectors)):
             wordvectors.append(nullvector)
-        testxtensors = torch.tensor([wordvectors],dtype=torch.float)
+        testxtensors = torch.tensor([wordvectors],dtype=torch.float).cuda()
         preds = self.model(testxtensors)[0:len(chunks)]
         seqs = beam_search_decoder(preds.detach().cpu().numpy(),5)
         allerpredictions = []
