@@ -25,12 +25,31 @@ f = open(sys.argv[2])
 s = f.read()
 d2 = json.loads(s)
 f.close()
+#for items in d2:
+#    itarr = []
+#    for item in items:
+#        for k,v in item['rerankedlists'].iteritems():
+#            itarr.append(v[0][1])
+#    earltest.append(itarr)
+
 for items in d2:
     itarr = []
+    bestsum = 0
+    bestset = None
     for item in items:
+        topsum = 0.0
         for k,v in item['rerankedlists'].iteritems():
-            itarr.append(v[0][1])
+            topsum += v[0][0]
+        if len(item['rerankedlists']) == 0:
+            continue
+        topsum = topsum/float(len(item['rerankedlists']))
+        if topsum > bestsum:
+            bestsum = topsum
+            bestset = item
+    for k,v in bestset['rerankedlists'].iteritems():
+        itarr.append(v[0][1])
     earltest.append(itarr)
+
 
 correct = 0
 wrong = 0

@@ -39,7 +39,7 @@ class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, tagset_size):
         super(LSTMTagger, self).__init__()
         self.hidden_dim = hidden_dim
-        self.sru = SRU(input_size=embedding_dim, hidden_size=hidden_dim//2, num_layers=3,dropout=0.3,layer_norm=True,bidirectional=True)
+        self.lstm = nn.LSTM(input_size=embedding_dim, hidden_size=hidden_dim//2, num_layers=2,bidirectional=True,batch_first=True)
         self.dropout = nn.Dropout(p=0.3)
         self.relu = nn.ReLU()
         self.hidden2tag = nn.Sequential(
@@ -51,18 +51,19 @@ class LSTMTagger(nn.Module):
         )
 
     def forward(self, sentence):
-        sru_out, _ = self.sru(sentence)
-        batch_size = sru_out.shape[0]
-        tags = self.hidden2tag(sru_out.contiguous().view(-1, sru_out.size(2)))
+        lstm_out, _ = self.lstm(sentence)
+        batch_size = lstm_out.shape[0]
+        tags = self.hidden2tag(lstm_out.contiguous().view(-1, lstm_out.size(2)))
         scores = F.log_softmax(tags, dim=1)
         return scores
+
 
 class ERSpanDetector():
     def __init__(self):
        print("Initialising ER span detector")
        self.es = Elasticsearch()
        self.model = LSTMTagger(456, 456, 4).cuda()
-       self.model.load_state_dict(torch.load('../data/erspanersru90.model'))#,map_location='cpu'))
+       self.model.load_state_dict(torch.load('../data/erspanlstm93.model'))#,map_location='cpu'))
        self.model.eval()
        print("Initialised ER span detector")
 
