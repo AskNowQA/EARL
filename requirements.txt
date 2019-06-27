@@ -16,7 +16,9 @@ elasticsearch==6.2.0
 enum34==1.1.6
 Flask==1.0.2
 funcsigs==1.0.2
+future==0.17.1
 futures==3.2.0
+fuzzywuzzy==0.17.0
 gast==0.2.0
 gensim==3.4.0
 gevent==1.2.2
@@ -37,9 +39,12 @@ mock==2.0.0
 nltk==3.3
 numpy==1.14.3
 pbr==4.0.3
+pkg-resources==0.0.0
+practNLPTools==1.0
 protobuf==3.5.2.post1
 pybloom==1.1
 python-dateutil==2.7.3
+python-Levenshtein==0.12.0
 PyYAML==3.12
 requests==2.18.4
 s3transfer==0.1.13
@@ -52,6 +57,8 @@ stop-words==2015.2.23.1
 tensorboard==1.8.0
 tensorflow==1.8.0
 termcolor==1.1.0
+textblob==0.15.3
+torch==1.1.0
 urllib3==1.22
 Werkzeug==0.14.1
 xgboost==0.71
