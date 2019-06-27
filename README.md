@@ -5,7 +5,7 @@ EARL (Entity and Relation Linker), a system for jointly linking entities and rel
 
 ISWC 2018 Research Paper: https://link.springer.com/chapter/10.1007/978-3-030-00671-6_7 or on arXiv https://arxiv.org/abs/1801.03825
 
-**Note**: The code in this branch is not an exact representation of the paper above. In particular we use https://github.com/AskNowQA/erpredictor2 for entity and relation classification now.
+**Note**: The code in this branch is not an exact representation of the paper above. In particular we use https://github.com/AskNowQA/erpredictor2 for entity and relation classification now. This allows us to handle questions in a case-independent fashion, the lack of which was a weakness of the original paper.
 
 # INSTRUCTIONS
 
