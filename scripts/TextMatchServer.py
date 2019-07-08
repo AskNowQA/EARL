@@ -23,6 +23,7 @@ try:
     s = f.read()
     labelhash = json.loads(s)
     model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
+    fasttextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
 except Exception,e:
     print e
     sys.exit(1)            
@@ -58,6 +59,24 @@ def phrase_similarity(_phrase_1, _phrase_2):
     v_phrase_2 = ConvertVectorSetToVecAverageBased(vw_phrase_2)
     cosine_similarity = np.dot(v_phrase_1, v_phrase_2) / (np.linalg.norm(v_phrase_1) * np.linalg.norm(v_phrase_2))
     return cosine_similarity
+
+@app.route('/ftwv', methods=['POST'])
+def ftwv():
+    d = request.get_json(silent=True)
+    chunk = d['chunk'] 
+    phrase_1 = chunk.split(" ")
+    vw_phrase_1 = []
+    for phrase in phrase_1:
+        try:
+            # print phrase
+            vw_phrase_1.append(fasttextmodel.word_vec(phrase))
+        except:
+            # print traceback.print_exc()
+            continue
+    if len(vw_phrase_1) == 0:
+        return json.dumps(300*[0.0])
+    v_phrase = ConvertVectorSetToVecAverageBased(vw_phrase_1)
+    return json.dumps(v_phrase.tolist())
 
 @app.route('/textMatch', methods=['POST'])
 def textMatch():
