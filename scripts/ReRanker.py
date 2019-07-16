@@ -1,9 +1,8 @@
 # /usr/bin/python
 
-import numpy as np
-import xgboost as xgb
+import torch
 import sys
-import editdistance
+import numpy as np
 
 class ReRanker:
     def __init__(self):
@@ -11,8 +10,17 @@ class ReRanker:
 	self.pred_change = {}
         print "ReRanker initializing"
         try:
-            self.model = xgb.Booster({'nthread': 4})
-            self.model.load_model('../models/db_predia_reranker.model')            
+            device = torch.device('cuda')
+            D_in, H, D_out =  3, 5, 1
+            self.model = torch.nn.Sequential(
+               torch.nn.Linear(D_in, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, D_out),
+             ).to(device)
+            self.model.load_state_dict(torch.load('../data/nnreranker.model'))
+            self.model.eval()
         except Exception,e:
             print e
             sys.exit(1)
@@ -31,23 +39,23 @@ class ReRanker:
                 uris.append(k2)
 		dbpediakey = k2.split('/')[-1].lower()
  		querykey = topklists['chunktext'][k1]['chunk'].lower()
-                featurevectors.append([v2['connections'],v2['sumofhops'],v2['esrank']])
-		lvnstn.append(editdistance.eval(querykey, dbpediakey))
+                featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
+		#lvnstn.append(editdistance.eval(querykey, dbpediakey))
 		#print (dbpediakey, querykey)
 		#print (editdistance.eval(querykey, dbpediakey))
-            featurevectors = np.array(featurevectors)
-            dtest = xgb.DMatrix(featurevectors)
-            predictions = self.model.predict(dtest)
+            featurevectors = torch.FloatTensor(featurevectors).cuda()
+            predictions = self.model(featurevectors).reshape(-1).cpu().detach().numpy()
             max_pred = (np.max(predictions))
 	    #print (np.min(lvnstn))
 	    #print (max_pred)
-            if max_pred < 0.1 and topklists['ertypes'][k1] == 'relation' and np.min(lvnstn) > 1.0:
-	    #if max_pred < 0.05 :
-                print ("Changing predictions for")
-		print (topklists['chunktext'][k1] )
-		self.pred_change[k1]= 'change'
-	    else:
-		self.pred_change[k1]= 'correct'
+#            if max_pred < 0.1 and topklists['ertypes'][k1] == 'relation' and np.min(lvnstn) > 1.0:
+#	    #if max_pred < 0.05 :
+#                print ("Changing predictions for")
+#		print (topklists['chunktext'][k1] )
+#		self.pred_change[k1]= 'change'
+#	    else:
+#		self.pred_change[k1]= 'correct'
+            self.pred_change[k1]= 'correct'
 
 	    print (self.pred_change)
             l = [(float(p),u) for p,u in zip(predictions, uris)]

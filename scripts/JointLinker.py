@@ -74,9 +74,20 @@ class JointLinker:
                         nodestats[permutation[1]][uri2]['connections'] += 1
                         nodestats[permutation[1]][uri2]['sumofhops'] += 2
         for k1,v1 in nodestats.iteritems():
+            maxconn = 0.01
+            maxhop = 0.01
+            maxesrank = 0.01
             for k2,v2 in v1.iteritems():
-                nodestats[k1][k2]['connections'] /= float(len(lists))
-                nodestats[k1][k2]['sumofhops'] /= float(len(lists))
+                if nodestats[k1][k2]['connections'] > maxconn:
+                    maxconn = nodestats[k1][k2]['connections']
+                if nodestats[k1][k2]['sumofhops'] > maxhop:
+                    maxhop = nodestats[k1][k2]['sumofhops']
+                if nodestats[k1][k2]['esrank'] > maxesrank:
+                   maxesrank = nodestats[k1][k2]['esrank']
+            for k2,v2 in v1.iteritems():
+                nodestats[k1][k2]['connections'] /= float(maxconn)
+                nodestats[k1][k2]['sumofhops'] /= float(maxhop)
+                nodestats[k1][k2]['esrank'] = 1.0 - (nodestats[k1][k2]['esrank']/float(maxesrank))
             
         return {'nodefeatures': nodestats, 'chunktext': chunktexts, 'ertypes': ertypes}
     
