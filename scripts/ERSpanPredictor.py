@@ -63,7 +63,7 @@ class ERSpanDetector():
        print("Initialising ER span detector")
        self.es = Elasticsearch()
        self.model = LSTMTagger(456, 456, 4).cuda()
-       self.model.load_state_dict(torch.load('../data/erspanlstm93.model'))#,map_location='cpu'))
+       self.model.load_state_dict(torch.load('../data/erspanlstm90.51.model'))#,map_location='cpu'))
        self.model.eval()
        print("Initialised ER span detector")
 
@@ -78,6 +78,7 @@ class ERSpanDetector():
         wordvector = []
         for chunk,word in zip(chunks,q.split(' ')):
             chunkswords.append((chunk,word))
+        print(chunkswords)
         for idx,chunkwordtuple in enumerate(chunkswords):
             word = chunkwordtuple[1]
             req = urllib2.Request('http://localhost:8887/ftwv')
@@ -184,10 +185,12 @@ class ERSpanDetector():
 
 if __name__ == '__main__':
     e = ERSpanDetector()
-    print(e.erspan("name the place of qaqun"))
-    print(e.erspan("who is the president of india?"))
-    print(e.erspan("Who is the president of India?"))
-    print(e.erspan("Who is the father of the mother of Barack Obama"))
-    print(e.erspan("who is the father of the mother of barack obama"))
-    print(e.erspan("How many rivers flow through Bonn?"))
-    print(e.erspan("how many rivers flow through bonn?"))
+#    print(e.erspan("name the place of qaqun"))
+#    print(e.erspan("who is the president of india?"))
+#    print(e.erspan("Who is the president of India?"))
+#    print(e.erspan("Who is the father of the mother of Barack Obama"))
+#    print(e.erspan("who is the father of the mother of barack obama"))
+#    print(e.erspan("How many rivers flow through Bonn?"))
+#    print(e.erspan("how many rivers flow through bonn?"))
+    print(e.erspan("List all the musicals with music by Elton John."))
+    print(e.erspan("Give me the names of professional skateboarders of India"))

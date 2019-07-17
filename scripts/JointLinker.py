@@ -85,8 +85,8 @@ class JointLinker:
                 if nodestats[k1][k2]['esrank'] > maxesrank:
                    maxesrank = nodestats[k1][k2]['esrank']
             for k2,v2 in v1.iteritems():
-                nodestats[k1][k2]['connections'] /= float(maxconn)
-                nodestats[k1][k2]['sumofhops'] /= float(maxhop)
+                nodestats[k1][k2]['connections'] /= float(maxconn)*float(len(lists))
+                nodestats[k1][k2]['sumofhops'] /= float(maxhop)*float(len(lists))
                 nodestats[k1][k2]['esrank'] = 1.0 - (nodestats[k1][k2]['esrank']/float(maxesrank))
             
         return {'nodefeatures': nodestats, 'chunktext': chunktexts, 'ertypes': ertypes}

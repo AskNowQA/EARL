@@ -10,7 +10,7 @@ class TextMatch:
         self.es = Elasticsearch()
         print "TextMatch initialized"
 
-    def textMatch(self, chunks, pagerankflag=False):
+    def textMatch(self, chunks, nlquery, pagerankflag=False):
         req = urllib2.Request('http://localhost:8887/textMatch')
         req.add_header('Content-Type', 'application/json')
         relationchunks = []
@@ -31,9 +31,9 @@ class TextMatch:
             topkents = []
             for record in res['hits']['hits']:
                 if 'dbpediaLabel' in record['_source']:
-                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.ratio(chunk['chunk'],record['_source']['dbpediaLabel'])))
+                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.partial_ratio(nlquery,record['_source']['dbpediaLabel'])))
                 if 'wikidataLabel' in record['_source']:
-                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.ratio(chunk['chunk'],record['_source']['wikidataLabel'])))
+                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.partial_ratio(nlquery,record['_source']['wikidataLabel'])))
             _topkents =  sorted(_topkents, key=lambda k: k[2], reverse=True)
             #if pagerankflag:
             #    _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
