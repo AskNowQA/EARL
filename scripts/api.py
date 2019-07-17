@@ -96,7 +96,7 @@ def processQuery():
     print "ER Predictions: %s"%json.dumps(erpredictions)
     rerankedlists = []
     for erprediction in erpredictions:
-        topkmatches = t.textMatch(erprediction, pagerankflag)
+        topkmatches = t.textMatch(erprediction, nlquery, pagerankflag)
         print "Top text matches: %s"%json.dumps(topkmatches)
         jointlylinked = j.jointLinker(topkmatches)
         print "ER link features: %s"%json.dumps(jointlylinked)
