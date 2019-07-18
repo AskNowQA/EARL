@@ -27,7 +27,7 @@ class ReRanker:
         print "ReRanker initialized"
 
 
-    def reRank(self, topklists):
+    def reRank(self, topklists,nlquery):
         rerankedlists = {}
         for k1, v1 in topklists['nodefeatures'].iteritems():
             if k1 == 'chunktext' or k1 == 'ertypes':
@@ -36,7 +36,7 @@ class ReRanker:
 	    lvnstn = []
             featurevectors = []
             for k2, v2 in v1.iteritems():
-                uris.append(k2)
+                uris.append((k2,v2))
 		dbpediakey = k2.split('/')[-1].lower()
  		querykey = topklists['chunktext'][k1]['chunk'].lower()
                 featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
@@ -65,7 +65,7 @@ class ReRanker:
         changes = self.pred_change.values()
 	if 'change' in changes:
 		self.rerun = True
-        return {'rerankedlists': rerankedlists, 'chunktext':topklists['chunktext'], 'ertypes': topklists['ertypes'], 'er-rerun': self.rerun, 'changes': self.pred_change}
+        return {'question': nlquery, 'rerankedlists': rerankedlists, 'chunktext':topklists['chunktext'], 'ertypes': topklists['ertypes'], 'er-rerun': self.rerun, 'changes': self.pred_change}
                 
 if __name__ == '__main__':
     r = ReRanker()

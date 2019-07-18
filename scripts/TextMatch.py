@@ -31,19 +31,19 @@ class TextMatch:
             topkents = []
             for record in res['hits']['hits']:
                 if 'dbpediaLabel' in record['_source']:
-                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.partial_ratio(nlquery,record['_source']['dbpediaLabel'])))
+                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.ratio(nlquery,record['_source']['dbpediaLabel']),fuzz.partial_ratio(nlquery,record['_source']['dbpediaLabel']),fuzz.token_sort_ratio(nlquery,record['_source']['dbpediaLabel']),fuzz.token_set_ratio(nlquery,record['_source']['dbpediaLabel'])))
                 if 'wikidataLabel' in record['_source']:
-                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.partial_ratio(nlquery,record['_source']['wikidataLabel'])))
-            _topkents =  sorted(_topkents, key=lambda k: k[2], reverse=True)
+                    _topkents.append((record['_source']['uri'],record['_source']['edgecount'],fuzz.ratio(nlquery,record['_source']['wikidataLabel']),fuzz.partial_ratio(nlquery,record['_source']['wikidataLabel']),fuzz.token_sort_ratio(nlquery,record['_source']['wikidataLabel']),fuzz.token_set_ratio(nlquery,record['_source']['wikidataLabel'])))
+            _topkents =  sorted(_topkents, key=lambda k: k[3], reverse=True)
             #if pagerankflag:
             #    _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
             for record in _topkents:
                 if len(topkents) >= 30:
                     break
-                if record[0] in topkents:
+                if record in topkents:
                     continue
                 else:
-                    topkents.append(record[0])
+                    topkents.append(record)
             matchedchunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
         return matchedchunks
                           
