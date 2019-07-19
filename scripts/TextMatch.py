@@ -46,8 +46,6 @@ class TextMatch:
                     topkents.append(record)
             matchedchunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
         return matchedchunks
-                          
-                     
 
 
 if __name__ == '__main__':

@@ -11,16 +11,25 @@ class ReRanker:
         print "ReRanker initializing"
         try:
             device = torch.device('cuda')
-            D_in, H, D_out =  3, 5, 1
-            self.model = torch.nn.Sequential(
+            D_in, H, D_out =  8, 8, 1
+            self.entitymodel = torch.nn.Sequential(
                torch.nn.Linear(D_in, H),
                torch.nn.ReLU(),
                torch.nn.Linear(H, H),
                torch.nn.ReLU(),
                torch.nn.Linear(H, D_out),
              ).to(device)
-            self.model.load_state_dict(torch.load('../data/nnreranker.model'))
-            self.model.eval()
+            self.entitymodel.load_state_dict(torch.load('../data/nnrerankerentity720.model'))
+            self.entitymodel.eval()
+            D_in, H, D_out =  3, 3, 1
+            self.relationmodel = torch.nn.Sequential(
+               torch.nn.Linear(D_in, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, D_out),
+             ).to(device)
+            self.relationmodel.load_state_dict(torch.load('../data/nnrerankerrelation644.model'))
+            self.relationmodel.eval()
+            
         except Exception,e:
             print e
             sys.exit(1)
@@ -37,23 +46,21 @@ class ReRanker:
             featurevectors = []
             for k2, v2 in v1.iteritems():
                 uris.append((k2,v2))
-		dbpediakey = k2.split('/')[-1].lower()
- 		querykey = topklists['chunktext'][k1]['chunk'].lower()
-                featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
+                #featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
+                if '/resource/' in k2:
+                    featurevectors.append([v2['connections'],v2['edgecount'],v2['esrank'],v2['fuzz1']/100.0,v2['fuzz2']/100.0,v2['fuzz3']/100.0,v2['fuzz4']/100.0,v2['sumofhops']])
+                else:
+                    featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
 		#lvnstn.append(editdistance.eval(querykey, dbpediakey))
 		#print (dbpediakey, querykey)
-		#print (editdistance.eval(querykey, dbpediakey))
+		#print (editdistance.eval(querykey, dbpediakey))i
             featurevectors = torch.FloatTensor(featurevectors).cuda()
-            predictions = self.model(featurevectors).reshape(-1).cpu().detach().numpy()
+            predictions = None
+            if '/resource/' in uris[0][0]:
+                predictions = self.entitymodel(featurevectors).reshape(-1).cpu().detach().numpy()
+            else:
+                predictions =  self.relationmodel(featurevectors).reshape(-1).cpu().detach().numpy()
             max_pred = (np.max(predictions))
-	    #print (np.min(lvnstn))
-	    #print (max_pred)
-#            if max_pred < 0.1 and topklists['ertypes'][k1] == 'relation' and np.min(lvnstn) > 1.0:
-#	    #if max_pred < 0.05 :
-#                print ("Changing predictions for")
-#		print (topklists['chunktext'][k1] )
-#		self.pred_change[k1]= 'change'
-#	    else:
 #		self.pred_change[k1]= 'correct'
             self.pred_change[k1]= 'correct'
 
