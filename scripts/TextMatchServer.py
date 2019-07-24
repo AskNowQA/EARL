@@ -8,6 +8,7 @@ from elasticsearch import Elasticsearch
 import gensim
 import numpy as np
 import json,sys
+from collections import OrderedDict
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -118,12 +119,19 @@ def textMatch():
                  uriarray = []
                  for result in newresults:
                      uriarray += result['uris']
+                 uriarray = list(OrderedDict.fromkeys(uriarray))
                  uriarray = uriarray[:30]
                  cache[phrase] = uriarray
-                 matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
+                 _uriarray = []
+                 for uri in uriarray:
+                     _uriarray.append((uri,-1,-1,-1,-1,-1))
+                 matchedChunks.append({'chunk':chunk, 'topkmatches': _uriarray, 'class': 'relation'})
              else:
                  print "%s in cache"%phrase
-                 matchedChunks.append({'chunk':chunk, 'topkmatches': cache[phrase], 'class': 'relation'})
+                 _uriarray = []
+                 for uri in cache[phrase]:
+                     _uriarray.append((uri,-1,-1,-1,-1,-1))
+                 matchedChunks.append({'chunk':chunk, 'topkmatches': _uriarray, 'class': 'relation'})
                         
     return json.dumps(matchedChunks)
 
