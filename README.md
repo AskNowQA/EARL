@@ -7,7 +7,7 @@ ISWC 2018 Research Paper: https://link.springer.com/chapter/10.1007/978-3-030-00
 
 **Note**: The code in this branch is not an exact representation of the paper above. In particular we use https://github.com/AskNowQA/erpredictor2 for entity and relation classification now. This allows us to handle questions in a case-independent fashion, the lack of which was a weakness of the original paper.
 
-# INSTRUCTIONS
+# SETUP INSTRUCTIONS
 
  Install all python dependencies required that are mentioned in requirements.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 6.x instance. The mappings can be found in data/elasticsearchdump/ folder. Download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder. Download https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.vec and store it in data/ folder.
 
@@ -39,3 +39,9 @@ You may need to add the following to the above elasticdump commands to make it w
 To consume the API
 
     curl -XPOST 'localhost:4999/processQuery' -H 'Content-Type: application/json' -d"{\"nlquery\":\"Who is the president of USA?\"}"
+
+# LIVE API
+
+  There is a live version of this api hosted by the University of Bonn. It may be accessed in the following manner:
+
+    curl -XPOST 'https://earldemo.sda.tech/earl/api/processQuery' -H 'Content-Type:application/json' -d'{"nlquery":"Who is the president of Russia?"}'
