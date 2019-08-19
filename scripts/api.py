@@ -3,14 +3,13 @@
 from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
-import json,sys,requests,logging
+import json,sys,requests
 from ShallowParser import ShallowParser
 from ErPredictorES import ErPredictorES
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
-logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
 s = ShallowParser()
 e = ErPredictorES()
 t = TextMatch()
@@ -100,7 +99,11 @@ def processQuery():
     else:
         chunks = d['chunks']
     print "Chunks: %s"%json.dumps(chunks)
-    erpredictions = e.erPredict(chunks)
+    erpredictions = []
+    if 'erpredictions' not in d.keys():
+        erpredictions = e.erPredict(chunks)
+    else:
+        erpredictions = d['erpredictions']
     print "ER Predictions: %s"%json.dumps(erpredictions)
     topkmatches = t.textMatch(erpredictions, pagerankflag)
     print "Top text matches: %s"%json.dumps(topkmatches)
@@ -133,7 +136,7 @@ def answerdetail():
     if not isSingleEntity(topkmatches):
         if numberOfNodes(topkmatches) > 4:
            print numberOfNodes(topkmatches)
-           logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+           #logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
            return json.dumps({'answers':[],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
         else:
             jointlylinked = j.jointLinker(topkmatches)
@@ -146,10 +149,10 @@ def answerdetail():
             print "sparql: %s"%json.dumps(sparql)
             answers = solvesparql(sparql)
             print "answer: %s"%json.dumps(answers)
-            logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+            #logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
             return json.dumps({'answers':answers,'sparql':sparql,'preparedlist':preparedlist,'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
     else:
-        logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
+        #logging.info(json.dumps({'remote_addr':d['remote_addr'],'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':[],'preparedlist':[],'topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery}))
         return json.dumps({'answers':[[{'u_0': {'type': 'uri','value': topkmatches[0]['topkmatches'][0]}}]],'sparql':'','preparedlist':'','topkmatches':topkmatches,'erpredictions':erpredictions,'chunks':chunks,'question':nlquery})
         
 
