@@ -51,14 +51,11 @@ class ErPredictorES:
             chunkk = chunk[0].encode('ascii','ignore')
             chunkwords = chunkk.translate(None, string.punctuation)
             embedding = self.embed(chunkwords)
-            esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":chunkwords,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":1})
+            esresult = self.es.search(index="wikidatalabelindex01", body={"query":{"multi_match":{"query":chunkwords,"fields":["wikidataLabel"]}},"size":1})
             topresult = esresult['hits']['hits']
             if len(topresult) == 1:
                 topresult = topresult[0]
-                if 'dbpediaLabel' in topresult['_source']:
-                    x = embedding + [topresult['_score']] + [fuzz.ratio(chunkwords, topresult['_source']['dbpediaLabel'])/100.0] + [fuzz.partial_ratio(chunkwords, topresult['_source']['dbpediaLabel'])/100.0] + [fuzz.token_sort_ratio(chunkwords, topresult['_source']['dbpediaLabel'])/100.0]
-                if 'wikidataLabel' in topresult['_source']:
-                    x = embedding + [topresult['_score']] + [fuzz.ratio(chunkwords, topresult['_source']['wikidataLabel'])/100.0] + [fuzz.partial_ratio(chunkwords, topresult['_source']['wikidataLabel'])/100.0] + [fuzz.token_sort_ratio(chunkwords, topresult['_source']['wikidataLabel'])/100.0]
+                x = embedding + [topresult['_score']] + [fuzz.ratio(chunkwords, topresult['_source']['wikidataLabel'])/100.0] + [fuzz.partial_ratio(chunkwords, topresult['_source']['wikidataLabel'])/100.0] + [fuzz.token_sort_ratio(chunkwords, topresult['_source']['wikidataLabel'])/100.0]
             else:
                 x = embedding + [0.0,0.0,0.0,0.0]
         #print(x, type(x))

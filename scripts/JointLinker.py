@@ -4,28 +4,38 @@ import json,sys
 import itertools
 from operator import itemgetter
 from pybloom import BloomFilter
-
+import glob
 
 class JointLinker:
     def __init__(self):
         print "Joint Linker initializing"
+        self.bloom2hoppreds = []
         try:
-            f = open('../data/blooms/bloom1hoppredicate.pickle')
+            f = open('../data/blooms/wikidatabloom1hoppredicate.pickle')
             self.bloom1hoppred = BloomFilter.fromfile(f)
             f.close()
-            f = open('../data/blooms/bloom1hopentity.pickle')
+            f = open('../data/blooms/wikidatabloom1.5hopqualifiers.pickle')
+            self.bloomqualifier = BloomFilter.fromfile(f) # ihoppred_qualifier
+            f.close()
+            f = open('../data/blooms/wikidatabloom1hopentity.pickle')
             self.bloom1hopentity = BloomFilter.fromfile(f)
             f.close()
-            f = open('../data/blooms/bloom2hoppredicate.pickle')
-            self.bloom2hoppredicate = BloomFilter.fromfile(f)
+            f = open('../data/blooms/bloom1hoptypeofentity.pickle')
+            self.bloom1hoptypeofentity = BloomFilter.fromfile(f)
             f.close()
-            f = open('../data/blooms/bloom2hoptypeofentity.pickle')
-            self.bloom2hoptypeofentity = BloomFilter.fromfile(f)
-            f.close()
+#            f = open('../data/blooms/bloom2hoptypeofentity.pickle')
+#            self.bloom2hoptypeofentity = BloomFilter.fromfile(f)
+#            f.close()
+#            twohoppredpaths = glob.glob('../data/blooms/bloom2hoppredicate*.pickle')
+#            for twohoppredpath in twohoppredpaths:
+#                f = open(twohoppredpath)
+#                self.bloom2hoppreds.append(BloomFilter.fromfile(f))
+#                f.close()
         except Exception,e:
             print e
             sys.exit(1)
         print "Joint Linker initialized"
+        sys.exit(1)
 
     def jointLinker(self, topklists):
         lists = []
@@ -58,21 +68,31 @@ class JointLinker:
                         nodestats[permutation[0]][uri1]['sumofhops'] += 0.5
                         nodestats[permutation[1]][uri2]['connections'] += 1
                         nodestats[permutation[1]][uri2]['sumofhops'] += 0.5
+                    if bloomstring in self.bloomqualifier:
+                        nodestats[permutation[0]][uri1]['connections'] += 1
+                        nodestats[permutation[0]][uri1]['sumofhops'] += 1.5
+                        nodestats[permutation[1]][uri2]['connections'] += 1
+                        nodestats[permutation[1]][uri2]['sumofhops'] += 1.5
                     elif bloomstring in self.bloom1hopentity:
                         nodestats[permutation[0]][uri1]['connections'] += 1
                         nodestats[permutation[0]][uri1]['sumofhops'] += 1
                         nodestats[permutation[1]][uri2]['connections'] += 1
                         nodestats[permutation[1]][uri2]['sumofhops'] += 1
-                    elif bloomstring in self.bloom2hoppredicate:
+#                    elif bloomstring in self.bloom2hoppredicate:
+#                        nodestats[permutation[0]][uri1]['connections'] += 1
+#                        nodestats[permutation[0]][uri1]['sumofhops'] += 1.5
+#                        nodestats[permutation[1]][uri2]['connections'] += 1
+#                        nodestats[permutation[1]][uri2]['sumofhops'] += 1.5
+                    elif bloomstring in self.bloom1hoptypeofentity:
                         nodestats[permutation[0]][uri1]['connections'] += 1
-                        nodestats[permutation[0]][uri1]['sumofhops'] += 1.5
+                        nodestats[permutation[0]][uri1]['sumofhops'] += 1
                         nodestats[permutation[1]][uri2]['connections'] += 1
-                        nodestats[permutation[1]][uri2]['sumofhops'] += 1.5
-                    elif bloomstring in self.bloom2hoptypeofentity:
-                        nodestats[permutation[0]][uri1]['connections'] += 1
-                        nodestats[permutation[0]][uri1]['sumofhops'] += 2
-                        nodestats[permutation[1]][uri2]['connections'] += 1
-                        nodestats[permutation[1]][uri2]['sumofhops'] += 2
+                        nodestats[permutation[1]][uri2]['sumofhops'] += 1
+#                    elif bloomstring in self.bloom2hoptypeofentity:
+#                        nodestats[permutation[0]][uri1]['connections'] += 1
+#                        nodestats[permutation[0]][uri1]['sumofhops'] += 2
+#                        nodestats[permutation[1]][uri2]['connections'] += 1
+#                        nodestats[permutation[1]][uri2]['sumofhops'] += 2
         for k1,v1 in nodestats.iteritems():
             for k2,v2 in v1.iteritems():
                 nodestats[k1][k2]['connections'] /= float(len(lists))
