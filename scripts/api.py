@@ -10,7 +10,7 @@ from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
-logging.basicConfig(filename='/var/log/asknowlog',level=logging.INFO)
+logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
 s = ShallowParser()
 e = ErPredictorES()
 t = TextMatch()
@@ -113,7 +113,7 @@ def processQuery():
     print "ER link features: %s"%json.dumps(jointlylinked)
     rerankedlist = r.reRank(jointlylinked)
     print "Re-reanked lists: %s"%json.dumps(rerankedlist)
-    return json.dumps(rerankedlist)
+    return json.dumps(rerankedlist) 
 
 @app.route('/answerdetail', methods=['POST'])
 def answerdetail():

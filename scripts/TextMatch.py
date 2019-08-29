@@ -8,7 +8,7 @@ class TextMatch:
         print "TextMatch initialized"
 
     def textMatch(self, chunks, pagerankflag=False):
-        req = urllib2.Request('http://localhost:8888/textMatch')
+        req = urllib2.Request('http://localhost:8887/textMatch')
         req.add_header('Content-Type', 'application/json')
         inputjson = {'chunks': chunks, 'pagerankflag':pagerankflag}
         response = urllib2.urlopen(req, json.dumps(inputjson))
@@ -21,4 +21,6 @@ class TextMatch:
 if __name__ == '__main__':
     t = TextMatch()
     #print t.textMatch([{'chunk': 'Who', 'surfacelength': 3, 'class': 'entity', 'surfacestart': 0}, {'chunk': 'the parent organisation', 'surfacelength': 23, 'class': 'relation', 'surfacestart': 7}, {'chunk': 'Barack Obama', 'surfacelength': 12, 'class': 'entity', 'surfacestart': 34}, {'chunk': 'is', 'surfacelength': 2, 'class': 'relation', 'surfacestart': 4}])
-    print t.textMatch([{"chunk": "friend", "surfacelength": 6, "class": "relation", "surfacestart": 0}])
+#    print t.textMatch([{"chunk": "friend", "surfacelength": 6, "class": "relation", "surfacestart": 0}])
+#    print t.textMatch([{"chunk": "mayor", "surfacelength": 6, "class": "relation", "surfacestart": 0}])
+    print t.textMatch([{"chunk": "Russia", "surfacelength": 6, "class": "entity", "surfacestart": 0}])

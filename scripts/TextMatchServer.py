@@ -130,20 +130,20 @@ def textMatch():
     matchedChunks = []
     for chunk in chunks:
          if chunk['class'] == 'entity':
-             res = es.search(index="wikidatalabelindex01", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel"]}},"size":200})
+             res = es.search(index="wikidataentitylabeindex01", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel"]}},"size":200})
              _topkents = []
              topkents = []
              for record in res['hits']['hits']:
-                 _topkents.append((record['_source']['uri'],record['_source']['edgecount']))
-             if pagerankflag:
-                 _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
+                 _topkents.append(record['_source']['uri'])#record['_source']['edgecount']))
+             #if pagerankflag:
+             #    _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
              for record in _topkents:
                  if len(topkents) >= 30:
                      break
-                 if record[0] in topkents:
+                 if record in topkents:
                      continue
                  else:
-                     topkents.append(record[0])
+                     topkents.append(record)
              matchedChunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
                  
          if chunk['class'] == 'relation':
@@ -156,11 +156,9 @@ def textMatch():
                  results = t.get_nns_by_vector(list(labeltovec(phrase)),100)
                  for id in results:
                      uris +=  numberlabelhash[id]
-                 print(uris)
                  seen = set()
                  seen_add = seen.add
                  uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))][:30]
-                 print(uriarray)
                  cache[phrase] = uriarray
                  matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
              else:

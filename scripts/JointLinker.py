@@ -3,7 +3,7 @@
 import json,sys
 import itertools
 from operator import itemgetter
-from pybloom import BloomFilter
+from pybloom import ScalableBloomFilter
 import glob
 
 class JointLinker:
@@ -12,16 +12,16 @@ class JointLinker:
         self.bloom2hoppreds = []
         try:
             f = open('../data/blooms/wikidatabloom1hoppredicate.pickle')
-            self.bloom1hoppred = BloomFilter.fromfile(f)
+            self.bloom1hoppred = ScalableBloomFilter.fromfile(f)
             f.close()
             f = open('../data/blooms/wikidatabloom1.5hopqualifiers.pickle')
-            self.bloomqualifier = BloomFilter.fromfile(f) # ihoppred_qualifier
+            self.bloomqualifier = ScalableBloomFilter.fromfile(f) # ihoppred_qualifier
             f.close()
             f = open('../data/blooms/wikidatabloom1hopentity.pickle')
-            self.bloom1hopentity = BloomFilter.fromfile(f)
+            self.bloom1hopentity = ScalableBloomFilter.fromfile(f)
             f.close()
             f = open('../data/blooms/bloom1hoptypeofentity.pickle')
-            self.bloom1hoptypeofentity = BloomFilter.fromfile(f)
+            self.bloom1hoptypeofentity = ScalableBloomFilter.fromfile(f)
             f.close()
 #            f = open('../data/blooms/bloom2hoptypeofentity.pickle')
 #            self.bloom2hoptypeofentity = BloomFilter.fromfile(f)
@@ -35,7 +35,6 @@ class JointLinker:
             print e
             sys.exit(1)
         print "Joint Linker initialized"
-        sys.exit(1)
 
     def jointLinker(self, topklists):
         lists = []
