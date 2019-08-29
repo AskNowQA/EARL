@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from annoy import AnnoyIndex
 from sets import Set
 from flask import request
 from flask import Flask
@@ -8,26 +9,13 @@ from elasticsearch import Elasticsearch
 import gensim
 import numpy as np
 import json,sys
+import random
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 
-print "TextMatch initializing"
-try:
-    es = Elasticsearch()
-    labelhash = {}
-    cache = {}
-    f = open('../data/ontologylabeluridict.json')
-    s = f.read()
-    labelhash = json.loads(s)
-    model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
-    fasttextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-except Exception,e:
-    print e
-    sys.exit(1)            
-print "TextMatch initialized"
 
 def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
     if len(ignore) == 0:
@@ -35,6 +23,60 @@ def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
     else:
         return np.dot(np.transpose(vectorSet),ignore)/sum(ignore)
 
+
+print "TextMatch initializing, loading word2vec"
+try:
+    es = Elasticsearch()
+    model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
+    print("loded word2vec, loading relation labels")
+    labelhash = {}
+    cache = {}
+    f = open('../data/wikidatareluri.json')
+    s = f.read()
+    labelhash = json.loads(s)
+    numberlabelhash = {}
+    t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
+    count = 0
+    for _label,urls in labelhash.iteritems():
+        labeltokens = _label.split(" ")
+        vw_label = []
+        for token in labeltokens:
+            try:
+                # print phrase
+                vw_label.append(model.word_vec(token.lower()))
+            except:
+                # print traceback.print_exc()
+                continue
+        if len(vw_label) == 0:
+            continue
+        v_label = ConvertVectorSetToVecAverageBased(vw_label)
+        t.add_item(count,list(v_label))
+        numberlabelhash[count] = urls
+        count += 1
+    t.build(10)
+    print("loaded relation labels, created annoy index, loading fastext")
+    fasttextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
+    print("loaded fastext")
+except Exception,e:
+    print e
+    sys.exit(1)            
+print "TextMatch initialized"
+
+
+def labeltovec(_phrase_1):
+    phrase_1 = _phrase_1.split(" ")
+    vw_phrase_1 = []
+    for phrase in phrase_1:
+        try:
+            # print phrase
+            vw_phrase_1.append(model.word_vec(phrase.lower()))
+        except:
+            # print traceback.print_exc()
+            continue
+    if len(vw_phrase_1) == 0:
+        return 300*[0.0]
+    v_phrase_1 = ConvertVectorSetToVecAverageBased(vw_phrase_1)
+    return v_phrase_1
 
 def phrase_similarity(_phrase_1, _phrase_2):
     phrase_1 = _phrase_1.split(" ")
@@ -111,14 +153,14 @@ def textMatch():
                  results = []
                  max_score = 0
                  uris = []
-                 for k,v in labelhash.iteritems():
-                     score = phrase_similarity(k, phrase)
-                     results.append({'label':k, 'score': float(score), 'uris': v})
-                 newresults = sorted(results, key=lambda k: k['score'], reverse=True)
-                 uriarray = []
-                 for result in newresults:
-                     uriarray += result['uris']
-                 uriarray = uriarray[:30]
+                 results = t.get_nns_by_vector(list(labeltovec(phrase)),100)
+                 for id in results:
+                     uris +=  numberlabelhash[id]
+                 print(uris)
+                 seen = set()
+                 seen_add = seen.add
+                 uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))][:30]
+                 print(uriarray)
                  cache[phrase] = uriarray
                  matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
              else:
