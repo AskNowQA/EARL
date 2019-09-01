@@ -38,8 +38,14 @@ for queryitem,golditem in zip(d,gold):
                 queryentities.append(queryentity)
                 break
         if chunk['chunk']['class'] == 'relation':
-            for queryrelation in chunk['topkmatches']: 
-                queryrelations.append(queryrelation)
+            for queryrelation in chunk['topkmatches']:
+                if '_' in queryrelation:
+                    relid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[0]
+                    qualid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[1]
+                    queryrelations.append('http://www.wikidata.org/entity/'+relid)
+                    queryrelations.append('http://www.wikidata.org/entity/'+qualid)
+                else:     
+                    queryrelations.append(queryrelation)
                 break
     for goldentity in golditem['entities']:
         totalentchunks += 1
@@ -84,9 +90,18 @@ for queryitem,golditem in zip(d,gold):
                 if goldentity in chunk['topkmatches']:
                     mrrent += 1.0/float(chunk['topkmatches'].index(goldentity)+1)
         if chunk['chunk']['class'] == 'relation':
+             queryrelations = []
+             for queryrelation in chunk['topkmatches']:
+                if '_' in queryrelation:
+                    relid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[0]
+                    qualid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[1]
+                    queryrelations.append('http://www.wikidata.org/entity/'+relid)
+                    queryrelations.append('http://www.wikidata.org/entity/'+qualid)
+                else:
+                    queryrelations.append(queryrelation)
              for goldrelation in golditem['relations']:
-                if goldrelation in chunk['topkmatches']:
-                    mrrrel += 1.0/float(chunk['topkmatches'].index(goldrelation)+1)
+                if goldrelation in queryrelations:
+                    mrrrel += 1.0/float(queryrelations.index(goldrelation)+1)
 
 totmrrent = mrrent/totalentchunks
 totmrrrel = mrrrel/totalrelchunks
