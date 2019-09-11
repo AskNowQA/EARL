@@ -15,7 +15,7 @@ for item in d:
     unit['relations'] = ['http://www.wikidata.org/entity/'+rel for rel in _rels]
     gold.append(unit)
 
-f = open('jointparseout1.json')
+f = open('newrerankerout1.json')
 d = json.loads(f.read())
 
 tpentity = 0
@@ -36,17 +36,17 @@ for queryitem,golditem in zip(d,gold):
         for num,urltuples in queryitem['rerankedlists'].iteritems():
             if queryitem['chunktext'][int(num)]['class'] == 'entity':
                 for urltuple in urltuples: 
-                    queryentities.append(urltuple[1])
+                    queryentities.append(urltuple[1][0])
                     break
             if  queryitem['chunktext'][int(num)]['class'] == 'relation':
                 for urltuple in urltuples:
-                    if '_' in urltuple[1]:
-                        relid = urltuple[1].split('http://www.wikidata.org/entity/')[1].split('_')[0]
-                        qualid = urltuple[1].split('http://www.wikidata.org/entity/')[1].split('_')[1]
+                    if '_' in urltuple[1][0]:
+                        relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
+                        qualid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[1]
                         queryrelations.append('http://www.wikidata.org/entity/'+relid)
                         queryrelations.append('http://www.wikidata.org/entity/'+qualid)
                     else:
-                        queryrelations.append(urltuple[1])
+                        queryrelations.append(urltuple[1][0])
                     break
     for goldentity in golditem['entities']:
         totalentchunks += 1
@@ -85,25 +85,26 @@ mrrent = 0
 mrrrel = 0
 faketotent = 0
 faketotrel = 0
+
 chunkingerror = 0
 for queryitem,golditem in zip(d,gold):
     if 'rerankedlists' in queryitem:
         for num,urltuples in queryitem['rerankedlists'].iteritems():
             if queryitem['chunktext'][int(num)]['class'] == 'entity':
                 for goldentity in golditem['entities']:
-                    if goldentity in [urltuple[1] for urltuple in urltuples]:
-                        mrrent += 1.0/float([urltuple[1] for urltuple in urltuples].index(goldentity)+1)
+                    if goldentity in [urltuple[1][0] for urltuple in urltuples]:
+                        mrrent += 1.0/float([urltuple[1][0] for urltuple in urltuples].index(goldentity)+1)
                         faketotent += 1
             if queryitem['chunktext'][int(num)]['class'] == 'relation':
                 queryrelations = []
                 for urltuple in urltuples:
-                    if '_' in urltuple[1]:
-                        relid = urltuple[1].split('http://www.wikidata.org/entity/')[1].split('_')[0]
-                        qualid = urltuple[1].split('http://www.wikidata.org/entity/')[1].split('_')[1]
+                    if '_' in urltuple[1][0]:
+                        relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
+                        qualid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[1]
                         queryrelations.append('http://www.wikidata.org/entity/'+relid)
                         queryrelations.append('http://www.wikidata.org/entity/'+qualid)
                     else: 
-                        queryrelations.append(urltuple[1])
+                        queryrelations.append(urltuple[1][0])
                 for goldrelation in golditem['relations']:
                     if goldrelation in queryrelations:
                         mrrrel += 1.0/float(queryrelations.index(goldrelation)+1)
@@ -113,7 +114,10 @@ totmrrent = mrrent/totalentchunks
 totmrrrel = mrrrel/totalrelchunks
 print('ent mrr = %f'%totmrrent)
 print('rel mrr = %f'%totmrrrel)
-totmrrent = mrrent/faketotent
-totmrrrel = mrrrel/faketotrel
-print('fake ent mrr = %f'%totmrrent)
-print('fake rel mrr = %f'%totmrrrel)
+faketotmrrent = mrrent/faketotent
+faketotmrrrel = mrrrel/faketotrel
+print('fake ent mrr = %f'%faketotmrrent)
+print('fake rel mrr = %f'%faketotmrrrel)
+
+
+

@@ -130,7 +130,7 @@ def textMatch():
     matchedChunks = []
     for chunk in chunks:
          if chunk['class'] == 'entity':
-             res = es.search(index="wikidataentitylabeindex01", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel"]}},"size":200})
+             res = es.search(index="wikidataentitylabelindex01", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel"]}},"size":200})
              _topkents = []
              topkents = []
              for record in res['hits']['hits']:

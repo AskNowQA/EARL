@@ -107,3 +107,31 @@ totmrrent = mrrent/totalentchunks
 totmrrrel = mrrrel/totalrelchunks
 print('ent mrr = %f'%totmrrent)
 print('rel mrr = %f'%totmrrrel)
+
+
+presentent = 0
+presentrel = 0
+chunkingerror = 0
+for queryitem,golditem in zip(d,gold):
+    for chunk in queryitem:
+        if chunk['chunk']['class'] == 'entity':
+            for goldentity in golditem['entities']:
+                if goldentity in chunk['topkmatches']:
+                    presentent += 1
+        if chunk['chunk']['class'] == 'relation':
+             queryrelations = []
+             for queryrelation in chunk['topkmatches']:
+                if '_' in queryrelation:
+                    relid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[0]
+                    qualid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[1]
+                    queryrelations.append('http://www.wikidata.org/entity/'+relid)
+                    queryrelations.append('http://www.wikidata.org/entity/'+qualid)
+                else:
+                    queryrelations.append(queryrelation)
+             for goldrelation in golditem['relations']:
+                if goldrelation in queryrelations:
+                    presentrel += 1
+
+
+print('entity pipeline failure = %f'%((totalentchunks-presentent)/float(totalentchunks)))
+print('relation pipeline failure = %f'%((totalrelchunks-presentrel)/float(totalrelchunks)))

@@ -1,18 +1,36 @@
 # /usr/bin/python
 
-import numpy as np
-import xgboost as xgb
+import torch
 import sys
-import editdistance
+import numpy as np
 
 class ReRanker:
     def __init__(self):
         self.rerun = False
-	self.pred_change = {}
+        self.pred_change = {}
         print "ReRanker initializing"
         try:
-            self.model = xgb.Booster({'nthread': 4})
-            self.model.load_model('../models/db_predia_reranker.model')            
+            device = torch.device('cuda')
+            D_in, H, D_out =  3, 3, 1
+            self.entitymodel = torch.nn.Sequential(
+               torch.nn.Linear(D_in, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, D_out)
+             ).to(device)
+            self.entitymodel.load_state_dict(torch.load('../data/wikirerankerentity1094.model'))
+            self.entitymodel.eval()
+            D_in, H, D_out =  3, 3, 1
+            self.relationmodel = torch.nn.Sequential(
+               torch.nn.Linear(D_in, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, H),
+               torch.nn.ReLU(),
+               torch.nn.Linear(H, D_out)
+             ).to(device)
+            self.relationmodel.load_state_dict(torch.load('../data/wikirerankerrelation1092.model'))
+            self.relationmodel.eval()
         except Exception,e:
             print e
             sys.exit(1)
@@ -25,38 +43,26 @@ class ReRanker:
             if k1 == 'chunktext' or k1 == 'ertypes':
                 continue
             uris = []
-	    lvnstn = []
+            lvnstn = []
             featurevectors = []
             for k2, v2 in v1.iteritems():
-                uris.append(k2)
-		dbpediakey = k2.split('/')[-1].lower()
- 		querykey = topklists['chunktext'][k1]['chunk'].lower()
-                featurevectors.append([v2['connections'],v2['sumofhops'],v2['esrank']])
-		lvnstn.append(editdistance.eval(querykey, dbpediakey))
-		#print (dbpediakey, querykey)
-		#print (editdistance.eval(querykey, dbpediakey))
-            featurevectors = np.array(featurevectors)
-            dtest = xgb.DMatrix(featurevectors)
-            predictions = self.model.predict(dtest)
+                uris.append((k2,v2))
+                featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
+            featurevectors = torch.FloatTensor(featurevectors).cuda()
+            predictions = None
+            if 'wikidata.dbpedia.org' in uris[0][0]:
+                predictions = self.entitymodel(featurevectors).reshape(-1).cpu().detach().numpy()
+            else:
+                predictions =  self.relationmodel(featurevectors).reshape(-1).cpu().detach().numpy()
             max_pred = (np.max(predictions))
-	    #print (np.min(lvnstn))
-	    #print (max_pred)
-            if max_pred < 0.1 and topklists['ertypes'][k1] == 'relation' and np.min(lvnstn) > 1.0:
-	    #if max_pred < 0.05 :
-                print ("Changing predictions for")
-		print (topklists['chunktext'][k1] )
-		self.pred_change[k1]= 'change'
-	    else:
-		self.pred_change[k1]= 'correct'
+            self.pred_change[k1]= 'correct'
 
-	    print (self.pred_change)
+            print (self.pred_change)
             l = [(float(p),u) for p,u in zip(predictions, uris)]
-	    #print (predictions, l)
             rerankedlists[k1] = sorted(l, key=lambda x: x[0], reverse=True)
-	    #rerankedlists[k1] = l
         changes = self.pred_change.values()
-	if 'change' in changes:
-		self.rerun = True
+        if 'change' in changes:
+                self.rerun = True
         return {'rerankedlists': rerankedlists, 'chunktext':topklists['chunktext'], 'ertypes': topklists['ertypes'], 'er-rerun': self.rerun, 'changes': self.pred_change}
                 
 if __name__ == '__main__':

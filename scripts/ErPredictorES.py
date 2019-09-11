@@ -21,8 +21,8 @@ class ErPredictorES:
                  nn.Linear(n_h, n_h),
                  nn.ReLU(),
                  nn.Linear(n_h,n_out),
-                 nn.Softmax())
-        self.ermodel.load_state_dict(torch.load('../data/er.model',map_location='cpu'))
+                 nn.Softmax()).cuda()
+        self.ermodel.load_state_dict(torch.load('../data/er.model',map_location='cuda'))
         self.ermodel.eval()
         print "Er Predictor Initialized"
 
@@ -51,7 +51,7 @@ class ErPredictorES:
             chunkk = chunk[0].encode('ascii','ignore')
             chunkwords = chunkk.translate(None, string.punctuation)
             embedding = self.embed(chunkwords)
-            esresult = self.es.search(index="wikidataentitylabeindex01", body={"query":{"multi_match":{"query":chunkwords,"fields":["wikidataLabel"]}},"size":1})
+            esresult = self.es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":chunkwords,"fields":["wikidataLabel"]}},"size":1})
             topresult = esresult['hits']['hits']
             if len(topresult) == 1:
                 topresult = topresult[0]
@@ -59,7 +59,7 @@ class ErPredictorES:
             else:
                 x = embedding + [0.0,0.0,0.0,0.0]
         #print(x, type(x))
-            x = torch.FloatTensor(x)  
+            x = torch.FloatTensor(x).cuda() 
             pred = self.ermodel(x)
             print(chunkwords,pred,pred[0])
             if pred[0] >0.5:
