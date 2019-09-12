@@ -4,15 +4,13 @@ from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
-from ShallowParser import ShallowParser
-from ErPredictorES import ErPredictorES
+from ERSpanPredictor import ERSpanDetector
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
-s = ShallowParser()
-e = ErPredictorES()
+e = ERSpanDetector()
 t = TextMatch()
 j = JointLinker()
 r = ReRanker()
@@ -93,27 +91,21 @@ def processQuery():
     except Exception,err:
         print err
         return 422
-    #print "Query: %s"%json.dumps(nlquery) 
-    chunks = None
-    if 'chunks' not in d.keys():
-        chunks = s.shallowParse(nlquery)
-    else:
-        chunks = d['chunks']
-    
-    print "Chunks: %s"%json.dumps(chunks)
-    erpredictions = []
-    if 'erpredictions' not in d.keys():
-        erpredictions = e.erPredict(chunks)
-    else:
-        erpredictions = d['erpredictions']
+    print "Query: %s"%json.dumps(nlquery) 
+    erpredictions = e.erspan(nlquery)
     print "ER Predictions: %s"%json.dumps(erpredictions)
-    topkmatches = t.textMatch(erpredictions, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches)
-    jointlylinked = j.jointLinker(topkmatches)
-    print "ER link features: %s"%json.dumps(jointlylinked)
-    rerankedlist = r.reRank(jointlylinked)
-    print "Re-reanked lists: %s"%json.dumps(rerankedlist)
-    return json.dumps(rerankedlist) 
+    rerankedlists = []
+    for erprediction in erpredictions:
+        topkmatches = t.textMatch(erprediction, pagerankflag)
+        print "Top text matches: %s"%json.dumps(topkmatches)
+        jointlylinked = j.jointLinker(topkmatches)
+        print "ER link features: %s"%json.dumps(jointlylinked)
+        rerankedlist = r.reRank(jointlylinked)
+        rerankedlists.append(rerankedlist)
+        print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+    print(json.dumps(rerankedlists))
+    return json.dumps(rerankedlists)
+
 
 @app.route('/answerdetail', methods=['POST'])
 def answerdetail():
