@@ -134,7 +134,7 @@ def textMatch():
              _topkents = []
              topkents = []
              for record in res['hits']['hits']:
-                 _topkents.append(record['_source']['uri'])#record['_source']['edgecount']))
+                 _topkents.append(record['_source']['uri'])#,record['_source']['wikidataLabel']))
              #if pagerankflag:
              #    _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
              for record in _topkents:

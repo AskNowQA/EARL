@@ -3,6 +3,7 @@
 import torch
 import sys
 import numpy as np
+device = torch.device('cuda')
 
 class ReRanker:
     def __init__(self):
@@ -10,7 +11,6 @@ class ReRanker:
         self.pred_change = {}
         print "ReRanker initializing"
         try:
-            device = torch.device('cuda')
             D_in, H, D_out =  3, 3, 1
             self.entitymodel = torch.nn.Sequential(
                torch.nn.Linear(D_in, H),
@@ -19,7 +19,7 @@ class ReRanker:
                torch.nn.ReLU(),
                torch.nn.Linear(H, D_out)
              ).to(device)
-            self.entitymodel.load_state_dict(torch.load('../data/wikirerankerentity1094.model'))
+            self.entitymodel.load_state_dict(torch.load('../data/wikirerankerentity1094.model',map_location=device))
             self.entitymodel.eval()
             D_in, H, D_out =  3, 3, 1
             self.relationmodel = torch.nn.Sequential(
@@ -29,7 +29,7 @@ class ReRanker:
                torch.nn.ReLU(),
                torch.nn.Linear(H, D_out)
              ).to(device)
-            self.relationmodel.load_state_dict(torch.load('../data/wikirerankerrelation1092.model'))
+            self.relationmodel.load_state_dict(torch.load('../data/wikirerankerrelation1092.model',map_location=device))
             self.relationmodel.eval()
         except Exception,e:
             print e
@@ -48,7 +48,7 @@ class ReRanker:
             for k2, v2 in v1.iteritems():
                 uris.append((k2,v2))
                 featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
-            featurevectors = torch.FloatTensor(featurevectors).cuda()
+            featurevectors = torch.FloatTensor(featurevectors).to(device)
             predictions = None
             if 'wikidata.dbpedia.org' in uris[0][0]:
                 predictions = self.entitymodel(featurevectors).reshape(-1).cpu().detach().numpy()
