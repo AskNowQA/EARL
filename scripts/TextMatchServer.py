@@ -10,6 +10,7 @@ import gensim
 import numpy as np
 import json,sys
 import random
+import copy
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -24,11 +25,11 @@ def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
         return np.dot(np.transpose(vectorSet),ignore)/sum(ignore)
 
 
-print "TextMatch initializing, loading word2vec"
+print "TextMatch initializing, loading fastext"
 try:
     es = Elasticsearch()
-    model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
-    print("loded word2vec, loading relation labels")
+    fastextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
+    print("loded fastext, loading relation labels")
     labelhash = {}
     cache = {}
     f = open('../data/wikidatareluri.json')
@@ -43,7 +44,7 @@ try:
         for token in labeltokens:
             try:
                 # print phrase
-                vw_label.append(model.word_vec(token.lower()))
+                vw_label.append(fastextmodel.word_vec(token.lower()))
             except:
                 # print traceback.print_exc()
                 continue
@@ -51,12 +52,10 @@ try:
             continue
         v_label = ConvertVectorSetToVecAverageBased(vw_label)
         t.add_item(count,list(v_label))
-        numberlabelhash[count] = urls
+        numberlabelhash[count] = {'label':_label,'urls':urls}
         count += 1
     t.build(10)
-    print("loaded relation labels, created annoy index, loading fastext")
-    fasttextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-    print("loaded fastext")
+    print("loaded relation labels, created annoy index")
 except Exception,e:
     print e
     sys.exit(1)            
@@ -69,7 +68,7 @@ def labeltovec(_phrase_1):
     for phrase in phrase_1:
         try:
             # print phrase
-            vw_phrase_1.append(model.word_vec(phrase.lower()))
+            vw_phrase_1.append(fastextmodel.word_vec(phrase.lower()))
         except:
             # print traceback.print_exc()
             continue
@@ -86,13 +85,13 @@ def phrase_similarity(_phrase_1, _phrase_2):
     for phrase in phrase_1:
         try:
             # print phrase
-            vw_phrase_1.append(model.word_vec(phrase.lower()))
+            vw_phrase_1.append(fastextmodel.word_vec(phrase.lower()))
         except:
             # print traceback.print_exc()
             continue
     for phrase in phrase_2:
         try:
-            vw_phrase_2.append(model.word_vec(phrase.lower()))
+            vw_phrase_2.append(fastextmodel.word_vec(phrase.lower()))
         except Exception,e:
             continue
     if len(vw_phrase_1) == 0 or len(vw_phrase_2) == 0:
@@ -111,7 +110,7 @@ def ftwv():
     for phrase in phrase_1:
         try:
             # print phrase
-            vw_phrase_1.append(fasttextmodel.word_vec(phrase))
+            vw_phrase_1.append(fastextmodel.word_vec(phrase))
         except:
             # print traceback.print_exc()
             continue
@@ -147,23 +146,27 @@ def textMatch():
              matchedChunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
                  
          if chunk['class'] == 'relation':
-             phrase = chunk['chunk']
+             tempchunk = copy.deepcopy(chunk)
+             phrase = tempchunk['chunk']
              if phrase not in cache:
                  print "%s not in cache"%phrase
                  results = []
                  max_score = 0
                  uris = []
-                 results = t.get_nns_by_vector(list(labeltovec(phrase)),100)
-                 for id in results:
-                     uris +=  numberlabelhash[id]
+                 results = t.get_nns_by_vector(list(labeltovec(phrase)),10, include_distances = True)
+                 print(phrase, results)
+                 for id,distance in zip(results[0],results[1]):
+                     uris.append({'inputlabel': phrase, 'matchedlabel':numberlabelhash[id]['label'], 'uris': numberlabelhash[id]['urls'], 'distance': distance})
                  seen = set()
-                 seen_add = seen.add
-                 uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))][:30]
-                 cache[phrase] = uriarray
-                 matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
+                 #seen_add = seen.add
+                 #uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))]
+                 cache[phrase] = uris
+                 tempchunk['topkmatches'] = uris
+                 matchedChunks.append(tempchunk)
              else:
                  print "%s in cache"%phrase
-                 matchedChunks.append({'chunk':chunk, 'topkmatches': cache[phrase], 'class': 'relation'})
+                 tempchunk['topkmatches'] = cache[phrase]
+                 matchedChunks.append(tempchunk)
                         
     return json.dumps(matchedChunks)
 

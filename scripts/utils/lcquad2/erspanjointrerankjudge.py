@@ -163,7 +163,9 @@ for queryitems,golditem in zip(d,gold):
                     presententlist.append(urltuple[1][0])
     for goldentity in golditem['entities']:
         if goldentity in presententlist:
-            presentent += 1  
+            presentent += 1
+        else:
+            print(golditem, [queryitem['chunktext'] for queryitem in queryitems]) 
 print('entity pipeline failure @5 = %f'%((totalentchunks-presentent)/float(totalentchunks)))
 
 #        if queryitem[0]['chunktext'][int(num)]['class'] == 'relation':

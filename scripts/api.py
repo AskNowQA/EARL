@@ -4,16 +4,18 @@ from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
-from ERSpanPredictor import ERSpanDetector
+#from ERSpanPredictor import ERSpanDetector
+from NgramTiler import NgramTiler
 from  TextMatch import TextMatch
 from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
-e = ERSpanDetector()
-t = TextMatch()
-j = JointLinker()
-r = ReRanker()
+#e = ERSpanDetector()
+n = NgramTiler()
+#t = TextMatch()
+#j = JointLinker()
+#r = ReRanker()
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -92,19 +94,16 @@ def processQuery():
         print err
         return 422
     print "Query: %s"%json.dumps(nlquery) 
-    erpredictions = e.erspan(nlquery)
+    erpredictions = n.ngramtiler(nlquery)#e.erspan(nlquery)
     print "ER Predictions: %s"%json.dumps(erpredictions)
-    rerankedlists = []
-    for erprediction in erpredictions:
-        topkmatches = t.textMatch(erprediction, pagerankflag)
-        print "Top text matches: %s"%json.dumps(topkmatches)
-        jointlylinked = j.jointLinker(topkmatches)
-        print "ER link features: %s"%json.dumps(jointlylinked)
-        rerankedlist = r.reRank(jointlylinked)
-        rerankedlists.append(rerankedlist)
-        print "Re-reanked lists: %s"%json.dumps(rerankedlist)
-    print(json.dumps(rerankedlists))
-    return json.dumps(rerankedlists)
+    jointlylinked = j.jointLinker(erpredictions)
+    print "ER link features: %s"%json.dumps(jointlylinked)
+    return json.dumps(jointlylinked)
+#        rerankedlist = r.reRank(jointlylinked)
+#        rerankedlists.append(rerankedlist)
+#        print "Re-reanked lists: %s"%json.dumps(rerankedlist)
+#   print(json.dumps(rerankedlists))
+#    return json.dumps(rerankedlists)
 
 
 @app.route('/answerdetail', methods=['POST'])
