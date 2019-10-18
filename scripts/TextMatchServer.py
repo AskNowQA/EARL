@@ -26,7 +26,7 @@ try:
     print("loded fastext, loading relation labels")
     labelhash = {}
     cache = {}
-    f = open('../data/wikidatareluri.json')
+    f = open('../data/wikilabeluridict1.json')
     s = f.read()
     labelhash = json.loads(s)
     numberlabelhash = {}
