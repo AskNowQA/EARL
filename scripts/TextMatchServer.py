@@ -24,14 +24,14 @@ def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
         return np.dot(np.transpose(vectorSet),ignore)/sum(ignore)
 
 
-print "TextMatch initializing, loading word2vec"
+print "TextMatch initializing, loading fastext"
 try:
     es = Elasticsearch()
-    model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
-    print("loded word2vec, loading relation labels")
+    model = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
+    print("loded fastext, loading relation labels")
     labelhash = {}
     cache = {}
-    f = open('../data/wikidatareluri.json')
+    f = open('../data/wikilabeluridict1.json')
     s = f.read()
     labelhash = json.loads(s)
     numberlabelhash = {}
@@ -54,9 +54,6 @@ try:
         numberlabelhash[count] = urls
         count += 1
     t.build(10)
-    print("loaded relation labels, created annoy index, loading fastext")
-    fasttextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-    print("loaded fastext")
 except Exception,e:
     print e
     sys.exit(1)            
@@ -111,7 +108,7 @@ def ftwv():
     for phrase in phrase_1:
         try:
             # print phrase
-            vw_phrase_1.append(fasttextmodel.word_vec(phrase))
+            vw_phrase_1.append(model.word_vec(phrase))
         except:
             # print traceback.print_exc()
             continue
@@ -130,7 +127,7 @@ def textMatch():
     matchedChunks = []
     for chunk in chunks:
          if chunk['class'] == 'entity':
-             res = es.search(index="wikidataentitylabelindex01", doc_type="records", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel"]}},"size":200})
+             res = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":chunk['chunk'],"fields":["wikidataLabel"]}},"size":200})
              _topkents = []
              topkents = []
              for record in res['hits']['hits']:
