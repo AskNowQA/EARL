@@ -46,20 +46,23 @@ class ReRanker:
             lvnstn = []
             featurevectors = []
             for k2, v2 in v1.iteritems():
+                if v2['connections'] == 0.0 and v2['sumofhops'] == 0.0:
+                    continue
                 uris.append((k2,v2))
                 featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
-            featurevectors = torch.FloatTensor(featurevectors).cuda()
-            predictions = None
-            if 'wikidata.dbpedia.org' in uris[0][0]:
-                predictions = self.entitymodel(featurevectors).reshape(-1).cpu().detach().numpy()
+            if len(featurevectors) == 0:
+                rerankedlists[k1] = []
             else:
-                predictions =  self.relationmodel(featurevectors).reshape(-1).cpu().detach().numpy()
-            max_pred = (np.max(predictions))
-            self.pred_change[k1]= 'correct'
-
-            print (self.pred_change)
-            l = [(float(p),u) for p,u in zip(predictions, uris)]
-            rerankedlists[k1] = sorted(l, key=lambda x: x[0], reverse=True)
+                featurevectors = torch.FloatTensor(featurevectors).cuda()
+                predictions = None
+                if 'wikidata.dbpedia.org' in uris[0][0]:
+                    predictions = self.entitymodel(featurevectors).reshape(-1).cpu().detach().numpy()
+                else:
+                    predictions =  self.relationmodel(featurevectors).reshape(-1).cpu().detach().numpy()
+                max_pred = (np.max(predictions))
+                self.pred_change[k1]= 'correct'
+                l = [(float(p),u) for p,u in zip(predictions, uris)]
+                rerankedlists[k1] = sorted(l, key=lambda x: x[0], reverse=True)
         changes = self.pred_change.values()
         if 'change' in changes:
                 self.rerun = True
