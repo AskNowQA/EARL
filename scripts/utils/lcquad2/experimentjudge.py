@@ -1,4 +1,4 @@
-import sys,os,json,re
+import sys,os,json,re,itertools
 
 
 gold = []
@@ -10,6 +10,7 @@ d = sorted(d1, key=lambda x: int(x['uid']))
 for item in d:
     wikisparql = item['sparql_wikidata']
     unit = {}
+    unit['question'] = item['question']
     unit['uid'] = item['uid']
     _ents = re.findall( r'wd:(.*?) ', wikisparql)
     _rels = re.findall( r'wdt:(.*?) ',wikisparql)
@@ -33,6 +34,48 @@ totalrelchunks = 0
 mrrent = 0
 mrrrel = 0
 chunkingerror = 0
+
+wikiurilabeldict = json.loads(open('../../../data/wikiurilabeldict1.json').read())
+
+def seqconfrerank(queryitems):
+    urlcombinations = []
+    for queryitem in queryitems:
+        freshurlslist = []
+        if 'rerankedlists' in queryitem:
+            for num,urltuples in queryitem['rerankedlists'].iteritems():
+                if queryitem['chunktext'][int(num)]['class'] == 'entity':
+                    querye = []
+                    for urltuple in urltuples[:3]:
+                        querye.append([urltuple[0],urltuple[1][0]])
+                    freshurlslist.append(querye)
+                if  queryitem['chunktext'][int(num)]['class'] == 'relation':
+                    queryr = []
+                    for urltuple in urltuples[:3]:
+                        if '_' in urltuple[1][0]:
+                            relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
+                            qualid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[1]
+                            queryr.append([urltuple[0],'http://www.wikidata.org/entity/'+relid])
+                            queryr.append([urltuple[0],'http://www.wikidata.org/entity/'+qualid])
+                        else:
+                            queryr.append([urltuple[0],urltuple[1][0]])
+                    freshurlslist.append(queryr)
+        urlcombinations += list(itertools.product(*freshurlslist))
+    besttup = []
+    bestcon = 0
+    for urls in urlcombinations:
+        con = 0
+        for url in urls:
+            con += url[0]
+        if len(urls) == 0:
+            continue
+        con /= float(len(urls))
+        if con > bestcon:
+            bestcon = con
+            besttup = urls 
+    return [x[1] for x in besttup]
+        
+        
+
 for _queryitem,golditem in zip(d,gold):
     if len(_queryitem[1]) == 0:
         continue
@@ -40,70 +83,57 @@ for _queryitem,golditem in zip(d,gold):
         print('uid mismatch')
         sys.exit(1)
     bestqueryentities = []
+    allqueryentities = []
     bestqueryrelations = []
+    allqueryrelations = []
     bestconfidence = 0
-    for idx,queryitem in enumerate(_queryitem[1]):
-        querye = []
-        queryr = []
-        netconfidence = 0
-        if 'rerankedlists' in queryitem:
-            for num,urltuples in queryitem['rerankedlists'].iteritems():
-                if queryitem['chunktext'][int(num)]['class'] == 'entity':
-                    urltuple = urltuples[0]
-                    netconfidence += urltuple[0]
-                    querye.append(urltuple[1][0])
-                if  queryitem['chunktext'][int(num)]['class'] == 'relation':
-                    urltuple = urltuples[0]
-                    if '_' in urltuple[1][0]:
-                        relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
-                        qualid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[1]
-                        queryr.append('http://www.wikidata.org/entity/'+relid)
-                        queryr.append('http://www.wikidata.org/entity/'+qualid)
-                    else:
-                        queryr.append(urltuple[1][0])
-                    netconfidence += urltuple[0]
-            if len(querye) + len(queryr) == 0:
-                continue
-            netconfidence /= float(len(querye) + len(queryr))
-            if netconfidence > bestconfidence:
-                print('best confidence index %d'%(idx))
-                bestconfidence = netconfidence
-                bestqueryentities = querye
-                bestqueryrelations = queryr
-    print(golditem['entities'],golditem['relations'], bestqueryentities, bestqueryrelations)
+    #siamqueryitems = siameserefine(_queryitem[1])
+    seqreranked = seqconfrerank(_queryitem[1])
+    for url in seqreranked:
+        if 'entity' in url:
+            allqueryrelations.append(url)
+        else:
+            allqueryentities.append(url)
+    print(allqueryentities,allqueryrelations, golditem['question'])
+    
+    
+    #print(golditem['entities'],golditem['relations'], allqueryentities, allqueryrelations)
     for goldentity in golditem['entities']:
         totalentchunks += 1
-        if goldentity in bestqueryentities:
+        if goldentity in allqueryentities:#bestqueryentities:
             tpentity += 1
         else:
             fnentity += 1
     for goldrelation in golditem['relations']:
         totalrelchunks += 1
-        if goldrelation in bestqueryrelations:
+        if goldrelation in allqueryrelations:#bestqueryrelations:
             tprelation += 1
         else:
             fnrelation += 1
-    for queryentity in bestqueryentities:
+    for queryentity in allqueryentities:
         if queryentity not in golditem['entities']:
             fpentity += 1
-    for queryrelation in bestqueryrelations:
+    for queryrelation in allqueryrelations:
         if queryrelation not in golditem['relations']:
             fprelation += 1
 
-precisionentity = tpentity/float(tpentity+fpentity)
-recallentity = tpentity/float(tpentity+fnentity)
-f1entity = 2*(precisionentity*recallentity)/(precisionentity+recallentity)
-print("precision entity = ",precisionentity)
-print("recall entity = ",recallentity)
-print("f1 entity = ",f1entity)
-
-precisionrelation = tprelation/float(tprelation+fprelation)
-recallrelation = tprelation/float(tprelation+fnrelation)
-f1relation = 2*(precisionrelation*recallrelation)/(precisionrelation+recallrelation)
-print("precision relation = ",precisionrelation)
-print("recall relation = ",recallrelation)
-print("f1 relation = ",f1relation)
-
+    try:
+        precisionentity = tpentity/float(tpentity+fpentity)
+        recallentity = tpentity/float(tpentity+fnentity)
+        f1entity = 2*(precisionentity*recallentity)/(precisionentity+recallentity)
+        print("precision entity = ",precisionentity)
+        print("recall entity = ",recallentity)
+        print("f1 entity = ",f1entity)
+        
+        precisionrelation = tprelation/float(tprelation+fprelation)
+        recallrelation = tprelation/float(tprelation+fnrelation)
+        f1relation = 2*(precisionrelation*recallrelation)/(precisionrelation+recallrelation)
+        print("precision relation = ",precisionrelation)
+        print("recall relation = ",recallrelation)
+        print("f1 relation = ",f1relation)
+    except Exception as e:
+        print(e)
+sys.exit(1)
 mrrent = 0
 mrrrel = 0
 faketotent = 0
