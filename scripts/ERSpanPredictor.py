@@ -34,6 +34,45 @@ def beam_search_decoder(data, k):
 		sequences = ordered[:k]
 	return sequences
 
+def generate_ngrams(self, s, n):
+    #s = re.sub(r'[^a-zA-Z0-9\s]', ' ', s)
+    if not s:
+        tokens = []
+    else:
+        tokens = [token for token in s.split(" ") if token != ""]
+
+    # Use the zip function to help us generate n-grams
+    # Concatentate the tokens into ngrams and return
+    ngrams = zip(*[tokens[i:] for i in range(n)])
+    return [" ".join(ngram) for ngram in ngrams]
+
+class LSTMTaggerEntity(nn.Module):
+    def __init__(self, embedding_dim, hidden_dim, tagset_size):
+        super(LSTMTaggerEntity, self).__init__()
+        self.hidden_dim = hidden_dim
+        self.lstm = nn.LSTM(input_size=embedding_dim, hidden_size=hidden_dim//2, num_layers=4,bidirectional=True,batch_first=True)
+        self.dropout = nn.Dropout(p=0.1)
+        self.relu = nn.ReLU()
+        self.hidden2tag = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.BatchNorm1d(hidden_dim),
+            self.relu,
+            self.dropout,
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.BatchNorm1d(hidden_dim),
+            self.relu,
+            nn.Linear(hidden_dim, 4)
+        ).cuda()
+
+
+    def forward(self, sentence):
+        lstm_out, _ = self.lstm(sentence)
+        batch_size = lstm_out.shape[0]
+        tags = self.hidden2tag(lstm_out.contiguous().view(-1, lstm_out.size(2)))
+        scores = F.log_softmax(tags, dim=1)
+        return scores
+
+
 class LSTMTagger(nn.Module):
     def __init__(self, embedding_dim, hidden_dim, tagset_size):
         super(LSTMTagger, self).__init__()
@@ -64,6 +103,9 @@ class ERSpanDetector():
        self.model = LSTMTagger(456, 456, 4).cuda()
        self.model.load_state_dict(torch.load('../data/erspanlstm90.51.model'))#,map_location='cpu'))
        self.model.eval()
+       self.entitymodel = LSTMTaggerEntity(456, 456, 4).cuda()
+       self.entitymodel.load_state_dict(torch.load('../data/espan98.0756.model'))
+       self.entitymodel.eval()
        print("Initialised ER span detector")
 
     def erspan(self,nlquery):
@@ -144,19 +186,26 @@ class ERSpanDetector():
             wordvectors.append(nullvector)
         testxtensors = torch.tensor([wordvectors],dtype=torch.float).cuda()
         preds = self.model(testxtensors)[0:len(chunks)]
-        seqs = beam_search_decoder(preds.detach().cpu().numpy(),5)
+        epreds = self.entitymodel(testxtensors)[0:len(chunks)]
+        seqs = beam_search_decoder(preds.detach().cpu().numpy(),10)
+        eseqs = beam_search_decoder(epreds.detach().cpu().numpy(),10)
         allerpredictions = []
-        for seq in seqs:
+        for seq,eseq in zip(seqs,eseqs):
+            #relations
             erpredictions = []
             pred_labels = seq[0]
+            entity_labels = eseq[0]
             predwordtuplelist = []
-            for pred,word in zip(pred_labels,q.split(' ')):
-                predwordtuplelist.append((word,pred))
+            for pred,word,ent in zip(pred_labels,q.split(' '),entity_labels):
+                if ent == 1:
+                    predwordtuplelist.append((word,ent))
+                else:
+                    predwordtuplelist.append((word,pred))
             predgroup = [tuple(i for i in e) for _, e in groupby(predwordtuplelist, lambda x: x[1])]
             entpredgroups = []
             for item in predgroup:
                 for t in item:
-                    if t[1] == 1 or t[1] == 2:
+                    if t[1] == 2 or t[1] == 1:
                         entpredgroups.append(item)
                         break
             for item in entpredgroups:
