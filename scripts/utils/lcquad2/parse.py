@@ -11,6 +11,9 @@ def hiturl(questionserial):
     req = urllib2.Request('http://localhost:4440/processQuery')
     req.add_header('Content-Type', 'application/json')
     try:
+        print(question)
+        question = re.sub(r"[^a-zA-Z0-9]+", ' ', question)
+        print(question)
         inputjson = {'nlquery': question.lower()}
         response = urllib2.urlopen(req, json.dumps(inputjson))
         response = response.read()
@@ -27,7 +30,7 @@ questions = []
 for item in d:
     questions.append((item['question'],item['uid']))
 
-pool = Pool(15)
+pool = Pool(10)
 responses = pool.imap(hiturl,questions)
 
 _results = []
@@ -45,6 +48,6 @@ for result in _results:
     results.append(result)
 
  
-f1 = open('erspan1.json','w')
+f1 = open('erspan3.json','w')
 print(json.dumps(results),file=f1)
 f1.close()
