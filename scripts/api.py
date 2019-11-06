@@ -47,7 +47,7 @@ def processQuery():
         rerankedlists.append(rerankedlist)
         print "Re-reanked lists: %s"%json.dumps(rerankedlist)
     print(json.dumps(rerankedlists))
-    return json.dumps(rerankedlists)#, indent=4, sort_keys=True)
+    return json.dumps(rerankedlists, indent=4, sort_keys=True)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)

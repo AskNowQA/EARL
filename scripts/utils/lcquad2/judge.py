@@ -11,13 +11,14 @@ for item in d:
     wikisparql = item['sparql_wikidata']
     unit = {}
     unit['uid'] = item['uid']
+    unit['question'] = item['question']
     _ents = re.findall( r'wd:(.*?) ', wikisparql)
     _rels = re.findall( r'wdt:(.*?) ',wikisparql)
     unit['entities'] = ['http://wikidata.dbpedia.org/resource/'+ent for ent in _ents]
     unit['relations'] = ['http://www.wikidata.org/entity/'+rel for rel in _rels]
     gold.append(unit)
 
-f = open('erspan1.json')
+f = open('erspan3.json')
 d1 = json.loads(f.read())
 
 d = sorted(d1, key=lambda x: int(x[0]))
@@ -57,7 +58,7 @@ for queryitem,golditem in zip(d,gold):
                     else:
                         queryrelations.append(urltuple[1][0])
                     break
-    print(golditem['entities'],golditem['relations'], queryentities, queryrelations)
+    print(golditem['entities'],queryentities,golditem['relations'], queryrelations, golditem['question'], queryitem[1][0]['chunktext'])
     for goldentity in golditem['entities']:
         totalentchunks += 1
         if goldentity in queryentities:

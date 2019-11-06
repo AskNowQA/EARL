@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 import sys,json,urllib, urllib2, requests
-import requests
+import requests,re
 from multiprocessing import Pool
 
 def hiturl(questionserial):
@@ -14,7 +14,7 @@ def hiturl(questionserial):
         print(question)
         question = re.sub(r"[^a-zA-Z0-9]+", ' ', question)
         print(question)
-        inputjson = {'nlquery': question.lower()}
+        inputjson = {'nlquery': question}
         response = urllib2.urlopen(req, json.dumps(inputjson))
         response = response.read()
         return (int(serial),response)

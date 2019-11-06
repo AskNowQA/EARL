@@ -46,8 +46,6 @@ class ReRanker:
             lvnstn = []
             featurevectors = []
             for k2, v2 in v1.iteritems():
-                if v2['connections'] == 0.0 and v2['sumofhops'] == 0.0:
-                    continue
                 uris.append((k2,v2))
                 featurevectors.append([v2['connections'],v2['esrank'],v2['sumofhops']])
             if len(featurevectors) == 0:
