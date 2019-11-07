@@ -1,6 +1,9 @@
 import sys,os,json,re
+from elasticsearch import Elasticsearch
 
+es = Elasticsearch()
 
+wikiurilabeldict = json.loads(open('../../../data/wikiurilabeldict1.json').read())
 gold = []
 f = open('/home/sda-srv05/debayan/LC-QuAD2.0/dataset/test.json')
 d1 = json.loads(f.read())
@@ -18,7 +21,23 @@ for item in d:
     unit['relations'] = ['http://www.wikidata.org/entity/'+rel for rel in _rels]
     gold.append(unit)
 
-f = open('erspan3.json')
+
+def getlabels(urls):
+    labels = []
+    for url in urls:
+         if 'entity' in url:
+             if url in wikiurilabeldict:
+                 labels.append([url,wikiurilabeldict[url]])
+             else:
+                 labels.append([url,[]])
+         else:
+             res = es.search(index="wikidataentitylabelindex01", body={"query":{"term":{"uri":url}},"size":100})
+             for idx,hit in enumerate(res['hits']['hits']):
+                labels.append([url,hit['_source']['wikidataLabel']])
+    return labels
+
+
+f = open('erspanmdp1.json')
 d1 = json.loads(f.read())
 
 d = sorted(d1, key=lambda x: int(x[0]))
@@ -42,13 +61,13 @@ for queryitem,golditem in zip(d,gold):
         sys.exit(1)
     queryentities = []
     queryrelations = []
-    if 'rerankedlists' in queryitem[1][0]:
-        for num,urltuples in queryitem[1][0]['rerankedlists'].iteritems():
-            if queryitem[1][0]['chunktext'][int(num)]['class'] == 'entity':
+    if 'rerankedlists' in queryitem[1]:
+        for num,urltuples in queryitem[1]['rerankedlists'].iteritems():
+            if queryitem[1]['chunktext'][int(num)]['class'] == 'entity':
                 for urltuple in urltuples:
                     queryentities.append(urltuple[1][0])
                     break
-            if  queryitem[1][0]['chunktext'][int(num)]['class'] == 'relation':
+            if  queryitem[1]['chunktext'][int(num)]['class'] == 'relation':
                 for urltuple in urltuples:
                     if '_' in urltuple[1][0]:
                         relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
@@ -58,7 +77,7 @@ for queryitem,golditem in zip(d,gold):
                     else:
                         queryrelations.append(urltuple[1][0])
                     break
-    print(golditem['entities'],queryentities,golditem['relations'], queryrelations, golditem['question'], queryitem[1][0]['chunktext'])
+    #print(getlabels(golditem['entities']),getlabels(queryentities),getlabels(golditem['relations']), getlabels(queryrelations), golditem['question'], queryitem[1]['chunktext'])
     for goldentity in golditem['entities']:
         totalentchunks += 1
         if goldentity in queryentities:
@@ -101,14 +120,14 @@ chunkingerror = 0
 for queryitem,golditem in zip(d,gold):
     if len(queryitem[1]) == 0:
         continue
-    if 'rerankedlists' in queryitem[1][0]:
-        for num,urltuples in queryitem[1][0]['rerankedlists'].iteritems():
-            if queryitem[1][0]['chunktext'][int(num)]['class'] == 'entity':
+    if 'rerankedlists' in queryitem[1]:
+        for num,urltuples in queryitem[1]['rerankedlists'].iteritems():
+            if queryitem[1]['chunktext'][int(num)]['class'] == 'entity':
                 for goldentity in golditem['entities']:
                     if goldentity in [urltuple[1][0] for urltuple in urltuples]:
                         mrrent += 1.0/float([urltuple[1][0] for urltuple in urltuples].index(goldentity)+1)
                         faketotent += 1
-            if queryitem[1][0]['chunktext'][int(num)]['class'] == 'relation':
+            if queryitem[1]['chunktext'][int(num)]['class'] == 'relation':
                 queryrelations = []
                 for urltuple in urltuples:
                     if '_' in urltuple[1][0]:
@@ -138,8 +157,8 @@ chunkingerror = 0
 for queryitem,golditem in zip(d,gold):
     if len(queryitem[1]) == 0:
         continue
-    for num,urltuples in queryitem[1][0]['rerankedlists'].iteritems():
-        if queryitem[1][0]['chunktext'][int(num)]['class'] == 'entity':
+    for num,urltuples in queryitem[1]['rerankedlists'].iteritems():
+        if queryitem[1]['chunktext'][int(num)]['class'] == 'entity':
             for goldentity in golditem['entities']:
                 for urltuple in urltuples:
                     if urltuple[1][0] == goldentity:

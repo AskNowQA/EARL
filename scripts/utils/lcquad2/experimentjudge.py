@@ -1,5 +1,7 @@
 import sys,os,json,re,itertools
+from elasticsearch import Elasticsearch
 
+es = Elasticsearch()
 
 gold = []
 f = open('/home/sda-srv05/debayan/LC-QuAD2.0/dataset/test.json')
@@ -18,7 +20,7 @@ for item in d:
     unit['relations'] = ['http://www.wikidata.org/entity/'+rel for rel in _rels]
     gold.append(unit)
 
-f = open('erspan1.json')
+f = open('erspan3.json')
 d1 = json.loads(f.read())
 
 d = sorted(d1, key=lambda x: int(x[0]))
@@ -36,6 +38,21 @@ mrrrel = 0
 chunkingerror = 0
 
 wikiurilabeldict = json.loads(open('../../../data/wikiurilabeldict1.json').read())
+
+
+def getlabels(urls):
+    labels = []
+    for url in urls:
+         if 'entity' in url:
+             if url in wikiurilabeldict:
+                 labels.append([url,wikiurilabeldict[url]])
+             else:
+                 labels.append([url,[]])
+         else:
+             res = es.search(index="wikidataentitylabelindex01", body={"query":{"term":{"uri":url}},"size":100})
+             for idx,hit in enumerate(res['hits']['hits']):
+                labels.append([url,hit['_source']['wikidataLabel']])
+    return labels
 
 def seqconfrerank(queryitems):
     urlcombinations = []
@@ -94,10 +111,11 @@ for _queryitem,golditem in zip(d,gold):
             allqueryrelations.append(url)
         else:
             allqueryentities.append(url)
-    print(allqueryentities,allqueryrelations, golditem['question'])
-    
-    
-    #print(golditem['entities'],golditem['relations'], allqueryentities, allqueryrelations)
+    print("goldent: ",getlabels(golditem['entities']))
+    print("goldrel: ",getlabels(golditem['relations']))
+    print("queryent: ", getlabels(allqueryentities))
+    print("queryrel: ", getlabels(allqueryrelations))
+    print("question: ",golditem['question'])
     for goldentity in golditem['entities']:
         totalentchunks += 1
         if goldentity in allqueryentities:#bestqueryentities:

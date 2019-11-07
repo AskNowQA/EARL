@@ -30,7 +30,7 @@ questions = []
 for item in d:
     questions.append((item['question'],item['uid']))
 
-pool = Pool(10)
+pool = Pool(20)
 responses = pool.imap(hiturl,questions)
 
 _results = []
@@ -48,6 +48,6 @@ for result in _results:
     results.append(result)
 
  
-f1 = open('erspan3.json','w')
+f1 = open('erspanmdp1.json','w')
 print(json.dumps(results),file=f1)
 f1.close()
