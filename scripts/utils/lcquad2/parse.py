@@ -48,6 +48,6 @@ for result in _results:
     results.append(result)
 
  
-f1 = open('erspan3.json','w')
+f1 = open('reified1.json','w')
 print(json.dumps(results),file=f1)
 f1.close()

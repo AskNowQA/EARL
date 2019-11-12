@@ -14,11 +14,11 @@ for item in d:
     unit['question'] = item['question']
     _ents = re.findall( r'wd:(.*?) ', wikisparql)
     _rels = re.findall( r'wdt:(.*?) ',wikisparql)
-    unit['entities'] = ['http://wikidata.dbpedia.org/resource/'+ent for ent in _ents]
-    unit['relations'] = ['http://www.wikidata.org/entity/'+rel for rel in _rels]
+    unit['entities'] = [ent for ent in _ents]
+    unit['relations'] = [rel for rel in _rels]
     gold.append(unit)
 
-f = open('erspan3.json')
+f = open('reified1.json')
 d1 = json.loads(f.read())
 
 d = sorted(d1, key=lambda x: int(x[0]))
@@ -51,17 +51,17 @@ for queryitem,golditem in zip(d,gold):
             if  queryitem[1][0]['chunktext'][int(num)]['class'] == 'relation':
                 for urltuple in urltuples:
                     if '_' in urltuple[1][0]:
-                        relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
-                        qualid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[1]
-                        queryrelations.append('http://www.wikidata.org/entity/'+relid)
-                        queryrelations.append('http://www.wikidata.org/entity/'+qualid)
+                        relid = urltuple[1][0].split('_')[0]
+                        qualid = urltuple[1][0].split('_')[1]
+                        queryrelations.append(relid)
+                        queryrelations.append(qualid)
                     else:
                         queryrelations.append(urltuple[1][0])
                     break
     print(golditem['entities'],queryentities,golditem['relations'], queryrelations, golditem['question'], queryitem[1][0]['chunktext'])
     for goldentity in golditem['entities']:
         totalentchunks += 1
-        if goldentity in queryentities:
+        if goldentity in queryentities or goldentity in queryrelations:
             tpentity += 1
         else:
             fnentity += 1
@@ -75,8 +75,13 @@ for queryitem,golditem in zip(d,gold):
         if queryentity not in golditem['entities']:
             fpentity += 1
     for queryrelation in queryrelations:
-        if queryrelation not in golditem['relations']:
-            fprelation += 1
+        if 'Q' in queryrelation:
+            if queryrelation not in golditem['entities']:
+                fpentity += 1
+    for queryrelation in queryrelations:
+        if 'P' in queryrelation:
+            if queryrelation not in golditem['relations']:
+                fprelation += 1
 
 precisionentity = tpentity/float(tpentity+fpentity)
 recallentity = tpentity/float(tpentity+fnentity)
@@ -112,10 +117,10 @@ for queryitem,golditem in zip(d,gold):
                 queryrelations = []
                 for urltuple in urltuples:
                     if '_' in urltuple[1][0]:
-                        relid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[0]
-                        qualid = urltuple[1][0].split('http://www.wikidata.org/entity/')[1].split('_')[1]
-                        queryrelations.append('http://www.wikidata.org/entity/'+relid)
-                        queryrelations.append('http://www.wikidata.org/entity/'+qualid)
+                        relid = urltuple[1][0].split('_')[0]
+                        qualid = urltuple[1][0].split('_')[1]
+                        queryrelations.append(relid)
+                        queryrelations.append(qualid)
                     else: 
                         queryrelations.append(urltuple[1][0])
                 for goldrelation in golditem['relations']:
@@ -132,36 +137,36 @@ faketotmrrrel = mrrrel/faketotrel
 print('fake ent mrr = %f'%faketotmrrent)
 print('fake rel mrr = %f'%faketotmrrrel)
 
-presentent = 0
-presentrel = 0
-chunkingerror = 0
-for queryitem,golditem in zip(d,gold):
-    if len(queryitem[1]) == 0:
-        continue
-    for num,urltuples in queryitem[1][0]['rerankedlists'].iteritems():
-        if queryitem[1][0]['chunktext'][int(num)]['class'] == 'entity':
-            for goldentity in golditem['entities']:
-                for urltuple in urltuples:
-                    if urltuple[1][0] == goldentity:
-                        presentent += 1
-#        if queryitem[0]['chunktext'][int(num)]['class'] == 'relation':
-#             queryrelations = []
-#             for queryrelation in chunk['topkmatches']:
-#                if '_' in queryrelation:
-#                    relid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[0]
-#                    qualid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[1]
-#                    queryrelations.append('http://www.wikidata.org/entity/'+relid)
-#                    queryrelations.append('http://www.wikidata.org/entity/'+qualid)
-#                else:
-#                    queryrelations.append(queryrelation)
-#             for goldrelation in golditem['relations']:
-#                if goldrelation in queryrelations:
-#                    presentrel += 1
-
-
-print('entity pipeline failure = %f'%((totalentchunks-presentent)/float(totalentchunks)))
-#print('relation pipeline failure = %f'%((totalrelchunks-presentrel)/float(totalrelchunks)))
-
-
-
-
+#presentent = 0
+#presentrel = 0
+#chunkingerror = 0
+#for queryitem,golditem in zip(d,gold):
+#    if len(queryitem[1]) == 0:
+#        continue
+#    for num,urltuples in queryitem[1][0]['rerankedlists'].iteritems():
+#        if queryitem[1][0]['chunktext'][int(num)]['class'] == 'entity':
+#            for goldentity in golditem['entities']:
+#                for urltuple in urltuples:
+#                    if urltuple[1][0] == goldentity:
+#                        presentent += 1
+##        if queryitem[0]['chunktext'][int(num)]['class'] == 'relation':
+##             queryrelations = []
+##             for queryrelation in chunk['topkmatches']:
+##                if '_' in queryrelation:
+##                    relid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[0]
+##                    qualid = queryrelation.split('http://www.wikidata.org/entity/')[1].split('_')[1]
+##                    queryrelations.append('http://www.wikidata.org/entity/'+relid)
+##                    queryrelations.append('http://www.wikidata.org/entity/'+qualid)
+##                else:
+##                    queryrelations.append(queryrelation)
+##             for goldrelation in golditem['relations']:
+##                if goldrelation in queryrelations:
+##                    presentrel += 1
+#
+#
+#print('entity pipeline failure = %f'%((totalentchunks-presentent)/float(totalentchunks)))
+##print('relation pipeline failure = %f'%((totalrelchunks-presentrel)/float(totalrelchunks)))
+#
+#
+#
+#

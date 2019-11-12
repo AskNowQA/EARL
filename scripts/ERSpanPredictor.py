@@ -124,9 +124,9 @@ class ERSpanDetector():
             word = chunkwordtuple[1]
             req = urllib2.Request('http://localhost:8887/ftwv')
             req.add_header('Content-Type', 'application/json')
-            inputjson = {'chunk':word}
+            inputjson = {'chunks':[word]}
             response = urllib2.urlopen(req, json.dumps(inputjson))
-            embedding = json.loads(response.read().decode('utf8'))
+            embedding = json.loads(response.read().decode('utf8'))[0]
             wordvector = embedding
             #n-1,n
             if idx > 0:
@@ -228,5 +228,6 @@ if __name__ == '__main__':
 #    print(e.erspan("who is the father of the mother of barack obama"))
 #    print(e.erspan("How many rivers flow through Bonn?"))
 #    print(e.erspan("how many rivers flow through bonn?"))
+    print(e.erspan("Which company developed Skype ?"))
     print(e.erspan("List all the musicals with music by Elton John."))
     print(e.erspan("Give me the names of professional skateboarders of India"))

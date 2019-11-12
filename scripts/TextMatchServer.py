@@ -29,31 +29,10 @@ try:
     es = Elasticsearch()
     model = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
     print("loded fastext, loading relation labels")
-    labelhash = {}
     cache = {}
-    f = open('../data/wikilabeluridict1.json')
-    s = f.read()
-    labelhash = json.loads(s)
-    numberlabelhash = {}
+    numberlabelhash = json.loads(open('../data/predtypeurls1.json').read())
     t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
-    count = 0
-    for _label,urls in labelhash.iteritems():
-        labeltokens = _label.split(" ")
-        vw_label = []
-        for token in labeltokens:
-            try:
-                # print phrase
-                vw_label.append(model.word_vec(token.lower()))
-            except:
-                # print traceback.print_exc()
-                continue
-        if len(vw_label) == 0:
-            continue
-        v_label = ConvertVectorSetToVecAverageBased(vw_label)
-        t.add_item(count,list(v_label))
-        numberlabelhash[count] = urls
-        count += 1
-    t.build(10)
+    t.load('../data/predtype1.ann')
 except Exception,e:
     print e
     sys.exit(1)            
@@ -102,20 +81,23 @@ def phrase_similarity(_phrase_1, _phrase_2):
 @app.route('/ftwv', methods=['POST'])
 def ftwv():
     d = request.get_json(silent=True)
-    chunk = d['chunk'] 
-    phrase_1 = chunk.split(" ")
-    vw_phrase_1 = []
-    for phrase in phrase_1:
-        try:
-            # print phrase
-            vw_phrase_1.append(model.word_vec(phrase))
-        except:
-            # print traceback.print_exc()
-            continue
-    if len(vw_phrase_1) == 0:
-        return json.dumps(300*[0.0])
-    v_phrase = ConvertVectorSetToVecAverageBased(vw_phrase_1)
-    return json.dumps(v_phrase.tolist())
+    chunks = d['chunks'] 
+    vectors = []
+    for chunk in chunks:
+        phrase_1 = chunk.split(" ")
+        vw_phrase_1 = []
+        for phrase in phrase_1:
+            try:
+                # print phrase
+                vw_phrase_1.append(model.word_vec(phrase))
+            except:
+                # print traceback.print_exc()
+                continue
+        if len(vw_phrase_1) == 0:
+           vectors.append(300*[0.0])
+        else:
+           vectors.append(ConvertVectorSetToVecAverageBased(vw_phrase_1).tolist())
+    return json.dumps(vectors)
 
 @app.route('/textMatch', methods=['POST'])
 def textMatch():
@@ -140,7 +122,7 @@ def textMatch():
                  if record in topkents:
                      continue
                  else:
-                     topkents.append(record)
+                     topkents.append(record[37:])
              matchedChunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
                  
          if chunk['class'] == 'relation':
@@ -150,9 +132,9 @@ def textMatch():
                  results = []
                  max_score = 0
                  uris = []
-                 results = t.get_nns_by_vector(list(labeltovec(phrase)),100)
-                 for id in results:
-                     uris +=  numberlabelhash[id]
+                 result = t.get_nns_by_vector(list(labeltovec(phrase)),100)
+                 for id in result:
+                     uris +=  numberlabelhash[str(id)]
                  seen = set()
                  seen_add = seen.add
                  uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))][:30]
@@ -161,7 +143,6 @@ def textMatch():
              else:
                  print "%s in cache"%phrase
                  matchedChunks.append({'chunk':chunk, 'topkmatches': cache[phrase], 'class': 'relation'})
-                        
     return json.dumps(matchedChunks)
 
 if __name__ == '__main__':
