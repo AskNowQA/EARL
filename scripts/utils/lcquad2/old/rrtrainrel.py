@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 
 torch.manual_seed(1)
-d = json.loads(open('reranktrain1.json').read())
+d = json.loads(open('reranktrain2.json').read())
 inputs = []
 outputs = []
 ocount = 0
@@ -16,7 +16,7 @@ for item in d:
         outputs.append(1.0)
         ocount += 1
     if item['truerelation'] == 0 and item['trueentity'] == -1:
-        if zcount%4 == 0:
+        if zcount%80 == 0:
             inputs.append([item['connections'],item['esrank'],item['sumofhops']])
             outputs.append(0.0)
             _zcount += 1
@@ -25,7 +25,7 @@ for item in d:
 print(ocount,zcount,_zcount)
 
 
-f = open('lcquad2.0.json')
+f = open('../LC-QuAD2.0/dataset/test.json')
 s = f.read()
 d1 = json.loads(s)
 f.close()
@@ -36,12 +36,12 @@ lcqgoldquestions = []
 for item in d1:
     itarr = []
     lcqgoldquestions.append(item['question'])
-    _ents = re.findall( r'wd:(.*?) ', item['sparql_wikidata'])
-    for ent in _ents:
-        itarr.append( 'http://wikidata.dbpedia.org/resource/'+ent )
+    _rels = re.findall( r'wdt:(.*?) ', item['sparql_wikidata'])
+    for rel in _rels:
+        itarr.append(rel)
     lcqgold.append(itarr)
 
-f = open('jointonlyparse1.json')
+f = open('../with2hoppreds1.json')
 s = f.read()
 d2 = json.loads(s)
 f.close()
@@ -87,15 +87,17 @@ while 1:
     total = 0
     tlqi = 0
     with torch.no_grad():
-        for lcqitem,item,question in zip(lcqgold[:1000],d2[:1000],lcqgoldquestions[:1000]):
+        for lcqitem,item in zip(lcqgold,d2):
             for lcquri in lcqitem:
-                for _k,_v in item['nodefeatures'].iteritems():
+                if len(item[1]) == 0:
+                    continue
+                for _k,_v in item[1]['rerankedlists'].iteritems():
                     reranked = []
                     uris = []
                     featurevectors = []
-                    for uri,features in _v.iteritems():
-                        uris.append(uri)
-                        featurevectors.append([features['connections'],features['esrank'],features['sumofhops']])
+                    for uridict in _v:
+                        uris.append(uridict[1][0])
+                        featurevectors.append([uridict[1][1]['connections'],uridict[1][1]['esrank'],uridict[1][1]['sumofhops']])
                     preds = model(torch.FloatTensor(featurevectors).cuda()).cuda()
                     preds = preds.reshape(-1).cpu().numpy()
                     reranked = [(float(pred),uri) for pred,uri in zip(preds,uris)]
@@ -104,7 +106,6 @@ while 1:
                         true += 1
                     else:
                         false += 1
-
     print(iter,true,besttrue,"epoch/true/besttrue")
     if true > besttrue:
         print('saved')
