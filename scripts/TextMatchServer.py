@@ -30,9 +30,9 @@ try:
     model = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
     print("loded fastext, loading relation labels")
     cache = {}
-    numberlabelhash = json.loads(open('../data/predtypeurls1.json').read())
+    numberlabelhash = json.loads(open('../data/predonlyurls1.json').read())
     t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
-    t.load('../data/predtype1.ann')
+    t.load('../data/predonly1.ann')
 except Exception,e:
     print e
     sys.exit(1)            
@@ -84,6 +84,7 @@ def ftwv():
     chunks = d['chunks'] 
     vectors = []
     for chunk in chunks:
+        print(chunk)
         phrase_1 = chunk.split(" ")
         vw_phrase_1 = []
         for phrase in phrase_1:
@@ -134,7 +135,7 @@ def textMatch():
                  uris = []
                  result = t.get_nns_by_vector(list(labeltovec(phrase)),100)
                  for id in result:
-                     uris +=  numberlabelhash[str(id)]
+                     uris.append(numberlabelhash[str(id)])
                  seen = set()
                  seen_add = seen.add
                  uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))][:30]
