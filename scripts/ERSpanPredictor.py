@@ -100,9 +100,6 @@ class ERSpanDetector():
     def __init__(self):
        print("Initialising ER span detector")
        self.es = Elasticsearch()
-       self.model = LSTMTagger(456, 456, 4).cuda()
-       self.model.load_state_dict(torch.load('../data/erspanlstm90.51.model'))#,map_location='cpu'))
-       self.model.eval()
        self.entitymodel = LSTMTaggerEntity(456, 456, 4).cuda()
        self.entitymodel.load_state_dict(torch.load('../data/espan98.0756.model'))
        self.entitymodel.eval()
@@ -185,27 +182,21 @@ class ERSpanDetector():
         for i in range(50 - len(wordvectors)):
             wordvectors.append(nullvector)
         testxtensors = torch.tensor([wordvectors],dtype=torch.float).cuda()
-        preds = self.model(testxtensors)[0:len(chunks)]
         epreds = self.entitymodel(testxtensors)[0:len(chunks)]
-        seqs = beam_search_decoder(preds.detach().cpu().numpy(),3)
-        eseqs = beam_search_decoder(epreds.detach().cpu().numpy(),3)
+        eseqs = beam_search_decoder(epreds.detach().cpu().numpy(),1)
         allerpredictions = []
-        for seq,eseq in zip(seqs,eseqs):
+        for eseq in eseqs:
             #relations
             erpredictions = []
-            pred_labels = seq[0]
             entity_labels = eseq[0]
             predwordtuplelist = []
-            for pred,word,ent in zip(pred_labels,q.split(' '),entity_labels):
-                if ent == 1:
-                    predwordtuplelist.append((word,ent))
-                else:
-                    predwordtuplelist.append((word,pred))
+            for word,ent in zip(q.split(' '),entity_labels):
+                predwordtuplelist.append((word,ent))
             predgroup = [tuple(i for i in e) for _, e in groupby(predwordtuplelist, lambda x: x[1])]
             entpredgroups = []
             for item in predgroup:
                 for t in item:
-                    if t[1] == 2 or t[1] == 1:
+                    if  t[1] == 1:
                         entpredgroups.append(item)
                         break
             for item in entpredgroups:
@@ -214,8 +205,6 @@ class ERSpanDetector():
                     chunk += ' '+t[0]
                 if item[0][1] == 1:
                     erpredictions.append({'chunk': chunk.strip(), 'surfacestart': -1, 'surfacelength':-1, 'class':'entity'})
-                if item[0][1] == 2:
-                    erpredictions.append({'chunk': chunk.strip(), 'surfacestart': -1, 'surfacelength':-1, 'class':'relation'})
             allerpredictions.append(erpredictions)
         return allerpredictions
 
@@ -228,6 +217,8 @@ if __name__ == '__main__':
 #    print(e.erspan("who is the father of the mother of barack obama"))
 #    print(e.erspan("How many rivers flow through Bonn?"))
 #    print(e.erspan("how many rivers flow through bonn?"))
-    print(e.erspan("Which company developed Skype ?"))
-    print(e.erspan("List all the musicals with music by Elton John."))
-    print(e.erspan("Give me the names of professional skateboarders of India"))
+#    print(e.erspan("Which company developed Skype ?"))
+#    print(e.erspan("List all the musicals with music by Elton John."))
+#    print(e.erspan("Give me the names of professional skateboarders of India"))
+    print(e.erspan("What award did Robert Zemeckis receive for his work in Forrest Gump ? "))
+
