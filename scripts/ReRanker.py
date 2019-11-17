@@ -61,6 +61,8 @@ class ReRanker:
             preds = self.model(x).to(device).reshape(-1).cpu().detach().numpy()
             l = [(float(p),u) for p,u in zip(preds, chunk['topkmatches'])]
             reranked = sorted(l, key=lambda x: x[0], reverse=True)
+            if reranked[0][0] < 0.5:
+                continue
             reranked = [x[1] for x in reranked]
             cchunk = copy.deepcopy(chunk)
             cchunk['reranked'] = reranked
