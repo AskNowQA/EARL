@@ -3,17 +3,11 @@
 import json,sys
 import itertools
 from operator import itemgetter
-import sparql
 
 class JointLinker:
     def __init__(self):
         print "Joint Linker initializing"
-        self.sparql = sparql.Service("https://query.wikidata.org/sparql", "utf-8", "GET")
-        result = self.sparql.query("SELECT ?item ?itemLabel WHERE {  ?item wdt:P31 wd:Q146} LIMIT 1")
-        print(result)
         print "Joint Linker initialized"
-
-    
 
     def jointLinker(self, topklists):
         lists = []

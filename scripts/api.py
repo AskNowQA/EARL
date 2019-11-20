@@ -35,13 +35,16 @@ def processQuery():
         print err
         return 422
     print "Query: %s"%json.dumps(nlquery) 
-    erprediction = e.erspan(nlquery)[0]
-    print "ER Predictions: %s"%json.dumps(erprediction)
-    topkmatches = t.textMatch(erprediction, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches)
-    reranked = r.rerank(topkmatches, nlquery)
-    print "ReRanked lists: %s"%json.dumps(reranked)
-    return json.dumps(reranked, indent=4, sort_keys=True)
+    erpredictions = e.erspan(nlquery)
+    rerankedlists = []
+    for erprediction in erpredictions:
+        print "ER Predictions: %s"%json.dumps(erprediction)
+        topkmatches = t.textMatch(erprediction, pagerankflag)
+        print "Top text matches: %s"%json.dumps(topkmatches)
+        reranked = r.rerank(topkmatches, nlquery)
+        print "ReRanked lists: %s"%json.dumps(reranked)
+        rerankedlists.append(reranked)
+    return json.dumps(rerankedlists, indent=4, sort_keys=True)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)

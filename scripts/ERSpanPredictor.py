@@ -183,7 +183,7 @@ class ERSpanDetector():
             wordvectors.append(nullvector)
         testxtensors = torch.tensor([wordvectors],dtype=torch.float).cuda()
         epreds = self.entitymodel(testxtensors)[0:len(chunks)]
-        eseqs = beam_search_decoder(epreds.detach().cpu().numpy(),1)
+        eseqs = beam_search_decoder(epreds.detach().cpu().numpy(),5)
         allerpredictions = []
         for eseq in eseqs:
             #relations
