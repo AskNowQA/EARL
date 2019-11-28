@@ -1,9 +1,16 @@
 import sys,os,json,re,urllib2
 from elasticsearch import Elasticsearch
 import torch
+from numpy import dot
+import itertools
+import traceback
+from numpy.linalg import norm
+import numpy as np
+from annoy import AnnoyIndex
 
 es = Elasticsearch()
-
+t = AnnoyIndex(200,'dot')
+t.load('../../../data/wikiembedrel1.ann')
 dlcqtrain = json.loads(open('LC-QuAD2.0/dataset/test.json').read())
 dquerytrain = json.loads(open('embedsimpletest1.json').read())
 
@@ -18,9 +25,44 @@ def getembedding(entid):
         return None
     return None
 
+def getjointembedding(chunkembeddings, chunkindex, entid, embedding):
+    bestdot = -1
+    for qchunkindex,qentities in chunkembeddings.items():
+        if chunkindex == qchunkindex:
+            continue
+        for qentid,qembedding in qentities.items():
+            queryrel = np.asarray(qembedding) - np.asarray(embedding) 
+            matchedrels = t.get_nns_by_vector(queryrel, 10, include_distances = True)
+            if matchedrels[1][0] > bestdot:
+                bestdot = matchedrels[1][0]
+            matchedrels = t.get_nns_by_vector(np.negative(queryrel), 10, include_distances = True)
+            if matchedrels[1][0] > bestdot:
+                bestdot = matchedrels[1][0]
+    return embedding + [bestdot]
+
+
+def getmeanrank(combination, listoflistofentities):
+    ranktot = 0
+    for uri1 in combination:
+        found = False
+        for l in listoflistofentities:
+            if found:
+                continue
+            for idx,uri2 in enumerate(l):
+                if uri1 == uri2:
+                    ranktot += idx
+                    found = True
+                    break
+    ranktot /= float(len(listoflistofentities))
+    return ranktot
+                 
+            
 
 trainingdata = []
+c = 0
 for gold,query in zip(dlcqtrain,dquerytrain):
+    print(c)
+    c+= 1
     try:
         if gold['uid'] != query[0]:
             print('uid mismatch')
@@ -30,37 +72,70 @@ for gold,query in zip(dlcqtrain,dquerytrain):
             continue
         goldents = re.findall( r'wd:(.*?) ', gold['sparql_wikidata'])
         question = gold['question']
-        req = urllib2.Request('http://localhost:8887/ftwv')
-        req.add_header('Content-Type', 'application/json')
-        inputjson = {'chunks':[question]}
-        response = urllib2.urlopen(req, json.dumps(inputjson))
-        embedding = json.loads(response.read().decode('utf8'))[0]
-        questionembedding = embedding
+        questionembedding = None
+        if question and len(question) > 0:
+            req = urllib2.Request('http://localhost:8887/ftwv')
+            req.add_header('Content-Type', 'application/json')
+            inputjson = {'chunks':[question]}
+            response = urllib2.urlopen(req, json.dumps(inputjson))
+            embedding = json.loads(response.read().decode('utf8'))[0]
+            questionembedding = embedding
         paraphrased_question = gold['paraphrased_question']
-        req = urllib2.Request('http://localhost:8887/ftwv')
-        req.add_header('Content-Type', 'application/json')
-        inputjson = {'chunks':[paraphrased_question]}
-        response = urllib2.urlopen(req, json.dumps(inputjson))
-        embedding = json.loads(response.read().decode('utf8'))[0]
-        paraphrased_questionembedding = embedding
-        for chunk in query:
+        paraphrased_questionembedding = None
+        if paraphrased_question and len(paraphrased_question) > 0:
+            req = urllib2.Request('http://localhost:8887/ftwv')
+            req.add_header('Content-Type', 'application/json')
+            inputjson = {'chunks':[paraphrased_question]}
+            response = urllib2.urlopen(req, json.dumps(inputjson))
+            embedding = json.loads(response.read().decode('utf8'))[0]
+            if not embedding:
+                continue
+            paraphrased_questionembedding = embedding
+        if not questionembedding and not paraphrased_questionembedding:
+            continue
+        chunkembeddings = {}
+        listoflistofentities = []
+        for chunkindex,chunk in enumerate(query):
             for idx,entid in enumerate(chunk['topkmatches']):
                 embedding = getembedding(entid)
-                if embedding:
-                    if entid in goldents:
-                        if len(question) > 0 and len(question) < 100:
-                            trainingdata.append([entid,idx,embedding,question,questionembedding,1.0])
-                        if len(paraphrased_question) > 0 and len(paraphrased_question) < 100:
-                            trainingdata.append([entid,idx,embedding,paraphrased_question,paraphrased_questionembedding,1.0])
-                    else:
-                        if len(question) > 0 and len(question) < 100:
-                            trainingdata.append([entid,idx,embedding,question,questionembedding,0.0])
-                        if len(paraphrased_question) > 0 and len(paraphrased_question) < 100:
-                            trainingdata.append([entid,idx,embedding,paraphrased_question,paraphrased_questionembedding,0.0])
+                if not embedding:
+                    print("no embedding for %s"%entid)
+                    continue
+                chunkembeddings[entid] = embedding
+            listoflistofentities.append(query[chunkindex]['topkmatches'])
+        true = False
+        false = False
+        if (len(query)) > 3:
+            continue
+        for combination in itertools.product(*listoflistofentities):
+            if true and false:
+                break
+            meanvector = None
+            meanranks = -1
+            vectors = [chunkembeddings[x] for x in  list(combination)]
+            if len(query) < 2:
+                meanvector = vectors[0]
+            else:
+                meanvector = list(np.mean(np.array(vectors), axis=0))
+            meanvector = meanvector+[getmeanrank(combination,listoflistofentities)]
+            if set(combination) == set(goldents) and not true:
+                print("total match")
+                true = True
+                if len(question) > 0 and len(question) < 200 and questionembedding:
+                    trainingdata.append([meanvector,questionembedding,1.0])
+                if len(question) > 0 and len(question) < 200 and paraphrased_questionembedding:
+                    trainingdata.append([meanvector,paraphrased_questionembedding,1.0])
+            elif not false:
+                false = True
+                if len(question) > 0 and len(question) < 200 and questionembedding:
+                    trainingdata.append([meanvector,questionembedding,0.0]) 
+                if len(question) > 0 and len(question) < 200 and paraphrased_questionembedding:
+                    trainingdata.append([meanvector,paraphrased_questionembedding,0.0])
     except Exception as e:
         print(e)
+        #traceback.print_exc()
+        #sys.exit(1)
 
-f = open('embedsimpletestvectors1.json','w')
+f = open('embedjointtestvectors1.json','w')
 f.write(json.dumps(trainingdata))
 f.close()
-             
