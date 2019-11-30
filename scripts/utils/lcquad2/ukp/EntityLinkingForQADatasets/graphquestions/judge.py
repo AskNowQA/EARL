@@ -38,23 +38,22 @@ for queryitem,golditem in zip(d,gold):
         print('uid mismatch')
         sys.exit(1)
     queryentities = []
-    for chunks in queryitem[1]:
-        for chunk in chunks:
-            if 'reranked' in chunk:
-                for entid in chunk['reranked']:
-                    queryentities.append(entid)
-                    break
-    print(golditem['entities'])
-    print(queryentities)
     print(golditem['question'])
-    print( chunk['chunk']['chunk'])
+    print(golditem['entities'])
+    for chunk in queryitem[1][0]:
+        print( chunk['chunk']['chunk'])
+        if 'reranked' in chunk:
+            for entid in chunk['reranked']:
+                queryentities.append(entid)
+                break
+    print(set(queryentities))
     for goldentity in golditem['entities']:
         totalentchunks += 1
         if goldentity in queryentities:
             tpentity += 1
         else:
             fnentity += 1
-    for queryentity in queryentities:
+    for queryentity in set(queryentities):
         if queryentity not in golditem['entities']:
             fpentity += 1
 
