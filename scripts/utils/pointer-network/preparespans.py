@@ -12,7 +12,7 @@ for item in d:
     seen[item['uid']] = None
     q = item['question']
     #print(q)
-    #q = re.sub("\s*\?", "", q.strip())
+    q = re.sub("\s*\?", "", q.strip())
     #print(q)
     qspan = [0]*len(q)
     for entity,span in item['spanmatch'].items():
@@ -43,7 +43,7 @@ for item in d:
     seen[item['uid']] = None
     q = item['question'].lower()
     #print(q)
-    #q = re.sub("\s*\?", "", q.strip())
+    q = re.sub("\s*\?", "", q.strip())
     #print(q)
     qspan = [0]*len(q)
     for entity,span in item['spanmatch'].items():

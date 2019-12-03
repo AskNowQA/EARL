@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 
 torch.manual_seed(1)
-d = json.loads(open('embedsimpletrainvectors1.json').read())
+d = json.loads(open('unifiedtrainvectors1.json').read())
 inputs = []
 outputs = []
 ocount = 0
@@ -17,16 +17,14 @@ for item in d:
         outputs.append(1.0)
         ocount += 1
     else:
-        if zcount%40 == 0:
-            vector = [item[1]] + item[2] + item[4]
-            inputs.append(vector)
-            outputs.append(0.0)
-            _zcount += 1
-        zcount += 1
+        vector = [item[1]]+item[2]+item[4]
+        inputs.append(vector)
+        outputs.append(0.0)
+        _zcount += 1
 
-print(ocount,zcount)
+print(ocount,_zcount)
 
-d = json.loads(open('embedsimpletestvectors1.json').read())
+d = json.loads(open('unifiedtestvectors1.json').read())
 testinputs = []
 testoutputs = []
 ocount = 0
@@ -39,23 +37,16 @@ for item in d:
         testoutputs.append(1.0)
         ocount += 1
     else:
-        if zcount%30 == 0:
-            vector = [item[1]] + item[2] + item[4]
-            testinputs.append(vector)
-            testoutputs.append(0.0)
-            _zcount += 1
-        zcount += 1
+        vector = [item[1]]+item[2]+item[4]
+        testinputs.append(vector)
+        testoutputs.append(0.0)
+        _zcount += 1
 
-
-f = open('testentityspans1.json')
-s = f.read()
-d2 = json.loads(s)
-f.close()
 
 
 device = torch.device('cuda')
-batch_size = 5000
-N, D_in, H1, H2, H3, D_out = batch_size, 501, 300, 100, 10, 1
+batch_size = 10000
+N, D_in, H1, H2, H3 ,H4, D_out = batch_size, 501, 300, 150, 70, 30, 1
 
 x = torch.FloatTensor(inputs).cuda()
 y = torch.FloatTensor(outputs).cuda()
@@ -69,12 +60,14 @@ model = torch.nn.Sequential(
           torch.nn.ReLU(),
           torch.nn.Linear(H2, H3),
           torch.nn.ReLU(),
-          torch.nn.Linear(H3, D_out)
+          torch.nn.Linear(H3, H4),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H4, D_out)
         ).to(device)
 
 loss_fn = torch.nn.MSELoss(reduction='mean')
 #loss_fn = torch.nn.BCELoss(reduction='mean')
-optimizer = optim.SGD(model.parameters(), lr=0.001)#,nesterov=True, momentum=0.5)
+optimizer = optim.SGD(model.parameters(), lr=0.001)
 iter = 0
 besttrue = 0
 urilabeldict = {}
@@ -98,7 +91,7 @@ while 1:
             testloss = testlossfn(preds.reshape(-1),ytest)
             print("test set mseloss = %f bestloss = %f"%(testloss, bestloss))
             if testloss < bestloss:
-                bestloss = loss
-                torch.save(model.state_dict(), 'embedentreranker.model')
+                bestloss = testloss
+                torch.save(model.state_dict(), 'jointreranker.model')
                  
                 

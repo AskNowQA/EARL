@@ -118,8 +118,6 @@ def textMatch():
              #if pagerankflag:
              #    _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
              for record in _topkents:
-                 if len(topkents) >= 30:
-                     break
                  if record in topkents:
                      continue
                  else:

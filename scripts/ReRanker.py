@@ -10,7 +10,8 @@ class ReRanker:
         self.es = Elasticsearch()
         print "ReRanker initializing"
         try:
-            N, D_in, H1, H2, H3, D_out = 100, 501, 300, 100, 10, 1
+            N, D_in, H1, H2, H3 ,H4, D_out = 200, 501, 300, 150, 70, 30, 1
+
             self.model = torch.nn.Sequential(
               torch.nn.Linear(D_in, H1),
               torch.nn.ReLU(),
@@ -18,9 +19,11 @@ class ReRanker:
               torch.nn.ReLU(),
               torch.nn.Linear(H2, H3),
               torch.nn.ReLU(),
-              torch.nn.Linear(H3, D_out)
+              torch.nn.Linear(H3, H4),
+              torch.nn.ReLU(),
+              torch.nn.Linear(H4, D_out)
             ).to(device)
-            self.model.load_state_dict(torch.load('../data/embedentreranker.040.model'))
+            self.model.load_state_dict(torch.load('../data/jointreranker.049573.model'))
             self.model.eval()
         except Exception,e:
             print e
