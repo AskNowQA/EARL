@@ -3,6 +3,7 @@
 import numpy as np
 from elasticsearch import Elasticsearch
 import urllib2,copy,json,sys,torch,re,requests
+from nltk.util import ngrams
 device = torch.device('cuda')
 
 class ReRanker:
@@ -10,7 +11,7 @@ class ReRanker:
         self.es = Elasticsearch()
         print "ReRanker initializing"
         try:
-            N, D_in, H1, H2, H3 ,H4, D_out = 200, 801, 500, 300, 150, 50, 1
+            N, D_in, H1, H2, H3 ,H4, D_out = 200, 802, 500, 300, 150, 50, 1
 
             self.model = torch.nn.Sequential(
               torch.nn.Linear(D_in, H1),
@@ -23,7 +24,7 @@ class ReRanker:
               torch.nn.ReLU(),
               torch.nn.Linear(H4, D_out)
             ).to(device)
-            self.model.load_state_dict(torch.load('../../../data/jointreranker.037242.model'))
+            self.model.load_state_dict(torch.load('../../../data/jointreranker.059501.model'))
             self.model.eval()
         except Exception,e:
             print e
@@ -55,18 +56,26 @@ class ReRanker:
         #questionembedding
         r = requests.post("http://localhost:8887/ftwv",json={'chunks': [nlquery]})
         questionembedding = r.json()[0]
-        for idx,word in enumerate(nlquery.split(' ')):
-            #word vector
-            r = requests.post("http://localhost:8887/ftwv",json={'chunks': [word]})
-            wordvector = r.json()[0]
-            #n
-            esresult = self.es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":3})
+        tokens = [token for token in nlquery.split(" ") if token != ""]
+        ngramarr = []
+        for n in range(1,4):
+            ngramwords = list(ngrams(tokens, n))
+            for tup in ngramwords:
+                ngramjoined = ' '.join(tup)
+                ngramarr.append([ngramjoined,n])
+                #word vector
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [x[0] for x in ngramarr]})
+        wordvectors = r.json()
+        for wordvector,ngramtup in zip(wordvectors,ngramarr):
+            word = ngramtup[0]
+            n = ngramtup[1]
+            esresult = self.es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":10})
             esresults = esresult['hits']['hits']
             if len(esresults) > 0:
                 for idx,esresult in enumerate(esresults):
                     entityembedding = self.getentityembedding(esresult['_source']['uri'])
                     if entityembedding and questionembedding and wordvector:
-                        candidatevectors.append([entityembedding+[idx]+questionembedding+wordvector])
+                        candidatevectors.append([entityembedding+questionembedding+wordvector+[idx,n]])
                         candidateids.append(esresult['_source']['uri'][37:])
         x = torch.FloatTensor(candidatevectors).to(device)
         preds = self.model(x).to(device).reshape(-1).cpu().detach().numpy()

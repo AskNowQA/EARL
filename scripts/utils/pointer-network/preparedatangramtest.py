@@ -3,7 +3,8 @@ import json
 from elasticsearch import Elasticsearch
 from fuzzywuzzy import fuzz
 import requests
-import re
+import re,random
+from nltk.util import ngrams
 from textblob import TextBlob
 
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
@@ -24,36 +25,46 @@ def getembedding(enturl):
 
 
 def givewordvectors(question,entities):
-    if not question:
+    try:
+        if not question:
+            return []
+        q = question
+        q = re.sub("\s*\?", "", q.strip())
+        candidatevectors = []
+        #questionembedding
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [q]})
+        questionembedding = r.json()[0]
+        tokens = [token for token in q.split(" ") if token != ""]
+        true = []
+        false = []
+        ngramarr = []
+        for n in range(1,4):
+            ngramwords = list(ngrams(tokens, n))
+            for tup in ngramwords:
+                ngramjoined = ' '.join(tup)
+                ngramarr.append([ngramjoined,n])
+                #word vector
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [x[0] for x in ngramarr]})
+        wordvectors = r.json()
+        for wordvector,ngramtup in zip(wordvectors,ngramarr):
+            word = ngramtup[0]
+            n = ngramtup[1]
+            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":10})
+            esresults = esresult['hits']['hits']
+            if len(esresults) > 0:
+                for idx,esresult in enumerate(esresults):
+                    entityembedding = getembedding(esresult['_source']['uri'])
+                    if entityembedding and questionembedding and wordvector:
+                        if esresult['_source']['uri'][37:] in entities:
+                            true.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],1.0])
+                        else:
+                            false.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],0.0])
+        candidatevectors += true
+        candidatevectors += random.sample(false,k=len(true)) 
+        return candidatevectors
+    except Exception as e:
+        print(e)
         return []
-    q = question
-    q = re.sub("\s*\?", "", q.strip())
-    result = TextBlob(q)
-    chunks = result.tags
-    candidatevectors = []
-    chunkswords = []
-    #questionembedding
-    r = requests.post("http://localhost:8887/ftwv",json={'chunks': [q]})
-    questionembedding = r.json()[0]
-    for chunk,word in zip(chunks,q.split(' ')):
-        chunkswords.append((chunk,word))
-    for idx,chunkwordtuple in enumerate(chunkswords):
-        #word vector
-        word = chunkwordtuple[1]
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [word]})
-        wordvector = r.json()[0]
-        #n
-        esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":3})
-        esresults = esresult['hits']['hits']
-        if len(esresults) > 0:
-            for idx,esresult in enumerate(esresults):
-                entityembedding = getembedding(esresult['_source']['uri'])
-                if entityembedding and questionembedding and wordvector:
-                    if esresult['_source']['uri'][37:] in entities:
-                        candidatevectors.append([entityembedding+[idx]+questionembedding+wordvector,esresult['_source']['uri'][37:],1.0])
-                    else:
-                        candidatevectors.append([entityembedding+[idx]+questionembedding+wordvector,esresult['_source']['uri'][37:],0.0])
-    return candidatevectors
 
 
 d = json.loads(open('unifieddatasets/unifiedtestdeduplicate.json').read())
@@ -63,5 +74,5 @@ for idx,item in enumerate(d):
     candidatevectors = givewordvectors(item['question'],item['entities'])
     labelledcandidates.append(candidatevectors)
 f = open('unifieddatasets/pointercandidatevectorstest1.json','w')
-f.write(json.dumps(labelledcandidates))
+f.write(json.dumps(labelledcandidates,indent=4))
 f.close()

@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 
 torch.manual_seed(1)
-d = json.loads(open('unifieddatasets/pointercandidatevectors1.json').read())
+d = json.loads(open('unifieddatasets/pointercandidatevectorstest1.json').read())
 inputs = []
 outputs = []
 ocount = 0
@@ -18,39 +18,44 @@ for question in d:
             outputs.append(1.0)
             ocount += 1
         else:
-            if _zcount%90 == 0:
-                vector = word[0]
-                inputs.append(vector)
-                outputs.append(0.0) 
-                zcount += 1
-            _zcount += 1
+            vector = word[0]
+            inputs.append(vector)
+            outputs.append(0.0) 
+            zcount += 1
 
 print(ocount,_zcount, zcount)
 
-d = json.loads(open('unifieddatasets/pointercandidatevectorstest1.json').read())
-testinputs = []
-testoutputs = []
-ocount = 0
-zcount = 0
-_zcount = 0
-for question in d:
-    for word in question:
-        if word[2] == 1.0:
-            vector = word[0]
-            testinputs.append(vector)
-            testoutputs.append(1.0)
-            ocount += 1
-        else:
-            vector = word[0]
-            testinputs.append(vector)
-            testoutputs.append(0.0)
-            _zcount += 1
+testinputs = inputs[int(0.9*len(inputs)):]
+testoutputs = outputs[int(0.9*len(outputs)):]
+inputs = inputs[:int(0.9*len(inputs))]
+outputs = outputs[:int(0.9*len(outputs))]
+
+#d = json.loads(open('unifieddatasets/pointercandidatevectorstest1.json').read())
+#testinputs = []
+#testoutputs = []
+#ocount = 0
+#zcount = 0
+#_zcount = 0
+#for question in d:
+#    for word in question:
+#        if word[2] == 1.0:
+#            vector = word[0]
+#            testinputs.append(vector)
+#            testoutputs.append(1.0)
+#            ocount += 1
+#        else:
+#            vector = word[0]
+#            testinputs.append(vector)
+#            testoutputs.append(0.0)
+#            _zcount += 1
+
+
 
 
 
 device = torch.device('cuda')
 batch_size = 10000
-N, D_in, H1, H2, H3 ,H4, D_out = batch_size, 801, 500, 300, 150, 50, 1
+N, D_in, H1, H2, H3 ,H4, D_out = batch_size, 802, 500, 300, 150, 50, 1
 
 x = torch.FloatTensor(inputs).cuda()
 y = torch.FloatTensor(outputs).cuda()
