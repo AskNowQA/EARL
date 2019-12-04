@@ -19,8 +19,8 @@ parser.add_argument('--low', type=int, default=0, help='lowest value in dataset 
 parser.add_argument('--high', type=int, default=100, help='highest value in dataset (default: 100)')
 parser.add_argument('--min-length', type=int, default=5, help='minimum length of sequences (default: 5)')
 parser.add_argument('--max-length', type=int, default=10, help='maximum length of sequences (default: 20)')
-parser.add_argument('--train-samples', type=int, default=100000, help='number of samples in train set (default: 100000)')
-parser.add_argument('--test-samples', type=int, default=1000, help='number of samples in test set (default: 1000)')
+parser.add_argument('--train-samples', type=int, default=2, help='number of samples in train set (default: 100000)')
+parser.add_argument('--test-samples', type=int, default=2, help='number of samples in test set (default: 1000)')
 
 parser.add_argument('--emb-dim', type=int, default=8, help='embedding dimension (default: 8)')
 parser.add_argument('--batch-size', type=int, default=256, help='input batch size for training (default: 256)')
@@ -98,6 +98,7 @@ def main():
 		# Train
 		model.train()
 		for batch_idx, (seq, length, target) in enumerate(train_loader):
+			print(seq,length,target)
 			seq, length, target = seq.to(device), length.to(device), target.to(device)
 
 			optimizer.zero_grad()

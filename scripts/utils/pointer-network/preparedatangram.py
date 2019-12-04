@@ -9,91 +9,64 @@ from textblob import TextBlob
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
 es = Elasticsearch()
 
-def givewordvectors(question):
-    q = question
-    #q = re.sub("\s*\?", "", q.strip())
-    result = TextBlob(q)
-    chunks = result.tags
-    fuzzscores = []
-    wordvectors = []
-    chunkswords = []
-    for chunk,word in zip(chunks,q.split(' ')):
-        chunkswords.append((chunk,word))
-    for idx,chunkwordtuple in enumerate(chunkswords):
-        word = chunkwordtuple[1]
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [word]})
-        embedding = r.json()[0]
-        wordvector = embedding
-        #n-1,n
-        if idx > 0:
-            word = chunkswords[idx-1][1] + ' ' + chunkswords[idx][1]
-            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel"]}},"size":10})
-            esresults = esresult['hits']['hits']
-            if len(esresults) > 0:
-                for esresult in esresults:
-                    wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
-                wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
-            else:
-                wordvector +=  10*[0.0,0.0,0.0]
-        else:
-            wordvector +=  10*[0.0,0.0,0.0]
-        #n
-        word = chunkwordtuple[1] 
-        esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel"]}},"size":10})
-        esresults = esresult['hits']['hits']
-        if len(esresults) > 0:
-            for esresult in esresults:
-                wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
-            wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
-        else:
-            wordvector +=  10*[0.0,0.0,0.0]
-        #n,n+1
-        if idx < len(chunkswords)-1:
-            word = chunkswords[idx][1] + ' ' + chunkswords[idx+1][1]
-            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel"]}},"size":10})
-            esresults = esresult['hits']['hits']
-            if len(esresults) > 0:
-                for esresult in esresults:
-                    wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
-                wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
-            else:
-                wordvector +=  10*[0.0,0.0,0.0]
-        else:
-            wordvector +=  10*[0.0,0.0,0.0]
-        #n-1,n,n+1
-        if idx > 0 and idx < len(chunkswords)-1:
-            word = chunkswords[idx-1][1] + ' ' + chunkswords[idx][1] + ' ' + chunkswords[idx+1][1]
-            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word,"fields":["wikidataLabel"]}},"size":10})
-            esresults = esresult['hits']['hits']
-            if len(esresults) > 0:
-                for esresult in esresults:
-                    wordvector +=  [fuzz.ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.partial_ratio(word, esresult['_source']['wikidataLabel'])/100.0, fuzz.token_sort_ratio(word, esresult['_source']['wikidataLabel'])/100.0]
-                wordvector += (10-len(esresults)) * [0.0,0.0,0.0]
-            else:
-                wordvector +=  10*[0.0,0.0,0.0]
-        else:
-            wordvector +=  10*[0.0,0.0,0.0]
-        posonehot = len(postags)*[0.0]
-        posonehot[postags.index(chunk[1])] = 1
-        wordvector += posonehot
-        if len(wordvector) != 456:
-            print(len(wordvector))
-            print("word vec len wrong")
-            sys.exit(1)
-        wordvectors.append(wordvector)
-    return wordvectors
+
+def getembedding(enturl):
+    entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
+    res = es.search(index="wikidataembedsindex01", body={"query":{"term":{"key":{"value":entityurl}}}})
+    try:
+        embedding = [float(x) for x in res['hits']['hits'][0]['_source']['embedding']]
+        return embedding
+    except Exception as e:
+        print(enturl,' not found')
+        return None
+    return None
 
 
-d = json.loads(open('unifieddatasets/erspans.json').read())
-items = []
-for item in d:
-    wordvectors = givewordvectors(item['question'])
-    iu = {}
-    iu['question'] = item['question']
-    iu['wordvectors'] = wordvectors
-    iu['erspan'] = item['erspan']
-    items.append(iu)
-f = open('unifieddatasets/entityonlywordvecsngrams1.json','w')
-f.write(json.dumps(items))
+
+def givewordvectors(question,entities):
+    question = None
+    try:
+        if not question:
+            return []
+        q = question
+        q = re.sub("\s*\?", "", q.strip())
+        result = TextBlob(q)
+        chunks = result.tags
+        candidatevectors = []
+        chunkswords = []
+        #questionembedding
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [q]})
+        questionembedding = r.json()[0]
+        for chunk,word in zip(chunks,q.split(' ')):
+            chunkswords.append((chunk,word))
+        for idx,chunkwordtuple in enumerate(chunkswords):
+            #word vector
+            word = chunkwordtuple[1]
+            r = requests.post("http://localhost:8887/ftwv",json={'chunks': [word]})
+            wordvector = r.json()[0]
+            #n
+            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":3})
+            esresults = esresult['hits']['hits']
+            if len(esresults) > 0:
+                for idx,esresult in enumerate(esresults):
+                    entityembedding = getembedding(esresult['_source']['uri'])
+                    if entityembedding and questionembedding and wordvector:
+                        if esresult['_source']['uri'][37:] in entities:
+                            candidatevectors.append([entityembedding+[idx]+questionembedding+wordvector,esresult['_source']['uri'][37:],1.0])
+                        else:
+                            candidatevectors.append([entityembedding+[idx]+questionembedding+wordvector,esresult['_source']['uri'][37:],0.0])
+        return candidatevectors
+    except Exception as e:
+        print(e)
+        return []
+
+
+d = json.loads(open('unifieddatasets/unifiedtraindeduplicate.json').read())
+labelledcandidates = []
+for idx,item in enumerate(d):
+    print(idx,item['question'])
+    candidatevectors = givewordvectors(item['question'],item['entities'])
+    labelledcandidates.append(candidatevectors)
+f = open('unifieddatasets/pointercandidatevectors1.json','w')
+f.write(json.dumps(labelledcandidates))
 f.close()
-
