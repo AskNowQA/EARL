@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 
 torch.manual_seed(1)
-d = json.loads(open('unifieddatasets/pointercandidatevectorstest1.json').read())
+d = json.loads(open('unifieddatasets/pointercandidatevectorstrain1.json').read())
 inputs = []
 outputs = []
 ocount = 0
@@ -25,32 +25,25 @@ for question in d:
 
 print(ocount,_zcount, zcount)
 
-testinputs = inputs[int(0.9*len(inputs)):]
-testoutputs = outputs[int(0.9*len(outputs)):]
-inputs = inputs[:int(0.9*len(inputs))]
-outputs = outputs[:int(0.9*len(outputs))]
 
-#d = json.loads(open('unifieddatasets/pointercandidatevectorstest1.json').read())
-#testinputs = []
-#testoutputs = []
-#ocount = 0
-#zcount = 0
-#_zcount = 0
-#for question in d:
-#    for word in question:
-#        if word[2] == 1.0:
-#            vector = word[0]
-#            testinputs.append(vector)
-#            testoutputs.append(1.0)
-#            ocount += 1
-#        else:
-#            vector = word[0]
-#            testinputs.append(vector)
-#            testoutputs.append(0.0)
-#            _zcount += 1
-
-
-
+d = json.loads(open('unifieddatasets/pointercandidatevectorstest1.json').read())
+testinputs = []
+testoutputs = []
+ocount = 0
+zcount = 0
+_zcount = 0
+for question in d:
+    for word in question:
+        if word[2] == 1.0:
+            vector = word[0]
+            testinputs.append(vector)
+            testoutputs.append(1.0)
+            ocount += 1
+        else:
+            vector = word[0]
+            testinputs.append(vector)
+            testoutputs.append(0.0)
+            _zcount += 1
 
 
 device = torch.device('cuda')

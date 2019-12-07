@@ -9,8 +9,6 @@ from  TextMatch import TextMatch
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
-e = ERSpanDetector()
-t = TextMatch()
 r = ReRanker()
 
 reload(sys)
@@ -32,17 +30,11 @@ def processQuery():
     except Exception,err:
         print err
         return 422
+    reranked = []
     print "Query: %s"%json.dumps(nlquery) 
-    erpredictions = e.erspan(nlquery)
-    rerankedlists = []
-    for erprediction in erpredictions:
-        print "ER Predictions: %s"%json.dumps(erprediction)
-        topkmatches = t.textMatch(erprediction, pagerankflag)
-        print "Top text matches: %s"%json.dumps(topkmatches)
-        reranked = r.rerank(topkmatches, nlquery)
-        print "ReRanked lists: %s"%json.dumps(reranked)
-        rerankedlists.append(reranked)
-    return json.dumps(rerankedlists)
+    reranked = r.rerank(nlquery)
+    print "ReRanked lists: %s"%json.dumps(reranked)
+    return json.dumps(reranked)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)

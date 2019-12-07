@@ -24,7 +24,7 @@ class ReRanker:
               torch.nn.ReLU(),
               torch.nn.Linear(H4, D_out)
             ).to(device)
-            self.model.load_state_dict(torch.load('../../../data/jointreranker.059501.model'))
+            self.model.load_state_dict(torch.load('../../../data/jointreranker.049349.model'))
             self.model.eval()
         except Exception,e:
             print e
