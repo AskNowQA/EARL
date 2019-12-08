@@ -12,7 +12,7 @@ for item in d:
     unit = {}
     unit['uid'] = item['uid']
     unit['question'] = item['question']
-    _ents = re.findall( r'wd:(.*?) ', wikisparql)
+    _ents = re.findall( r'wd:([Q][0-9]*)', wikisparql)
     _rels = re.findall( r'wdt:(.*?) ',wikisparql)
     unit['entities'] = [ent for ent in _ents]
     unit['relations'] = [rel for rel in _rels]
