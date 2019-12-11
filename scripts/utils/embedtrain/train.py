@@ -12,19 +12,20 @@ zcount = 0
 _zcount = 0
 for item in d:
     if item[5] == 1.0:
-        vector = [item[1]] + item[2] + item[4]
+        vector =  item[2] + item[4]
         inputs.append(vector)
         outputs.append(1.0)
         ocount += 1
     else:
-        if zcount%40 == 0:
-            vector = [item[1]] + item[2] + item[4]
+        if zcount%35 == 0:
+            vector =  item[2] + item[4]
             inputs.append(vector)
             outputs.append(0.0)
             _zcount += 1
         zcount += 1
 
-print(ocount,zcount)
+print(ocount,zcount,_zcount)
+del d
 
 d = json.loads(open('embedsimpletestvectors1.json').read())
 testinputs = []
@@ -34,18 +35,18 @@ zcount = 0
 _zcount = 0
 for item in d:
     if item[5] == 1.0:
-        vector = [item[1]] + item[2] + item[4]
+        vector = item[2] + item[4]
         testinputs.append(vector)
         testoutputs.append(1.0)
         ocount += 1
     else:
         if zcount%30 == 0:
-            vector = [item[1]] + item[2] + item[4]
+            vector = item[2] + item[4]
             testinputs.append(vector)
             testoutputs.append(0.0)
             _zcount += 1
         zcount += 1
-
+del d
 
 f = open('testentityspans1.json')
 s = f.read()
@@ -55,7 +56,7 @@ f.close()
 
 device = torch.device('cuda')
 batch_size = 5000
-N, D_in, H1, H2, H3, D_out = batch_size, 501, 300, 100, 10, 1
+N, D_in, H1, H2, H3, D_out = batch_size, 500, 300, 100, 10, 1
 
 x = torch.FloatTensor(inputs).cuda()
 y = torch.FloatTensor(outputs).cuda()
@@ -98,7 +99,7 @@ while 1:
             testloss = testlossfn(preds.reshape(-1),ytest)
             print("test set mseloss = %f bestloss = %f"%(testloss, bestloss))
             if testloss < bestloss:
-                bestloss = loss
+                bestloss = testloss
                 torch.save(model.state_dict(), 'embedentreranker.model')
                  
                 
