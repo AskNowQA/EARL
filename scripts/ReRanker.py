@@ -20,7 +20,7 @@ class ReRanker:
               torch.nn.ReLU(),
               torch.nn.Linear(H3, D_out)
             ).to(device)
-            self.model.load_state_dict(torch.load('../data/embedentreranker.040.model'))
+            self.model.load_state_dict(torch.load('../data/embedentreranker.044678.model'))
             self.model.eval()
         except Exception,e:
             print e
@@ -48,7 +48,10 @@ class ReRanker:
 
     def rerank(self, topklists, nlquery):
         rerankedlists = []
-        questionembedding = self.getsentenceembedding(nlquery)
+        question = nlquery
+        for chunk in topklists:
+            question = question.replace(chunk['chunk']['chunk'], "")
+        questionembedding = self.getsentenceembedding(question)
         for chunk in topklists:
             inputfeatures = []
             for idx,entid in enumerate(chunk['topkmatches']):
