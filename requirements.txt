@@ -55,7 +55,7 @@ sklearn==0.0
 smart-open==1.5.7
 stop-words==2015.2.23.1
 tensorboard==1.8.0
-tensorflow==1.8.0
+tensorflow==1.15.0
 termcolor==1.1.0
 textblob==0.15.3
 torch==1.1.0
