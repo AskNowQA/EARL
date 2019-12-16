@@ -48,7 +48,7 @@ del d
 
 device = torch.device('cuda')
 batch_size = 5000
-N, D_in, H1, H2, H3, D_out = batch_size, 501, 300, 100, 10, 1
+N, D_in, H1, H2, H3, H4, H5, H6, D_out = batch_size, 501, 300, 200, 100, 50, 25, 10, 1
 
 x = torch.FloatTensor(inputs).cuda()
 y = torch.FloatTensor(outputs).cuda()
@@ -62,7 +62,13 @@ model = torch.nn.Sequential(
           torch.nn.ReLU(),
           torch.nn.Linear(H2, H3),
           torch.nn.ReLU(),
-          torch.nn.Linear(H3, D_out)
+          torch.nn.Linear(H3, H4),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H4, H5),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H5, H6),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H6, D_out)
         ).to(device)
 
 loss_fn = torch.nn.MSELoss(reduction='mean')

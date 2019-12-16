@@ -25,6 +25,8 @@ for gold,query in zip(dlcqtrain,dquerytrain):
         if gold['id'] != query[0]:
             print('uid mismatch')
             sys.exit(1)
+        if gold['source'] != 'webqtrain':
+            continue
         query = query[1]
         if len(query) == 0:
             continue

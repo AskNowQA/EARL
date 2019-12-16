@@ -16,6 +16,7 @@ for item in d:
     _rels = re.findall( r'wdt:(.*?) ',wikisparql)
     unit['entities'] = [ent for ent in _ents]
     unit['relations'] = [rel for rel in _rels]
+    unit['full'] = item
     gold.append(unit)
 
 f = open('simpleentembed1.json')
@@ -34,6 +35,7 @@ totalrelchunks = 0
 mrrent = 0
 mrrrel = 0
 chunkingerror = 0
+templatedict = {}
 for queryitem,golditem in zip(d,gold):
     if len(queryitem[1]) == 0:
         continue
@@ -45,7 +47,7 @@ for queryitem,golditem in zip(d,gold):
         if 'reranked' in chunk:
             for entid in chunk['reranked']:
                 queryentities.append(entid)
-                break
+    #            break
     print(golditem['entities'],queryentities, golditem['question'], chunk['chunk']['chunk'])
     for goldentity in golditem['entities']:
         totalentchunks += 1

@@ -43,7 +43,7 @@ for queryitem,golditem in zip(d,gold):
         print(chunk['chunk']['chunk'])
         for match in chunk['topkmatches']:
             queryentities.append(match)
-            #break
+            break
     print(golditem['entities'])
     print(queryentities)
     for goldentity in golditem['entities']:
