@@ -10,7 +10,7 @@ class ReRanker:
         self.es = Elasticsearch()
         print "ReRanker initializing"
         try:
-            N, D_in, H1, H2, H3 ,H4, D_out = 200, 501, 300, 150, 70, 30, 1
+            N, D_in, H1, H2, H3 ,H4, D_out = 200, 502, 300, 150, 75, 25, 1
 
             self.model = torch.nn.Sequential(
               torch.nn.Linear(D_in, H1),
@@ -23,7 +23,7 @@ class ReRanker:
               torch.nn.ReLU(),
               torch.nn.Linear(H4, D_out)
             ).to(device)
-            self.model.load_state_dict(torch.load('../data/jointreranker.049573.model'))
+            self.model.load_state_dict(torch.load('../data/embedentreranker.040497.model'))
             self.model.eval()
         except Exception,e:
             print e
@@ -49,25 +49,47 @@ class ReRanker:
             return None
         return None
 
+    def getjointembedding(self, chunkembeddings, chunkindex, embedding):
+        bestdot = -1
+        for qchunkindex,qentities in chunkembeddings.items():
+            if chunkindex == qchunkindex:
+                continue
+            for qentid,qembedding in qentities.items():
+                dotproduct = np.dot(np.asarray(qembedding),np.asarray(embedding))
+                if dotproduct > bestdot:
+                    bestdot = dotproduct
+        return embedding + [bestdot]
+
     def rerank(self, topklists, nlquery):
-        rerankedlists = []
         questionembedding = self.getsentenceembedding(nlquery)
-        for chunk in topklists:
-            inputfeatures = []
+        chunkembeddings = {}
+        rerankedlists = []
+        listoflistofentities = []
+        for chunkindex,chunk in enumerate(topklists):
+            if chunkindex not in chunkembeddings:
+                chunkembeddings[chunkindex] = {}
             for idx,entid in enumerate(chunk['topkmatches']):
-                entityembedding = self.getentityembedding(entid)
-                if not entityembedding or not questionembedding:
+                embedding = self.getentityembedding(entid)
+                if not embedding:
+                    print("no embedding for %s"%entid)
                     continue
-                vector = [idx]+entityembedding+questionembedding
+                chunkembeddings[chunkindex][entid] = embedding
+            listoflistofentities.append(topklists[chunkindex]['topkmatches'])
+        for chunkidx,listofentities in enumerate(listoflistofentities):
+            inputfeatures = []
+            for entidx,entid in enumerate(listofentities):
+                entembedding = chunkembeddings[chunkidx][entid]
+                jointembed = self.getjointembedding(chunkembeddings,chunkidx,entembedding)
+                vector = jointembed+[entidx]+questionembedding
                 inputfeatures.append(vector)
             x = torch.FloatTensor(inputfeatures).to(device)
             preds = self.model(x).to(device).reshape(-1).cpu().detach().numpy()
-            l = [(float(p),u) for p,u in zip(preds, chunk['topkmatches'])]
+            l = [(float(p),u) for p,u in zip(preds, listofentities)]
             reranked = sorted(l, key=lambda x: x[0], reverse=True)
             if reranked[0][0] < 0.5:
                 continue
             reranked = [x[1] for x in reranked]
-            cchunk = copy.deepcopy(chunk)
+            cchunk = copy.deepcopy(topklists[chunkidx])
             cchunk['reranked'] = reranked
             rerankedlists.append(cchunk)
         return rerankedlists
