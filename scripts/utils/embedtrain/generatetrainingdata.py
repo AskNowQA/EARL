@@ -38,45 +38,14 @@ def getrelembedding(entityurl):
 
 def getjointembedding(chunkembeddings, chunkindex, embedding):
     bestdot = -1
-    bestrelurl = None
-    bestrelembedding = None
     for qchunkindex,qentities in chunkembeddings.items():
         if chunkindex == qchunkindex:
             continue
         for qentid,qembedding in qentities.items():
-            queryrel = np.asarray(qembedding) - np.asarray(embedding) 
-            matchedrels = t.get_nns_by_vector(queryrel, 10, include_distances = True)
-            if matchedrels[1][0] > bestdot:
-                bestdot = matchedrels[1][0]
-                bestrelurl = treldict[str(matchedrels[0][0])]
-                bestrelembedding = getrelembedding(treldict[str(matchedrels[0][0])])
-            matchedrels = t.get_nns_by_vector(np.negative(queryrel), 10, include_distances = True)
-            if matchedrels[1][0] > bestdot:
-                bestdot = matchedrels[1][0]
-                bestrelurl = treldict[str(matchedrels[0][0])]
-                bestrelembedding = getrelembedding(treldict[str(matchedrels[0][0])])
-    if not bestrelembedding:
-        return embedding + [-1]*200 + [bestdot]
-    else:
-        return embedding + bestrelembedding + [bestdot]
-
-
-def getmeanrank(combination, listoflistofentities):
-    ranktot = 0
-    for uri1 in combination:
-        found = False
-        for l in listoflistofentities:
-            if found:
-                continue
-            for idx,uri2 in enumerate(l):
-                if uri1 == uri2:
-                    ranktot += idx
-                    found = True
-                    break
-    ranktot /= float(len(listoflistofentities))
-    return ranktot
-                 
-            
+            dotproduct = np.dot(np.asarray(qembedding),np.asarray(embedding))
+            if dotproduct > bestdot:
+                bestdot = dotproduct
+    return embedding + [bestdot]
 
 trainingdata = []
 c = 0

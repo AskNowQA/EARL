@@ -4,58 +4,49 @@ from torch.nn import functional as F
 
 
 torch.manual_seed(1)
-d = json.loads(open('embedsimpletrainvectors1.json').read())
+d = json.loads(open('embedjointtrainvectors1.json').read())
 inputs = []
 outputs = []
 ocount = 0
 zcount = 0
 _zcount = 0
 for item in d:
-    if item[5] == 1.0:
-        vector = [item[1]] + item[2] + item[4]
+    if item[1] == 1.0:
+        vector = item[0]
         inputs.append(vector)
         outputs.append(1.0)
         ocount += 1
     else:
-        if zcount%40 == 0:
-            vector = [item[1]] + item[2] + item[4]
-            inputs.append(vector)
-            outputs.append(0.0)
-            _zcount += 1
-        zcount += 1
+        vector = item[0]
+        inputs.append(vector)
+        outputs.append(0.0)
+        _zcount += 1
 
-print(ocount,zcount)
+print(ocount,_zcount)
 
-d = json.loads(open('embedsimpletestvectors1.json').read())
+d = json.loads(open('embedjointtestvectors1.json').read())
 testinputs = []
 testoutputs = []
 ocount = 0
 zcount = 0
 _zcount = 0
 for item in d:
-    if item[5] == 1.0:
-        vector = [item[1]] + item[2] + item[4]
+    if item[1] == 1.0:
+        vector = item[0]
         testinputs.append(vector)
         testoutputs.append(1.0)
         ocount += 1
     else:
-        if zcount%30 == 0:
-            vector = [item[1]] + item[2] + item[4]
-            testinputs.append(vector)
-            testoutputs.append(0.0)
-            _zcount += 1
-        zcount += 1
+        vector = item[0]
+        testinputs.append(vector)
+        testoutputs.append(0.0)
+        _zcount += 1
 
-
-f = open('testentityspans1.json')
-s = f.read()
-d2 = json.loads(s)
-f.close()
 
 
 device = torch.device('cuda')
 batch_size = 5000
-N, D_in, H1, H2, H3, D_out = batch_size, 501, 300, 100, 10, 1
+N, D_in, H1, H2, H3, H4, D_out = batch_size, 502, 300, 150, 75, 25, 1
 
 x = torch.FloatTensor(inputs).cuda()
 y = torch.FloatTensor(outputs).cuda()
@@ -69,7 +60,9 @@ model = torch.nn.Sequential(
           torch.nn.ReLU(),
           torch.nn.Linear(H2, H3),
           torch.nn.ReLU(),
-          torch.nn.Linear(H3, D_out)
+          torch.nn.Linear(H3, H4),
+          torch.nn.ReLU(),
+          torch.nn.Linear(H4, D_out)
         ).to(device)
 
 loss_fn = torch.nn.MSELoss(reduction='mean')
@@ -98,7 +91,7 @@ while 1:
             testloss = testlossfn(preds.reshape(-1),ytest)
             print("test set mseloss = %f bestloss = %f"%(testloss, bestloss))
             if testloss < bestloss:
-                bestloss = loss
+                bestloss = testloss
                 torch.save(model.state_dict(), 'embedentreranker.model')
                  
                 
