@@ -10,6 +10,7 @@ from textblob import TextBlob
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
 es = Elasticsearch()
 
+writef = open('unifieddatasets/pointercandidatevectorstrainfull1.json', 'a') 
 
 def getembedding(enturl):
     entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
@@ -23,7 +24,7 @@ def getembedding(enturl):
     return None
 
 
-
+fail = 0
 def givewordvectors(question,entities):
     try:
         if not question:
@@ -49,18 +50,19 @@ def givewordvectors(question,entities):
         for wordvector,ngramtup in zip(wordvectors,ngramarr):
             word = ngramtup[0]
             n = ngramtup[1]
-            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":10})
+            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":30})
             esresults = esresult['hits']['hits']
             if len(esresults) > 0:
                 for idx,esresult in enumerate(esresults):
                     entityembedding = getembedding(esresult['_source']['uri'])
                     if entityembedding and questionembedding and wordvector:
                         if esresult['_source']['uri'][37:] in entities:
-                            true.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],1.0])
+                            candidatevectors.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],1.0])
                         else:
-                            false.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],0.0])
-        candidatevectors += true
-        candidatevectors += random.sample(false,k=len(true)) 
+                            candidatevectors.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],0.0])
+        #candidatevectors += true
+        #candidatevectors += random.sample(false,k=len(true))
+        writef.write(json.dumps(candidatevectors)+'\n')
         return candidatevectors
     except Exception as e:
         print(e)
@@ -72,7 +74,8 @@ labelledcandidates = []
 for idx,item in enumerate(d):
     print(idx,item['question'])
     candidatevectors = givewordvectors(item['question'],item['entities'])
-    labelledcandidates.append(candidatevectors)
-f = open('unifieddatasets/pointercandidatevectorstrain1.json','w')
-f.write(json.dumps(labelledcandidates,indent=4))
-f.close()
+    #labelledcandidates.append(candidatevectors)
+#f = open('unifieddatasets/pointercandidatevectorstrain1.json','w')
+#f.write(json.dumps(labelledcandidates,indent=4))
+#f.close()
+writef.close()
