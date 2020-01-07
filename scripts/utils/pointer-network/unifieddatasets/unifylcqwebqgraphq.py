@@ -11,9 +11,9 @@ for item in d:
     wikisparql = item['sparql_wikidata']
     entities = re.findall( r'wd:(.*?) ', wikisparql)
     if question and len(question) > 10 and len(question) < 500:
-        trainingdata.append({'question':question, 'entities': entities, 'source':'lcq2train', 'id':item['uid']})
+        trainingdata.append({'question':question, 'entities': entities, 'source':'lcq2train', 'id':str(item['uid'])+'_1'})
     if paraphrased_question and len(paraphrased_question) > 10 and len(paraphrased_question) < 500:
-        trainingdata.append({'question':question, 'entities': entities, 'source':'lcq2train', 'id':item['uid']})
+        trainingdata.append({'question':paraphrased_question, 'entities': entities, 'source':'lcq2train', 'id':str(item['uid'])+'_2'})
 
 d = json.loads(open('EntityLinkingForQADatasets/graphquestions/input/graph.train.entities.json').read())
 
@@ -41,7 +41,7 @@ with open('EntityLinkingForQADatasets/simplequestions/annotated_wd_data_train.tx
         entities = [s]
         qid = 'sqs%d'%simpleqsid
         simpleqsid += 1
-        trainingdata.append({'question':question, 'entities': entities, 'source':'simplequestion', 'id':qid})
+        trainingdata.append({'question':question, 'entities': entities, 'source':'simplequestiontrain', 'id':qid})
 
 
 
@@ -55,9 +55,7 @@ for item in d:
     wikisparql = item['sparql_wikidata']
     entities = re.findall( r'wd:(.*?) ', wikisparql)
     if question and len(question) > 10 and len(question) < 500:
-        testingdata.append({'question':question, 'entities': entities, 'source':'lcq2train', 'id':item['uid']})
-    if paraphrased_question and len(paraphrased_question) > 10 and len(paraphrased_question) < 500:
-        testingdata.append({'question':question, 'entities': entities, 'source':'lcq2train', 'id':item['uid']})
+        testingdata.append({'question':question, 'entities': entities, 'source':'lcq2test', 'id':str(item['uid'])+'_1'})
 
 d = json.loads(open('EntityLinkingForQADatasets/graphquestions/input/graph.test.entities.json').read())
 
@@ -65,7 +63,7 @@ for item in d:
     question = item['utterance']
     entities = item['entities']
     qid = item['question_id']
-    testingdata.append({'question':question, 'entities': entities, 'source':'graphqtrain', 'id':qid})
+    testingdata.append({'question':question, 'entities': entities, 'source':'graphqtest', 'id':qid})
 
 d = json.loads(open('EntityLinkingForQADatasets/webqsp/input/webqsp.test.entities.with_classes.json').read())
 
@@ -73,7 +71,7 @@ for item in d:
     question = item['utterance']
     entities = item['entities']
     qid = item['question_id']
-    testingdata.append({'question':question, 'entities': entities, 'source':'webqtrain', 'id':qid})
+    testingdata.append({'question':question, 'entities': entities, 'source':'webqtest', 'id':qid})
 
 simpleqsid = 0
 with open('EntityLinkingForQADatasets/simplequestions/annotated_wd_data_test.txt') as fp:
@@ -84,7 +82,7 @@ with open('EntityLinkingForQADatasets/simplequestions/annotated_wd_data_test.txt
         entities = [s]
         qid = 'sqs%d'%simpleqsid
         simpleqsid += 1
-        testingdata.append({'question':question, 'entities': entities, 'source':'simplequestion', 'id':qid})
+        testingdata.append({'question':question, 'entities': entities, 'source':'simplequestiontest', 'id':qid})
 
 f = open('unifiedtrain.json','w')
 f.write(json.dumps(trainingdata,indent=4))
