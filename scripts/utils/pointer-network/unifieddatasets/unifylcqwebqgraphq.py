@@ -31,6 +31,20 @@ for item in d:
     qid = item['question_id']
     trainingdata.append({'question':question, 'entities': entities, 'source':'webqtrain', 'id':qid})
 
+simpleqsid = 0
+with open('EntityLinkingForQADatasets/simplequestions/annotated_wd_data_train.txt') as fp:
+    for line in fp.readlines():
+        line = line.strip()
+        print(line)
+        s,p,o,q = line.split('\t')
+        question = q
+        entities = [s]
+        qid = 'sqs%d'%simpleqsid
+        simpleqsid += 1
+        trainingdata.append({'question':question, 'entities': entities, 'source':'simplequestion', 'id':qid})
+
+
+
 testingdata = []
 
 d = json.loads(open('LC-QuAD2.0/dataset/test.json').read())
@@ -61,6 +75,16 @@ for item in d:
     qid = item['question_id']
     testingdata.append({'question':question, 'entities': entities, 'source':'webqtrain', 'id':qid})
 
+simpleqsid = 0
+with open('EntityLinkingForQADatasets/simplequestions/annotated_wd_data_test.txt') as fp:
+    for line in fp.readlines():
+        line = line.strip()
+        s,p,o,q = line.split('\t')
+        question = q
+        entities = [s]
+        qid = 'sqs%d'%simpleqsid
+        simpleqsid += 1
+        testingdata.append({'question':question, 'entities': entities, 'source':'simplequestion', 'id':qid})
 
 f = open('unifiedtrain.json','w')
 f.write(json.dumps(trainingdata,indent=4))
@@ -70,9 +94,3 @@ f.close()
 f = open('unifiedtest.json','w')
 f.write(json.dumps(testingdata,indent=4))
 f.close()
-
-
-
-
-
-
