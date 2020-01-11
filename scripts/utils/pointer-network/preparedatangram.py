@@ -3,6 +3,7 @@ import json
 from elasticsearch import Elasticsearch
 from fuzzywuzzy import fuzz
 import requests
+from annoy import AnnoyIndex
 import re,random
 from nltk.util import ngrams
 from textblob import TextBlob
@@ -10,7 +11,9 @@ from textblob import TextBlob
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
 es = Elasticsearch()
 
-writef = open('unifieddatasets/pointercandidatevectorstrainfull1.json', 'a') 
+writef = open('newvectorfiles/simplequestiontrain.json', 'a') 
+
+
 
 def getembedding(enturl):
     entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
@@ -25,7 +28,7 @@ def getembedding(enturl):
 
 
 fail = 0
-def givewordvectors(question,entities):
+def givewordvectors(id,question,entities):
     try:
         if not question:
             return []
@@ -62,18 +65,21 @@ def givewordvectors(question,entities):
                             candidatevectors.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],0.0])
         #candidatevectors += true
         #candidatevectors += random.sample(false,k=len(true))
-        writef.write(json.dumps(candidatevectors)+'\n')
+        writef.write(json.dumps([id,item['entities'],candidatevectors])+'\n')
         return candidatevectors
     except Exception as e:
         print(e)
         return []
 
 
-d = json.loads(open('unifieddatasets/unifiedtraindeduplicate.json').read())
+d = json.loads(open('unifieddatasets/unifiedtrain.json').read())
 labelledcandidates = []
 for idx,item in enumerate(d):
     print(idx,item['question'])
-    candidatevectors = givewordvectors(item['question'],item['entities'])
+    if item['source'] != 'simplequestiontrain':
+        continue
+    print(idx,item)
+    candidatevectors = givewordvectors(item['id'],item['question'],item['entities'])
     #labelledcandidates.append(candidatevectors)
 #f = open('unifieddatasets/pointercandidatevectorstrain1.json','w')
 #f.write(json.dumps(labelledcandidates,indent=4))
