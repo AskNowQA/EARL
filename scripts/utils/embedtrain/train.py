@@ -67,7 +67,7 @@ model = torch.nn.Sequential(
 
 loss_fn = torch.nn.MSELoss(reduction='mean')
 #loss_fn = torch.nn.BCELoss(reduction='mean')
-optimizer = optim.SGD(model.parameters(), lr=0.001)#,nesterov=True, momentum=0.5)
+optimizer = optim.SGD(model.parameters(), lr=0.001)
 iter = 0
 besttrue = 0
 urilabeldict = {}

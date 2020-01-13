@@ -19,7 +19,7 @@ def getembedding(entid):
         embedding = [float(x) for x in res['hits']['hits'][0]['_source']['embedding']]
         return embedding
     except Exception as e:
-        print(e)
+        print(entid,' not found')
         return None
     return None
 
@@ -41,13 +41,16 @@ for gold,query in zip(dlcqtrain,dquerytrain):
     print(c)
     c+= 1
     try:
-        if gold['uid'] != query[0]:
+        print(count)
+        count += 1
+        if gold['id'] != query[0]:
             print('uid mismatch')
             sys.exit(1)
         query = query[1]
         if len(query) == 0:
             continue
-        goldents = re.findall( r'wd:(.*?) ', gold['sparql_wikidata'])
+        query = query[0]
+        goldents = gold['entities']
         question = gold['question']
         questionembedding = None
         if question and len(question) > 0:

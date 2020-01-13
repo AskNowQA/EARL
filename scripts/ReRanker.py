@@ -2,7 +2,8 @@
 
 import numpy as np
 from elasticsearch import Elasticsearch
-import urllib2,copy,json,sys,torch
+import urllib2,copy,json,sys,torch,re,requests
+from nltk.util import ngrams
 device = torch.device('cuda')
 
 class ReRanker:
@@ -38,8 +39,8 @@ class ReRanker:
         embedding = json.loads(response.read().decode('utf8'))[0]
         return embedding
 
-    def getentityembedding(self,entid):
-        entityurl = '<http://www.wikidata.org/entity/'+entid+'>'
+    def getentityembedding(self,enturl):
+        entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
         res = self.es.search(index="wikidataembedsindex01", body={"query":{"term":{"key":{"value":entityurl}}}})
         try:
             embedding = [float(x) for x in res['hits']['hits'][0]['_source']['embedding']]
@@ -96,4 +97,19 @@ class ReRanker:
             
 if __name__ == '__main__':
     r = ReRanker()
-    print(r.rerank([{"chunk": {"chunk": "India", "surfacelength": -1, "class": "entity", "surfacestart": -1}, "topkmatches": ["Q1488929", "Q17055962", "Q22043425", "Q11157534", "Q16578519", "Q36548019", "Q274592", "Q15975440", "Q16429066", "Q50755762", "Q3624238", "Q5802812", "Q39542602", "Q668", "Q23642847", "Q17055987", "Q17014026", "Q2060630", "Q1936198", "Q39611746", "Q39457540", "Q47586501", "Q1963604", "Q6019237", "Q6019242", "Q6019245", "Q37186648", "Q6866034", "Q6866064", "Q712499"], "class": "entity"}], "who is the president of india ?"))
+    d = json.loads(open('unifieddatasets/LC-QuAD2.0/dataset/test.json').read())
+    for item in d:
+        #print(item)
+        question = item['question']
+        question = re.sub(r"[^a-zA-Z0-9]+", ' ', question)
+        print(question)
+        goldents = re.findall( r'wd:(.*?) ', item['sparql_wikidata'])
+        print(goldents)
+        if not question:
+            continue
+        entities = r.rerank(question)
+    
+
+
+
+    #print(r.rerank([{"chunk": {"chunk": "India", "surfacelength": -1, "class": "entity", "surfacestart": -1}, "topkmatches": ["Q1488929", "Q17055962", "Q22043425", "Q11157534", "Q16578519", "Q36548019", "Q274592", "Q15975440", "Q16429066", "Q50755762", "Q3624238", "Q5802812", "Q39542602", "Q668", "Q23642847", "Q17055987", "Q17014026", "Q2060630", "Q1936198", "Q39611746", "Q39457540", "Q47586501", "Q1963604", "Q6019237", "Q6019242", "Q6019245", "Q37186648", "Q6866034", "Q6866064", "Q712499"], "class": "entity"}], "who is the president of india ?"))

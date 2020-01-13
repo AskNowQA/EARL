@@ -6,13 +6,9 @@ from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
 from ERSpanPredictor import ERSpanDetector
 from  TextMatch import TextMatch
-#from JointLinker import JointLinker
 from ReRanker import ReRanker
 import json
 logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
-e = ERSpanDetector()
-t = TextMatch()
-#j = JointLinker()
 r = ReRanker()
 
 reload(sys)
@@ -34,14 +30,11 @@ def processQuery():
     except Exception,err:
         print err
         return 422
+    reranked = []
     print "Query: %s"%json.dumps(nlquery) 
-    erprediction = e.erspan(nlquery)[0]
-    print "ER Predictions: %s"%json.dumps(erprediction)
-    topkmatches = t.textMatch(erprediction, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches)
-    reranked = r.rerank(topkmatches, nlquery)
+    reranked = r.rerank(nlquery)
     print "ReRanked lists: %s"%json.dumps(reranked)
-    return json.dumps(reranked, indent=4, sort_keys=True)
+    return json.dumps(reranked)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)
