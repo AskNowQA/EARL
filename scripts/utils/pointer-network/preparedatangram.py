@@ -11,7 +11,7 @@ from textblob import TextBlob
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
 es = Elasticsearch()
 
-writef = open('newvectorfiles/simplequestiontrain.json', 'a') 
+writef = open('newvectorfiles/simpleqtrainwv.json', 'a') 
 
 
 
@@ -29,59 +29,82 @@ def getembedding(enturl):
 
 fail = 0
 def givewordvectors(id,question,entities):
-    try:
-        if not question:
-            return []
-        q = question
-        q = re.sub("\s*\?", "", q.strip())
-        candidatevectors = []
-        #questionembedding
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [q]})
-        questionembedding = r.json()[0]
-        tokens = [token for token in q.split(" ") if token != ""]
-        true = []
-        false = []
-        ngramarr = []
-        for n in range(1,4):
-            ngramwords = list(ngrams(tokens, n))
-            for tup in ngramwords:
-                ngramjoined = ' '.join(tup)
-                ngramarr.append([ngramjoined,n])
-                #word vector
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [x[0] for x in ngramarr]})
-        wordvectors = r.json()
-        for wordvector,ngramtup in zip(wordvectors,ngramarr):
-            word = ngramtup[0]
-            n = ngramtup[1]
+    if not question:
+        return []
+    q = question
+    q = re.sub("\s*\?", "", q.strip())
+    candidatevectors = []
+    #questionembedding
+    r = requests.post("http://localhost:8887/ftwv",json={'chunks': [q]})
+    questionembedding = r.json()[0]
+    tokens = [token for token in q.split(" ") if token != ""]
+    true = []
+    false = []
+    for idx,token in enumerate(tokens):
+        #n
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [token]})
+        wordvector = r.json()[0]
+        esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":tokens[idx]}},"size":30})
+        esresults = esresult['hits']['hits']
+        if len(esresults) > 0:
+            for entidx,esresult in enumerate(esresults):
+                entityembedding = getembedding(esresult['_source']['uri'])
+                if entityembedding and questionembedding :
+                    if esresult['_source']['uri'][37:] in entities:
+                        candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,1],esresult['_source']['uri'][37:],1.0])
+                    else:
+                        candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,1],esresult['_source']['uri'][37:],0.0])
+        #n-1,n
+        if idx > 0:
+             word = tokens[idx-1]+' '+tokens[idx]
+             esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":30})
+             esresults = esresult['hits']['hits']
+             if len(esresults) > 0:
+                 for entidx,esresult in enumerate(esresults):
+                     entityembedding = getembedding(esresult['_source']['uri'])
+                     if entityembedding and questionembedding :
+                         if esresult['_source']['uri'][37:] in entities:
+                             candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,-2],esresult['_source']['uri'][37:],1.0])
+                         else:
+                             candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,-2],esresult['_source']['uri'][37:],0.0])
+        #n,n+1
+        if idx < len(tokens) - 1:
+            word = tokens[idx]+' '+tokens[idx+1]
             esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":30})
             esresults = esresult['hits']['hits']
             if len(esresults) > 0:
-                for idx,esresult in enumerate(esresults):
+                for entidx,esresult in enumerate(esresults):
                     entityembedding = getembedding(esresult['_source']['uri'])
-                    if entityembedding and questionembedding and wordvector:
+                    if entityembedding and questionembedding :
                         if esresult['_source']['uri'][37:] in entities:
-                            candidatevectors.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],1.0])
+                            candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,2],esresult['_source']['uri'][37:],1.0])
                         else:
-                            candidatevectors.append([entityembedding+questionembedding+wordvector+[idx,n],esresult['_source']['uri'][37:],0.0])
-        #candidatevectors += true
-        #candidatevectors += random.sample(false,k=len(true))
-        writef.write(json.dumps([id,item['entities'],candidatevectors])+'\n')
-        return candidatevectors
-    except Exception as e:
-        print(e)
-        return []
+                            candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,2],esresult['_source']['uri'][37:],0.0])
+
+        #n-1,n,n+1
+        if idx < len(tokens) - 1 and idx > 0:
+            word = tokens[idx-1]+' '+tokens[idx]+' '+tokens[idx+1]
+            esresult = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":word}},"size":30})
+            esresults = esresult['hits']['hits']
+            if len(esresults) > 0:
+                for entidx,esresult in enumerate(esresults):
+                    entityembedding = getembedding(esresult['_source']['uri'])
+                    if entityembedding and questionembedding :
+                        if esresult['_source']['uri'][37:] in entities:
+                            candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,3],esresult['_source']['uri'][37:],1.0])
+                        else:
+                            candidatevectors.append([entityembedding+questionembedding+wordvector+[entidx,idx,3],esresult['_source']['uri'][37:],0.0])
+     
+    writef.write(json.dumps([id,item['entities'],candidatevectors])+'\n')
+    return candidatevectors
 
 
 d = json.loads(open('unifieddatasets/unifiedtrain.json').read())
 labelledcandidates = []
 for idx,item in enumerate(d):
-    print(idx,item['question'])
     if item['source'] != 'simplequestiontrain':
         continue
-    print(idx,item)
+    print(idx,item['question'])
     candidatevectors = givewordvectors(item['id'],item['question'],item['entities'])
-    #labelledcandidates.append(candidatevectors)
-#f = open('unifieddatasets/pointercandidatevectorstrain1.json','w')
-#f.write(json.dumps(labelledcandidates,indent=4))
-#f.close()
+    print(len(candidatevectors))
 writef.close()
