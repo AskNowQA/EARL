@@ -11,7 +11,7 @@ from textblob import TextBlob
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
 es = Elasticsearch()
 
-writef = open('newvectorfiles/simpleqtrainwv.json', 'a') 
+writef = open('newvectorfiles/webqstrainwv.json', 'a') 
 
 
 
@@ -102,7 +102,7 @@ def givewordvectors(id,question,entities):
 d = json.loads(open('unifieddatasets/unifiedtrain.json').read())
 labelledcandidates = []
 for idx,item in enumerate(d):
-    if item['source'] != 'simplequestiontrain':
+    if item['source'] != 'webqtrain':
         continue
     print(idx,item['question'])
     candidatevectors = givewordvectors(item['id'],item['question'],item['entities'])
