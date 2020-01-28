@@ -40,8 +40,9 @@ for queryitem,golditem in zip(d,gold):
     queryentities = []
     print(golditem['question'])
     for chunk in queryitem[1]:
-        if chunk[0] > 0.0:
-            queryentities.append(chunk[1])
+        for entity in chunk['reranked']:
+            queryentities.append(entity)
+            break
     print(golditem['entities'])
     print(set(queryentities))
     for goldentity in golditem['entities']:
