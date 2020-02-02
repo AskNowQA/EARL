@@ -40,8 +40,8 @@ except Exception,e:
     sys.exit(1)
 
 print("Loading Bert")
-berttokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-bertmodel = BertModel.from_pretrained('bert-base-uncased')
+transfoxltokenizer = TransfoXLTokenizer.from_pretrained('../data/bertmodelfiles/')
+transfoxlmodel = TransfoXLModel.from_pretrained('../data/bertmodelfiles/')
 print("Bert Loaded")
 print "TextMatch initialized"
 
@@ -95,9 +95,9 @@ def bert():
     vectors = []
     for sentence in sentences:
         print(sentence)
-        input_ids = torch.tensor([berttokenizer.encode(sentence, add_special_tokens=True)]) 
+        input_ids = torch.tensor([transfoxltokenizer.encode(sentence, add_special_tokens=True)]) 
         with torch.no_grad():
-            last_hidden_states = bertmodel(input_ids)[0][0][-1]
+            last_hidden_states = transfoxlmodel(input_ids)[0][0][-1]
             vectors.append(last_hidden_states.tolist())
     return json.dumps(vectors)
 
