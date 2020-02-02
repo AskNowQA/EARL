@@ -29,12 +29,12 @@ def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
 print("TextMatch initializing, loading fastext")
 try:
     es = Elasticsearch()
-    #model = None#gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-    #print("loaded fastext, loading relation labels")
-    #cache = {}
-    #numberlabelhash = json.loads(open('../data/predonlyurls1.json').read())
-    #t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
-    #t.load('../data/predonly1.ann')
+    model = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
+    print("loaded fastext, loading relation labels")
+    cache = {}
+    numberlabelhash = json.loads(open('../data/predonlyurls1.json').read())
+    t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
+    t.load('../data/predonly1.ann')
 except Exception,e:
     print e
     sys.exit(1)
