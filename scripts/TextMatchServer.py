@@ -10,6 +10,8 @@ import gensim
 import numpy as np
 import json,sys
 import random
+import torch
+from pytorch_transformers import *
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -24,19 +26,27 @@ def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
         return np.dot(np.transpose(vectorSet),ignore)/sum(ignore)
 
 
-print "TextMatch initializing, loading fastext"
+print("TextMatch initializing, loading fastext")
 try:
     es = Elasticsearch()
-    model = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-    print("loded fastext, loading relation labels")
-    cache = {}
-    numberlabelhash = json.loads(open('../data/predonlyurls1.json').read())
-    t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
-    t.load('../data/predonly1.ann')
+    #model = None#gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
+    #print("loaded fastext, loading relation labels")
+    #cache = {}
+    #numberlabelhash = json.loads(open('../data/predonlyurls1.json').read())
+    #t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
+    #t.load('../data/predonly1.ann')
 except Exception,e:
     print e
-    sys.exit(1)            
+    sys.exit(1)
+
+print("Loading Bert")
+berttokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+bertmodel = BertModel.from_pretrained('bert-base-uncased')
+print("Bert Loaded")
 print "TextMatch initialized"
+
+
+
 
 
 def labeltovec(_phrase_1):
@@ -77,6 +87,19 @@ def phrase_similarity(_phrase_1, _phrase_2):
     v_phrase_2 = ConvertVectorSetToVecAverageBased(vw_phrase_2)
     cosine_similarity = np.dot(v_phrase_1, v_phrase_2) / (np.linalg.norm(v_phrase_1) * np.linalg.norm(v_phrase_2))
     return cosine_similarity
+
+@app.route('/bert', methods=['POST'])
+def bert():
+    d = request.get_json(silent=True)
+    sentences = d['sentences']
+    vectors = []
+    for sentence in sentences:
+        print(sentence)
+        input_ids = torch.tensor([berttokenizer.encode(sentence, add_special_tokens=True)]) 
+        with torch.no_grad():
+            last_hidden_states = bertmodel(input_ids)[0][0][-1]
+            vectors.append(last_hidden_states.tolist())
+    return json.dumps(vectors)
 
 @app.route('/ftwv', methods=['POST'])
 def ftwv():
