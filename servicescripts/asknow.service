@@ -1,0 +1,9 @@
+[Unit]
+Description=earl
+
+[Service]
+WorkingDirectory=/home/debayan/AskNowUI
+ExecStart=/home/debayan/AskNowUI/bin/python2.7 /home/debayan/AskNowUI/app.py 5001
+
+[Install]
+WantedBy=multi-user.target

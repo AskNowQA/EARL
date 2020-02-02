@@ -1,0 +1,9 @@
+[Unit]
+Description=earl
+
+[Service]
+WorkingDirectory=/home/debayan/EARL/scripts
+ExecStart=/home/debayan/EARL/bin/python2.7 /home/debayan/EARL/scripts/api.py 4998
+
+[Install]
+WantedBy=multi-user.target
