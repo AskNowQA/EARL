@@ -68,7 +68,8 @@ class ReRanker:
         for chunkindex,chunk in enumerate(topklists):
             if chunkindex not in chunkembeddings:
                 chunkembeddings[chunkindex] = {}
-            for idx,entid in enumerate(chunk['topkmatches']):
+            for idx,entidlabel in enumerate(chunk['topkmatches']):
+                entid = entidlabel[0]
                 embedding = self.getentityembedding(entid)
                 if not embedding:
                     print("no embedding for %s"%entid)
@@ -77,8 +78,12 @@ class ReRanker:
             listoflistofentities.append(topklists[chunkindex]['topkmatches'])
         for chunkidx,listofentities in enumerate(listoflistofentities):
             inputfeatures = []
-            for entidx,entid in enumerate(listofentities):
-                entembedding = chunkembeddings[chunkidx][entid]
+            for entidx,entidlabel in enumerate(listofentities):
+                entid = entidlabel[0]
+                if entid in chunkembeddings[chunkidx]:
+                    entembedding = chunkembeddings[chunkidx][entid]
+                else:
+                    continue
                 jointembed = self.getjointembedding(chunkembeddings,chunkidx,entembedding)
                 vector = jointembed+[entidx]+questionembedding
                 inputfeatures.append(vector)

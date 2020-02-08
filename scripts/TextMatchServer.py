@@ -137,36 +137,18 @@ def textMatch():
              _topkents = []
              topkents = []
              for record in res['hits']['hits']:
-                 _topkents.append(record['_source']['uri'])#record['_source']['edgecount']))
+                 _topkents.append([record['_source']['uri'],record['_source']['wikidataLabel']])#record['_source']['edgecount']))
              #if pagerankflag:
              #    _topkents =  sorted(_topkents, key=lambda k: k[1], reverse=True)
              for record in _topkents:
                  if len(topkents) >= 30:
                      break
-                 if record in topkents:
+                 if record[0] in topkents:
                      continue
                  else:
-                     topkents.append(record[37:])
+                     topkents.append([record[0][37:],record[1]])
              matchedChunks.append({'chunk':chunk, 'topkmatches': topkents, 'class': 'entity'})
                  
-         if chunk['class'] == 'relation':
-             phrase = chunk['chunk']
-             if phrase not in cache:
-                 print "%s not in cache"%phrase
-                 results = []
-                 max_score = 0
-                 uris = []
-                 result = t.get_nns_by_vector(list(labeltovec(phrase)),100)
-                 for id in result:
-                     uris.append(numberlabelhash[str(id)])
-                 seen = set()
-                 seen_add = seen.add
-                 uriarray = [uri for uri in uris if not (uri in seen or seen_add(uri))][:30]
-                 cache[phrase] = uriarray
-                 matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
-             else:
-                 print "%s in cache"%phrase
-                 matchedChunks.append({'chunk':chunk, 'topkmatches': cache[phrase], 'class': 'relation'})
     return json.dumps(matchedChunks)
 
 if __name__ == '__main__':
