@@ -10,7 +10,7 @@ class ReRanker:
         self.es = Elasticsearch()
         print "ReRanker initializing"
         try:
-            N, D_in, H1, H2, H3 ,H4, D_out = 200, 502, 300, 150, 75, 25, 1
+            N, D_in, H1, H2, H3 ,H4, D_out = 200, 802, 500, 250, 100, 50, 1
 
             self.model = torch.nn.Sequential(
               torch.nn.Linear(D_in, H1),
@@ -23,7 +23,7 @@ class ReRanker:
               torch.nn.ReLU(),
               torch.nn.Linear(H4, D_out)
             ).to(device)
-            self.model.load_state_dict(torch.load('../data/embedentreranker.040497.model'))
+            self.model.load_state_dict(torch.load('../data/embentreranker.039443.model'))
             self.model.eval()
         except Exception,e:
             print e
@@ -60,6 +60,22 @@ class ReRanker:
                     bestdot = dotproduct
         return embedding + [bestdot]
 
+    def getdescriptionsembedding(self,entid):
+        res = self.es.search(index="wikidataentitydescriptionsindex01", body={"query":{"term":{"entityid.keyword":entid}}})
+        try:
+            description = res['hits']['hits'][0]['_source']['description']
+            req = urllib2.Request('http://localhost:8887/ftwv')
+            req.add_header('Content-Type', 'application/json')
+            inputjson = {'chunks':[description]}
+            response = urllib2.urlopen(req, json.dumps(inputjson))
+            descembedding = json.loads(response.read().decode('utf8'))[0]
+            return descembedding
+        except Exception as e:
+            print("getdescriptionsembedding err: ",e)
+            return None
+        return None
+
+
     def rerank(self, topklists, nlquery):
         questionembedding = self.getsentenceembedding(nlquery)
         chunkembeddings = {}
@@ -86,7 +102,10 @@ class ReRanker:
                     continue
                 jointembed = self.getjointembedding(chunkembeddings,chunkidx,entembedding)
                 vector = jointembed+[entidx]+questionembedding
-                inputfeatures.append(vector)
+                descembed = self.getdescriptionsembedding(entid)
+                if not descembed:
+                    descembed = [0]*300
+                inputfeatures.append(vector+descembed)
             x = torch.FloatTensor(inputfeatures).to(device)
             preds = self.model(x).to(device).reshape(-1).cpu().detach().numpy()
             l = [(float(p),u) for p,u in zip(preds, listofentities)]
@@ -101,4 +120,4 @@ class ReRanker:
             
 if __name__ == '__main__':
     r = ReRanker()
-    print(r.rerank([{"chunk": {"chunk": "India", "surfacelength": -1, "class": "entity", "surfacestart": -1}, "topkmatches": ["Q1488929", "Q17055962", "Q22043425", "Q11157534", "Q16578519", "Q36548019", "Q274592", "Q15975440", "Q16429066", "Q50755762", "Q3624238", "Q5802812", "Q39542602", "Q668", "Q23642847", "Q17055987", "Q17014026", "Q2060630", "Q1936198", "Q39611746", "Q39457540", "Q47586501", "Q1963604", "Q6019237", "Q6019242", "Q6019245", "Q37186648", "Q6866034", "Q6866064", "Q712499"], "class": "entity"}], "who is the president of india ?"))
+    print(r.rerank([{"chunk": {"chunk": "Russia", "surfacelength": -1, "class": "entity", "surfacestart": -1}, "topkmatches": [["Q159", "Russia"], ["Q3772566", "Russia"], ["Q4350653", ", Russia"], ["Q21193357", "in Russia"], ["Q18600282", "in Russia"], ["Q2477732", "Russia"], ["Q24058892", "Russia"], ["Q4165777", "in Russia"], ["Q4504164", "Russia"], ["Q182648", "Russia"], ["Q23890440", "Russia"], ["Q7381938", "Russia"], ["Q17287317", "in Russia"], ["Q3708651", "Russia"], ["Q6168351", "Russia"], ["Q2624171", "Russia"], ["Q104717", "Russia"], ["Q20657737", "Russia"], ["Q42195226", "Russia"], ["Q42195225", "Russia"], ["Q17287321", "in Russia"], ["Q1401527", "Russia"], ["Q3537636", "Russia"], ["Q28155299", "Shinty in Russia"], ["Q30595979", "Uzbeks in Russia"], ["Q30601289", "Category:Neighborhoods in Russia"], ["Q30644595", "Category:ESports in Russia"], ["Q30685173", "Category:Counts of Russia"], ["Q30806888", "Category:Welfare in Russia"], ["Q32901003", "Category:Towns in Russia"]], "class": "entity"}], "who is the president of Russia ?"))
