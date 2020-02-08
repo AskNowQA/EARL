@@ -80,7 +80,10 @@ class ReRanker:
             inputfeatures = []
             for entidx,entidlabel in enumerate(listofentities):
                 entid = entidlabel[0]
-                entembedding = chunkembeddings[chunkidx][entid]
+                if entid in chunkembeddings[chunkidx]:
+                    entembedding = chunkembeddings[chunkidx][entid]
+                else:
+                    continue
                 jointembed = self.getjointembedding(chunkembeddings,chunkidx,entembedding)
                 vector = jointembed+[entidx]+questionembedding
                 inputfeatures.append(vector)
