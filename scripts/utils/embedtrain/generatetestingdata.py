@@ -11,8 +11,8 @@ from annoy import AnnoyIndex
 es = Elasticsearch()
 t = AnnoyIndex(200,'dot')
 t.load('../../../data/wikiembedrel1.ann')
-dlcqtrain = json.loads(open('LC-QuAD2.0/dataset/train.json').read())
-dquerytrain = json.loads(open('embedsimpletrain1.json').read())
+dlcqtrain = json.loads(open('LC-QuAD2.0/dataset/test.json').read())
+dquerytrain = json.loads(open('embedsimpletest1.json').read())
 treldict = json.loads(open('../../../data/wikiemberrel1dict.json').read())
 
 def getembedding(entid):
@@ -140,6 +140,6 @@ for gold,query in zip(dlcqtrain,dquerytrain):
         #traceback.print_exc()
         #sys.exit(1)
 
-f = open('embedjointtrainvectorsdesc1.json','w')
+f = open('embedjointtestvectorsdesc1.json','w')
 f.write(json.dumps(trainingdata))
 f.close()
