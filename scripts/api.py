@@ -4,16 +4,13 @@ from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
 import json,sys,requests,logging
-from ERSpanPredictor import ERSpanDetector
-from  TextMatch import TextMatch
-#from JointLinker import JointLinker
-from ReRanker import ReRanker
 import json
+from Vectoriser import Vectoriser
+from PointerNetworkLinker import PointerNetworkLinker
 logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
-e = ERSpanDetector()
-t = TextMatch()
+v = Vectoriser()
+p = PointerNetworkLinker()
 #j = JointLinker()
-r = ReRanker()
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -34,14 +31,11 @@ def processQuery():
     except Exception,err:
         print err
         return 422
-    print "Query: %s"%json.dumps(nlquery) 
-    erprediction = e.erspan(nlquery)[0]
-    print "ER Predictions: %s"%json.dumps(erprediction)
-    topkmatches = t.textMatch(erprediction, pagerankflag)
-    print "Top text matches: %s"%json.dumps(topkmatches)
-    reranked = r.rerank(topkmatches, nlquery)
-    print "ReRanked lists: %s"%json.dumps(reranked)
-    return json.dumps(reranked, indent=4, sort_keys=True)
+    print("Query: %s"%json.dumps(nlquery)) 
+    vectors = v.vectorise(nlquery)
+    print("Vectorisation length %d"%(len(vectors)))
+    entities = p.link(vectors)
+    return json.dumps({'nlquery':d['nlquery'],'entities':entities}, indent=4, sort_keys=True)
 
 if __name__ == '__main__':
     http_server = WSGIServer(('', int(sys.argv[1])), app)
