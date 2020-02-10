@@ -12,24 +12,19 @@ v = Vectoriser()
 p = PointerNetworkLinker()
 #j = JointLinker()
 
-reload(sys)
-sys.setdefaultencoding('utf8')
-
 app = Flask(__name__)
-
-
 
 @app.route('/processQuery', methods=['POST'])
 def processQuery():
     d = request.get_json(silent=True)
-    print d
+    print(d)
     nlquery = d['nlquery']
     pagerankflag = False
     try:
         if 'pagerankflag' in d:
             pagerankflag = d['pagerankflag']
-    except Exception,err:
-        print err
+    except Exception as err:
+        print(err)
         return 422
     print("Query: %s"%json.dumps(nlquery)) 
     vectors = v.vectorise(nlquery)

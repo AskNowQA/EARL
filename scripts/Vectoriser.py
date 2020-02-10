@@ -3,9 +3,7 @@ import json
 import re
 import requests
 from elasticsearch import Elasticsearch
-
-def mean(a):
-    return sum(a) / len(a)
+import numpy as np
 
 
 class Vectoriser():
@@ -34,7 +32,7 @@ class Vectoriser():
         tokens = [token for token in q.split(" ") if token != ""]
         r = requests.post("http://localhost:8887/ftwv",json={'chunks': tokens})
         questionembeddings = r.json()
-        questionembedding = map(mean,zip(*questionembeddings)) 
+        questionembedding = list(map(lambda x: sum(x)/len(x), zip(*questionembeddings))) 
         true = []
         false = []
         for idx,token in enumerate(tokens):
