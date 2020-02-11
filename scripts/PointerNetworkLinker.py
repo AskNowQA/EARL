@@ -4,6 +4,7 @@ import numpy as np
 import pointer_net
 import time,os,sys,json,re,requests
 from Vectoriser import Vectoriser
+import copy
 
 tf.app.flags.DEFINE_integer("max_input_sequence_len", 3000, "Maximum input sequence length.")
 tf.app.flags.DEFINE_integer("max_output_sequence_len", 100, "Maximum output sequence length.")
@@ -51,7 +52,48 @@ class PointerNetworkLinker():
                 print("Load model parameters from %s" % ckpt.model_checkpoint_path)
                 self.model.saver.restore(self.sess, ckpt.model_checkpoint_path)
             self.sess.graph.finalize()
-   
+
+    def merge(self, entitytuple, entdict):
+        span = entitytuple[1]
+        tempentdict = copy.deepcopy(entdict)
+        for k,v in tempentdict.items():
+            for entchunk in v:
+                entspan = entchunk[1]
+                x = range(span[0],span[1]+1)
+                y = range(entspan[0],entspan[1]+1)
+                if len(set(x).intersection(y)) > 0:
+                    if entitytuple in entdict[k]:
+                        print("Exact already present, skip")
+                        continue
+                    print("Merging ", entitytuple, " into ", entdict)
+                    entdict[k].append((entitytuple))
+        
+
+    def overlap(self,span,entdict):
+        for k,v in entdict.items():
+            for entchunk in v:
+                entspan = entchunk[1]
+                x = range(span[0],span[1]+1)
+                y = range(entspan[0],entspan[1]+1)
+                if len(set(x).intersection(y)) > 0:
+                    print("Overlap exists between ",span," and ",entspan)
+                    return True
+        return False 
+                    
+    def processentities(self, entities):
+        entdict = {}
+        clustercount = 0
+        for entitytuple in entities:
+            entid,span, spanphrase, storedlabel = entitytuple
+            if len(entdict) == 0:
+                entdict[clustercount] = [entitytuple]
+            else:
+                if self.overlap(span, entdict):
+                    self.merge(entitytuple,entdict)
+                else:
+                    clustercount += 1
+                    entdict[clustercount] =  [entitytuple]
+            print("entdict: ",entdict)
 
     def link(self, vectors):
         print("Entered pointer network linker ...")
@@ -77,32 +119,26 @@ class PointerNetworkLinker():
         self.test_enc_input_weights = np.stack(enc_input_weights)
         predicted_ids,outputs = self.model.step(self.sess, self.test_inputs, self.test_enc_input_weights, update=False) 
         print("predicted_ids: ",list(predicted_ids[0][0]))
-        predents = set()
-        seen = []
-        entities = {}
+        entities = []
         for entnum in list(predicted_ids[0][0]):
             if entnum <= 0:
                 continue
             wordindex = vectors[entnum-1][0][801]
             #if wordindex in seen:
             #    continue
-            entityid = vectors[entnum-1][1]
-            entitylabel = vectors[entnum-1][2]
-            entityspan = vectors[entnum-1][3]
-            ngramtype = vectors[entnum-1][0][802]
-            if entityid not in entities:
-                entities[entityid] = [[entitylabel,entityspan]]
-            else:
-                entities[entityid].append([entitylabel,entityspan])
-            print(vectors[entnum-1][0][801], vectors[entnum-1][0][802],vectors[entnum-1][0][800], vectors[entnum-1][1], vectors[entnum-1][2], vectors[entnum-1][3])
-            #predents.add(vectors[entnum-1][1])
-            #seen.append(wordindex)
-        print("predents: ",entities)
-        return entities
+            span = vectors[entnum-1][4] # [startindex, endindex]
+            spanphrase = vectors[entnum-1][3] # of India
+            storedlabel = vectors[entnum-1][2] # India
+            entid = vectors[entnum-1][1] #Q668
+            entities.append((entid,span, spanphrase, storedlabel))
+            print(vectors[entnum-1][0][801], vectors[entnum-1][0][802],vectors[entnum-1][0][800], vectors[entnum-1][1], vectors[entnum-1][2], vectors[entnum-1][3], vectors[entnum-1][4])
+        groupedentities = self.processentities(entities)
+        print("predents: ",groupedentities)
+        return groupedentities
 
 if __name__ == '__main__':
     v = Vectoriser()
-    vectors = v.vectorise("where is India ?")
+    vectors = v.vectorise("which city in India is located in Tamil Nadu ?")
     p = PointerNetworkLinker()
     entities = p.link(vectors)
     
