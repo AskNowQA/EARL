@@ -94,6 +94,7 @@ class PointerNetworkLinker():
                     clustercount += 1
                     entdict[clustercount] =  [entitytuple]
             print("entdict: ",entdict)
+        return entdict
 
     def link(self, vectors):
         print("Entered pointer network linker ...")
