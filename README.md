@@ -9,7 +9,7 @@ ISWC 2018 Research Paper: https://link.springer.com/chapter/10.1007/978-3-030-00
 
 # SETUP INSTRUCTIONS
 
- Install all python dependencies required that are mentioned in requirements.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 6.x instance. The mappings can be found in data/elasticsearchdump/ folder. Download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder. Download https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.vec and store it in data/ folder.
+ Install all python dependencies required that are mentioned in requirements.txt. Clone practNLPTools from https://github.com/biplab-iitb/practNLPTools and install. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/. Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 6.8.5 instance. The mappings can be found in data/elasticsearchdump/ folder. Download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder. Download https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.en.vec and https://dl.fbaipublicfiles.com/fasttext/vectors-english/wiki-news-300d-1M-subword.vec.zip (unzip after download) and store it in data/ folder.
 
 To import elasticsearch data one could install elasticdump https://www.npmjs.com/package/elasticdump
 
