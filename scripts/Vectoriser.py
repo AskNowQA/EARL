@@ -69,6 +69,7 @@ class Vectoriser():
                  if len(esresults) > 0:
                      for entidx,esresult in enumerate(esresults):
                          entityembedding = self.getembedding(esresult['_source']['uri'])
+                         descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                          if entityembedding and questionembedding and tokenembedding:
                              candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
             #n,n+1
@@ -79,6 +80,7 @@ class Vectoriser():
                 if len(esresults) > 0:
                     for entidx,esresult in enumerate(esresults):
                         entityembedding = self.getembedding(esresult['_source']['uri'])
+                        descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                         if entityembedding and questionembedding and tokenembedding:
                             candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
     
@@ -90,6 +92,7 @@ class Vectoriser():
                 if len(esresults) > 0:
                     for entidx,esresult in enumerate(esresults):
                         entityembedding = self.getembedding(esresult['_source']['uri'])
+                        descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                         if entityembedding and questionembedding :
                             candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
         return candidatevectors
