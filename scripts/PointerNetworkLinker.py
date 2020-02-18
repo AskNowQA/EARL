@@ -28,7 +28,7 @@ class PointerNetworkLinker():
         with self.graph.as_default():
             config = tf.ConfigProto()
             config.gpu_options.allow_growth = True
-            config.operation_timeout_in_ms=30000
+            config.operation_timeout_in_ms=10000
             self.sess = tf.Session(config=config)
         self.build_model()
         print("Initialised PointerNetworkLinker")
