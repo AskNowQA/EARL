@@ -23,6 +23,21 @@ class Vectoriser():
             return None
         return None
 
+    def getdescriptionsembedding(self, entid):
+        res = self.es.search(index="wikidataentitydescriptionsindex01", body={"query":{"term":{"entityid.keyword":entid}}})
+        try:
+            description = res['hits']['hits'][0]['_source']['description']
+            req = urllib2.Request('http://localhost:8887/ftwv')
+            req.add_header('Content-Type', 'application/json')
+            inputjson = {'chunks':[description]}
+            response = urllib2.urlopen(req, json.dumps(inputjson))
+            descembedding = json.loads(response.read().decode('utf8'))[0]
+            return descembedding
+        except Exception as e:
+            #print("getdescriptionsembedding err: ",e)
+            return [0]*300
+        return [0]*300
+
     def vectorise(self,nlquery):
         if not nlquery:
             return []
@@ -43,8 +58,9 @@ class Vectoriser():
             if len(esresults) > 0:
                 for entidx,esresult in enumerate(esresults):
                     entityembedding = self.getembedding(esresult['_source']['uri'])
+                    descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                     if entityembedding and questionembedding and tokenembedding :
-                        candidatevectors.append([entityembedding+questionembedding+tokenembedding+[entidx,idx,1],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],tokens[idx], [idx,idx]])
+                        candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,1],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],tokens[idx], [idx,idx]])
             #n-1,n
             if idx > 0:
                  word = tokens[idx-1]+' '+tokens[idx]
@@ -54,7 +70,7 @@ class Vectoriser():
                      for entidx,esresult in enumerate(esresults):
                          entityembedding = self.getembedding(esresult['_source']['uri'])
                          if entityembedding and questionembedding and tokenembedding:
-                             candidatevectors.append([entityembedding+questionembedding+tokenembedding+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
+                             candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
             #n,n+1
             if idx < len(tokens) - 1:
                 word = tokens[idx]+' '+tokens[idx+1]
@@ -64,7 +80,7 @@ class Vectoriser():
                     for entidx,esresult in enumerate(esresults):
                         entityembedding = self.getembedding(esresult['_source']['uri'])
                         if entityembedding and questionembedding and tokenembedding:
-                            candidatevectors.append([entityembedding+questionembedding+tokenembedding+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
+                            candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
     
             #n-1,n,n+1
             if idx < len(tokens) - 1 and idx > 0:
@@ -75,7 +91,7 @@ class Vectoriser():
                     for entidx,esresult in enumerate(esresults):
                         entityembedding = self.getembedding(esresult['_source']['uri'])
                         if entityembedding and questionembedding :
-                            candidatevectors.append([entityembedding+questionembedding+tokenembedding+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
+                            candidatevectors.append([entityembedding+questionembedding+descembedding+tokenembedding+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
         return candidatevectors
 
 if __name__ == '__main__':

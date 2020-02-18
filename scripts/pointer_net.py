@@ -74,7 +74,7 @@ class PointerNet(object):
     # Choose LSTM Cell
     cell = tf.contrib.rnn.LSTMCell
     # Create placeholders
-    self.inputs = tf.placeholder(tf.float32, shape=[self.batch_size,self.max_input_sequence_len,803], name="inputs")
+    self.inputs = tf.placeholder(tf.float32, shape=[self.batch_size,self.max_input_sequence_len,1103], name="inputs")
     self.outputs = tf.placeholder(tf.int32, shape=[self.batch_size,self.max_output_sequence_len+1], name="outputs")
     self.enc_input_weights = tf.placeholder(tf.int32,shape=[self.batch_size,self.max_input_sequence_len], name="enc_input_weights")
     self.dec_input_weights = tf.placeholder(tf.int32,shape=[self.batch_size,self.max_output_sequence_len], name="dec_input_weights")
@@ -82,7 +82,7 @@ class PointerNet(object):
     enc_input_lens=tf.reduce_sum(self.enc_input_weights,axis=1)
     dec_input_lens=tf.reduce_sum(self.dec_input_weights,axis=1)
     # Special token embedding
-    special_token_embedding = tf.get_variable("special_token_embedding", [3,803], tf.float32, tf.contrib.layers.xavier_initializer())
+    special_token_embedding = tf.get_variable("special_token_embedding", [3,1103], tf.float32, tf.contrib.layers.xavier_initializer())
     # Embedding_table
     # Shape: [batch_size,vocab_size,features_size]
     embedding_table = tf.concat([tf.tile(tf.expand_dims(special_token_embedding,0),[self.batch_size,1,1]), self.inputs],axis=1)   

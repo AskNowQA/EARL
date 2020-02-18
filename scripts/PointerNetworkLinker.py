@@ -16,7 +16,7 @@ tf.app.flags.DEFINE_float("learning_rate", 0.001, "Learning rate.")
 tf.app.flags.DEFINE_string("test_data", "./a.txt", "Learning rate.")
 tf.app.flags.DEFINE_float("max_gradient_norm", 5.0, "Maximum gradient norm.")
 tf.app.flags.DEFINE_boolean("forward_only", True, "Forward Only.")
-tf.app.flags.DEFINE_string("models_dir", "../data/pointermodel/solid", "Log directory")
+tf.app.flags.DEFINE_string("models_dir", "../data/pointermodelwebqs/solid", "Log directory")
 tf.app.flags.DEFINE_integer("batch_size", 1, "batchsize")
 FLAGS = tf.app.flags.FLAGS
 
@@ -111,7 +111,7 @@ class PointerNetworkLinker():
         for idx,word in enumerate(vectors):
             questioninputs.append(word[0])
         for i in range(FLAGS.max_input_sequence_len-enc_input_len):
-            questioninputs.append([0]*803)
+            questioninputs.append([0]*1103)
         weight = np.zeros(FLAGS.max_input_sequence_len)
         weight[:enc_input_len]=1
         enc_input_weights.append(weight)
