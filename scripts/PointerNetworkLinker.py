@@ -140,7 +140,7 @@ class PointerNetworkLinker():
 
 if __name__ == '__main__':
     v = Vectoriser()
-    vectors = v.vectorise("what language is spoken in haiti today?")
+    vectors = v.vectorise("which city in India is located in Tamil Nadu ?")
     p = PointerNetworkLinker()
     entities = p.link(vectors)
     

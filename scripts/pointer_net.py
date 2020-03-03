@@ -31,6 +31,7 @@ class PointerWrapper(tf.contrib.seq2seq.AttentionWrapper):
 
   def call(self, inputs, state):
     _, next_state = super(PointerWrapper, self).call(inputs, state)
+    print("nextstate: ", next_state.alignments, next_state)
     return next_state.alignments, next_state
  
 
