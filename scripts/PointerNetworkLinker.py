@@ -16,7 +16,7 @@ tf.app.flags.DEFINE_float("learning_rate", 0.001, "Learning rate.")
 tf.app.flags.DEFINE_string("test_data", "./a.txt", "Learning rate.")
 tf.app.flags.DEFINE_float("max_gradient_norm", 5.0, "Maximum gradient norm.")
 tf.app.flags.DEFINE_boolean("forward_only", True, "Forward Only.")
-tf.app.flags.DEFINE_string("models_dir", "../data/pointermodelwebqs6/", "Log directory")
+tf.app.flags.DEFINE_string("models_dir", "../data/pointermodelwebqs8/", "Log directory")
 tf.app.flags.DEFINE_integer("batch_size", 1, "batchsize")
 FLAGS = tf.app.flags.FLAGS
 
@@ -111,7 +111,7 @@ class PointerNetworkLinker():
         for idx,word in enumerate(vectors):
             questioninputs.append(word[0])
         for i in range(FLAGS.max_input_sequence_len-enc_input_len):
-            questioninputs.append([0]*1403)
+            questioninputs.append([0]*1439)
         weight = np.zeros(FLAGS.max_input_sequence_len)
         weight[:enc_input_len]=1
         enc_input_weights.append(weight)
@@ -124,7 +124,7 @@ class PointerNetworkLinker():
         for entnum in list(predicted_ids[0][0]):
             if entnum <= 0:
                 continue
-            wordindex = vectors[entnum-1][0][1401]
+            #wordindex = vectors[entnum-1][0][1437]
             #if wordindex in seen:
             #    continue
             span = vectors[entnum-1][4] # [startindex, endindex]
@@ -132,7 +132,7 @@ class PointerNetworkLinker():
             storedlabel = vectors[entnum-1][2] # India
             entid = vectors[entnum-1][1] #Q668
             entities.append((entid,span, spanphrase, storedlabel))
-            print(vectors[entnum-1][0][1401], vectors[entnum-1][0][1402],vectors[entnum-1][0][1400], vectors[entnum-1][1], vectors[entnum-1][2], vectors[entnum-1][3], vectors[entnum-1][4])
+            #print(vectors[entnum-1][0][1437], vectors[entnum-1][0][1438],vectors[entnum-1][0][1436], vectors[entnum-1][1], vectors[entnum-1][2], vectors[entnum-1][3], vectors[entnum-1][4])
         #groupedentities = self.processentities(entities)
         #print("predents: ",groupedentities)
         print("unprocessed predicted ents: ", entities)
@@ -140,7 +140,7 @@ class PointerNetworkLinker():
 
 if __name__ == '__main__':
     v = Vectoriser()
-    vectors = v.vectorise("which city in India is located in Tamil Nadu ?")
+    vectors = v.vectorise("what electorate does anna bligh represent?")
     p = PointerNetworkLinker()
     entities = p.link(vectors)
     
