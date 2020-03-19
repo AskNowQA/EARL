@@ -5,7 +5,11 @@ import requests
 from elasticsearch import Elasticsearch
 from textblob import TextBlob
 import numpy as np
+from multiprocessing import Pool
+
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
+
+pool = Pool(5)
 
 class Vectoriser():
     def __init__(self):
@@ -67,7 +71,6 @@ class Vectoriser():
                 #n
                 posonehot = len(postags)*[0.0]
                 posonehot[postags.index(chunk[1])] = 1
-                print(posonehot)
                 tokenembedding = questionembeddings[idx]
                 res = self.es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":chunks[idx][0]}},"size":30})
                 esresults = res['hits']['hits']

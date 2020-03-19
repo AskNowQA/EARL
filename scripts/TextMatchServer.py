@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-from annoy import AnnoyIndex
-from sets import Set
 from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
@@ -10,14 +8,11 @@ import gensim
 import numpy as np
 import json,sys
 import random
-import torch
-from pytorch_transformers import *
 
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 
+cache = {}
 
 def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
     if len(ignore) == 0:
@@ -30,76 +25,11 @@ print("TextMatch initializing, loading fastext")
 try:
     es = Elasticsearch()
     model = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-    print("loaded fastext, loading relation labels")
-    cache = {}
-    numberlabelhash = json.loads(open('../data/predonlyurls1.json').read())
-    t = AnnoyIndex(300, 'angular') #approx nearest neighbour search lib
-    t.load('../data/predonly1.ann')
-except Exception,e:
-    print e
+    print("loaded fastext")
+except Exception as e:
+    print(e)
     sys.exit(1)
 
-print("Loading Bert")
-transfoxltokenizer = TransfoXLTokenizer.from_pretrained('../data/bertmodelfiles/')
-transfoxlmodel = TransfoXLModel.from_pretrained('../data/bertmodelfiles/')
-print("Bert Loaded")
-print "TextMatch initialized"
-
-
-
-
-
-def labeltovec(_phrase_1):
-    phrase_1 = _phrase_1.split(" ")
-    vw_phrase_1 = []
-    for phrase in phrase_1:
-        try:
-            # print phrase
-            vw_phrase_1.append(model.word_vec(phrase.lower()))
-        except:
-            # print traceback.print_exc()
-            continue
-    if len(vw_phrase_1) == 0:
-        return 300*[0.0]
-    v_phrase_1 = ConvertVectorSetToVecAverageBased(vw_phrase_1)
-    return v_phrase_1
-
-def phrase_similarity(_phrase_1, _phrase_2):
-    phrase_1 = _phrase_1.split(" ")
-    phrase_2 = _phrase_2.split(" ")
-    vw_phrase_1 = []
-    vw_phrase_2 = []
-    for phrase in phrase_1:
-        try:
-            # print phrase
-            vw_phrase_1.append(model.word_vec(phrase.lower()))
-        except:
-            # print traceback.print_exc()
-            continue
-    for phrase in phrase_2:
-        try:
-            vw_phrase_2.append(model.word_vec(phrase.lower()))
-        except Exception,e:
-            continue
-    if len(vw_phrase_1) == 0 or len(vw_phrase_2) == 0:
-        return 0
-    v_phrase_1 = ConvertVectorSetToVecAverageBased(vw_phrase_1)
-    v_phrase_2 = ConvertVectorSetToVecAverageBased(vw_phrase_2)
-    cosine_similarity = np.dot(v_phrase_1, v_phrase_2) / (np.linalg.norm(v_phrase_1) * np.linalg.norm(v_phrase_2))
-    return cosine_similarity
-
-@app.route('/bert', methods=['POST'])
-def bert():
-    d = request.get_json(silent=True)
-    sentences = d['sentences']
-    vectors = []
-    for sentence in sentences:
-        print(sentence)
-        input_ids = torch.tensor([transfoxltokenizer.encode(sentence, add_special_tokens=True)]) 
-        with torch.no_grad():
-            last_hidden_states = transfoxlmodel(input_ids)[0][0][-1]
-            vectors.append(last_hidden_states.tolist())
-    return json.dumps(vectors)
 
 @app.route('/ftwv', methods=['POST'])
 def ftwv():
@@ -107,6 +37,8 @@ def ftwv():
     chunks = d['chunks'] 
     vectors = []
     for chunk in chunks:
+        if chunk in cache:
+            vectors.append(cache[chunk])
         print(chunk)
         phrase_1 = chunk.split(" ")
         vw_phrase_1 = []
@@ -119,8 +51,11 @@ def ftwv():
                 continue
         if len(vw_phrase_1) == 0:
            vectors.append(300*[0.0])
+           cache[chunk] = 300*[0.0]
         else:
-           vectors.append(ConvertVectorSetToVecAverageBased(vw_phrase_1).tolist())
+           x = ConvertVectorSetToVecAverageBased(vw_phrase_1).tolist()
+           vectors.append(x)
+           cache[chunk] = x
     return json.dumps(vectors)
 
 @app.route('/textMatch', methods=['POST'])

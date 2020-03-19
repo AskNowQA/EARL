@@ -133,10 +133,9 @@ class PointerNetworkLinker():
             entid = vectors[entnum-1][1] #Q668
             entities.append((entid,span, spanphrase, storedlabel))
             #print(vectors[entnum-1][0][1437], vectors[entnum-1][0][1438],vectors[entnum-1][0][1436], vectors[entnum-1][1], vectors[entnum-1][2], vectors[entnum-1][3], vectors[entnum-1][4])
-        #groupedentities = self.processentities(entities)
-        #print("predents: ",groupedentities)
-        print("unprocessed predicted ents: ", entities)
-        return entities
+        groupedentities = self.processentities(entities)
+        print("predents: ",groupedentities)
+        return groupedentities
 
 if __name__ == '__main__':
     v = Vectoriser()
