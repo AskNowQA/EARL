@@ -7,5 +7,5 @@ inputjson = {'sentences':["where is delhi", "who is the president of america"]}
 response = urllib2.urlopen(req, json.dumps(inputjson))
 print(response)
 embedding = json.loads(response.read().decode('utf8'))
-print(embedding)
+print(len(embedding[1]))
 

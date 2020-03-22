@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 
 torch.manual_seed(1)
-d = json.loads(open('embedjointtrainvectors1.json').read())
+d = json.loads(open('embedjointtrainvectorsdesc1.json').read())
 inputs = []
 outputs = []
 ocount = 0
@@ -24,7 +24,7 @@ for item in d:
 
 print(ocount,_zcount)
 
-d = json.loads(open('embedjointtestvectors1.json').read())
+d = json.loads(open('embedjointtestvectorsdesc1.json').read())
 testinputs = []
 testoutputs = []
 ocount = 0
@@ -46,7 +46,7 @@ for item in d:
 
 device = torch.device('cuda')
 batch_size = 5000
-N, D_in, H1, H2, H3, H4, D_out = batch_size, 502, 300, 150, 75, 25, 1
+N, D_in, H1, H2, H3, H4, D_out = batch_size, 802, 500, 250, 100, 50, 1
 
 x = torch.FloatTensor(inputs).cuda()
 y = torch.FloatTensor(outputs).cuda()
