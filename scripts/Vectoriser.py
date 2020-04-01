@@ -15,13 +15,19 @@ class Vectoriser():
     def __init__(self):
        print("Initialising Vectoriser")
        self.es = Elasticsearch()
+       self.entembedcache = {}
+       self.labelembedcache = {}
+       self.descembedcache = {}
        print("Initialised Vectoriser")
    
     def getembedding(self, enturl):
+        if enturl in self.entembedcache:
+            return self.entembedcache[enturl]
         entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
         res = self.es.search(index="wikidataembedsindex01", body={"query":{"term":{"key":{"value":entityurl}}}})
         try:
             embedding = [float(x) for x in res['hits']['hits'][0]['_source']['embedding']]
+            self.entembedcache[enturl] = embedding
             return embedding
         except Exception as e:
             print(enturl,' entity embedding not found')
@@ -29,6 +35,8 @@ class Vectoriser():
         return None
 
     def getdescriptionsembedding(self, entid):
+        if entid in self.descembedcache:
+            return self.descembedcache[entid]
         res = self.es.search(index="wikidataentitydescriptionsindex01", body={"query":{"term":{"entityid.keyword":entid}}})
         if len(res['hits']['hits']) == 0:
             return [0]*300
@@ -36,6 +44,7 @@ class Vectoriser():
             description = res['hits']['hits'][0]['_source']['description']
             r = requests.post("http://localhost:8887/ftwv",json={'chunks': [description]})
             descembedding = r.json()[0]
+            self.descembedcache[entid] = descembedding
             return descembedding
         except Exception as e:
             print("getdescriptionsembedding err: ",e)
@@ -44,8 +53,11 @@ class Vectoriser():
      
     def getlabelembedding(self,label):
         try:
+            if label in self.labelembedcache:
+                return self.labelembedcache[label]
             r = requests.post("http://localhost:8887/ftwv",json={'chunks': [label]})
             labelembedding = r.json()[0]
+            self.labelembedcache[label] = labelembedding
             return labelembedding
         except Exception as e:
             print("getlabelsembedding err: ",e)
@@ -80,7 +92,7 @@ class Vectoriser():
                         descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                         labelembedding = self.getlabelembedding(esresult['_source']['wikidataLabel'])
                         if entityembedding and questionembedding :
-                            candidatevectors.append([questionembedding+tokenembedding+descembedding+labelembedding+entityembedding+posonehot+[entidx,idx,1],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],tokens[idx], [idx,idx]])
+                            candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,1],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],tokens[idx], [idx,idx]])
                 #n-1,n
                 if idx > 0:
                      word = chunks[idx-1][0]+' '+chunks[idx][0]
@@ -92,7 +104,7 @@ class Vectoriser():
                              descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                              labelembedding = self.getlabelembedding(esresult['_source']['wikidataLabel'])
                              if entityembedding and questionembedding :
-                                 candidatevectors.append([questionembedding+tokenembedding+descembedding+labelembedding+entityembedding+posonehot+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
+                                 candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
                 #n,n+1
                 if idx < len(tokens) - 1:
                     word = chunks[idx][0]+' '+chunks[idx+1][0]
@@ -104,7 +116,7 @@ class Vectoriser():
                             descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                             labelembedding = self.getlabelembedding(esresult['_source']['wikidataLabel'])
                             if entityembedding and questionembedding :
-                                candidatevectors.append([questionembedding+tokenembedding+descembedding+labelembedding+entityembedding+posonehot+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
+                                candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
         
                 #n-1,n,n+1
                 if idx < len(tokens) - 1 and idx > 0:
@@ -117,7 +129,7 @@ class Vectoriser():
                             descembedding = self.getdescriptionsembedding(esresult['_source']['uri'][37:])
                             labelembedding = self.getlabelembedding(esresult['_source']['wikidataLabel'])
                             if entityembedding and questionembedding :
-                                candidatevectors.append([questionembedding+tokenembedding+descembedding+labelembedding+entityembedding+posonehot+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
+                                candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
             except Exception as e:
                 print('mainfunerror: ',e)
         return candidatevectors
