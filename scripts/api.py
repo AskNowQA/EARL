@@ -11,8 +11,9 @@ from pynif import NIFCollection
 from rdflib import URIRef
 
 logging.basicConfig(filename='/var/log/asknow/earl.log',level=logging.INFO)
+modelpath = sys.argv[1]
 v = Vectoriser()
-p = PointerNetworkLinker()
+p = PointerNetworkLinker(modelpath)
 #j = JointLinker()
 
 app = Flask(__name__)
@@ -64,5 +65,5 @@ def processQueryNif():
 
 
 if __name__ == '__main__':
-    http_server = WSGIServer(('', int(sys.argv[1])), app)
+    http_server = WSGIServer(('', int(sys.argv[2])), app)
     http_server.serve_forever()

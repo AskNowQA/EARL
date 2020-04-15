@@ -35,7 +35,7 @@ def getdescriptionsembedding(entid):
         return [0]*300
     try:
         description = res['hits']['hits'][0]['_source']['description']
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [description]})
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [description]},headers={'Connection':'close'})
         descembedding = r.json()[0]
         descembedcache[entid] = descembedding
         return descembedding
@@ -48,7 +48,7 @@ def getlabelembedding(label):
     try:
         if label in labelembedcache:
             return labelembedcache[label]
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [label]})
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [label]},headers={'Connection':'close'})
         labelembedding = r.json()[0]
         labelembedcache[label] = labelembedding
         return labelembedding
@@ -120,7 +120,7 @@ def CreateVectors(inputcandidatetuple):
 class Vectoriser():
     def __init__(self):
        print("Initialising Vectoriser")
-       
+       self.pool = Pool(10)
        print("Initialised Vectoriser")
    
 
@@ -133,19 +133,19 @@ class Vectoriser():
         candidatevectors = []
         #questionembedding
         tokens = [token for token in q.split(" ") if token != ""]
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': tokens})
+        r = requests.post("http://localhost:8887/ftwv",json={'chunks': tokens},headers={'Connection':'close'})
         questionembeddings = r.json()
         questionembedding = list(map(lambda x: sum(x)/len(x), zip(*questionembeddings)))
         true = []
         false = []
-        pool = Pool(10)
         inputcandidates = []
         for idx,chunk in enumerate(chunks):
             inputcandidates.append((tokens,questionembeddings,questionembedding,chunks,idx,chunk))
-        responses = pool.imap(CreateVectors, inputcandidates)
+        responses = self.pool.imap(CreateVectors, inputcandidates)
         print("Received pool response")
         for response in responses:
             candidatevectors += response
+        #self.pool.close()
         return candidatevectors
 
 if __name__ == '__main__':

@@ -16,13 +16,14 @@ tf.app.flags.DEFINE_float("learning_rate", 0.001, "Learning rate.")
 tf.app.flags.DEFINE_string("test_data", "./a.txt", "Learning rate.")
 tf.app.flags.DEFINE_float("max_gradient_norm", 5.0, "Maximum gradient norm.")
 tf.app.flags.DEFINE_boolean("forward_only", True, "Forward Only.")
-tf.app.flags.DEFINE_string("models_dir", "../data/pointermodelwebqs8/", "Log directory")
+#tf.app.flags.DEFINE_string("models_dir", "../data/lcqmodel0/", "Log directory")
 tf.app.flags.DEFINE_integer("batch_size", 1, "batchsize")
 FLAGS = tf.app.flags.FLAGS
 
 class PointerNetworkLinker():
-    def __init__(self):
+    def __init__(self, modelpath):
         print("Initialising PointerNetworkLinker")
+        self.modelpath = modelpath
         self.forward_only = True
         self.graph = tf.Graph()
         with self.graph.as_default():
@@ -46,8 +47,8 @@ class PointerNetworkLinker():
                         learning_rate=FLAGS.learning_rate,
                         max_gradient_norm=FLAGS.max_gradient_norm,
                         forward_only=self.forward_only)
-            ckpt = tf.train.get_checkpoint_state(FLAGS.models_dir)
-            print(ckpt, FLAGS.models_dir)
+            ckpt = tf.train.get_checkpoint_state(self.modelpath)
+            print(ckpt, self.modelpath)
             if ckpt and tf.train.checkpoint_exists(ckpt.model_checkpoint_path):
                 print("Load model parameters from %s" % ckpt.model_checkpoint_path)
                 self.model.saver.restore(self.sess, ckpt.model_checkpoint_path)
