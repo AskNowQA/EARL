@@ -37,9 +37,11 @@ def ftwv():
     chunks = d['chunks'] 
     vectors = []
     for chunk in chunks:
-        if chunk in cache:
-            vectors.append(cache[chunk])
         print(chunk)
+        if chunk in cache:
+            print('in cache')
+            vectors.append(cache[chunk])
+            continue
         phrase_1 = chunk.split(" ")
         vw_phrase_1 = []
         for phrase in phrase_1:
