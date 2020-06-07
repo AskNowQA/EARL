@@ -112,7 +112,7 @@ class PointerNetworkLinker():
         for idx,word in enumerate(vectors):
             questioninputs.append(word[0])
         for i in range(FLAGS.max_input_sequence_len-enc_input_len):
-            questioninputs.append([0]*1439)
+            questioninputs.append([0]*1142)
         weight = np.zeros(FLAGS.max_input_sequence_len)
         weight[:enc_input_len]=1
         enc_input_weights.append(weight)
@@ -141,7 +141,7 @@ class PointerNetworkLinker():
 if __name__ == '__main__':
     v = Vectoriser()
     vectors = v.vectorise("what electorate does anna bligh represent?")
-    p = PointerNetworkLinker()
+    p = PointerNetworkLinker("../data/lcq1142/")
     entities = p.link(vectors)
     
 

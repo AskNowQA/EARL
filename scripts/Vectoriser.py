@@ -6,12 +6,12 @@ from elasticsearch import Elasticsearch
 from textblob import TextBlob
 import numpy as np
 from multiprocessing import Pool
+from fuzzywuzzy import fuzz
 
 postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
 
 es = Elasticsearch()
 entembedcache = {}
-labelembedcache = {}
 descembedcache = {}
 def getembedding(enturl):
     if enturl in entembedcache:
@@ -26,6 +26,9 @@ def getembedding(enturl):
         print(enturl,' entity embedding not found')
         return None
     return None
+
+def gettextmatchmetric(label,word):
+    return [fuzz.ratio(label,word)/100.0,fuzz.partial_ratio(label,word)/100.0,fuzz.token_sort_ratio(label,word)/100.0]
 
 def getdescriptionsembedding(entid):
     if entid in descembedcache:
@@ -44,19 +47,6 @@ def getdescriptionsembedding(entid):
         return [0]*300
     return [0]*300
  
-def getlabelembedding(label):
-    try:
-        if label in labelembedcache:
-            return labelembedcache[label]
-        r = requests.post("http://localhost:8887/ftwv",json={'chunks': [label]},headers={'Connection':'close'})
-        labelembedding = r.json()[0]
-        labelembedcache[label] = labelembedding
-        return labelembedding
-    except Exception as e:
-        print("getlabelsembedding err: ",e)
-        return [0]*300
-    return [0]*300
-
 def CreateVectors(inputcandidatetuple):
     candidatevectors = []
     tokens,questionembeddings,questionembedding,chunks,idx,chunk = inputcandidatetuple
@@ -65,15 +55,17 @@ def CreateVectors(inputcandidatetuple):
         posonehot = len(postags)*[0.0]
         posonehot[postags.index(chunk[1])] = 1
         tokenembedding = questionembeddings[idx]
+        word = chunks[idx][0]
         res = es.search(index="wikidataentitylabelindex01", body={"query":{"multi_match":{"query":chunks[idx][0]}},"size":30})
         esresults = res['hits']['hits']
         if len(esresults) > 0:
             for entidx,esresult in enumerate(esresults):
-                entityembedding = getembedding(esresult['_source']['uri'])
                 descembedding = getdescriptionsembedding(esresult['_source']['uri'][37:])
-                labelembedding = getlabelembedding(esresult['_source']['wikidataLabel'])
+                entityembedding = getembedding(esresult['_source']['uri'])
+                label = esresult['_source']['wikidataLabel']
+                textmatchmetric = gettextmatchmetric(label, word)
                 if entityembedding and questionembedding :
-                    candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,1],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],tokens[idx], [idx,idx]])
+                    candidatevectors.append([questionembedding+tokenembedding+entityembedding+descembedding+posonehot+textmatchmetric+[entidx,idx,1],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],tokens[idx], [idx,idx]])
         #n-1,n
         if idx > 0:
              word = chunks[idx-1][0]+' '+chunks[idx][0]
@@ -81,11 +73,12 @@ def CreateVectors(inputcandidatetuple):
              esresults = res['hits']['hits']
              if len(esresults) > 0:
                  for entidx,esresult in enumerate(esresults):
-                     entityembedding = getembedding(esresult['_source']['uri'])
                      descembedding = getdescriptionsembedding(esresult['_source']['uri'][37:])
-                     labelembedding = getlabelembedding(esresult['_source']['wikidataLabel'])
+                     entityembedding = getembedding(esresult['_source']['uri'])
+                     label = esresult['_source']['wikidataLabel']
+                     textmatchmetric = gettextmatchmetric(label, word)
                      if entityembedding and questionembedding :
-                         candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
+                         candidatevectors.append([questionembedding+tokenembedding+entityembedding+descembedding+posonehot+textmatchmetric+[entidx,idx,-2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx]])
         #n,n+1
         if idx < len(tokens) - 1:
             word = chunks[idx][0]+' '+chunks[idx+1][0]
@@ -93,11 +86,12 @@ def CreateVectors(inputcandidatetuple):
             esresults = res['hits']['hits']
             if len(esresults) > 0:
                 for entidx,esresult in enumerate(esresults):
-                    entityembedding = getembedding(esresult['_source']['uri'])
                     descembedding = getdescriptionsembedding(esresult['_source']['uri'][37:])
-                    labelembedding = getlabelembedding(esresult['_source']['wikidataLabel'])
+                    entityembedding = getembedding(esresult['_source']['uri'])
+                    label = esresult['_source']['wikidataLabel']
+                    textmatchmetric = gettextmatchmetric(label, word)
                     if entityembedding and questionembedding :
-                        candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
+                        candidatevectors.append([questionembedding+tokenembedding+entityembedding+descembedding+posonehot+textmatchmetric+[entidx,idx,2],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx,idx+1]])
 
         #n-1,n,n+1
         if idx < len(tokens) - 1 and idx > 0:
@@ -106,11 +100,12 @@ def CreateVectors(inputcandidatetuple):
             esresults = res['hits']['hits']
             if len(esresults) > 0:
                 for entidx,esresult in enumerate(esresults):
+                    escembedding = getdescriptionsembedding(esresult['_source']['uri'][37:])
                     entityembedding = getembedding(esresult['_source']['uri'])
-                    descembedding = getdescriptionsembedding(esresult['_source']['uri'][37:])
-                    labelembedding = getlabelembedding(esresult['_source']['wikidataLabel'])
+                    label = esresult['_source']['wikidataLabel']
+                    textmatchmetric = gettextmatchmetric(label, word)
                     if entityembedding and questionembedding :
-                        candidatevectors.append([questionembedding+tokenembedding+labelembedding+descembedding+entityembedding+posonehot+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
+                        candidatevectors.append([questionembedding+tokenembedding+entityembedding+descembedding+posonehot+textmatchmetric+[entidx,idx,3],esresult['_source']['uri'][37:],esresult['_source']['wikidataLabel'],word, [idx-1,idx+1]])
         return candidatevectors
     except Exception as err:
         print(err, "Createvectorfail")
