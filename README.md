@@ -1,4 +1,4 @@
-# EARL 
+# EARL (Python 3.8 compatible)
 ## Joint Entity and Relation Linking for Question Answering
 
 EARL (Entity and Relation Linker), a system for jointly linking entities and relations in a question to a knowledge graph. EARL treats entity linking and relation linking as a single task and thus aims to reduce the error caused by the dependent steps. To realise this, EARL uses the knowledge graph to jointly disambiguate entity and relations. EARL obtains the context for entity disambiguation by observing the relations surrounding the entity. Similarly, it obtains the context for relation disambiguation by looking at the surrounding entities. We support multiple entities and relations occurring in complex questions by modelling the joint entity and relation linking task as an instance of the Generalised Travelling Salesman Problem (GTSP).
@@ -26,6 +26,9 @@ Then import the actual data:
 Now go to EARL/ code checkout folder:
 
     $cd scripts/
+
+Download SENNA parser from https://ronan.collobert.com/senna/ and unzip in this folder, then:
+
     $python TextMatchServer.py 8888  (this takes several minutes to load)
     $python api.py 4999
 

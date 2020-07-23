@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from sets import Set
 from flask import request
 from flask import Flask
 from gevent.pywsgi import WSGIServer
@@ -9,12 +8,10 @@ import gensim
 import numpy as np
 import json,sys
 
-reload(sys)
-sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 
-print "TextMatch initializing"
+print("TextMatch initializing")
 try:
     es = Elasticsearch()
     labelhash = {}
@@ -24,10 +21,10 @@ try:
     labelhash = json.loads(s)
     model = gensim.models.KeyedVectors.load_word2vec_format('../data/lexvec.commoncrawl.300d.W.pos.vectors')
     fasttextmodel = gensim.models.KeyedVectors.load_word2vec_format('../data/fasttext-wiki-news-subwords-300')
-except Exception,e:
-    print e
+except Exception as e:
+    print(e)
     sys.exit(1)            
-print "TextMatch initialized"
+print("TextMatch initialized")
 
 def ConvertVectorSetToVecAverageBased(vectorSet, ignore = []):
     if len(ignore) == 0:
@@ -51,7 +48,7 @@ def phrase_similarity(_phrase_1, _phrase_2):
     for phrase in phrase_2:
         try:
             vw_phrase_2.append(model.word_vec(phrase.lower()))
-        except Exception,e:
+        except Exception as e:
             continue
     if len(vw_phrase_1) == 0 or len(vw_phrase_2) == 0:
         return 0
@@ -82,6 +79,7 @@ def ftwv():
 def textMatch():
     pagerankflag = False
     d = request.get_json(silent=True)
+    print(d)
     if 'pagerankflag' in d:
         pagerankflag = d['pagerankflag']
     chunks = d['chunks']
@@ -107,11 +105,11 @@ def textMatch():
          if chunk['class'] == 'relation':
              phrase = chunk['chunk']
              if phrase not in cache:
-                 print "%s not in cache"%phrase
+                 print("%s not in cache"%phrase)
                  results = []
                  max_score = 0
                  uris = []
-                 for k,v in labelhash.iteritems():
+                 for k,v in labelhash.items():
                      score = phrase_similarity(k, phrase)
                      results.append({'label':k, 'score': float(score), 'uris': v})
                  newresults = sorted(results, key=lambda k: k['score'], reverse=True)
@@ -122,7 +120,7 @@ def textMatch():
                  cache[phrase] = uriarray
                  matchedChunks.append({'chunk':chunk, 'topkmatches': uriarray, 'class': 'relation'})
              else:
-                 print "%s in cache"%phrase
+                 print("%s in cache"%phrase)
                  matchedChunks.append({'chunk':chunk, 'topkmatches': cache[phrase], 'class': 'relation'})
                         
     return json.dumps(matchedChunks)

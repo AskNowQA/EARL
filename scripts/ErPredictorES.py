@@ -2,7 +2,8 @@
 
 import numpy as np
 import re
-import urllib2
+from urllib.request import urlopen
+from urllib.request import Request
 import gzip
 from elasticsearch import Elasticsearch
 import torch
@@ -13,7 +14,7 @@ from fuzzywuzzy import fuzz
 
 class ErPredictorES:
     def __init__(self):
-        print "Er Predictor ES Initializing"
+        print("Er Predictor ES Initializing")
         self.es  = Elasticsearch()
         n_in, n_h, n_out = 304, 200, 2
         self.ermodel = nn.Sequential(nn.Linear(n_in, n_h),
@@ -24,13 +25,17 @@ class ErPredictorES:
                  nn.Softmax())
         self.ermodel.load_state_dict(torch.load('../data/er.model',map_location='cpu'))
         self.ermodel.eval()
-        print "Er Predictor Initialized"
+        print("Er Predictor Initialized")
 
     def embed(self, words):
-        req = urllib2.Request('http://localhost:8888/ftwv')
+        req = Request('http://localhost:8888/ftwv')
         req.add_header('Content-Type', 'application/json')
-        inputjson = {'chunk': words}
-        response = urllib2.urlopen(req, json.dumps(inputjson))
+        body = {'chunk': words}
+        print(body)
+        jsondata = json.dumps(body)
+        jsondataasbytes = jsondata.encode("utf-8")
+        req.add_header('Content-Length', len(jsondataasbytes))
+        response = urlopen(req, jsondataasbytes)
         response = json.loads(response.read())
         return response
 
@@ -48,8 +53,8 @@ class ErPredictorES:
          
         for chunk in combinedchunks:
             x = None
-            chunkk = chunk[0].encode('ascii','ignore')
-            chunkwords = chunkk.translate(None, string.punctuation)
+            chunkk = chunk[0]#.encode('ascii','ignore')
+            chunkwords = chunkk#.translate(None, string.punctuation)
             embedding = self.embed(chunkwords)
             esresult = self.es.search(index="dbentityindex11", body={"query":{"multi_match":{"query":chunkwords,"fields":["wikidataLabel", "dbpediaLabel^1.5"]}},"size":1})
             topresult = esresult['hits']['hits']
@@ -74,6 +79,6 @@ class ErPredictorES:
 if __name__=='__main__':
     e = ErPredictorES()
     #print e.erPredict(['There', 'people', 'world', 'better', 'place', 'me.'])
-    print e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['Barack', 'B-NP', 34, 6], ['Obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]])
-    print e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['barack', 'B-NP', 34, 6], ['obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]])
+    print(e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['Barack', 'B-NP', 34, 6], ['Obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]]))
+    print(e.erPredict([[['Who', 'S-NP', 0, 3]], [['the', 'B-NP', 7, 3], ['parent', 'I-NP', 11, 6], ['organisation', 'E-NP', 18, 12]], [['barack', 'B-NP', 34, 6], ['obama', 'E-NP', 41, 5]], [['is', 'S-VP', 4, 2]]]))
 
