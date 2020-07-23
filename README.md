@@ -1,4 +1,4 @@
-# EARL (Python 3.8 compatible)
+# EARL
 ## Joint Entity and Relation Linking for Question Answering
 
 EARL (Entity and Relation Linker), a system for jointly linking entities and relations in a question to a knowledge graph. EARL treats entity linking and relation linking as a single task and thus aims to reduce the error caused by the dependent steps. To realise this, EARL uses the knowledge graph to jointly disambiguate entity and relations. EARL obtains the context for entity disambiguation by observing the relations surrounding the entity. Similarly, it obtains the context for relation disambiguation by looking at the surrounding entities. We support multiple entities and relations occurring in complex questions by modelling the joint entity and relation linking task as an instance of the Generalised Travelling Salesman Problem (GTSP).
@@ -9,7 +9,9 @@ ISWC 2018 Research Paper: https://link.springer.com/chapter/10.1007/978-3-030-00
 
 # SETUP INSTRUCTIONS
 
- Install all python dependencies required that are mentioned in requirements.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/.  Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 6.8.5 instance. The mappings can be found in data/elasticsearchdump/ folder. Download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder. Download https://drive.google.com/file/d/1IEkWGq89bc2UgWj--JkxOKztjXxxjkec/view?usp=sharing (unzip after download) and store it in data/ folder.
+**The code in this branch is compatible with Python 3.8.**
+
+Install all python dependencies required that are mentioned in requirements.txt. Download bloom files from https://drive.google.com/drive/folders/1lKu0tVA5APhZVOZqRQK2tCk0FDj82lvo?usp=sharing and store them at data/blooms/.  Download the archived elastic search dumps from the same google drive link and import them into a local running elasticsearch 6.8.5 instance. The mappings can be found in data/elasticsearchdump/ folder. Download https://www.dropbox.com/s/flh1fjynqvdsj4p/lexvec.commoncrawl.300d.W.pos.vectors.gz?dl=1, unzip it, and store it in data/ folder. Download https://drive.google.com/file/d/1IEkWGq89bc2UgWj--JkxOKztjXxxjkec/view?usp=sharing (unzip after download) and store it in data/ folder.
 
 To import elasticsearch data one could install elasticdump https://www.npmjs.com/package/elasticdump
 
