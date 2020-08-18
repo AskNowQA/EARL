@@ -49,4 +49,4 @@ To consume the API
 
   There is a live version of this api hosted by the University of Bonn. It may be accessed in the following manner:
 
-    curl -XPOST 'https://earldemo.sda.tech/earl/api/processQuery' -H 'Content-Type:application/json' -d'{"nlquery":"Who is the president of Russia?"}'
+    curl --insecure -XPOST 'https://earldemo.sda.tech/earl/api/processQuery' -H 'Content-Type:application/json' -d'{"nlquery":"Who is the president of Russia?"}'
