@@ -47,6 +47,6 @@ To consume the API
 
 # LIVE API
 
-  There is a live version of this api hosted by the University of Bonn. It may be accessed in the following manner:
+  There is a live version of this api hosted by th LT Group, University of Hamburg. It may be accessed in the following manner:
 
-    curl --insecure -XPOST 'https://earldemo.sda.tech/earl/api/processQuery' -H 'Content-Type:application/json' -d'{"nlquery":"Who is the president of Russia?"}'
+    curl  -XPOST 'http://ltdemos.informatik.uni-hamburg.de/earl/processQuery' -H 'Content-Type:application/json' -d'{"nlquery":"Who is the president of Russia?"}'
