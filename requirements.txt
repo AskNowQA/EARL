@@ -32,7 +32,7 @@ lockfile==0.12.2
 MarkupSafe==1.1.1
 msgpack==0.6.2
 nltk==3.4.5
-numpy==1.16.1
+numpy==1.22.0
 packaging==20.3
 pep517==0.8.2
 pntl==0.2.4
